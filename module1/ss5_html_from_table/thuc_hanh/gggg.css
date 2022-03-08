@@ -1,5 +1,5 @@
 body{padding: 50px}
-table{width:100px;
+table{width:50%;
       border-collapse: collapse}
 td, th {padding:20px;
         border:1px solid balck;}
@@ -7,7 +7,7 @@ th{
     font-family:'Patua one', Century;
     font-weight: 500px;
     font-size: 30px;
-    color:yellow;
+    color:white;
     padding:20px;
     background-color: red;
     border-color:red ;
@@ -22,7 +22,7 @@ td{
     border-bottom:1px solid #e0e0e0;
     border-left:1px solid #e0e0e0;
     border-right:1px solid #e0e0e0;
-    background-color:yellow ;
+    background-color:white ;
     text-align:center;
 }
 .hover{background:green;}

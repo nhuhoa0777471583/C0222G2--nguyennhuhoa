@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="showMessage()" ;>Click me!</button>
+<script>
+    function showMessage() {
+        alert('halo');
+    }
+</script>
+<div id="Messagediv">
+</div>
+<button type="button" onclick="showMessage();">Clickme!</button>
+<script>
+    function showMessage() {
+        document.getElementById('Messagediv').innerHTML = 'Xin chao';
+    }
+</script>
+
+<button type="button" onclick="showMessage();">Clickme</button>
+<script>
+    function showMessage() {
+    document.write('xin chao');
+}
+</script>
+
+<button type="button" onclick="showMessage();">Clickme</button>
+<script>
+   function showMessage() {
+      console.log('xin chao');}
+   // bam F12-> console
+
+</script>
+</body>
+</html>
