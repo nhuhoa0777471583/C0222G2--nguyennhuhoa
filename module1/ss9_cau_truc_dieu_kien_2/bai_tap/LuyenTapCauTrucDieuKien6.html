@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let doanhSo = parseInt(prompt("nhap tien"));
+    if(doanhSo>20000000){
+        hoaHong= doanhSo *0.2;
+        alert("hoaHong :" +hoaHong.toLocaleString());
+    }
+    if(doanhSo>10000000){
+        hoaHong= doanhSo *0.1;
+        alert("hoaHong :" +hoaHong.toLocaleString());
+    }
+    if(doanhSo<5000000){
+        hoaHong= doanhSo *0.05;
+        alert("hoaHong :" +hoaHong.toLocaleString());
+    }
+</script>
+</body>
+</html>

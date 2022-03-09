@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="2"><input type="text" id="day"/></td>
+        <td>
+            <button type="button" onclick="tinhSoNgay()">tính số ngày</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="thang">
+        </td>
+    </tr>
+    <script>
+        function tinhSoNgay() {
+            let ngay = parseInt(document.getElementById("day").value);
+            switch (ngay) {
+                case 1:
+                    document.getElementById("thang").value = "Thang 1 co 31 ngay";
+                    break;
+                case 2:
+                    document.getElementById("thang").value = "Thang 2 co 28,29 ngay";
+                    break;
+                case 3:
+                    document.getElementById("thang").value = "Thang 3 co 31 ngay";
+                    break;
+                case 4:
+                    document.getElementById("thang").value = "Thang 4 co 30 ngay";
+                    break;
+                case 5:
+                    document.getElementById("thang").value = "Thang 5 co 30 ngay";
+            }
+        }
+
+    </script>
+</table>
+</body>
+</html>

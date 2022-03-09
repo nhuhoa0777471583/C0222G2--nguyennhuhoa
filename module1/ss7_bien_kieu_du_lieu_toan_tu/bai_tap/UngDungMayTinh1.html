@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><input type="text" id="number1"/></td>
+
+        <td><input type="text" id="number2"/></td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="cong()">+</button>
+            <button type="button" onclick="tru()"> -</button>
+            <button type="button" onclick="nhan()"> * </button>
+            <button type="button" onclick="chia()"> / </button>
+        </td>
+    </tr>
+    <tr>
+        <td>Ket Qua</td>
+    </tr>
+    <tr>
+        <td>
+            <input id="kq"  type="text" value=""/></td>
+    </tr>
+    <script>
+        function cong() {
+
+            let num1 = document.getElementById("number1").value;
+            let num2 = document.getElementById("number2").value;
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+
+            let ketQua = num1 + num2;
+
+            document.getElementById("kq").value = ketQua;
+        }
+        function tru() {
+            let num1 = document.getElementById("number1").value;
+            let num2 = document.getElementById("number2").value;
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+            let ketQua = num1 - num2;
+            document.getElementById("kq").value = ketQua;
+        }
+        function nhan() {
+            let num1 = document.getElementById("number1").value;
+            let num2 = document.getElementById("number2").value;
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+            let ketQua = num1 * num2;
+            document.getElementById("kq").value=ketQua;
+        }
+        function chia() {
+            let num1 = document.getElementById("number1").value;
+            let num2 = document.getElementById("number2").value;
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+            let ketQua =num1 / num2;
+            document.getElementById("kq").value = ketQua;
+        }
+    </script>
+</table>
+</body>
+</html>
