@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+<tr>
+    <td><input type="text" id="ketQua"/> </td>
+</tr>
+<tr>
+    <td>
+        <button type="button" onclick="nhan('+')"> +</button>
+        <button type="button" onclick="nhan('-')"> -</button>
+        <button type="button" onclick="nhan('*')"> *</button>
+        <button type="button" onclick="nhan('/')"> /</button>
+        <button type="button" onclick="bang('=')">=</button>
+    </td>
+</tr>
+    <tr>
+        <td>
+            <button type="button" onclick="nhan('1')">1</button>
+            <button type="button" onclick="nhan('2')">2</button>
+            <button type="button" onclick="nhan(3)">3</button>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="nhan('4')">4</button>
+            <button type="button" onclick="nhan('5')">5</button>
+            <button type="button" onclick="nhan('6')">6</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="nhan('7')">7</button>
+            <button type="button" onclick="nhan('8')">8</button>
+            <button type="button" onclick="nhan('9')">9</button>
+            <button type="button" onclick="xoa('c')">C</button>
+        </td>
+    </tr>
+</table>
+<script>
+    function nhan(so) {
+        document.getElementById("ketQua").value +=so;
+    }
+    function xoa() {
+        document.getElementById("ketQua").value = "";
+    }
+    function bang() {
+        let string = document.getElementById("ketQua").value;
+        let ketQua = eval (string)  ;
+        document.getElementById("ketQua").value= ketQua;
+    }
+</script>
+</body>
+</html>

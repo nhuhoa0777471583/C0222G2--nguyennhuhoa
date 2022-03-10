@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let bangNhan;
+     bangNhan= "<tabel border='1' width='500' cellspacding='' cellppading='3' >"
+    for (let i =1 ;i<=9;i++){
+        bangNhan = bangNhan +"<tr>";
+        for (let j=1; j<=9; j++) {
+            bangNhan = bangNhan + "<td>" +  i * j + "</td>";
+            document.write("<br>",i,"* 2 = ",+2*j);
+
+        }
+           bangNhan=bangNhan +"</tr>";
+
+    }
+    bangNhan=bangNhan +"</table>";
+    document.write(bangNhan);
+
+</script>
+</body>
+</html>
