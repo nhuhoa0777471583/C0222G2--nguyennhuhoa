@@ -16,7 +16,7 @@
         <td><button type="button" onclick="">(</button> </td>
         <td><button type="button" onclick="">)</button> </td>
         <td><button type="button" onclick="">%</button> </td>
-        <td><button type="button" onclick="ac(AC)">AC</button> </td>
+        <td><button type="button" onclick="xoa('xoa')"> AC </button> </td>
     </tr>
     <tr>
         <td><button type="button" onclick="">Inv</button> </td>
@@ -40,9 +40,9 @@
         <td><button type="button" onclick="">e</button> </td>
         <td><button type="button" onclick="">tan</button> </td>
         <td><button type="button" onclick="">can</button> </td>
-        <td><button type="button" onclick="nhap('7')">1</button> </td>
-        <td><button type="button" onclick="nhap('7')">2</button> </td>
-        <td><button type="button" onclick="nhap('7')">3</button> </td>
+        <td><button type="button" onclick="nhap('1')">1</button> </td>
+        <td><button type="button" onclick="nhap('2')">2</button> </td>
+        <td><button type="button" onclick="nhap('3')">3</button> </td>
         <td><button type="button" onclick="nhap('-')">-</button> </td>
     </tr>
     <tr>
@@ -51,21 +51,21 @@
         <td><button type="button" onclick="">x^y</button> </td>
         <td><button type="button" onclick="nhap('0')">0</button> </td>
         <td><button type="button" onclick="">.</button> </td>
-        <td><button type="button" onclick="bang('=')">=</button> </td>
-        <td><button type="button" onclick="nhap('+')">+</button> </td>
+        <td><button type="button" onclick="bang()">=</button> </td>
+        <td><button type="button" onclick="nhap()">+</button> </td>
     </tr>
     <script>
         function nhap(so) {
-            document.getElementById(kQ).value +=so;
+            document.getElementById("kQ").value +=so;
         }
         function bang() {
-
-
+            let string = document.getElementById("kQ").value;
+            let dapSo = eval(string);
+            document.getElementById("kQ").value = dapSo
         }
-
-
-
-
+        function xoa() {
+            document.getElementById("kQ").value="";
+        }
 
     </script>
 </table>

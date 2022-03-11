@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let a1=0;  /*nhap lenh (1)*/
+    let a2=1;
+    let tong=a1+a2;   /*tong 2 so*/
+    let a3;
+    document.write(a1);   /* in ra (2)*/
+    document.write("<br>");
+    document.write(a2);
+    /*vong lap for khai bao dieu kien (3)*/
+    for(let i=2; i<=10; i++) {
+        a3 = a1 + a2;   /* N la so tiep theo bang 2 so truoc cong lai (4) */
+        tong= a3 + tong; /*tong = tong 2 so dau + so tiep theo a3 (7)*/
+        document.write("<br>");
+        document.write(a3);  /*in ra N trong for*/
+        a1 = a2;   /*a1 tiep theo bang a thu 2 (5)*/
+        a2 = a3;     /*a2 tt bang thu a thu 3 (6) */
+    }
+    document.write("<br>");
+    document.write("tong :" +tong);  /*in tong tu (7) ra (8)*/
+
+</script>
+</body>
+</html>

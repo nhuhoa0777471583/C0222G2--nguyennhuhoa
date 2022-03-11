@@ -6,20 +6,20 @@
 </head>
 <body>
 <script>
-    let bangNhan;
-     bangNhan= "<tabel border='1' width='500' cellspacding='' cellppading='3' >"
-    for (let i =1 ;i<=9;i++){
-        bangNhan = bangNhan +"<tr>";
-        for (let j=1; j<=9; j++) {
-            bangNhan = bangNhan + "<td>" +  i * j + "</td>";
-            document.write("<br>",i,"* 2 = ",+2*j);
+    document.write("<table border='1' cellspacing='' cellpadding='3'>");
+    for (let i = 1; i <= 9; i++) {
 
+        for (let j = 2; j <= 9; j++) {
+            document.write("<td>");
+            document.write( i + '*'+ j + '='+ i * j);
+            document.write("</td>" ) ;
         }
-           bangNhan=bangNhan +"</tr>";
+        document.write("</tr>");
+        }
+    document.write("</table>");
 
-    }
-    bangNhan=bangNhan +"</table>";
-    document.write(bangNhan);
+
+
 
 </script>
 </body>

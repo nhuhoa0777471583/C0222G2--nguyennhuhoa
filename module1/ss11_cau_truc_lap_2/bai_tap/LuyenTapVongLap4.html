@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let F1=1;
+    let F2=1;
+    document.write(F1);
+    document.write("<br>");
+    document.write(F2);
+    for(i=2; i<=20; i++){
+        F=F1+F2;
+        document.write("<br>");
+        document.write(F);
+        if (F%5===0){
+            document.write("<br>");
+            document.write("chia het cho 5!!");
+            break;
+        }
+        F1=F2;
+        F2=F;
+    }
+</script>
+</body>
+</html>

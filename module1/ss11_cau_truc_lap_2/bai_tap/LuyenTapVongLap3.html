@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n1 = 0; /*khai bao bien (1)*/
+    let n2 = 1;
+    let N;
+    document.write(n1);/* in bien da khai (2)*/
+    document.write("<br>");
+    document.write(n2);
+    /*sd vong lap for (4)*/
+    for (let i = 2; i < 5; i++) {
+        N = n1 + n2; /* so dau n1 + so tt n2 = so thu 3 N (4)*/
+        document.write("<br>");
+        document.writeln(N); /*in ra so thu 3 (5)*/
+        n1 = n2; /* n1 tiep theo bang n thu2 (6)*/
+        n2 = N;  /* n2 tiep theo bang N thu 3(7)*/
+    }
+</script>
+</body>
+</html>
