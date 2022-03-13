@@ -6,16 +6,12 @@
 </head>
 <body>
 <script>
-    for(let i = 1; i <= 100; i ++) {
-        document.write(i);
-        i=99;
-            alert("hoan thanh")
-        break;
-
+    let n=prompt("nhap so:");
+    let giaiThua=1;
+    for(let i=1;i<=n;i++){
+        giaiThua= giaiThua * i;
     }
-
-
-
+    document.write("N!: " +giaiThua);
 
 </script>
 </body>

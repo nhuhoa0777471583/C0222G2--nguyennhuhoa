@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var tienBanDau=parseInt(prompt("nhap so tien :"));
+    let lai=0.5;
+    let thoiGian=12;
+    var tienLai;
+
+    for(var i=0;i<thoiGian;i++){
+        tienLai = tienBanDau * lai/100 ;
+        tienBanDau=tienBanDau+tienLai;
+      document.write("tien lai:"+tienLai + " tien goc:" +tienBanDau+"<br/><br/>");
+    }
+    document.write("tiền lãi :" + tienLai);
+
+</script>
+
+
+</body>
+</html>
