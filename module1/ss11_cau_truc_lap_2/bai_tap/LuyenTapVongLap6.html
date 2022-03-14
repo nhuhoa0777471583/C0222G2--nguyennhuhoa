@@ -6,24 +6,24 @@
 </head>
 <body>
 <script>
-    let count=0;
-    let n;
-    let tong=0;
-    for(let i=0;i<100;i++){
-        if(i%7===0){
-            document.write(i+"<br/>");
-            tong+=i;
-            n=i;
-            count++;
-        }
-        if(n===30){
-            break;
-        }
-    }document.write("tong:" + tong);
 
-
-
-
+    let count = 0;
+    let n = 0;
+    let tong = 0;
+    while (count < 30) {
+            if (n % 7 === 0) {
+                tong += n;
+                count++;
+            }
+            n++;
+    }
+    // for (let n = 0; count <30 ; n++) {
+    //     if (n % 7 === 0) {
+    //         tong += n;
+    //         count++;
+    //     }
+    // }
+    document.write("tong:" + tong);
 
 </script>
 </body>

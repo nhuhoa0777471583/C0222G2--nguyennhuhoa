@@ -6,14 +6,31 @@
 </head>
 <body>
 <script>
-let nhietDo= parseInt(prompt("nhiet do :"));
-while (nhietDo>100){
-alert("giam nhiet do");
-} if (nhietDo<20){
-alert("tang nhiet do");
-}else {
-alert("nhiet do binh thuong");
-}
+    let nhietDo;
+    do {
+        nhietDo = parseInt(prompt("nhiet do :"));
+        if (nhietDo < 20) {
+            alert("tang nhiet do");
+        } else if (nhietDo > 100) {
+            alert("nhiet do giam");
+        }else {
+            alert("ok")
+        }
+
+    } while (nhietDo < 20 || nhietDo > 100);
+    alert(nhietDo);
+
+
+
+    // while (nhietDo > 100) {
+    //     alert("giam nhiet do");
+    //     nhietDo=parseInt(prompt("nhiet do :"));;
+    // }
+    // if (nhietDo < 20) {
+    //     alert("tang nhiet do");
+    // } else {
+    //     alert("nhiet do binh thuong");
+    // }
 </script>
 </body>
 </html>

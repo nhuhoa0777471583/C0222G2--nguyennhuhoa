@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<input type="text" id="a"/>
+<input type="button" onclick="ad();" value="Add" />
+<input type="button" onclick="dis();" value="Display"/>
+<!--dat id cho cac input-->
+<div id="result"></div>
+<script>
+    let x =0;
+    let array=Array();
+    function ad() {
+        array[x] =document.getElementById("a").value;
+        alert("Element: "+array[x]+"Added at index"+x);
+        x++;
+        document.getElementById("a").value="";
+    }
+    function dis() {
+    let e ="<hr/>";
+    for(let i =0; i<array.length;i++){
+        e+= "Element"+i +"="+array[i]+"</br>";
+    }
+    document.getElementById("result").innerHTML=e ;
+    }
+
+</script>
 </body>
 </html>
