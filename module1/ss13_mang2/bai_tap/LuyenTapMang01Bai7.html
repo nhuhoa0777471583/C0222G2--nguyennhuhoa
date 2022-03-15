@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr=[2,3,5,6,7,9,8];
+    let v=prompt("nhap so :");
+    let flag=false;
+    for(let i =0;i<arr.length;i++){
+        if(v=== arr[i]){
+            flag=true;
+            arr.pop();
+            // arr.splice(arr[i-1],1,0);
+            document.write(arr[i]);
+            break;
+        }else {
+            flag=false;
+            alert("sai" );
+        }
+    }
+
+
+
+
+</script>
+</body>
+</html>

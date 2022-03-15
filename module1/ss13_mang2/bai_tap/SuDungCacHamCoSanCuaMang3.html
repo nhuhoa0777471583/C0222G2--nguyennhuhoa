@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ten = "nguyennhuhoa";/* khai bao chuoi  */
+    // let str="NGUYENNHUHOA";
+    let chuHoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';/*khai bao chuoi chu hoa  */
+    let chuTHuong = 'abcdefghijklmnopqrstuvwxyz';/*khai bao chuoi chu thuong*/
+    let kQ = [];
+    for (let i = 0; i < ten.length; i++) {
+
+        if (chuHoa.includes(ten[i])) { /*neu co chu hoa trong(includes) chuoi ten */
+
+            kQ.push(str[i].toLowerCase());/*thi in ra chu thuong(toLowerCase)*/
+
+        } else if (chuTHuong.includes(ten[i])) {/*nguoc lai */
+
+            kQ.push(ten[i].toUpperCase());
+        } else {                            /*khong co thi in ra nhu ban dau*/
+            kQ.push(ten[i]);
+        }
+    }
+    console.log(kQ.join(""));
+    document.write(kQ.join(""));
+
+</script>
+</body>
+</html>

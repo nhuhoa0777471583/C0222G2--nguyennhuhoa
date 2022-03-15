@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n="3333222444";/* chuỗi"" khác với mảng [ , , , ]*/
+    // let n=[0,2,4,5,6,8,9];/*sdung chuỗi thì sd string */
+    let str=n.toString();/*neu sd mảng thi ko cần string ghi trực tiếp va kQ*/
+    let kQ=[str[0]];
+    for (let i=1;i<str.length;i++){
+        if( (str[i-1]%2 === 0 ) && (str[i]%2 === 0)){
+            kQ.push('-',str[i]);
+        }else{
+            kQ.push(str[i]);
+        }
+    }
+    console.log(kQ.join(''));
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
