@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Met :<input type="number"
+               oninput="met(this.value)"/>Feet :<span id="f" ></span></p>
+<p>Feet :<input  type="number"
+                 oninput="feet(this.value)" /> Met :<span id="m">
+</span></p>
+
+<script>
+    function met(meter) {
+        meter=parseFloat(meter);
+        document.getElementById("f").innerHTML=(meter*3.279);
+
+    }
+        function feet(foot) {
+            foot=parseFloat(foot);
+            document.getElementById("m").innerHTML=(foot*0.305);
+
+        }
+
+
+
+
+</script>
+
+</body>
+</html>

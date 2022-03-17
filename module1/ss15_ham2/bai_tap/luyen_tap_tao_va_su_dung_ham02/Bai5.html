@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function soNhoNhat(a, b, c) {
+        min = a;
+        if (min > b) {
+            min = b;
+        }
+        if (min > c) {
+            min = c;
+        }
+        return min;
+    }
+
+    let min;
+    let a = prompt("nhap so a :");
+    let b = prompt("nhap so b :");
+    let c = prompt("nhap so c :");
+    let soSanh = soNhoNhat(a, b, c);
+    console.log(soSanh);
+
+
+</script>
+</body>
+</html>

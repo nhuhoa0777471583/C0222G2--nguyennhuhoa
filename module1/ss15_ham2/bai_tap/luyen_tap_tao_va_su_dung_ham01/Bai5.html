@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+<script>
+    let a=prompt("nhap tem sao can tim!! :");
+    let ngoiSao=['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe','Regulus'];
+    let chomSao=['UrsaMinor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'UrsaMajor' ,' Leo'];
+    console.log(sky(ngoiSao,chomSao));
+    function sky() {
+        for (let i = 0; i <ngoiSao.length ; i++) {
+            if(a==ngoiSao[i]){
+                return chomSao[i];
+            }
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

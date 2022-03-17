@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("nhap :");
+    let arr= str.split("");
+    function isPalindrome(array){
+        if(array.length<2){
+            return true;
+            console.log(arr);
+        }else{
+            if(array[0]===array[array.length-1]){
+                array.pop();
+                array.shift();
+                console.log(arr);
+                return isPalindrome(array);
+            }else{
+                return false;
+            }
+        }
+    }
+
+    console.log(isPalindrome(arr));
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [1, 'a', 2, '!', '@', '#', '?', '*'];
+    let result = arr(a);
+    function arr(a) {
+        let v = prompt("nhập kí tự cần tìm!! ");
+        for (let i = 0; i < a.length; i++) {
+            if (v == a[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    console.log(result);
+</script>
+</body>
+</html>
