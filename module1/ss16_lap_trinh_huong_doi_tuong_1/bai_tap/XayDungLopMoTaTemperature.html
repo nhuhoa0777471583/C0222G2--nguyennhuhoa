@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class tinhNhietDo {
+        constructor(doC, doF) {
+            this.doC = doC;
+            this.doF = doF;
+        }
+
+        getTinhDoF() {
+            return this.doC*1.8+32;
+        }
+        getTinhDoK(){
+            return this.doC+273.15;
+        }
+    }
+    let a=parseInt(prompt("nhap do C:"));
+    let nhietdo= new tinhNhietDo(a)
+    let doF= nhietdo. getTinhDoF();
+    let doK= nhietdo.getTinhDoK();
+    document.write("doF= "+doF+"<br>"+"doK"+doK)
+
+</script>
+</body>
+</html>

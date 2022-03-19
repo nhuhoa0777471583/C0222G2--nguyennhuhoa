@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<canvas id="mauSac" width="200" height="100"></canvas>-->
+<script>
+    class hinhChuNhat {
+        constructor(chieuDai, chieuRong) {
+            this.chieuDai = chieuDai;
+            this.chieuRong = chieuRong;
+
+        }
+
+        getChieuDai() {
+            return this.chieuDai;
+        }
+
+        getChieuRong() {
+            return this.chieuRong;
+        }
+
+        getDienTich() {
+            return this.chieuDai * this.chieuRong;
+        }
+
+        getChuVi() {
+            return 2 * (this.chieuDai + this.chieuRong);
+        }
+    }
+
+    let a = parseInt(prompt("nhap chieu dai:"));
+    let b = parseInt(prompt("nhap chieu rong:"));
+    let hinhchunhat = new hinhChuNhat(a, b);
+    let dientich = hinhchunhat.getDienTich();
+    let chuvi = hinhchunhat.getChuVi();
+    document.write("dien tich :" + dientich + "chu vi:" + chuvi);
+
+    // let canvas = document.getElementById("mauSac")
+
+
+</script>
+</body>
+</html>

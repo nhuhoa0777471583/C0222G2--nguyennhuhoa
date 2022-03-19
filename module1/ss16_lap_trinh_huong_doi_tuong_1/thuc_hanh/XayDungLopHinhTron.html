@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Circle{
+        constructor(banKinh,tinhDienTich) {
+            this.banKinh=banKinh;
+            this.tinhDienTinh=tinhDienTich;
+        }
+        getBanKinh(){
+            return this.banKinh;
+        }
+        getDienTich(){
+            return Math.PI*this.banKinh*this.banKinh;
+        }
+    }
+    let hinhtron =new Circle(2);
+    let bankinh =hinhtron.getBanKinh();
+    let dientich=hinhtron.getDienTich();
+    document.write("ban kinh="+bankinh+ "</br>" + "dientich="+dientich);
+
+
+
+</script>
+</body>
+</html>
