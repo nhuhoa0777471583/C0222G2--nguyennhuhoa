@@ -5,7 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<!--<canvas id="mauSac" width="200" height="100"></canvas>-->
 <script>
     class hinhChuNhat {
         constructor(chieuDai, chieuRong) {
@@ -33,12 +32,11 @@
 
     let a = parseInt(prompt("nhap chieu dai:"));
     let b = parseInt(prompt("nhap chieu rong:"));
-    let hinhchunhat = new hinhChuNhat(a, b);
-    let dientich = hinhchunhat.getDienTich();
-    let chuvi = hinhchunhat.getChuVi();
-    document.write("dien tich :" + dientich + "chu vi:" + chuvi);
+    let chuNhat = new hinhChuNhat(a, b);
+    let dienTich =  chuNhat.getDienTich();
+    let chuVi =  chuNhat.getChuVi();
+    document.write("dien tich :" + dienTich + "chu vi:" + chuVi);
 
-    // let canvas = document.getElementById("mauSac")
 
 
 </script>

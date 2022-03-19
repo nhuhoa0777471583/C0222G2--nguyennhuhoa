@@ -6,17 +6,16 @@
 </head>
 <body>
 <script>
-    let num = [2, 3, 4, 5, 6, 1, 7,];
+    let num = [2, 3,'C','%','*',7,'A','@','#'];
     let count = 0;
     for (let i = 0; i < num.length; i++) {
-        count++;
-        console.log(num);
+       if(!isNaN(num[i])){
+           count++;
+       }
     }
-    document.write(count);
-
-
-
-    num.push()
+    document.write(num.length);
+    document.write("<br>");
+    document.write("co ki tu so :"+count);
 </script>
 </body>
 </html>
