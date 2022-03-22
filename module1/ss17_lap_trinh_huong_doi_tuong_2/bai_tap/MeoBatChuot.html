@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mouse {
+        constructor(ten, khoiLuong,tocDo,trangThai) {
+            this.name = ten;
+            this.weight = khoiLuong;
+            this.speed=tocDo;
+            this.status=trangThai;
+        }
+        say(text) {
+            console.log(" chit chit: "+text) ;
+        }
+    }
+
+    class Cat {
+        constructor(ten, khoiLuong, tocDo) {
+            this.name = ten;
+            this.weight = khoiLuong;
+            this.speed=tocDo;
+        }
+        say(text) {
+            console.log("meo meo: "+text);
+        }
+        anChuot(mouse){
+            if(mouse.status=="song"){
+                this.weight += mouse.weight;
+            }else{
+                this.say("chet roi khong an duoc!! ");
+            }
+        }
+        batChuot(mouse){
+            if(this.speed > mouse.speed){
+                this.say("bat dc roi!!");
+                this.anChuot(mouse);
+            }else{
+                mouse.say("thoat dc roi !!!");
+            }
+        }
+    }
+    let tom = new Cat("Tom",10,10);
+    let jerry = new Mouse("Jerry", 2,5,"song");
+    console.log(jerry);
+    console.log(tom);
+    console.log(tom.batChuot(jerry));
+    console.log("can nang"+tom.weight);
+
+
+    let jerry1 = new Mouse("Jerry", 2,15,"song");
+    console.log(jerry1);
+    console.log(tom);
+    console.log(tom.batChuot(jerry1));
+    console.log("can nang"+tom.weight);
+
+    let jerry2 = new Mouse("Jerry", 2,5,"chet");
+    console.log(jerry2);
+    console.log(tom);
+    console.log(tom.batChuot(jerry2));
+    console.log("can nang"+tom.weight);
+
+
+
+</script>
+</body>
+</html>

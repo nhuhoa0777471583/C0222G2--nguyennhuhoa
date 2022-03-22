@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class DienThoai {
+        constructor() {
+            this.trangthai = true;
+            this.pin = " ";
+            this.tinNhanDangSoan = " ";
+            this.tinhNhanGui = [];
+            this.tinNhanDen = [];
+        }
+
+        getTrangThai() {
+            console.log("dien thoai dang bat");
+        }
+
+        setTrangThai() {
+            console.log("dt dang tat");
+        }
+
+        batTat() {
+            this.trangthai = !this.trangthai;
+        }
+
+        sacPin() {
+            console.log("con day pin");
+        }
+
+        setSacPin() {
+            console.log("sap het pin, can sac");
+        }
+
+        soanTin(message) {
+            this.tinNhanDangSoan = message;
+        }
+
+        nhanTin(message) {
+            this.tinNhanDen = message;
+        }
+
+        guiTinNhan(mobile, message) {
+            this.soanTin(message);
+            this.tinhNhanGui.push(this.tinNhanDangSoan);
+            mobile.nhanTin(this.tinNhanDangSoan);
+            this.tinNhanDangSoan = "";
+        }
+
+        hienThiTinNhan() {
+            console.log(this.tinNhanDen);
+        }
+
+        hienThiTinGui() {
+            console.log(this.tinhNhanGui);
+        }
+    }
+
+    let nokia = new DienThoai();
+    let iphone = new DienThoai();
+    nokia.sacPin(10);
+    nokia.getTrangThai();
+
+    nokia.guiTinNhan(iphone, "hello ip");
+
+    iphone.hienThiTinNhan();
+    iphone.guiTinNhan(nokia, "hi nokia");
+
+    nokia.hienThiTinNhan();
+
+    nokia.setTrangThai();
+    nokia.setSacPin()
+
+</script>
+</body>
+</html>

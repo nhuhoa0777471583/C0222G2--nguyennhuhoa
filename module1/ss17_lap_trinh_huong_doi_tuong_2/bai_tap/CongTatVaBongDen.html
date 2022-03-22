@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Lamp {
+        constructor() {
+            this.status = false;
+        }
+
+        denBat() {
+            this.status = true;
+        }
+
+        denTat() {
+            this.status = false;
+        }
+
+        kiemTraTrangThai() {
+            if (this.status) {
+                alert("den dang mo");
+            } else {
+                alert("den dang tat");
+            }
+        }
+    }
+
+    class Switch {
+        constructor() {
+            this.status = false;
+            this.den = null;
+        }
+
+        noiVoiDen(den) {
+            this.den = den;
+        }
+
+        bat() {
+            this.status = true;
+            this.den.denBat();
+        }
+
+        tat() {
+            this.status = false;
+            this.den.denTat();
+        }
+    }
+
+    let bongDen = new Lamp();
+    let congTat=new Switch();
+
+    congTat.noiVoiDen(bongDen);
+    congTat.tat();
+    bongDen.kiemTraTrangThai();
+    congTat.bat();
+    bongDen.kiemTraTrangThai();
+    congTat.tat();
+    bongDen.kiemTraTrangThai();
+    congTat.bat();
+    bongDen.kiemTraTrangThai();
+</script>
+</body>
+</html>

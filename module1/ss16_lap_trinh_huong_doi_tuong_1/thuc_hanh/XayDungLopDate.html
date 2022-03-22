@@ -38,16 +38,16 @@
         }
     }
 
-    let day = new MyDate(2, 2, 2022);
-    console.log(day);
+    let day = new MyDate(2, 3, 2022);
+
     document.write(day.getDay() + "/" + day.getMoth()+"/"+day.getYear());
     document.write("<br>");
 
-    let day1 = new MyDate(2, 2, 2022)
+    let day1 = new MyDate();
     day1.setDay("23");
     day1.setMonth("3");
     day1.setYear("2002");
-    console.log(day1);
+
     document.write(day1.setDay("23") + "/" + day1.setMonth("3") +"/" +day1.setYear("2002"));
 
 </script>

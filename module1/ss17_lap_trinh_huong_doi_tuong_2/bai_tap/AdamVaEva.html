@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor() {
+            this.canNang = 10;
+        }
+        // giam(){
+        //     if(this.canNang>0){
+        //         this.canNang--;
+        //     }
+        // }
+        // isEmpty(){
+        //     if(this.canNang==0){
+        //         console.log("tao da an het!!!");
+        //         return true;
+        //     }else{
+        //         return false;
+        //     }
+        // }
+
+        getCanNang() {
+            return this.canNang;
+        }
+        setCanNang(canNang) {
+            return this.canNang = canNang;
+        }
+
+    }
+
+    class Human {
+        constructor(name, gender, weight, say, apple) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.say = say;
+            this.apple = apple;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+        isMale(){
+            if(this.gender==="NAM"){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        getSay() {
+            return this.say;
+        }
+
+        setSay(message) {
+            this.say = message;
+        }
+
+        setApple(apple) {
+            this.apple = apple;
+        }
+
+        getApple() {
+            return this.apple;
+        }
+
+        anTao() {// cân nặng quả táo(getCanNang) >0
+            // nếu người ăn thì tăng cân nặng(this.getWeight) lên 1
+            //giảm cân nặng táo(setCanNang=getCanNang-1) xuông 1
+            if (this.apple.getCanNang() > 0) {
+                this.setWeight(Number(this.getWeight()) + 1);
+                this.apple.setCanNang(this.apple.getCanNang() - 1);
+                document.write("người ăn:" + this.getName() + "\n" + "khối lượng táo:" +
+                    this.apple.getCanNang() + "\n" + "cân nặng: " + this.getWeight())
+            }
+        }
+
+    }
+
+    let quaTao = new Apple(10);
+    document.write("quả táo có khối lượng :" + quaTao.getCanNang());
+    document.write("<br>");
+    //thong tin của adam
+    let human = new Human(quaTao);
+    human.setName("Adam");
+    human.setWeight("70");
+    human.setGender("Nam");
+    document.write("Tên:" + human.getName() + " Cân nặng:" + human.getWeight() + " Giới tính:" + human.getGender());
+    document.write("<br>");
+    //thông tin của eva
+    let human2 = new Human(quaTao);
+    human2.setName("Eva");
+    human2.setWeight("50");
+    human2.setGender("Nữ");
+    document.write("Tên:" + human2.getName() + " Cân nặng:" + human2.getWeight() + " Giới tính:" + human2.getGender());
+    document.write("<br>");
+    //adam vs eva nchuyen
+    human.setSay("hello,Eva");
+    document.write("Adam say: " + human.getSay());
+    document.write("<br>");
+    human2.setSay("hi,Adam");
+    document.write("Eva say:  " + human2.getSay());
+    document.write("<br>");
+    human.setSay("Eva ăn táo không?");
+    document.write("Adam say: " + human.getSay());
+    document.write("<br>");
+    human2.setSay("có, Adam!!!");
+    document.write("Eva say:  " + human2.getSay());
+    document.write("<br>");
+    //ăn táo
+    human.setApple(quaTao);
+    human2.setApple(quaTao);
+    human.anTao();
+    document.write("<br>");
+    human2.anTao();
+    document.write("<br>");
+    human.anTao();
+    document.write("<br>");
+    human.anTao();
+    document.write("<br>");
+    human.anTao();
+    document.write("<br>");
+    human.anTao();
+
+
+</script>
+</body>
+</html>
