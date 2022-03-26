@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = "cabcadepfeeedgkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkhkha";
+    a = a.split("");
+    let dem=0;
+
+    for (let i = 0; i < a.length-1; i++) {
+        for (let j = i + 1; j < a.length; j++) {
+            if (a[i] === a[j]) {
+                a.splice(j, 1);
+                j--;
+                dem=a.length;
+            }
+        }
+    }
+     alert(a + "  " + dem)
+
+
+
+</script>
+</body>
+</html>
