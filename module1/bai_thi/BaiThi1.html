@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    let arr = [];
+    let arr1 = [];
+    let flag = false;
+    do {
+        n = parseInt(prompt("nhap n: "));
+    } while (n < 0 || n >= 50);
+
+    for (let i = 0; i < n; i++) {
+        arr[i] = Number(prompt("nhap phan tu :"));
+    }
+    alert(arr);
+    for (let i = 0; i < arr; i++) {
+        if (arr < 2) {
+            flag = false;
+        } else if (arr % i === 0) {
+            flag = false;
+        }else{
+            flag=true;
+        }arr1.push(arr);
+    }
+
+    console.log(arr1);
+
+
+</script>
+</body>
+</html>
