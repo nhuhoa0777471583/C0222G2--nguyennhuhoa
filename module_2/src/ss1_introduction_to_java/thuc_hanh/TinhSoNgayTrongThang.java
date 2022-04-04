@@ -10,7 +10,6 @@ public class TinhSoNgayTrongThang {
         String ngayTrongThang;
         switch (thang) {
             case 2:
-//                System.out.println(" thang"+ thang +" co 28 or 29 ngay");
                 ngayTrongThang ="28 or 29 ";
                 break;
             case 1:
