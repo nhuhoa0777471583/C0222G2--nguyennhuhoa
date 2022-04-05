@@ -6,7 +6,8 @@ public class Bai2CurrencyConversion {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        double vnd,dola;
+        double vnd;
+        double dola;
         System.out.print("Enter dolla to exchange: ");
         dola= sc.nextDouble();
         vnd=dola*23000;
