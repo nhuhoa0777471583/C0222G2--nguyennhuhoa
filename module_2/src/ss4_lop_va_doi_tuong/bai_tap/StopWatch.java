@@ -4,35 +4,46 @@ import java.time.LocalTime;
 import java.util.Date;
 
 public class StopWatch {
-    private LocalTime startTime;
-    private LocalTime endTime;
+    private long startTime;
+    private long endTime;
 
     public StopWatch() {
-    startTime=LocalTime.now();
     }
 
-    public StopWatch(LocalTime startTime, LocalTime endTime) {
+    public StopWatch(long startTime, long endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
     }
 
-    public LocalTime getStart(LocalTime startTime) {
-        return startTime;
-    }
-    public LocalTime getStop(LocalTime endTime) {
-        return endTime;
-    }
-    public void start(){
-        this.startTime=LocalTime.now();
-        getStart(startTime);
-    }
-    public void end(){
-        this.endTime=LocalTime.now();
-        getStop(endTime);
+    public void start() {
+        this.startTime = System.currentTimeMillis();
+
     }
 
-    public void getElapsedTime() {
-       int ElapsedTime=endTime.toSecondOfDay()*100 - startTime.toSecondOfDay()*100;
-        System.out.print("so mili giay dem duoc la: "+ElapsedTime);
+    public void end() {
+        this.endTime = System.currentTimeMillis();
+
+    }
+
+    public long getElapsedTime() {
+        return this.endTime - this.startTime;
     }
 }
+
+class TextStopWatch {
+    public static void main(String[] args) {
+        StopWatch stopWatch = new StopWatch();
+
+        stopWatch.start();
+        long a = 1;
+        long b = 2;
+        long c = 3;
+        for (long i = 0; i < 1000000000; i++) {
+            a = b;
+            c = a;
+        }
+        stopWatch.end();
+        System.out.print(stopWatch.getElapsedTime());
+    }
+}
+
