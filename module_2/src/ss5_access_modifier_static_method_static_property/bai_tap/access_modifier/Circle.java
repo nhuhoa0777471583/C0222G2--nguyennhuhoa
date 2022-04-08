@@ -19,8 +19,9 @@ public class Circle {
     public double getArea(){
             return radius*radius*Math.PI;
     }
-}
-class TestCircle {
+
+
+
     public static void main(String[] args) {
         Scanner scanner= new Scanner(System.in);
 

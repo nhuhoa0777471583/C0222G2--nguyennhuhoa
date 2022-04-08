@@ -28,8 +28,14 @@ public class Student {
             this.classes = classes;
     }
 
-}
-class TestStudent{
+    @Override
+    public String toString() {
+        return "Student: " +
+                "name='" + name + '\'' +
+                ", classes='" + classes + '\'' +super.toString();
+
+    }
+
     public static void main(String[] args) {
         Student student =new Student();
         student.setName("hoa");
