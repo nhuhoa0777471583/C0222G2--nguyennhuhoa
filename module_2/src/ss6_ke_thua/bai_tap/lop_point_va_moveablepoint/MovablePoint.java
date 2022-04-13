@@ -63,6 +63,7 @@ public class MovablePoint extends Point {
         System.out.println(movablePoint.move());
 
 
+
     }
 
 }

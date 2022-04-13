@@ -1,4 +1,30 @@
 package ss7_abstract_class_interface.thuc_hanh.trien_khai_interface_comparable;
 
-public class Circle {
+import ss6_ke_thua.thuc_hanh.he_cac_doi_tuong_hinh_hoc.Circle;
+
+import java.util.Arrays;
+
+public class ComparableCircle extends Circle implements Comparable<ComparableCircle> {
+    public ComparableCircle() {
+    }
+
+    public ComparableCircle(double radius) {
+        super(radius);
+    }
+
+    public ComparableCircle(double radius, String color, boolean filled) {
+        super(radius, color, filled);
+    }
+
+    //dung der sap xep thu tu cua ban kinh hinh tron
+    @Override
+    public int compareTo(ComparableCircle o) {
+        if (getRadius() > o.getRadius()) {
+            return 1;
+        } else if (getRadius() < o.getRadius()) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
 }
