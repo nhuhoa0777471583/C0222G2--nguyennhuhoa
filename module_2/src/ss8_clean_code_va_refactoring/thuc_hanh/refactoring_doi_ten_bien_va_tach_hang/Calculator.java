@@ -16,16 +16,15 @@ public class Calculator {
             case MULTIPLICATION:
                 return firstOperand * secondOperand;
             case DIVISION:
-                if (secondOperand != 0){
+                if (secondOperand != 0) {
                     return firstOperand / secondOperand;
-                }
-
-                else{
+                } else {
                     throw new RuntimeException("Can not divide by 0");
                 }
             default:
                 throw new RuntimeException("Unsupported operation");
         }
     }
+
 }
 

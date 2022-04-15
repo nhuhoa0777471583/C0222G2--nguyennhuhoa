@@ -36,34 +36,42 @@ public class TennisGame {
 
         }
         else if (player_1 || player_2) {
-            score = playerDraw(playerScore_1, playerScore_2);
+            score = playerAdvantage(playerScore_1, playerScore_2);
         } else {
-            for (int i = 1; i < 3; i++) {
-                if (i == 1) tempScore = playerScore_1;
-                else {
-                    score += "-";
-                    tempScore = playerScore_2;
-                }
-                switch (tempScore) {
-                    case POINT_0:
-                        score+="Love";
-                        break;
-                    case POINT_1:
-                        score+="Fifteen";
-                        break;
-                    case POINT_2:
-                        score+="Thirty";
-                        break;
-                    case POINT_3:
-                        score+="Forty";
-                        break;
-                }
+            score = playerAdvantage(playerScore_1, playerScore_2, score);
+        }
+        return score;
+    }
+
+
+
+    private static String playerAdvantage(int playerScore_1, int playerScore_2, String score) {
+        int tempScore;
+        for (int i = 1; i < 3; i++) {
+            if (i == 1) tempScore = playerScore_1;
+            else {
+                score += "-";
+                tempScore = playerScore_2;
+            }
+            switch (tempScore) {
+                case POINT_0:
+                    score +="Love";
+                    break;
+                case POINT_1:
+                    score +="Fifteen";
+                    break;
+                case POINT_2:
+                    score +="Thirty";
+                    break;
+                case POINT_3:
+                    score +="Forty";
+                    break;
             }
         }
         return score;
     }
 
-    private static String playerDraw(int playerScore_1, int playerScore_2) {
+    private static String playerAdvantage(int playerScore_1, int playerScore_2) {
         String score;
         int minusResult = playerScore_1 - playerScore_2;
         if (minusResult == 1) {
