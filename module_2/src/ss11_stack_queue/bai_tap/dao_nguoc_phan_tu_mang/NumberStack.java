@@ -8,6 +8,7 @@ public class NumberStack {
         Scanner scanner=new Scanner(System.in);
 
         Stack<Integer>myNumbreStack =new Stack<>();
+
         myNumbreStack.add(1);
         myNumbreStack.add(2);
         myNumbreStack.add(3);
