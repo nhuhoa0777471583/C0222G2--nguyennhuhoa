@@ -11,14 +11,17 @@ public class TextPhuongTien {
         ManagerPhuongTien managerPhuongTien = new ManagerPhuongTien();
         boolean flag = true;
 
-            System.out.print("Các chức năng:\n" +
-                    "1:Thêm mới phương tiện\n" +
-                    "2:Hiển thị phương tiện\n" +
-                    "3:Xoá phương tiện\n" +
-                    "4:Tìm kiếm theo biển kiểm soát\n" +
-                    "5: Thoát\n");
-            System.out.print("Chọn chức năng:");
-            int choose = scanner.nextInt();
+        System.out.print("Các chức năng:\n" +
+                "1:Thêm mới phương tiện\n" +
+                "2:Hiển thị phương tiện\n" +
+                "3:Xoá phương tiện\n" +
+                "4:Tìm kiếm theo biển kiểm soát\n" +
+                "5: Thoát\n");
+        System.out.print("Chọn chức năng:");
+        int choose = scanner.nextInt();
+        boolean flag3 = true;
+        do {
+
             switch (choose) {
                 case 1:
                     System.out.println("1.Thêm mới phương tiện");
@@ -39,7 +42,6 @@ public class TextPhuongTien {
                     System.out.println("Thoát");
                     break;
             }
-
+        } while (flag3);
     }
-
 }
