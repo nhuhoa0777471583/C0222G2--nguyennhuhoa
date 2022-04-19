@@ -1,13 +1,13 @@
 package bai_tap_lam_them_oop.model;
 
 public class PhuongTien {
-    private int bienKiemSoat;
+    private String bienKiemSoat;
     private String tenHang;
     private int namSanXuat;
     private String chuSoHuu;
 
     public PhuongTien(){}
-    public PhuongTien(int bienKiemSoat, String tenHang,int namSanXuat, String chuSoHuu){
+    public PhuongTien(String bienKiemSoat, String tenHang,int namSanXuat, String chuSoHuu){
         this.bienKiemSoat=bienKiemSoat;
         this.tenHang=tenHang;
         this.namSanXuat=namSanXuat;
@@ -16,11 +16,11 @@ public class PhuongTien {
 
 
 
-    public int getBienKiemSoat() {
+    public String getBienKiemSoat() {
         return bienKiemSoat;
     }
 
-    public void setBienKiemSoat(int bienKiemSoat) {
+    public void setBienKiemSoat(String bienKiemSoat) {
         this.bienKiemSoat = bienKiemSoat;
     }
 

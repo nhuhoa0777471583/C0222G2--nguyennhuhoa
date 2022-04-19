@@ -1,20 +1,20 @@
 package bai_tap_lam_them_oop.model;
 
-import bai_tap_lam_them_oop.model.PhuongTien;
+import java.util.Scanner;
 
 public class XeTai extends PhuongTien {
-    private int trongTai;
+    private String trongTai;
     public XeTai(){}
-    public XeTai(int bienKiemSoat, String tenHang,int namSanXuat, String chuSoHuu,int trongTai){
+    public XeTai(String bienKiemSoat, String tenHang,int namSanXuat, String chuSoHuu,String trongTai){
         super(bienKiemSoat, tenHang, namSanXuat, chuSoHuu);
         this.trongTai=trongTai;
     }
 
-    public void setTrongTai(int trongTai) {
+    public void setTrongTai(String trongTai) {
         this.trongTai = trongTai;
     }
 
-    public int getTrongTai() {
+    public String getTrongTai() {
         return trongTai;
     }
 
@@ -23,4 +23,5 @@ public class XeTai extends PhuongTien {
         return "XeTai: " +
                 "trongTai=" + trongTai +'\''+ super.toString();
     }
+
 }

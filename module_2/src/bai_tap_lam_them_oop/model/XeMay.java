@@ -1,11 +1,11 @@
 package bai_tap_lam_them_oop.model;
 
-import bai_tap_lam_them_oop.model.PhuongTien;
+import java.util.Scanner;
 
 public class XeMay extends PhuongTien {
     private String congSuat;
     public XeMay(){}
-    public XeMay(int bienKiemSoat, String tenHang,int namSanXuat, String chuSoHuu,String congSuat){
+    public XeMay(String bienKiemSoat, String tenHang,int namSanXuat, String chuSoHuu,String congSuat){
         super(bienKiemSoat, tenHang, namSanXuat, chuSoHuu);
         this.congSuat=congSuat;
     }
@@ -20,8 +20,7 @@ public class XeMay extends PhuongTien {
 
     @Override
     public String toString() {
-        return "XeMay: " +
-                "congSuat=" + congSuat +'\''+ super.toString();
+        return "Xe may: "+ super.toString()+ '\''+
+                "congSuat=" + congSuat ;
     }
-
 }
