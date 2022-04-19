@@ -1,4 +1,4 @@
-package ss12_java_collection_framework.bai_tap.quan_li_san_pham.common;
+package ss12_java_collection_framework.bai_tap.quan_li_san_pham.comparator_product;
 
 import ss12_java_collection_framework.bai_tap.quan_li_san_pham.model.Product;
 

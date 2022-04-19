@@ -2,7 +2,6 @@ package ss12_java_collection_framework.thuc_hanh.sap_xep_comparable_comparator;
 
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
