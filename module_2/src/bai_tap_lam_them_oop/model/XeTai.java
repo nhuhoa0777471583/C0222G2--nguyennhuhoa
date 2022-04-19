@@ -20,8 +20,8 @@ public class XeTai extends PhuongTien {
 
     @Override
     public String toString() {
-        return "XeTai: " +
-                "trongTai=" + trongTai +'\''+ super.toString();
+        return "XeTai: " + super.toString()+
+                "trongTai=" + trongTai +'\'';
     }
 
 }
