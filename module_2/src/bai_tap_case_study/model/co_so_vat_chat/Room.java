@@ -1,8 +1,8 @@
-package bai_tap_case_study.model;
+package bai_tap_case_study.model.co_so_vat_chat;
 
 import java.util.Date;
 
-public class Room extends Furama{
+public class Room extends FacilityFurama {
     private String dichVuFree;
     public Room(){}
 
@@ -13,7 +13,7 @@ public class Room extends Furama{
 
     @Override
     public String toString() {
-        return "Room: " +
-                "dichVuFree= " + dichVuFree + '\'' + super.toString();
+        return "Room: "+ super.toString()+ '\''  +
+                "dichVuFree= " + dichVuFree ;
     }
 }

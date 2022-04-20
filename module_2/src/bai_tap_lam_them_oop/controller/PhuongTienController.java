@@ -61,8 +61,7 @@ public class PhuongTienController {
                 + "1-oto\n" +
                 "2-xe máy\n" +
                 "3-xe tải\n" +
-                "4-tat ca\n" +
-                "0-Thoat");
+                "4-tat ca\n" );
         System.out.print("chọn chức năng: ");
         int choose2 = scanner.nextInt();
         switch (choose2) {

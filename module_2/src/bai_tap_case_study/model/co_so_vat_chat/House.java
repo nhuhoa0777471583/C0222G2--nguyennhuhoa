@@ -1,8 +1,8 @@
-package bai_tap_case_study.model;
+package bai_tap_case_study.model.co_so_vat_chat;
 
 import java.util.Date;
 
-public class House extends Furama{
+public class House extends FacilityFurama {
     private String tieuChuanPhong;
     private String soTang;
     public House(){}
@@ -15,8 +15,8 @@ public class House extends Furama{
 
     @Override
     public String toString() {
-        return "House: " +
+        return "House: " + super.toString()+ '\'' +
                 "tieuChuanPhong= " + tieuChuanPhong + '\'' +
-                ", soTang= " + soTang + '\'' +super.toString();
+                ", soTang= " + soTang  ;
     }
 }

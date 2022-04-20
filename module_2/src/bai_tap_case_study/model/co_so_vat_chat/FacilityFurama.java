@@ -1,15 +1,15 @@
-package bai_tap_case_study.model;
+package bai_tap_case_study.model.co_so_vat_chat;
 
 import java.util.Date;
 
-public class Furama {
+public abstract class FacilityFurama {
     private String tenDichVu;
     private String dienTichSuDung;
     private String soLuongNguoi;
     private Date kieuThue;
-    public Furama(){}
+    public FacilityFurama(){}
 
-    public Furama(String tenDichVu, String dienTichSuDung, String soLuongNguoi, Date kieuThue) {
+    public FacilityFurama(String tenDichVu, String dienTichSuDung, String soLuongNguoi, Date kieuThue) {
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
         this.soLuongNguoi = soLuongNguoi;

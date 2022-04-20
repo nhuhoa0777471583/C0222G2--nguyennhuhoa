@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class InsertionSort {
     public static void main(String[] args) {
-        Scanner scanner =new Scanner(System.in);
-        int[]list ={8,2,4,5,7,1,6,4};
+        Scanner scanner = new Scanner(System.in);
+        int[] list = {8, 2, 4, 5, 7, 1, 6, 4};
 //        System.out.print("nhap size: ");
 //        int size=Integer.parseInt(scanner.nextLine());
 //        int[]list=new int[size];
@@ -15,29 +15,30 @@ public class InsertionSort {
 //        }
 
         System.out.println("truoc khi chua đuoc chen: ");
-        for (int i:list) {
-            System.out.print(i+" ");
+        for (int i : list) {
+            System.out.print(i + " ");
         }
         System.out.println();
         insertionSort(list);
         System.out.println("sau khi chen");
-        for (int i:list) {
-            System.out.print(i+" ");
+        for (int i : list) {
+            System.out.print(i + " ");
         }
     }
-    public static void insertionSort(int[]array){
+
+    public static void insertionSort(int[] array) {
         int pos;
         int x;
-        for (int i = 1; i < array.length ; i++) {
-            x=array[i];
-            pos=i-1;
+        for (int i = 1; i < array.length; i++) {
+            x = array[i];
+            pos = i - 1;
 
-            while (pos>-1 && x< array[pos]){
-                System.out.println("vi tri: "+pos+" doi voi ptu: "+x);
-                array[pos+1]=array[pos];
+            while (pos > -1 && x > array[pos]) {
+                System.out.println("vi tri: " + pos + " doi voi ptu: " + x);
+                array[pos + 1] = array[pos];
                 pos--;
             }
-            array[pos+1]=x;
+            array[pos + 1] = x;
         }
     }
 }
