@@ -1,2 +1,4 @@
-package bai_tap_case_study.service;public class ManageFurama {
+package bai_tap_case_study.service;
+
+public class ManageFurama {
 }

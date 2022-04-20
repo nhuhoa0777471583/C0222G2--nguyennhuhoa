@@ -5,11 +5,13 @@ import ss12_java_collection_framework.bai_tap.quan_li_san_pham.model.Product;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class ProductService implements IProductService {
     Scanner scanner = new Scanner(System.in);
-    private static ArrayList<Product> products = new ArrayList<>();
+//    private static ArrayList<Product> products = new ArrayList<>();
+    private static LinkedList<Product> products=new LinkedList<>();
 
     static {
         products.add(new Product(1, "iphone", 50, 10));
@@ -31,6 +33,8 @@ public class ProductService implements IProductService {
         System.out.print("nhap so luong: ");
         int soLuong = Integer.parseInt(scanner.nextLine());
 
+        //them cac gia tri moi vao doi tuong
+        //roi them vao list
         Product product = new Product(id, tenSanPham, gia, soLuong);
         System.out.println(product);
         products.add(product);
@@ -48,6 +52,7 @@ public class ProductService implements IProductService {
         System.out.print("nhap id: ");
         int id = Integer.parseInt(scanner.nextLine());
         boolean tonTaiID = false;
+        //duyet list neu co id trong list thi dung va cho sua lai gia tri do
         for (int i = 0; i < products.size(); i++) {
             if (id == (products.get(i).getId())) {
                 tonTaiID = true;
@@ -66,6 +71,7 @@ public class ProductService implements IProductService {
 
             }
         }
+        //neu ko co thi thong bao ra
         if (tonTaiID == false) {
             System.out.println("ko co id");
 
@@ -77,21 +83,24 @@ public class ProductService implements IProductService {
         System.out.print("nhap id: ");
         int id = Integer.parseInt(scanner.nextLine());
         boolean flag = false;
+        //duyet list neu co id thi dung
             for (int i = 0; i < products.size(); i++) {
                 if (id == (products.get(i).getId())) {
                     flag = true;
                     break;
                 }
             }
-
-        if (flag) {
+        // dusng thi duyet list vao xoa
+        if (flag==true) {
             for (int i = 0; i < products.size(); i++) {
                 if (id == (products.get(i).getId())) {
                     products.remove(i);
                     break;
                 }
             }
-        } else {
+        }
+        //sai thi thong bao ra
+        else {
             System.out.println("Khong ton tai!");
         }
     }
@@ -102,7 +111,9 @@ public class ProductService implements IProductService {
         System.out.print("nhap ten san pham: ");
         String tenSanPham = scanner.nextLine();
         boolean flag = false;
-
+        //duyet list
+        //so sanh tenSp voi list thi sd pthuc equals de ss chuoi
+        //neu co thi in ra
         for (int i = 0; i < products.size(); i++) {
             if (tenSanPham.equals(products.get(i).getTenSanPham())) {
                 System.out.println("ten san pham can tim: " + products.get(i).getTenSanPham());
@@ -110,6 +121,7 @@ public class ProductService implements IProductService {
                 break;
             }
         }
+        //ko co thi thong bao
         if (flag == false) {
             System.out.println("ko co sp");
         }
@@ -123,12 +135,14 @@ public class ProductService implements IProductService {
         int choose = Integer.parseInt(scanner.nextLine());
         switch (choose) {
             case 1:
+                //tao class comparator de so sanh gia
                 System.out.println("muon tang");
                 Collections.sort(products, new ComparatorProduct());
                 break;
             case 2:
                 System.out.println("muon giam");
                 Collections.sort(products, new ComparatorProduct());
+                // sdung reverse de dao nguoc tang thanh giam
                 Collections.reverse(products);
                 break;
         }
