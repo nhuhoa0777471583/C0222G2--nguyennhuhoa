@@ -4,9 +4,7 @@ public class Customer extends Preson {
     private String loaiKhach;
     private String diaChi;
 
-    public Customer(String loaiKhach, String diaChi) {
-        this.loaiKhach = loaiKhach;
-        this.diaChi = diaChi;
+    public Customer() {
     }
 
     public Customer(int id,String hoVaTen, String ngaySinh, String gioiTinh, int soCMND, int soDT, String email, String loaiKhach, String diaChi) {

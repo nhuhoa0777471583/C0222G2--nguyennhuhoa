@@ -7,7 +7,7 @@ public class House extends FacilityFurama {
     private String soTang;
     public House(){}
 
-    public House(String tenDichVu, String dienTichSuDung, String soLuongNguoi, Date kieuThue,String tieuChuanPhong, String soTang) {
+    public House(String tenDichVu, String dienTichSuDung, String soLuongNguoi, String kieuThue,String tieuChuanPhong, String soTang) {
         super(tenDichVu, dienTichSuDung, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;

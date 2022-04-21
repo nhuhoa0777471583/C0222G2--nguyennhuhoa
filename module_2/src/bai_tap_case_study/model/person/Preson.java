@@ -22,6 +22,13 @@ public abstract class Preson {
         this.email = email;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public String getHoVaTen() {
         return hoVaTen;

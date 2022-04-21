@@ -6,10 +6,10 @@ public abstract class FacilityFurama {
     private String tenDichVu;
     private String dienTichSuDung;
     private String soLuongNguoi;
-    private Date kieuThue;
+    private String kieuThue;
     public FacilityFurama(){}
 
-    public FacilityFurama(String tenDichVu, String dienTichSuDung, String soLuongNguoi, Date kieuThue) {
+    public FacilityFurama(String tenDichVu, String dienTichSuDung, String soLuongNguoi, String kieuThue) {
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
         this.soLuongNguoi = soLuongNguoi;
@@ -40,18 +40,17 @@ public abstract class FacilityFurama {
         this.soLuongNguoi = soLuongNguoi;
     }
 
-    public Date getKieuThue() {
+    public String getKieuThue() {
         return kieuThue;
     }
 
-    public void setKieuThue(Date kieuThue) {
+    public void setKieuThue(String kieuThue) {
         this.kieuThue = kieuThue;
     }
 
     @Override
     public String toString() {
-        return "Furama: " +
-                "tenDichVu= " + tenDichVu + '\'' +
+        return "tenDichVu= " + tenDichVu + '\'' +
                 ", dienTichSuDung= " + dienTichSuDung +
                 ", soLuongNguoi= " + soLuongNguoi +
                 ", kieuThue= " + kieuThue ;

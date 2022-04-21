@@ -6,7 +6,7 @@ public class Room extends FacilityFurama {
     private String dichVuFree;
     public Room(){}
 
-    public Room(String tenDichVu, String dienTichSuDung, String soLuongNguoi, Date kieuThue,String dichVuFree){
+    public Room(String tenDichVu, String dienTichSuDung, String soLuongNguoi, String kieuThue,String dichVuFree){
         super(tenDichVu,dienTichSuDung,soLuongNguoi,kieuThue);
         this.dichVuFree = dichVuFree;
     }
