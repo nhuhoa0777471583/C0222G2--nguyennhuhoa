@@ -1,5 +1,6 @@
-package bai_tap_case_study.service.co_so_vat_chat_impl;
+package bai_tap_case_study.service;
 
+import bai_tap_case_study.service.co_so_vat_chat_impl.CoSoVatChatServiceImpl;
 import bai_tap_case_study.service.interf.IBookingService;
 
 import java.util.LinkedHashMap;
