@@ -18,8 +18,12 @@ public class CoSoVatChatServiceImpl implements ICoSoVatChatService {
     protected static Map< Integer,House> house = new LinkedHashMap<>();
 
     static {
+        //Villa: String tenDichVu, String dienTichSuDung, String soLuongNguoi, String kieuThue,
+        // String tieuChuanPhong, String dienTichHoBoi, String soTang
         villa.put(1,new Villa("thue phong", "50m2", "5 nguoi/phong", "thue theo gio", "vip", "50m2", "2 tang"));
+        //Room:String tenDichVu, String dienTichSuDung, String soLuongNguoi, String kieuThue,String dichVuFree
         room.put(2,new Room("thue phong", "50m2", "5 nguoi/phong", "thue theo gio", "su dung dieu hoa free"));
+       //Houser: String tenDichVu, String dienTichSuDung, String soLuongNguoi, String kieuThue,String tieuChuanPhong, String soTang
         house.put(3,new House("thue phong", "50m2", "5 nguoi/phong", "thue theo gio", "5 sao", "2 tang"));
 
     }

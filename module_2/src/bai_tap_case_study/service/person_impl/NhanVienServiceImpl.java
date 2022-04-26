@@ -17,7 +17,6 @@ public class NhanVienServiceImpl implements INhanVienService {
         employeeArrayList.add(new Employee(4, "hoa4", "4/03", "nam", 123, 321, "hoa23@", "cao dang", "giam doc", "500$"));
         employeeArrayList.add(new Employee(5, "hoa4", "4/03", "nam", 123, 321, "hoa23@", "cao dang", "chuyen vien", "200$"));
     }
-
     @Override
     public void add() {
         System.out.print("them id: ");
@@ -56,10 +55,10 @@ public class NhanVienServiceImpl implements INhanVienService {
     public void edit() {
         System.out.print("nhap id: ");
         int id = Integer.parseInt(scanner.nextLine());
-        boolean flag =false;
+        boolean flag = false;
         for (int i = 0; i < employeeArrayList.size(); i++) {
-            if(id==(employeeArrayList.get(i+1).getId())){
-                flag=true;
+            if (id == (employeeArrayList.get(i + 1).getId())) {
+                flag = true;
                 System.out.print("them ho ten: ");
                 String name = scanner.nextLine();
                 System.out.print("them ngay sinh: ");
@@ -80,11 +79,11 @@ public class NhanVienServiceImpl implements INhanVienService {
                 String luong = scanner.nextLine();
                 Employee employee = new Employee(id, name, birth, gender, soCMND, soDienThoai, email, level, viTri, luong);
                 System.out.print(employee);
-                employeeArrayList.set(i,employee);
+                employeeArrayList.set(i, employee);
                 break;
             }
         }
-        if(flag==false){
+        if (flag == false) {
             System.out.println("ko ton tại ");
         }
     }

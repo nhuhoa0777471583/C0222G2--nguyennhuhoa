@@ -1,58 +1,46 @@
 package ss16_io_text_file.bai_tap.coppy_file;
 
 import java.io.*;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ReadAndWriteFile {
-    public static void writeFile(String pathFile, String line) {
-        try {
-            FileWriter fileWriter = new FileWriter(pathFile, true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(line);
-            bufferedWriter.newLine();
-            bufferedWriter.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void readLine(String pathFile) {
+    public static List<String> readFile(String pathFile) {
+        List<String> listString = new ArrayList<>();
 
         try {
-            FileReader fileReader = new FileReader(pathFile);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            FileReader fr = new FileReader(pathFile);
+            BufferedReader br = new BufferedReader(fr);
             String line = null;
-            while ((line = bufferedReader.readLine()) != null) {
+            while ((line = br.readLine()) != null) {
+                listString.add(line);
                 System.out.println(line);
             }
-            bufferedReader.close();
         } catch (Exception e) {
-            System.out.println("error!!");
+            System.out.println("đường dẫn bị lỗi!!!");
         }
+        return listString;
     }
 
-    public void writeFile(String filePath, StringBuilder text) {
+    public static void writeFile(String pathFile, List<String> strings) {
         try {
-            FileWriter write = new FileWriter(filePath, true);
-            BufferedWriter bufferedWriter = new BufferedWriter(write);
-            bufferedWriter.write(String.valueOf(text));
-            bufferedWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+            FileWriter fw = new FileWriter(pathFile);
+            BufferedWriter bw = new BufferedWriter(fw);
+            for (String st : strings) {
+                bw.write(st);
+                bw.newLine();
+            }
+            bw.close();
+            fw.close();
+        } catch (Exception e) {
+            System.out.println("copy ko thành công!!!");
         }
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("nhap duong dan: ");
-        String path = scanner.nextLine();
-        ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
-        readAndWriteFile.readLine(path);
+        List<String> stringList = new ArrayList<>();
+             readFile("src/ss16_io_text_file/bai_tap/coppy_file/source_file.text");
+        writeFile("src/ss16_io_text_file/bai_tap/coppy_file/target_file.txt", stringList);
 
-
-//        StringBuilder lines = new StringBuilder();
-//        readAndWriteFile.writeFile("src/ss16_io_text_file/bai_tap/coppy_file/copyfile.text",lines);
     }
-
-
 }
