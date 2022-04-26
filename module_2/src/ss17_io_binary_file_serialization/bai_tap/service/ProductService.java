@@ -42,6 +42,18 @@ public class ProductService implements IProduct {
 
     @Override
     public void timKiem() {
-
+        productList= ReadAndWriteProduct.readProduct();
+        System.out.println("nhập tên sản phẩm cần tìm: ");
+        String tenSanPham= sc.nextLine();
+        boolean flag= false;
+        for (int i = 0; i < productList.size(); i++) {
+            if(tenSanPham.equals(productList.get(i).getTenSanPham())){
+                System.out.println("tên sản phẩm cẩn tìm: ");
+                System.out.println(productList.get(i).getTenSanPham());
+                flag =true;
+            }
+        }if(flag==false){
+            System.out.println("ko có tên sản phẩm trong file");
+        }
     }
 }

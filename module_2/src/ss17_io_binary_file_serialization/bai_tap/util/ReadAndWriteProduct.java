@@ -32,4 +32,5 @@ public class ReadAndWriteProduct {
             System.out.println("file bị lỗi");
         }
     }
+
 }

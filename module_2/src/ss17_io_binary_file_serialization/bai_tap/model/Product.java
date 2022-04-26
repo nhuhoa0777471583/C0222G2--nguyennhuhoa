@@ -63,8 +63,8 @@ public class Product implements Serializable {
     @Override
     public String toString() {
         return "id= " + id +
-                ", tenSanPham= " + tenSanPham + '\'' +
-                ", hangSanXuat= " + hangSanXuat + '\'' +
+                ", tenSanPham= " + tenSanPham  +
+                ", hangSanXuat= " + hangSanXuat  +
                 ", gia=" + gia +
                 ", moTaVeSanPham= " + moTaVeSanPham ;
     }
