@@ -7,16 +7,15 @@ public class House extends FacilityFurama {
     private String soTang;
     public House(){}
 
-    public House(String tenDichVu, String dienTichSuDung, String soLuongNguoi, String kieuThue,String tieuChuanPhong, String soTang) {
-        super(tenDichVu, dienTichSuDung, soLuongNguoi, kieuThue);
+    public House(String tenDichVu,  String chiPhiThue,String dienTichSuDung, String soLuongNguoi, String kieuThue,String tieuChuanPhong, String soTang) {
+        super(tenDichVu,chiPhiThue, dienTichSuDung, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;
     }
 
     @Override
     public String toString() {
-        return "House: " + super.toString()+ '\'' +
-                "tieuChuanPhong= " + tieuChuanPhong + '\'' +
-                ", soTang= " + soTang  ;
+        return "House: " + super.toString() +
+                "tieuChuanPhong= " + tieuChuanPhong+ ", soTang= " + soTang  ;
     }
 }

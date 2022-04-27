@@ -1,4 +1,4 @@
-package ss19_String_Regex.thuc_hanh.ValidateEmail;
+package ss19_string_regex.thuc_hanh.ValidateEmail;
 
 public class EmailExampleTest {
     private static EmailExample emailExample;

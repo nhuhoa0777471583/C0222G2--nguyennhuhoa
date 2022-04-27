@@ -1,7 +1,7 @@
 package bai_tap_case_study.service.person_impl;
 
 import bai_tap_case_study.model.person.Customer;
-import bai_tap_case_study.service.interf.IKhachHangService;
+import bai_tap_case_study.service.interf.i_preson.IKhachHangService;
 
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -10,14 +10,17 @@ public class KhachHangServiceImpl implements IKhachHangService {
     protected static Scanner scanner =new Scanner(System.in);
     protected static LinkedList<Customer>customerLinkedList=new LinkedList<>();
     static {
+
     customerLinkedList.add(new Customer(1, "hoa1", "1/03", "nam", 123, 321, "hoa23@", "Gold","sg"));
-    customerLinkedList.add(new Customer(2, "hoa2", "2/03", "nam", 123, 321, "hoa23@", "Platinium","dn"));
-    customerLinkedList.add(new Customer(3, "hoa3", "3/03", "nam", 123, 321, "hoa23@", "Diamond","hue"));
-    customerLinkedList.add(new Customer(4, "hoa4", "4/03", "nam", 123, 321, "hoa23@", "Silver","hn"));
-    customerLinkedList.add(new Customer(5, "hoa5", "5/03", "nam", 123, 321, "hoa23@", "Member","qtri"));
+    customerLinkedList.add(new Customer(20, "hoa2", "2/03", "nam", 123, 321, "hoa23@", "Platinium","dn"));
+
     }
     @Override
     public void add() {
+        themKhachHang();
+    }
+
+    private void themKhachHang() {
         System.out.print("them id: ");
         int id = Integer.parseInt(scanner.nextLine());
         System.out.print("them ho ten: ");
@@ -50,6 +53,10 @@ public class KhachHangServiceImpl implements IKhachHangService {
 
     @Override
     public void edit() {
+        suaKhachHang();
+    }
+
+    private void suaKhachHang() {
         System.out.print("nhap id: ");
         int id = Integer.parseInt(scanner.nextLine());
         boolean flag =false;
@@ -74,7 +81,7 @@ public class KhachHangServiceImpl implements IKhachHangService {
                 String diaChi = scanner.nextLine();
                 Customer customer = new Customer(id, name, birth, gender, soCMND, soDienThoai, email,loaiKhach,diaChi);
                 System.out.print(customer);
-                customerLinkedList.set(id,customer);
+                customerLinkedList.set(i,customer);
                 break;
             }
         }

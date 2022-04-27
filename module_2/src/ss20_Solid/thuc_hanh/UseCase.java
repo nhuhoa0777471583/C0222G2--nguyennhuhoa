@@ -1,4 +1,4 @@
-package ss20_Solid.thuc_hanh;
+package ss20_solid.thuc_hanh;
 
 public class UseCase {
 }

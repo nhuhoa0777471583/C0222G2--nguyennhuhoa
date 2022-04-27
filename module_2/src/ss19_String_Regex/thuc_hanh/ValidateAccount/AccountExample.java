@@ -1,4 +1,4 @@
-package ss19_String_Regex.thuc_hanh.ValidateAccount;
+package ss19_string_regex.thuc_hanh.ValidateAccount;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

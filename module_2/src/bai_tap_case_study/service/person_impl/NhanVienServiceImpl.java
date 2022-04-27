@@ -1,24 +1,31 @@
 package bai_tap_case_study.service.person_impl;
 
 import bai_tap_case_study.model.person.Employee;
-import bai_tap_case_study.service.interf.INhanVienService;
+import bai_tap_case_study.service.interf.i_preson.INhanVienService;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NhanVienServiceImpl implements INhanVienService {
-    protected static Scanner scanner = new Scanner(System.in);
-    protected static ArrayList<Employee> employeeArrayList = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+    private static ArrayList<Employee> employeeArrayList = new ArrayList<>();
 
     static {
-        employeeArrayList.add(new Employee(1, "hoa1", "1/03", "nam", 123, 321, "hoa23@", "cao dang", "le tan", "50$"));
-        employeeArrayList.add(new Employee(2, "hoa2", "2/03", "nam", 123, 321, "hoa23@", "cao dang", "phuc vu", "10$"));
-        employeeArrayList.add(new Employee(3, "hoa3", "3/03", "nam", 123, 321, "hoa23@", "cao dang", "quan li ", "100$"));
-        employeeArrayList.add(new Employee(4, "hoa4", "4/03", "nam", 123, 321, "hoa23@", "cao dang", "giam doc", "500$"));
-        employeeArrayList.add(new Employee(5, "hoa4", "4/03", "nam", 123, 321, "hoa23@", "cao dang", "chuyen vien", "200$"));
+        //id, name, birth, gender, soCMND, soDienThoai, email, level, viTri, luong
+        employeeArrayList.add(new Employee(1,"hoa1","23/3","nam",123,0122,"hoa123","cao đẳng","nhan vien","100"));
+        employeeArrayList.add(new Employee(2,"hoa1","23/3","nam",123,0122,"hoa123","đại học","quản lí","200"));
+        employeeArrayList.add(new Employee(3,"hoa1","23/3","nam",123,0122,"hoa123","sau đại học","giám đốc","500"));
+//        employeeArrayList = ReadAll.readNhanVien();
     }
+
+
+
     @Override
     public void add() {
+        methodAdd();
+    }
+
+    private void methodAdd() {
         System.out.print("them id: ");
         int id = Integer.parseInt(scanner.nextLine());
         System.out.print("them ho ten: ");
@@ -42,10 +49,12 @@ public class NhanVienServiceImpl implements INhanVienService {
         Employee employee = new Employee(id, name, birth, gender, soCMND, soDienThoai, email, level, viTri, luong);
         System.out.print(employee);
         employeeArrayList.add(employee);
+//        WriteAll.writeNhanVien(employeeArrayList,true);
     }
 
     @Override
-    public void display() {
+    public void display(){
+//        employeeArrayList= ReadAll.readNhanVien();
         for (Employee employee : employeeArrayList) {
             System.out.println(employee);
         }
@@ -53,11 +62,15 @@ public class NhanVienServiceImpl implements INhanVienService {
 
     @Override
     public void edit() {
+        suaNhanVien();
+    }
+
+    private void suaNhanVien() {
         System.out.print("nhap id: ");
         int id = Integer.parseInt(scanner.nextLine());
         boolean flag = false;
         for (int i = 0; i < employeeArrayList.size(); i++) {
-            if (id == (employeeArrayList.get(i + 1).getId())) {
+            if (id == (employeeArrayList.get(i ).getId())) {
                 flag = true;
                 System.out.print("them ho ten: ");
                 String name = scanner.nextLine();

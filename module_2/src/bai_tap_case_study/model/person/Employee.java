@@ -1,34 +1,34 @@
 package bai_tap_case_study.model.person;
 
-import bai_tap_case_study.model.person.Preson;
-
 public class Employee extends Preson {
-    private String tinhDo;
+    private String trinhDo;
     private String viTri;
     private String luong;
 
-    public Employee() {
-    }
 
-    public Employee(String tinhDo, String viTri, String luong) {
-        this.tinhDo = tinhDo;
-        this.viTri = viTri;
-        this.luong = luong;
-    }
 
-    public Employee(int id,String hoVaTen, String ngaySinh, String gioiTinh, int soCMND, int soDT, String email, String tinhDo, String viTri, String luong) {
+
+
+    public Employee(int id,String hoVaTen, String ngaySinh, String gioiTinh, int soCMND
+            , int soDT, String email, String tinhDo, String viTri, String luong) {
         super(id,hoVaTen, ngaySinh, gioiTinh, soCMND, soDT, email);
-        this.tinhDo = tinhDo;
+        this.trinhDo = tinhDo;
         this.viTri = viTri;
         this.luong = luong;
     }
 
-    public String getTinhDo() {
-        return tinhDo;
+//    public Employee(String tinhDo, String viTri, String luong) {
+//        this.trinhDo = tinhDo;
+//        this.viTri = viTri;
+//        this.luong = luong;
+//    }
+
+    public String getTrinhDo() {
+        return trinhDo;
     }
 
-    public void setTinhDo(String tinhDo) {
-        this.tinhDo = tinhDo;
+    public void setTrinhDo(String trinhDo) {
+        this.trinhDo = trinhDo;
     }
 
     public String getViTri() {
@@ -50,8 +50,14 @@ public class Employee extends Preson {
     @Override
     public String toString() {
         return "Nhân viên: "+super.toString()+'\''+
-                "tinhDo='" + tinhDo + '\'' +
+                ",tinhDo='" + trinhDo + '\'' +
                 ", viTri='" + viTri + '\'' +
                 ", luong='" + luong ;
+    }
+    //int id,String hoVaTen, String ngaySinh, String gioiTinh, int soCMND
+    //ư, int soDT, String email, String tinhDo, String viTri, String luong
+    public String getInfoEmployee(){
+        return getId()+","+getHoVaTen()+","+getNgaySinh()+","+getGioiTinh()+","
+                +getSoCMND()+","+getSoDT()+","+getEmail()+","+ getTrinhDo()+","+getViTri()+","+getLuong();
     }
 }

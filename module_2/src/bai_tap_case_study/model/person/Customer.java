@@ -7,11 +7,13 @@ public class Customer extends Preson {
     public Customer() {
     }
 
-    public Customer(int id,String hoVaTen, String ngaySinh, String gioiTinh, int soCMND, int soDT, String email, String loaiKhach, String diaChi) {
+    public Customer(int id,String hoVaTen, String ngaySinh, String gioiTinh,
+                    int soCMND, int soDT, String email, String loaiKhach, String diaChi) {
         super(id,hoVaTen, ngaySinh, gioiTinh, soCMND, soDT, email);
         this.loaiKhach = loaiKhach;
         this.diaChi = diaChi;
     }
+
 
     public String getLoaiKhach() {
         return loaiKhach;
@@ -34,6 +36,10 @@ public class Customer extends Preson {
         return "Khách hàng: "+ super.toString() + '\'' +
                 "loaiKhach= " + loaiKhach + '\'' +
                 ", diaChi= " + diaChi ;
+    }
+    public String getInfoCustomer(){
+        return getId()+","+getHoVaTen()+","+getNgaySinh()+","+getGioiTinh()+","
+                +getSoCMND()+","+getSoDT()+","+getEmail()+","+ getLoaiKhach()+","+getDiaChi();
     }
 }
 

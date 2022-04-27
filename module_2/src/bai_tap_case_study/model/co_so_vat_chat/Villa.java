@@ -10,8 +10,8 @@ public class Villa extends FacilityFurama {
     public Villa() {
     }
 
-    public Villa(String tenDichVu, String dienTichSuDung, String soLuongNguoi, String kieuThue, String tieuChuanPhong, String dienTichHoBoi, String soTang) {
-        super(tenDichVu, dienTichSuDung, soLuongNguoi, kieuThue);
+    public Villa(String tenDichVu,String chiPhiThue, String dienTichSuDung, String soLuongNguoi, String kieuThue, String tieuChuanPhong, String dienTichHoBoi, String soTang) {
+        super(tenDichVu,chiPhiThue, dienTichSuDung, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.dienTichHoBoi = dienTichHoBoi;
         this.soTang = soTang;
@@ -19,9 +19,9 @@ public class Villa extends FacilityFurama {
 
     @Override
     public String toString() {
-        return "Villa: " + super.toString() + '\'' +
-                "tieuChuanPhong= " + tieuChuanPhong + '\'' +
-                ", dienTichHoBoi= " + dienTichHoBoi + '\'' +
+        return "Villa: " + super.toString() +
+                "tieuChuanPhong= " + tieuChuanPhong +
+                ", dienTichHoBoi= " + dienTichHoBoi +
                 ", soTang= " + soTang;
     }
 }

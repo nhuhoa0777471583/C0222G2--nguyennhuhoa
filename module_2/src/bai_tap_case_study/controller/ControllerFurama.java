@@ -1,6 +1,9 @@
 package bai_tap_case_study.controller;
 
 import bai_tap_case_study.service.co_so_vat_chat_impl.CoSoVatChatServiceImpl;
+import bai_tap_case_study.service.co_so_vat_chat_impl.HouseService;
+import bai_tap_case_study.service.co_so_vat_chat_impl.RoomService;
+import bai_tap_case_study.service.co_so_vat_chat_impl.VillaService;
 import bai_tap_case_study.service.person_impl.KhachHangServiceImpl;
 import bai_tap_case_study.service.person_impl.NhanVienServiceImpl;
 
@@ -162,16 +165,16 @@ public class ControllerFurama {
             int choos = scanner.nextInt();
             switch (choos) {
                 case 1:
-                    new CoSoVatChatServiceImpl().addNewVila();
-                    System.out.println("Add New Villa");
+                    System.out.println("You Chosse Add New Villa");
+                    new VillaService().addNewVila();
                     break;
                 case 2:
-                    System.out.println("Add New House");
-                    new CoSoVatChatServiceImpl().addNewHouse();
+                    System.out.println("You Chosse Add New House");
+                    new HouseService().addNewHouse();
                     break;
                 case 3:
-                    System.out.println("Add New Room");
-                    new CoSoVatChatServiceImpl().addNewRoom();
+                    System.out.println("You Chosse Add New Room");
+                    new RoomService().addNewRoom();
                     break;
                 case 4:
                     System.out.println("---------thoat menu---------");
