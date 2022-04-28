@@ -3,17 +3,21 @@ package bai_tap_case_study.model.co_so_vat_chat;
 import java.util.Date;
 
 public abstract class FacilityFurama {
+    private String maDichVu;
     private String tenDichVu;
     private String chiPhiThue;
     private String dienTichSuDung;
     private String soLuongNguoi;
     private String kieuThue;
-    public FacilityFurama(){}
 
-    public FacilityFurama(String tenDichVu, String chiPhiThue, String dienTichSuDung,
-                          String soLuongNguoi,String kieuThue) {
+    public FacilityFurama() {
+    }
+
+    public FacilityFurama(String maDichVu, String tenDichVu, String chiPhiThue, String dienTichSuDung,
+                          String soLuongNguoi, String kieuThue) {
+        this.maDichVu = maDichVu;
         this.tenDichVu = tenDichVu;
-        this.chiPhiThue= chiPhiThue;
+        this.chiPhiThue = chiPhiThue;
         this.dienTichSuDung = dienTichSuDung;
         this.soLuongNguoi = soLuongNguoi;
         this.kieuThue = kieuThue;
@@ -62,10 +66,12 @@ public abstract class FacilityFurama {
 
     @Override
     public String toString() {
-        return "tenDichVu='" + tenDichVu +
-                ", chiPhiThue='" + chiPhiThue +
-                ", dienTichSuDung='" + dienTichSuDung +
-                ", soLuongNguoi='" + soLuongNguoi +
-                ", kieuThue='" + kieuThue ;
+
+        return "mã dịch vụ= " + maDichVu +
+                ", tenDichVu= " + tenDichVu +
+                ", chiPhiThue= " + chiPhiThue +
+                ", dienTichSuDung= " + dienTichSuDung +
+                ", soLuongNguoi= " + soLuongNguoi +
+                ", kieuThue= " + kieuThue;
     }
 }

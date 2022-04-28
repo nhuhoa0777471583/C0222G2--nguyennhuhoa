@@ -4,8 +4,10 @@ public class ValidateAll {
     private static final String REGEX_ROOM ="^(SVRO)\\-[0-9]{4}$";
     private static final String REGEX_VILLA ="^(SVVL)\\-[0-9]{4}$";
     private static final String REGEX_HOUSE ="^(SVHO)\\-[0-9]{4}$";
+
     private static final String REGEX_NAMESERVICE ="^[A-Z][a-z]+$";
-    private static final String REGEX_DIENTICH ="^[3-9]{1}[0-9]{1}(m2)$";
+
+    private static final String REGEX_DIENTICH = "^[3-9]+[0-9]+(.[0-9])+(m2)$";
     private static final String REGEX_CHIPHITHUE="^[1-9]{1}[0-9]{1}[0-9]{1}(Dola)$";
     private static final String REGEX_SOLUONGNGUOI="^[1]{1}[0-9]{1}$";
     private static final String REGEX_SOTANG="^[1-5]$";
@@ -35,4 +37,8 @@ public class ValidateAll {
     public static boolean isMatchesSotang(String soTang){
         return soTang.matches(REGEX_SOTANG);
     }
+
+
+
+
 }

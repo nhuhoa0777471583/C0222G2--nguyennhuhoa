@@ -17,21 +17,9 @@ public class CoSoVatChatServiceImpl implements ICoSoVatChatService {
     }
     @Override
     public void displayCoSo() {
-
-//        Set<Map.Entry<Integer, Room>> rooms = room.entrySet();
-//        Set<Map.Entry<Integer, Villa>> villas = villa.entrySet();
-//        Set<Map.Entry<Integer, House>> houses = house.entrySet();
-//
-//        for (Map.Entry<Integer, Villa> v : villas) {
-//            System.out.println(v);
-//        }
-//        for (Map.Entry<Integer, Room> r : rooms) {
-//            System.out.println(r);
-//        }
-//        for (Map.Entry<Integer, House> h : houses) {
-//            System.out.println(h);
-//        }
-
+        new HouseService().dislayHouse();
+        new VillaService().displayVilla();
+        new RoomService().displayRoom();
     }
 
     @Override

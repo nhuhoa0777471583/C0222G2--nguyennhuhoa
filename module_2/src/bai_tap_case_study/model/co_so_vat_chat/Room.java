@@ -6,8 +6,8 @@ public class Room extends FacilityFurama {
     private String dichVuFree;
     public Room(){}
 
-    public Room(String tenDichVu, String chiPhi, String dienTichSuDung, String soLuongNguoi, String kieuThue,String dichVuFree){
-        super(tenDichVu,chiPhi,dienTichSuDung,soLuongNguoi,kieuThue);
+    public Room(String maDichVu,String tenDichVu, String chiPhi, String dienTichSuDung, String soLuongNguoi, String kieuThue,String dichVuFree){
+        super(maDichVu,tenDichVu,chiPhi,dienTichSuDung,soLuongNguoi,kieuThue);
         this.dichVuFree = dichVuFree;
     }
 
@@ -16,6 +16,6 @@ public class Room extends FacilityFurama {
     @Override
     public String toString() {
         return "Room: "+ super.toString() +
-                "dichVuFree= " + dichVuFree ;
+                ", dichVuFree= " + dichVuFree ;
     }
 }
