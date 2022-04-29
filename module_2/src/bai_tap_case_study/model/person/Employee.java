@@ -5,11 +5,10 @@ public class Employee extends Preson {
     private String viTri;
     private String luong;
 
+    public Employee() {
+    }
 
-
-
-
-    public Employee(int id,String hoVaTen, String ngaySinh, String gioiTinh, int soCMND
+    public Employee(int id, String hoVaTen, String ngaySinh, String gioiTinh, int soCMND
             , int soDT, String email, String tinhDo, String viTri, String luong) {
         super(id,hoVaTen, ngaySinh, gioiTinh, soCMND, soDT, email);
         this.trinhDo = tinhDo;
@@ -49,10 +48,10 @@ public class Employee extends Preson {
 
     @Override
     public String toString() {
-        return "Nhân viên: "+super.toString()+'\''+
-                ",tinhDo='" + trinhDo + '\'' +
-                ", viTri='" + viTri + '\'' +
-                ", luong='" + luong ;
+        return "Nhân viên: "+super.toString()+
+                ",tinhDo= " + trinhDo  +
+                ", viTri= " + viTri  +
+                ", luong= " + luong ;
     }
     //int id,String hoVaTen, String ngaySinh, String gioiTinh, int soCMND
     //ư, int soDT, String email, String tinhDo, String viTri, String luong

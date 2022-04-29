@@ -4,14 +4,14 @@ public class ValidateAll {
     private static final String REGEX_ROOM ="^(SVRO)\\-[0-9]{4}$";
     private static final String REGEX_VILLA ="^(SVVL)\\-[0-9]{4}$";
     private static final String REGEX_HOUSE ="^(SVHO)\\-[0-9]{4}$";
-
     private static final String REGEX_NAMESERVICE ="^[A-Z][a-z]+$";
-
     private static final String REGEX_DIENTICH = "^[3-9]+[0-9]+(.[0-9])+(m2)$";
     private static final String REGEX_CHIPHITHUE="^[1-9]{1}[0-9]{1}[0-9]{1}(Dola)$";
-    private static final String REGEX_SOLUONGNGUOI="^[1]{1}[0-9]{1}$";
+    private static final String REGEX_SOLUONGNGUOI="^[0-9]{1}$";
     private static final String REGEX_SOTANG="^[1-5]$";
-
+//    private static final String REGEX_KIEUTHUE="^[A-Z][a-z]+$";
+//    private static final String REGEX_TIEUCHUANPHONG="^[A-Z][a-z]+$";
+//private static final String REGEX_DAYBIRTH
 
     public static boolean isMatchesRoom(String room){
         return room.matches(REGEX_ROOM);
@@ -38,7 +38,12 @@ public class ValidateAll {
         return soTang.matches(REGEX_SOTANG);
     }
 
-
+//    public static boolean isMatchesKieuThue(String kieuThue){
+//        return kieuThue.matches(REGEX_KIEUTHUE);
+//    }
+//    public static boolean isMatchesTieuChuanPhong(String tieuCHuanPhong){
+//        return tieuCHuanPhong.matches(REGEX_TIEUCHUANPHONG);
+//    }
 
 
 }

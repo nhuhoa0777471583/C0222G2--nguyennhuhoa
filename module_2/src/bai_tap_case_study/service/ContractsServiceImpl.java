@@ -1,8 +1,8 @@
 package bai_tap_case_study.service;
 
-import bai_tap_case_study.service.interf.IHopDongService;
+import bai_tap_case_study.service.interf.IContractsService;
 
-public class HopDongServiceImpl implements IHopDongService {
+public class ContractsServiceImpl implements IContractsService {
     @Override
     public void add() {
 

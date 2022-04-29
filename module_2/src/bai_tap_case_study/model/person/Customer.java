@@ -33,8 +33,8 @@ public class Customer extends Preson {
 
     @Override
     public String toString() {
-        return "Khách hàng: "+ super.toString() + '\'' +
-                "loaiKhach= " + loaiKhach + '\'' +
+        return "Khách hàng: "+ super.toString()  +
+                "loaiKhach= " + loaiKhach  +
                 ", diaChi= " + diaChi ;
     }
     public String getInfoCustomer(){

@@ -1,15 +1,15 @@
 package bai_tap_case_study.model;
 
-public class HopDong  {
+public class Contract {
     private int soHopDong;
     private int maBooking;
     private int soTienCoc;
     private int tongTien;
 
-    public HopDong() {
+    public Contract() {
     }
 
-    public HopDong(int soHopDong, int maBooking, int soTienCoc, int tongTien, int maKhachHang) {
+    public Contract(int soHopDong, int maBooking, int soTienCoc, int tongTien, int maKhachHang) {
         this.soHopDong = soHopDong;
         this.maBooking = maBooking;
         this.soTienCoc = soTienCoc;

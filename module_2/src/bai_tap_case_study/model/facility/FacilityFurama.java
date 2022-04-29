@@ -1,6 +1,4 @@
-package bai_tap_case_study.model.co_so_vat_chat;
-
-import java.util.Date;
+package bai_tap_case_study.model.facility;
 
 public abstract class FacilityFurama {
     private String maDichVu;
@@ -21,6 +19,14 @@ public abstract class FacilityFurama {
         this.dienTichSuDung = dienTichSuDung;
         this.soLuongNguoi = soLuongNguoi;
         this.kieuThue = kieuThue;
+    }
+
+    public String getMaDichVu() {
+        return maDichVu;
+    }
+
+    public void setMaDichVu(String maDichVu) {
+        this.maDichVu = maDichVu;
     }
 
     public String getTenDichVu() {

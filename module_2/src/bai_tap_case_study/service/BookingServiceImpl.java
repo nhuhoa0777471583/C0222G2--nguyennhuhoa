@@ -1,12 +1,12 @@
 package bai_tap_case_study.service;
 
-import bai_tap_case_study.service.co_so_vat_chat_impl.CoSoVatChatServiceImpl;
+import bai_tap_case_study.service.facility_impl.FacilityServiceImpl;
 import bai_tap_case_study.service.interf.IBookingService;
 
 import java.util.LinkedHashMap;
 
 public class BookingServiceImpl implements IBookingService {
-    protected static LinkedHashMap<CoSoVatChatServiceImpl,Integer> linkedHashMap=new LinkedHashMap<>();
+    protected static LinkedHashMap<FacilityServiceImpl,Integer> linkedHashMap=new LinkedHashMap<>();
     @Override
     public void add() {
 

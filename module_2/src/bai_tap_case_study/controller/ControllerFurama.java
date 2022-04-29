@@ -1,11 +1,11 @@
 package bai_tap_case_study.controller;
 
-import bai_tap_case_study.service.co_so_vat_chat_impl.CoSoVatChatServiceImpl;
-import bai_tap_case_study.service.co_so_vat_chat_impl.HouseService;
-import bai_tap_case_study.service.co_so_vat_chat_impl.RoomService;
-import bai_tap_case_study.service.co_so_vat_chat_impl.VillaService;
-import bai_tap_case_study.service.person_impl.KhachHangServiceImpl;
-import bai_tap_case_study.service.person_impl.NhanVienServiceImpl;
+import bai_tap_case_study.service.facility_impl.FacilityServiceImpl;
+import bai_tap_case_study.service.facility_impl.HouseService;
+import bai_tap_case_study.service.facility_impl.RoomService;
+import bai_tap_case_study.service.facility_impl.VillaService;
+import bai_tap_case_study.service.person_impl.CustomerServiceImpl;
+import bai_tap_case_study.service.person_impl.EmployeeServiceImpl;
 
 import java.util.Scanner;
 
@@ -15,33 +15,32 @@ public class ControllerFurama {
 
     public void displayMainMenu() {
         while (true) {
-            System.out.println("Cac chuc nang:\n" +
-                    "1.Quan li nhanh vien\n" +
-                    "2.Quan li khanh hang\n" +
-                    "3.Quan li co so\n" +
-                    "4.Quan li đặt chổ\n" +
-                    "5.khuyến mãi\n" +
-                    "6.Exit\n");
-            System.out.print("chon chuc nang: ");
+            System.out.println("1.Employee Management\n" +
+                    "2.Customer Management\n" +
+                    "3.Facility Management \n" +
+                    "4.Booking Management\n" +
+                    "5.Promotion Management\n" +
+                    "6.Exit\n" +
+                    "chon chuc nang: ");
             int choose = scanner.nextInt();
             switch (choose) {
                 case 1:
-                    quanLiNhanVien();
+                    managementEmployee();
                     break;
                 case 2:
-                    quanLiKhachHang();
+                    managementCustomers();
                     break;
                 case 3:
-                    quanLiCoSo();
+                    managementFacility();
                     break;
                 case 4:
-                    quanLiDatTruoc();
+                    managementBooking();
                     break;
                 case 5:
-                    quanLiKhuyenMai();
+                    managementPromotion();
                     break;
                 case 6:
-                   return;
+                    return;
                 default:
                     System.out.println("-----chon sai roi nhap lai di------");
                     break;
@@ -50,26 +49,26 @@ public class ControllerFurama {
     }
 
     //5
-    private void quanLiKhuyenMai() {
+    private void managementPromotion() {
         while (true) {
-            System.out.println("---------");
-            System.out.println("5-Quản lí khuyến mãi");
-            System.out.println("-----");
-            System.out.println("1.Hien thi danh sach KH su dung dich vu\n" +
-                    "2.Danh sách hiển thị khách hàng nhận được voucher\n" +
-                    "3.Trở lại menu chính\n");
-            System.out.print("chon chuc nang: ");
+            System.out.println("-----------");
+            System.out.println("5 Promotion Management ");
+            System.out.println("-----------");
+            System.out.println("1.Display list customers use service\n" +
+                    "2.Display list customers get voucher\n" +
+                    "3.Return main menu\n"+
+                    "chon chuc nang: ");
             int choose5 = scanner.nextInt();
             switch (choose5) {
                 case 1:
-                    System.out.println("Hien thi danh sach KH su dung dich vu");
+                    System.out.println("You choosse display list customers use service");
                     break;
                 case 2:
-                    System.out.println("Danh sách hiển thị khách hàng nhận được voucher");
+                    System.out.println("You choosse display list customers get voucher");
                     break;
                 case 3:
-                    System.out.println("Trở lại menu chính");
-                   return;
+                    System.out.println("Return main menu");
+                    return;
                 default:
                 case 0:
                     System.out.println("-----chon sai roi nhap lai di------");
@@ -79,38 +78,38 @@ public class ControllerFurama {
     }
 
     //4
-    private void quanLiDatTruoc() {
+    private void managementBooking() {
         while (true) {
             System.out.println("---------");
-            System.out.println("4-Quản lý đặt chỗ");
-            System.out.println("-----");
-            System.out.println("1.Thêm đặt chỗ mới\n" +
-                    "2.Hiển thị danh sách đặt chỗ\n" +
-                    "3.Tạo ra hợp đồng\n" +
-                    "4.Hiển thị hợp đồng danh sách\n" +
-                    "5.Sửa hợp đồng \n" +
-                    "6.Trở lại menu chính\n");
-            System.out.print("chon chuc nang: ");
+            System.out.println("4-Booking Managerment ");
+            System.out.println("--------");
+            System.out.println("1.Add new booking\n" +
+                    "2.Display list booking\n" +
+                    "3.Create new constracts\n" +
+                    "4.Display list contracts\n" +
+                    "5.Edit contracts\n" +
+                    "6.Return main menu\n"+
+                    "chon chuc nang: ");
             int choose4 = scanner.nextInt();
             switch (choose4) {
                 case 1:
-                    System.out.println("Thêm đặt chỗ mới");
+                    System.out.println("You choosse add new booking");
                     break;
                 case 2:
-                    System.out.println("Hiển thị danh sách đặt chỗ");
+                    System.out.println("You choosse display list booking");
                     break;
                 case 3:
-                    System.out.println("Tạo ra hợp đồng");
+                    System.out.println("You choosse create new constracts ");
                     break;
                 case 4:
-                    System.out.println("Hiển thị hợp đồng danh sách ");
+                    System.out.println("You choosse display list contracts ");
                     break;
                 case 5:
-                    System.out.println("Sửa hợp đồng");
+                    System.out.println("You choosse edit contracts");
                     break;
                 case 6:
-                    System.out.println("Trở lại menu chính");
-                   return;
+                    System.out.println("Return main menu");
+                    return;
                 default:
                 case 0:
                     System.out.println("-----chon sai roi nhap lai di------");
@@ -120,32 +119,32 @@ public class ControllerFurama {
     }
 
     //3
-    private void quanLiCoSo() {
+    private void managementFacility() {
         while (true) {
-            System.out.println("3-Quản lý cơ sở:\n ");
-            System.out.println("-----");
-
-            System.out.println("1.Hiển thị danh sách cơ sở\n" +
-                    "2.Thêm cơ sở mới\n" +
-                    "3.Hiển thị danh sách bảo trì cơ sở\n" +
-                    "4.Trở lại menu chính\n");
-            System.out.print("chon chuc nang: ");
+            System.out.println("----------------");
+            System.out.println("3Facility Management:\n ");
+            System.out.println("------------");
+            System.out.println("1.Display list facility\n" +
+                    "2.Add new facility\n" +
+                    "3.Display list facility maintenance\n" +
+                    "4.Return main menu\n" +
+                    "chon chuc nang: ");
             int choose3 = scanner.nextInt();
             switch (choose3) {
                 case 1:
-                    System.out.println("Hiển thị danh sách cơ sở");
-                    new CoSoVatChatServiceImpl().displayCoSo();
+                    System.out.println("You choosse display facility");
+                    new FacilityServiceImpl().displayFacility();
                     break;
                 case 2:
-                    System.out.println("Thêm cơ sở mới");
+                    System.out.println("You choosse Add facility");
                     menuDichVu();
                     break;
                 case 3:
-                    System.out.println("Hiển thị danh sách bảo trì cơ sở");
+                    System.out.println("You choosse Display facility maintenance");
                     break;
                 case 4:
-                    System.out.println("Trở lại menu chính");
-                   return;
+                    System.out.println("Return main menu");
+                    return;
                 default:
                 case 0:
                     System.out.println("-----chon sai roi nhap lai di------");
@@ -178,7 +177,7 @@ public class ControllerFurama {
                     break;
                 case 4:
                     System.out.println("---------thoat menu---------");
-                   return;
+                    return;
                 default:
                     System.out.println("------nhap lại-------");
                     break;
@@ -187,70 +186,70 @@ public class ControllerFurama {
     }
 
     //2
-    private void quanLiKhachHang() {
+    private void managementCustomers() {
         while (true) {
-            System.out.println("---------");
-            System.out.println("2-Quản li khách hàng:");
+            System.out.println("------------");
+            System.out.println("2Customer Management: ");
             System.out.println("-----");
-            System.out.println("1.Hiển thị danh sách khách hàng\n" +
-                    "2.Thêm khách hàng mới\n" +
-                    "3.Chỉnh sửa khách hàng\n" +
-                    "4.Trở lại menu chính\n");
-            System.out.print("chon chuc nang: ");
+            System.out.println("1.Display list customers\n" +
+                    "2.Add new customer\n" +
+                    "3.Edit customer\n" +
+                    "4.Return main menu\n" +
+                    "chon chuc nang: ");
             int choose2 = scanner.nextInt();
             switch (choose2) {
                 case 1:
-                    System.out.println("Hiển thị danh sách khách hàng");
-                    new KhachHangServiceImpl().display();
+                    System.out.println("You choosse display customers");
+                    new CustomerServiceImpl().display();
                     break;
                 case 2:
-                    System.out.println("Thêm khách hàng mới");
-                    new KhachHangServiceImpl().add();
+                    System.out.println("You choosse add customers");
+                    new CustomerServiceImpl().add();
                     break;
                 case 3:
-                    System.out.println("Chỉnh sửa khách hàng");
-                    new KhachHangServiceImpl().edit();
+                    System.out.println("You choosse edit customers");
+                    new CustomerServiceImpl().edit();
                     break;
                 default:
                 case 0:
                     System.out.println("-----chon sai roi nhap lai di------");
                     break;
                 case 4:
-                    System.out.println("Trở lại menu chính");
-                  return;
+                    System.out.println("Return main menu");
+                    return;
             }
         }
     }
 
     //1
-    private void quanLiNhanVien() {
-
+    private void managementEmployee() {
         while (true) {
+            System.out.println();
             System.out.println("---------");
-            System.out.println("1-Quản lí nhân viên:");
-            System.out.println("-----");
-            System.out.println("1.Hiển thị danh sách nhân viên\n" +
-                    "2.Thêm danh sách nhân viên\n" +
-                    "3.Sửa danh sách nhân viên\n" +
-                    "4.Trở lại menu chính\n");
-            System.out.print("chon chuc nang: ");
+            System.out.println("1 Employee Management: ");
+            System.out.println("--------");
+            System.out.println("1.Display list employees\n" +
+                    "2.Add new employee\n" +
+                    "3.Edit employee\n" +
+                    "4.Return main menu\n"+
+                    "chon chuc nang: ");
             int choose1 = scanner.nextInt();
             switch (choose1) {
                 case 1:
-                    System.out.println("Hiển thị danh sách nhân viên");
-                    new NhanVienServiceImpl().display();
+                    System.out.println("You choosse display employee");
+                    new EmployeeServiceImpl().display();
                     break;
                 case 2:
-                    System.out.println("Thêm danh sách nhân viên");
-                    new NhanVienServiceImpl().add();
+                    System.out.println("You choosse add employee");
+                    new EmployeeServiceImpl().add();
 
                     break;
                 case 3:
-                    System.out.println("Sửa danh sách nhân viên");
-                    new NhanVienServiceImpl().edit();
+                    System.out.println("You choosse edit employee");
+                    new EmployeeServiceImpl().edit();
                     break;
                 case 4:
-                    System.out.println("Trở lại menu chính");
+                    System.out.println("Return main menu");
                     return;
                 default:
                 case 0:

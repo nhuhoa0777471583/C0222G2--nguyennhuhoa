@@ -80,12 +80,12 @@ public abstract class Preson {
 
     @Override
     public String toString() {
-        return "id=" + id +
-                ", hoVaTen='" + hoVaTen + '\'' +
-                ", ngaySinh='" + ngaySinh + '\'' +
-                ", gioiTinh='" + gioiTinh + '\'' +
-                ", soCMND=" + soCMND +
-                ", soDT=" + soDT +
-                ", email='" + email;
+        return "id= " + id +
+                ", hoVaTen= " + hoVaTen  +
+                ", ngaySinh= " + ngaySinh  +
+                ", gioiTinh= " + gioiTinh  +
+                ", soCMND= " + soCMND +
+                ", soDT= " + soDT +
+                ", email= " + email;
     }
 }
