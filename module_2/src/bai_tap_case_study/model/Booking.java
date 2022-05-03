@@ -70,7 +70,7 @@ public class Booking {
                 ", ngayBatDau= " + ngayBatDau +
                 ", ngayKetThuc= " + ngayKetThuc +
                 ", maKhachHang= " + maKhachHang +
-                ", tenDichVu= " + tenDichVu + '\'' +
+                ", tenDichVu= " + tenDichVu +
                 ", loạiDichVu= " + loạiDichVu ;
     }
 }

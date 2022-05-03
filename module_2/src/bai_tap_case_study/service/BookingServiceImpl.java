@@ -2,13 +2,22 @@ package bai_tap_case_study.service;
 
 import bai_tap_case_study.service.facility_impl.FacilityServiceImpl;
 import bai_tap_case_study.service.interf.IBookingService;
+import bai_tap_case_study.service.person_impl.CustomerServiceImpl;
 
-import java.util.LinkedHashMap;
+import java.util.*;
 
 public class BookingServiceImpl implements IBookingService {
-    protected static LinkedHashMap<FacilityServiceImpl,Integer> linkedHashMap=new LinkedHashMap<>();
+    private static Scanner scanner = new Scanner(System.in);
+    private static CustomerServiceImpl customerService = new CustomerServiceImpl();
+    private static Set<CustomerServiceImpl> customerSet = new TreeSet<>();
+
+    //mã booking, ngày bắt đầu, ngày kết thúc, mã khách hàng, tên dịch vụ, loại dịch vụ.
+    static {
+
+    }
+
     @Override
-    public void add() {
+    public void add() throws Exception {
 
     }
 
@@ -21,4 +30,6 @@ public class BookingServiceImpl implements IBookingService {
     public void edit() {
 
     }
+
+
 }

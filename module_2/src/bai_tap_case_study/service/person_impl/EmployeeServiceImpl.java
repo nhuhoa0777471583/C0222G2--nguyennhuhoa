@@ -42,8 +42,11 @@ public class EmployeeServiceImpl implements IEmployyeService {
         int soDienThoai = Integer.parseInt(scanner.nextLine());
         System.out.print("them email: ");
         String email = scanner.nextLine();
-        System.out.print("trinh do: ");
+
+//        addlevel();
+        System.out.println("them trình độ: ");
         String level = scanner.nextLine();
+
         System.out.print("them vi tri: ");
         String viTri = scanner.nextLine();
         System.out.print("them luong: ");
@@ -53,6 +56,32 @@ public class EmployeeServiceImpl implements IEmployyeService {
         employeeArrayList.add(employee1);
         WriteAll.writeEmployee(employeeArrayList, false);
     }
+
+//    private void addlevel() {
+//        System.out.println("them trinh do:\n" +
+//                "1.Trung cấp\n" +
+//                "2.Cao đẳng\n" +
+//                "3.Đại học\n" +
+//                "4.sau đại học\n" +
+//                " chon trình độ: ");
+//        int choose = scanner.nextInt();
+//        switch (choose) {
+//            case 1:
+//                System.out.println("đã thêm trung cấp");
+//                break;
+//            case 2:
+//                System.out.println("đã thêm cao đẳng");
+//                break;
+//            case 3:
+//                System.out.println("đã thêm đại học");
+//                break;
+//            case 4:
+//                System.out.println("đã thêm sau đại học");
+//                break;
+//            case 0:
+//                return ;
+//        }
+//    }
 
     @Override
     public void display() {
@@ -96,8 +125,10 @@ public class EmployeeServiceImpl implements IEmployyeService {
                 int soDienThoai = Integer.parseInt(scanner.nextLine());
                 System.out.print("them email: ");
                 String email = scanner.nextLine();
-                System.out.print("trinh do: ");
+
+                System.out.println("sua trinh do: ");
                 String level = scanner.nextLine();
+
                 System.out.print("them vi tri: ");
                 String viTri = scanner.nextLine();
                 System.out.print("them luong: ");
