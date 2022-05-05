@@ -8,7 +8,6 @@ public class TinhNamNhuan {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int nam;
-
         System.out.println("nhap nam: ");
         nam = sc.nextInt();
         boolean namNhuan = false;

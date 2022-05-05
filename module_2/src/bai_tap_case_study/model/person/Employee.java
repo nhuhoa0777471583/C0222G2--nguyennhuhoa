@@ -1,6 +1,7 @@
 package bai_tap_case_study.model.person;
 
 public class Employee extends Preson {
+    private String maNhanVien;
     private String trinhDo;
     private String viTri;
     private String luong;
@@ -9,9 +10,10 @@ public class Employee extends Preson {
     }
 
     public Employee(int id, String hoVaTen, String ngaySinh, String gioiTinh, int soCMND
-            , int soDT, String email, String tinhDo, String viTri, String luong) {
+            , int soDT, String email,String maNhanVien ,String trinhDo, String viTri, String luong) {
         super(id,hoVaTen, ngaySinh, gioiTinh, soCMND, soDT, email);
-        this.trinhDo = tinhDo;
+        this.maNhanVien =maNhanVien;
+        this.trinhDo = trinhDo;
         this.viTri = viTri;
         this.luong = luong;
     }
@@ -21,6 +23,15 @@ public class Employee extends Preson {
 //        this.viTri = viTri;
 //        this.luong = luong;
 //    }
+
+
+    public String getMaNhanVien() {
+        return maNhanVien;
+    }
+
+    public void setMaNhanVien(String maNhanVien) {
+        this.maNhanVien = maNhanVien;
+    }
 
     public String getTrinhDo() {
         return trinhDo;
@@ -49,7 +60,8 @@ public class Employee extends Preson {
     @Override
     public String toString() {
         return "Nhân viên: "+super.toString()+
-                ",tinhDo= " + trinhDo  +
+                ",ma nhan vien= "+maNhanVien+
+                ",trinhDo= " + trinhDo  +
                 ", viTri= " + viTri  +
                 ", luong= " + luong ;
     }
@@ -57,6 +69,7 @@ public class Employee extends Preson {
     //ư, int soDT, String email, String tinhDo, String viTri, String luong
     public String getInfoEmployee(){
         return getId()+","+getHoVaTen()+","+getNgaySinh()+","+getGioiTinh()+","
-                +getSoCMND()+","+getSoDT()+","+getEmail()+","+ getTrinhDo()+","+getViTri()+","+getLuong();
+                +getSoCMND()+","+getSoDT()+","+getEmail()+","+getMaNhanVien()+
+                ","+ getTrinhDo()+","+getViTri()+","+getLuong();
     }
 }

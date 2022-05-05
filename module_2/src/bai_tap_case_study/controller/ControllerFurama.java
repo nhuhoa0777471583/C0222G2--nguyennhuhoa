@@ -19,6 +19,7 @@ public class ControllerFurama {
     private static Scanner scanner = new Scanner(System.in);
 
     public void displayMainMenu() {
+        System.out.println("WELCOME TO FURAMA ");
         while (true) {
             try {
                 System.out.println("1.Employee Management\n" +

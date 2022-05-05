@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ReadAll {
 
-    public static List<String> readAll(String pathFile) {
+    public static List<String> readAll(String pathFile, boolean flag) {
         List<String> stringList = new ArrayList<>();
         try {
             FileReader fr = new FileReader(pathFile);
@@ -28,24 +28,24 @@ public class ReadAll {
         return stringList;
     }
 
-    public static List<Employee> readNhanVien() {
-        List<String> stringList = readAll("src/bai_tap_case_study/common/data/nhan_vien.csv");
+    public static List<Employee> readEmployee() {
+        List<String> stringList = readAll("src/bai_tap_case_study/common/data/nhan_vien.csv",true);
         List<Employee> listEmployee = new ArrayList<>();
         String[] arr = null;
 //int id,String hoVaTen, String ngaySinh, String gioiTinh, int soCMND
-//            , int soDT, String email, String tinhDo, String viTri, String luong
+//            , int soDT, String email, ma nhanvien,String tinhDo, String viTri, String luong
         for (String str : stringList) {
             arr = str.split(",");
             listEmployee.add(new Employee(Integer.parseInt(arr[0]), arr[1],
                     arr[2], arr[3], Integer.parseInt(arr[4]),
-                    Integer.parseInt(arr[5]), arr[6], arr[7],
-                    arr[8], arr[9]));
+                    Integer.parseInt(arr[5]), arr[6], arr[7],arr[8],
+                    arr[9], arr[10]));
         }
         return listEmployee;
     }
 
-    public static List<Customer> readKhachHang() {
-        List<String> stringList = readAll("src/bai_tap_case_study/common/data/khach_hang.csv");
+    public static List<Customer> readCustomer() {
+        List<String> stringList = readAll("src/bai_tap_case_study/common/data/khach_hang.csv",true);
         List<Customer> listCustomer = new ArrayList<>();
         String[] arr1 = null;
 
@@ -55,14 +55,14 @@ public class ReadAll {
             arr1 = str1.split(",");
             listCustomer.add(new Customer(Integer.parseInt(arr1[0]), arr1[1],
                     arr1[2], arr1[3], Integer.parseInt(arr1[4]),
-                    Integer.parseInt(arr1[5]), arr1[6], arr1[7], arr1[8]));
+                    Integer.parseInt(arr1[5]), arr1[6],arr1[7], arr1[8], arr1[9]));
         }
         return listCustomer;
     }
 
 
     public static List<Villa> readVilla() {
-        List<String> stringList = readAll("src/bai_tap_case_study/common/data/villa.csv");
+        List<String> stringList = readAll("src/bai_tap_case_study/common/data/villa.csv",true);
         List<Villa> villaList= new ArrayList<>();
         String[] arr = null;
 
@@ -77,7 +77,7 @@ public class ReadAll {
     }
 
     public static List<Room> readRoom() {
-        List<String> stringList = readAll("src/bai_tap_case_study/common/data/room.csv");
+        List<String> stringList = readAll("src/bai_tap_case_study/common/data/room.csv",true);
         List<Room> roomList= new ArrayList<>();
         String[] arr = null;
 
@@ -93,7 +93,7 @@ public class ReadAll {
 
 
     public static List<House> readHouse() {
-        List<String> stringList = readAll("src/bai_tap_case_study/common/data/house.csv");
+        List<String> stringList = readAll("src/bai_tap_case_study/common/data/house.csv",true);
         List<House> houseList= new ArrayList<>();
         String[] arr = null;
 
@@ -106,6 +106,4 @@ public class ReadAll {
         }
         return houseList;
     }
-
-
 }
