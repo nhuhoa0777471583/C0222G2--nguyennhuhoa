@@ -13,12 +13,11 @@ import java.io.IOException;
 import java.util.*;
 
 public class Read {
-    private static final String ROOM_CSV = "src/crud/common/data/room.csv";
-    private static final String VILLA_CSV = "src/crud/common/data/villa.csv";
-    private static final String HOUSE_CSV = "src/crud/common/data/house.csv";
-    private static final String EMPLOYEE_CSV = "src/crud/common/data/employee.csv";
-    private static final String CUSTOMER_CSV = "src/crud/common/data/customer.csv";
-
+    private static final String ROOM_CSV = "src/case_study2/common/data/room.csv";
+    private static final String VILLA_CSV = "src/case_study2/common/data/villa.csv";
+    private static final String HOUSE_CSV = "src/case_study2/common/data/house.csv";
+    private static final String EMPLOYEE_CSV = "src/case_study2/common/data/employee.csv";
+    private static final String CUSTOMER_CSV = "src/case_study2/common/data/customer.csv";
 
     public static List<String> readAll(String pathFile, boolean flag) {
         List<String> stringList = new ArrayList<>();
@@ -65,6 +64,7 @@ public class Read {
         }
         return customerList;
     }
+
     public static Map<Villa,Integer> readVilla(){
         List<String>stringList= readAll(VILLA_CSV,true);
         Map<Villa,Integer>villaMap= new LinkedHashMap<>();

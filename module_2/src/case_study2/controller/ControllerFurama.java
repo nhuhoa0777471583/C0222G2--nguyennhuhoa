@@ -1,5 +1,6 @@
 package case_study2.controller;
 
+import case_study2.serivce.impl.BookingService;
 import case_study2.serivce.impl.CustomerServiceImpl;
 import case_study2.serivce.impl.EmployeeServiceImpl;
 import case_study2.serivce.impl.facility.FacilityServiceImpl;
@@ -17,11 +18,11 @@ public class ControllerFurama {
     private static RoomService roomService = new RoomService();
     private static HouseService houseService = new HouseService();
     private static VillaService villaService = new VillaService();
+    private static  BookingService bookingService = new BookingService();
 
     public void displayMenu() {
         while (true) {
             try {
-
                 System.out.println("Welcome furama");
                 System.out.println("1.Employee Management\n" +
                         "2.Customer Management\n" +
@@ -110,6 +111,7 @@ public class ControllerFurama {
                     break;
                 case 2:
                     System.out.println("You chosse display list booking");
+                    bookingService.display();
                     break;
                 case 3:
                     System.out.println("You chosse create new constracts");

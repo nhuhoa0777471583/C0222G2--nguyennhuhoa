@@ -57,7 +57,8 @@ public class EmployeeServiceImpl implements IEmployyeService {
 
 
         String trinhDo = addTrinhDo();
-        String viTri = addLuong();
+        String viTri = addViTri();
+
         System.out.print("them lương: ");
         String luong = scanner.nextLine();
         Employee employee1 = new Employee(id, name, birth, gender, soCMND, soDienThoai, email, maNhanVien, trinhDo, viTri, luong);
@@ -66,8 +67,8 @@ public class EmployeeServiceImpl implements IEmployyeService {
         WriteAll.writeEmployee(employeeArrayList, false);
     }
 
-    private String addLuong() {
-        System.out.print("them luong:\n" +
+    private String addViTri() {
+        System.out.print("them vị trí:\n" +
                 "1.Lễ tân\n" +
                 "2.phục vụ\n" +
                 "3.chuyên viên\n" +
@@ -96,6 +97,7 @@ public class EmployeeServiceImpl implements IEmployyeService {
             case 6:
                 viTri = "giám đốc";
                 break;
+
         }
         return viTri;
     }
@@ -122,6 +124,7 @@ public class EmployeeServiceImpl implements IEmployyeService {
             case 4:
                 trinhDo = "sau đại học";
                 break;
+
         }
         return trinhDo;
     }

@@ -14,11 +14,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Write {
-    private static final String ROOM_CSV = "src/crud/common/data/room.csv";
-    private static final String VILLA_CSV = "src/crud/common/data/villa.csv";
-    private static final String HOUSE_CSV = "src/crud/common/data/house.csv";
-    private static final String EMPLOYEE_CSV = "src/crud/common/data/employee.csv";
-    private static final String CUSTOMER_CSV = "src/crud/common/data/customer.csv";
+    private static final String ROOM_CSV = "src/case_study2/common/data/room.csv";
+    private static final String VILLA_CSV = "src/case_study2/common/data/villa.csv";
+    private static final String HOUSE_CSV = "src/case_study2/common/data/house.csv";
+    private static final String EMPLOYEE_CSV = "src/case_study2/common/data/employee.csv";
+    private static final String CUSTOMER_CSV = "src/case_study2/common/data/customer.csv";
 
     public static void writeAll(List<String> stringList, String pathFile, boolean flag) {
         try {

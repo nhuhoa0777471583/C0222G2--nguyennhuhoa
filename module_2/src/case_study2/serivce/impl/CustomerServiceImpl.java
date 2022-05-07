@@ -45,20 +45,22 @@ public class CustomerServiceImpl implements ICustomerService {
         Integer soDienThoai = Integer.parseInt(sc.nextLine());
         System.out.print("them email: ");
         String email = sc.nextLine();
+
         System.out.print("them ma khach hang: ");
         String maKhachHang = sc.nextLine();
         System.out.print("them loai khach hang: ");
         String loaiKhachHang = sc.nextLine();
         System.out.print("them dia chi: ");
         String diaChi = sc.nextLine();
-        Customer c =new Customer(id ,hoTen,ngaySinh,gioiTinh,soCMND,soDienThoai,email,maKhachHang,loaiKhachHang,diaChi);
+        Customer c = new Customer(id, hoTen, ngaySinh, gioiTinh, soCMND, soDienThoai, email, maKhachHang, loaiKhachHang, diaChi);
+        System.out.println(c);
         customerList.add(c);
-        Write.writeCustomer(customerList,false);
+        Write.writeCustomer(customerList, false);
     }
 
     @Override
     public void display() {
-        customerList= Read.readCustomer();
+        customerList = Read.readCustomer();
         for (Customer customer : customerList) {
             System.out.println(customer);
         }
@@ -66,12 +68,14 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public void edit() {
-        customerList= Read.readCustomer();
+        customerList = Read.readCustomer();
+
         System.out.print("nhap id can sửa: ");
         Integer id = Integer.parseInt(sc.nextLine());
         boolean flag = false;
+
         for (int i = 0; i < customerList.size(); i++) {
-            if (id == customerList.get(i).getId()) {
+            if (id.equals(customerList.get(i).getId())) {
                 flag = true;
                 System.out.print("sửa ho ten: ");
                 String hoTen = sc.nextLine();
@@ -91,14 +95,13 @@ public class CustomerServiceImpl implements ICustomerService {
                 String loaiKhachHang = sc.nextLine();
                 System.out.print("sửa dia chi: ");
                 String diaChi = sc.nextLine();
-                Customer c =new Customer(id ,hoTen,ngaySinh,gioiTinh,soCMND,soDienThoai,email,maKhachHang,loaiKhachHang,diaChi);
+                Customer c = new Customer(id, hoTen, ngaySinh, gioiTinh, soCMND, soDienThoai, email, maKhachHang, loaiKhachHang, diaChi);
                 System.out.println(c);
-                customerList.set(i,c);
-                Write.writeCustomer(customerList,false);
-
+                customerList.set(i, c);
+                Write.writeCustomer(customerList, false);
             }
         }
-        if(flag==false){
+        if (flag == false) {
             System.out.println("ko co trong danh sách cần sửa!!");
         }
     }

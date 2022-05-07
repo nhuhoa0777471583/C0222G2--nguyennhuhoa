@@ -29,7 +29,7 @@ public class RoomService implements IRoom {
             String maDichVu = sc.nextLine();
             System.out.print("thêm tên dịch vụ: ");
             String tenDichVu = sc.nextLine();
-            System.out.print("thêm tên diện tích sử dụng: ");
+            System.out.print("thêm diện tích sử dụng: ");
             String dienTichSD = sc.nextLine();
             System.out.print("thêm chi phí thuê: ");
             String chiPhiThue = sc.nextLine();
