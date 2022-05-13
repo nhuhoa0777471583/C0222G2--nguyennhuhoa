@@ -3,11 +3,9 @@ package bai_tap_lam_them_oop.service.imp;
 import bai_tap_lam_them_oop.model.Oto;
 import bai_tap_lam_them_oop.service.cac_interface.IOtoService;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
-public class OtoService implements IOtoService {
+public class OtoService implements IOtoService  {
     private static Scanner scanner = new Scanner(System.in);
     private static List<Oto> otos = new ArrayList<>();
 
