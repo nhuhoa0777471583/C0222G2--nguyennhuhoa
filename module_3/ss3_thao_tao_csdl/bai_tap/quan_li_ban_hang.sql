@@ -37,17 +37,33 @@ from order_customer;
 -- Hiển thị danh sách các khách hàng đã mua hàng, và danh sách sản phẩm được mua bởi các khách
 select
 order_detail.id_order, 
-customer.name_customer,
 product.name_product
 from customer
 join order_customer on customer.id_customer=order_customer.id_customer
-join order_detail on order_customer.id_customer=order_detail.id_order
+join order_detail on order_customer.id_order=order_detail.id_order
 join product on product.id_product=order_detail.id_product;
+
 -- Hiển thị tên những khách hàng không mua bất kỳ một sản phẩm nào
-
-select customer.name_customer
+select
+customer.name_customer 
 from customer
-join order_detail on customer.id_customer= order_detail.id_product;
+left join order_customer on customer.id_customer = order_customer.id_customer
+where order_customer.id_order is null;
 
+select *from customer;
+select *from order_customer;
 
+-- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn 
+-- (giá một hóa đơn được tính bằng tổng giá bán của từng loại mặt hàng xuất hiện trong hóa đơn. 
+-- Giá bán của từng loại được tính = odQTY*pPrice)
 
+select 
+order_customer.id_order,
+order_customer.date_o,
+(order_detail.order_qty * product.product_price) as tong_tien
+from order_customer
+join order_detail on order_customer.id_order= order_detail.id_order
+join product on order_detail.id_product= product.id_product
+;
+
+select*from order_detail;
