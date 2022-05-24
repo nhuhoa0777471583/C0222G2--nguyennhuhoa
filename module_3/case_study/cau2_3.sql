@@ -1,17 +1,12 @@
 USE case_study;
+
+
 select*from loai_khach;
 select*from khach_hang;
 
 -- câu 2 Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu 
 -- là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 kí tự.
-
-
 select * from nhan_vien where ho_ten regexp '^[H,K,T].{1,14}$';
-
-
-
--- select *,year(curdate())-year(dob) - (right(curdate(),5) < right(dob,5)) as age from your_table
-
 
 
 -- câu 3 Hiển thị thông tin của tất cả khách hàng
@@ -52,7 +47,12 @@ left join loai_khach on khach_hang.ma_loai_khach= loai_khach.ma_loai_khach
 left join hop_dong on khach_hang.id_customer = hop_dong.id_customer
 left join dich_vu on dich_vu.id_dich_vu =hop_dong.id_dich_vu
 left join hop_dong_chi_tiet on hop_dong_chi_tiet.ma_hop_dong = hop_dong.ma_hop_dong
-left join dich_vu_di_kem on dich_vu_di_kem.ma_dich_vu_di_kem= hop_dong_chi_tiet.ma_dich_vu_di_kem;
+left join dich_vu_di_kem on dich_vu_di_kem.ma_dich_vu_di_kem= hop_dong_chi_tiet.ma_dich_vu_di_kem#
+group by khach_hang.id_customer,
+khach_hang.ho_ten,
+loai_khach.ten_loai_khach,
+hop_dong.ma_hop_dong,
+dich_vu.ten_dich_vu;
 
 
 -- cau 6. Hiển thị ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue,
@@ -238,46 +238,47 @@ nhan_vien.so_dien_thoai,
 nhan_vien.dia_chi
 from nhan_vien
 join trinh_do on nhan_vien.ma_trinh_do= trinh_do.ma_trinh_do
-left join bo_phan on nhan_vien.ma_bo_phan = bo_phan.ma_bo_phan
-left join hop_dong on nhan_vien.id_employee= hop_dong.id_employee
-where (year(hop_dong.ngay_lam_hop_dong) >= 2020 and year(hop_dong.ngay_lam_hop_dong) <= 2021)
+inner join bo_phan on nhan_vien.ma_bo_phan = bo_phan.ma_bo_phan
+inner join hop_dong on nhan_vien.id_employee= hop_dong.id_employee
+where (year(hop_dong.ngay_lam_hop_dong) between 2020 and 2021 )
 group by nhan_vien.id_employee
 having count(hop_dong.ma_hop_dong) <= 3 
 order by hop_dong.ma_hop_dong desc;
 
-select * from nhan_vien;
-select * from bo_phan;
-select * from trinh_do;
-select 
-nhan_vien.id_employee,
-nhan_vien.ho_ten,
-trinh_do.ten_trinh_do,
-bo_phan.ten_bo_phan,
-nhan_vien.so_dien_thoai,
-nhan_vien.dia_chi
-from nhan_vien
- join trinh_do on nhan_vien.ma_trinh_do= trinh_do.ma_trinh_do
-left join bo_phan on nhan_vien.ma_bo_phan = bo_phan.ma_bo_phan
-left join hop_dong on nhan_vien.id_employee= hop_dong.id_employee
-group by nhan_vien.id_employee 
- ;
 
+-- select * from nhan_vien;
+-- select * from bo_phan;
+-- select * from trinh_do;
+-- select 
+-- nhan_vien.id_employee,
+-- nhan_vien.ho_ten,
+-- trinh_do.ten_trinh_do,
+-- bo_phan.ten_bo_phan,
+-- nhan_vien.so_dien_thoai,
+-- nhan_vien.dia_chi
+-- from nhan_vien
+--  join trinh_do on nhan_vien.ma_trinh_do= trinh_do.ma_trinh_do
+-- left join bo_phan on nhan_vien.ma_bo_phan = bo_phan.ma_bo_phan
+-- left join hop_dong on nhan_vien.id_employee= hop_dong.id_employee
+-- group by nhan_vien.id_employee 
+--  ;
 
-select 
-nhan_vien.id_employee,
-nhan_vien.ho_ten,
-trinh_do.ten_trinh_do,
-bo_phan.ten_bo_phan,
-nhan_vien.so_dien_thoai,
-nhan_vien.dia_chi
-from nhan_vien
-inner join trinh_do on nhan_vien.ma_trinh_do= trinh_do.ma_trinh_do
-inner join bo_phan on nhan_vien.ma_bo_phan = bo_phan.ma_bo_phan
-inner join hop_dong on nhan_vien.id_employee= hop_dong.id_employee
-group by nhan_vien.id_employee;
+-- select 
+-- nhan_vien.id_employee,
+-- nhan_vien.ho_ten,
+-- trinh_do.ten_trinh_do,
+-- bo_phan.ten_bo_phan,
+-- nhan_vien.so_dien_thoai,
+-- nhan_vien.dia_chi
+-- from nhan_vien
+-- inner join trinh_do on nhan_vien.ma_trinh_do= trinh_do.ma_trinh_do
+-- inner join bo_phan on nhan_vien.ma_bo_phan = bo_phan.ma_bo_phan
+-- inner join hop_dong on nhan_vien.id_employee= hop_dong.id_employee
+-- where (year(hop_dong.ngay_lam_hop_dong) between 2020 and 2021 )
+-- group by nhan_vien.id_employee
+-- having count(hop_dong.ma_hop_dong) <= 3 
+-- order by hop_dong.ma_hop_dong desc;
 
-
--- trường hợp nào sd inner hay left join 
 
 -- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
 
@@ -295,14 +296,15 @@ nhan_vien.id_employee);
 -- 17.	Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond, 
 -- chỉ cập nhật những khách hàng đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021 là lớn hơn 10.000.000 VNĐ.
 
-
-
 select* from khach_hang ;
 set sql_safe_updates = 0;
+
 update khach_hang
-set khach_hang.ma_loai_khach = khach_hang.ma_loai_khach - 1
+set khach_hang.ma_loai_khach = 1
 where khach_hang.ma_loai_khach in 
-(select abc.ma_loai_khach from (select 
+(select abc.ma_loai_khach
+ from (
+ select 
 hop_dong.ma_hop_dong,
 hop_dong.ngay_lam_hop_dong,
 khach_hang.id_customer,
@@ -311,18 +313,22 @@ loai_khach.ma_loai_khach,
 loai_khach.ten_loai_khach,
 dich_vu.id_dich_vu,
 dich_vu.ten_dich_vu,
-dich_vu.chi_phi_thue,
-dich_vu.chi_phi_thue * (datediff(hop_dong.ngay_ket_thuc,hop_dong.ngay_lam_hop_dong)) as tong_tien 
+dich_vu.chi_phi_thue + ifnull((hop_dong_chi_tiet.so_luong *dich_vu_di_kem.gia),0) as tong_tien
 from hop_dong
 join khach_hang on hop_dong.id_customer = khach_hang.id_customer
 join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
 join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
+join hop_dong_chi_tiet on hop_dong_chi_tiet.ma_hop_dong = hop_dong.ma_hop_dong
+join dich_vu_di_kem on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem
 where 
 year(hop_dong.ngay_lam_hop_dong) in (2021) 
-and loai_khach.ten_loai_khach= 'Platinium'
+and loai_khach.ma_loai_khach= 2
 group by 
-hop_dong.ma_hop_dong) as abc);
+hop_dong.ma_hop_dong
+)
+ as abc);
 set sql_safe_updates = 1;
+
 select* from khach_hang ;
 
 -- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
@@ -330,10 +336,11 @@ select* from khach_hang ;
 select* from khach_hang ;
 select* from hop_dong;
 
-delete  
-from khach_hang
-where
-(select 
+set sql_safe_updates = 0;
+delete from khach_hang 
+where khach_hang.id_customer in
+(select kh.id_customer 
+from (select 
 khach_hang.id_customer,
 khach_hang.ho_ten,
 hop_dong.ngay_ket_thuc
@@ -341,7 +348,54 @@ from
 khach_hang
 join hop_dong on khach_hang.id_customer = hop_dong.id_customer
 where 
-year(hop_dong.ngay_ket_thuc) <(2021))
+year(hop_dong.ngay_ket_thuc) < 2021) as kh);
+set sql_safe_updates = 1;
+
+-- 19.	Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
+-- sai cách
+select * from dich_vu_di_kem;
+
+set sql_safe_updates = 0;
+update dich_vu_di_kem
+set dich_vu_di_kem.gia = dich_vu_di_kem.gia *2
+where dich_vu_di_kem.ma_dich_vu_di_kem in 
+(select dv.ma_dich_vu_di_kem
+from
+( select
+dich_vu_di_kem.ma_dich_vu_di_kem,
+dich_vu_di_kem.ten_dich_vu_di_kem,
+dich_vu_di_kem.gia,
+hop_dong_chi_tiet.so_luong,
+hop_dong.ngay_lam_hop_dong
+from dich_vu_di_kem
+inner join hop_dong_chi_tiet 
+on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem
+inner join hop_dong on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+where year (hop_dong.ngay_lam_hop_dong) in (2020)
+having hop_dong_chi_tiet.so_luong> 10 ) as dv) ;
+set sql_safe_updates = 1;
 
 
+
+-- 20.	Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống,
+--  thông tin hiển thị bao gồm id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.
+
+select * from khach_hang;
+select * from nhan_vien;
+
+select nhan_vien.id_employee,
+nhan_vien.ho_ten,
+nhan_vien.email
+,nhan_vien.so_dien_thoai,
+nhan_vien.ngay_sinh,
+nhan_vien.dia_chi 
+from nhan_vien
+union
+select khach_hang.id_customer,
+khach_hang.ho_ten,
+khach_hang.email,
+khach_hang.so_dt,
+khach_hang.ngay_sinh,
+khach_hang.dia_chi 
+from khach_hang
 
