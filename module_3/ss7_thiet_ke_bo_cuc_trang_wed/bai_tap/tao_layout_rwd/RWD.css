@@ -1,0 +1,141 @@
+
+body{
+    height: 500px;
+}
+
+.list {
+    display: inline-block;
+    float: left;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 30px;
+
+    color: #eceaea;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+
+.list-right {
+    display: inline-block;
+    float: right;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 30px;
+
+    color: #eceaea;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+li:hover {
+    color: red;
+    text-decoration: none;
+}
+
+#header {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    border: 1px solid black;
+    position: fixed;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+}
+icon{
+    position: sticky;
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+#table-center {
+    height: 600px;
+    width: 70%;
+    background-color: white;
+    float: left;
+    top: 50px;
+    position: relative;
+}
+
+.letter_center {
+    text-align: left;
+    font-size: 15px;
+    line-height: 20px;
+    width: 80%;
+    font-style: normal;
+    color: black;
+}
+
+p {
+    padding-left: 20px;
+}
+
+h1 {
+    padding-left: 20px;
+}
+
+#table-left {
+    text-align: left;
+    height: 600px;
+    width: 15%;
+    background-color: #dad5d5;
+    float: left;
+    top: 50px;
+    position: relative;
+}
+
+.left_letter {
+    line-height: 50px;
+    font-size: 15px;
+    color: blue;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+
+#table-right {
+    text-align: left;
+    height: 600px;
+    width: 15%;
+    background-color: #dad5d5;
+    float: left;
+    top: 50px;
+    position: relative;
+}
+
+.lettet_right {
+    background-color: #CDCDCD;
+    width: 50%;
+    height: 80px;
+    margin-left: 40px;
+    padding-top: 40px;
+    text-align: center;
+
+}
+
+#table-footer {
+    width: 100%;
+    height: 100px;
+    background-color: grey;
+    clear: both;
+    position: relative;
+    top: 50px;
+}
+
+#table-footer p {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+
+
+
