@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="536cf3da-2002-4823-8cbf-000e9f2dd560" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../module_1/.idea/module1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss7_thiet_ke_bo_cuc_trang_wed/.idea/ss7_thiet_ke_bo_cuc_trang_wed.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss8_bootstrap/bai_tap/gallery/Gallery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss8_bootstrap/bai_tap/gallery/gallery.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thuc_hanh/simple-login/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e04c0e17-68df-47f9-b9ce-d96a2847219b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/ss10_jsp_jstl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/.idea/ss9_tong_quan_ung_dung_wed.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/thuc_hanh/server-time/.idea/server-time.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Untitled Diagram.drawio" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../module1/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../module1/.idea/misc.xml" beforeDir="false" />
@@ -315,8 +314,34 @@
       <change beforePath="$PROJECT_DIR$/../../ss6_css/bai_tap/doremon/TruyenNgan.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6_css/bai_tap/doremon/TruyenNgan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss7_thiet_ke_bo_cuc_trang_wed/bai_tap/facebook/Facebook.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_thiet_ke_bo_cuc_trang_wed/bai_tap/facebook/Facebook.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss7_thiet_ke_bo_cuc_trang_wed/bai_tap/facebook/fb.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_thiet_ke_bo_cuc_trang_wed/bai_tap/facebook/fb.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss8_bootstrap/thuc_hanh/Bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_bootstrap/thuc_hanh/Bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss8_bootstrap/thuc_hanh/Bootstrap.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_bootstrap/thuc_hanh/Bootstrap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_bootstrap/bai_tap/microsoft/Microsoft.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_bootstrap/bai_tap/microsoft/Microsoft.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_bootstrap/bai_tap/microsoft/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_bootstrap/bai_tap/microsoft/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/LoginServer/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/LoginServer/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/LoginServer/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/server-time/src/main/java/ServerTimeServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/servlet/src/main/java/javawebcurrencyconverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/simple-login/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/simple-login/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/simple-login/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/simple-login/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/simple-login/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/simple-login/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/simple-login/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/simple-login/src/main/java/LoginServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/simple_dictionarys/src/main/java/TranslationServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/thuc_hanh/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/thuc_hanh/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/thuc_hanh/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/thuc_hanh/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/thuc_hanh/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/thuc_hanh/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/thuc_hanh/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/thuc_hanh/simple-login/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/thuc_hanh/simple-login/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_tong_quan_ung_dung_wed/thuc_hanh/src/main/java/ServerTimeServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../server-time/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../server-time/src/main/java/ServerTimeServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../simple_login/index.jsp.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,6 +353,13 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
@@ -338,7 +370,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectId" id="29jVQ1etcJlfNB35XAix1ThoALA" />
+  <component name="ProjectId" id="29ngnsP6cpbrzXwWgHFWUCRrDfK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -351,19 +383,17 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.63" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.63" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8082/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Gradle___org_example___chuyen_doi_tien_te_jsp_1_0_SNAPSHOT_war/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Gradle : org.example : simple-login-1.0-SNAPSHOT.war">
+        <artifact name="Gradle : org.example : chuyen-doi-tien-te-jsp-1.0-SNAPSHOT.war">
           <settings>
-            <option name="CONTEXT_PATH" value="" />
+            <option name="CONTEXT_PATH" value="/Gradle___org_example___chuyen_doi_tien_te_jsp_1_0_SNAPSHOT_war" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="e0e2c872-ed6c-4190-b9bf-12749eed7ad9" />
-        <option name="HTTP_PORT" value="8082" />
-        <option name="JNDI_PORT" value="1092" />
+        <option name="BASE_DIRECTORY_NAME" value="7f923d1b-1b97-477e-b510-2c9217a19a8d" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -371,7 +401,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56378" />
+        <option name="DEBUG_PORT" value="50748" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -436,7 +466,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : org.example : simple-login-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : org.example : chuyen-doi-tien-te-jsp-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
@@ -444,12 +474,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="536cf3da-2002-4823-8cbf-000e9f2dd560" name="Changes" comment="" />
-      <created>1653626466018</created>
+      <changelist id="e04c0e17-68df-47f9-b9ce-d96a2847219b" name="Changes" comment="" />
+      <created>1653754438301</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1653626466018</updated>
-      <workItem from="1653626485431" duration="604000" />
+      <updated>1653754438301</updated>
+      <workItem from="1653754444631" duration="1355000" />
     </task>
     <servers />
   </component>

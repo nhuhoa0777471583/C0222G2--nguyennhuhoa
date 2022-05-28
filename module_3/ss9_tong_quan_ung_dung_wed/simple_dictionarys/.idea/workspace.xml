@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="536cf3da-2002-4823-8cbf-000e9f2dd560" name="Changes" comment="">
+    <list default="true" id="c0f22bfd-e832-494a-9a6a-5bfb9e400a68" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../../module_1/.idea/module1.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../ss7_thiet_ke_bo_cuc_trang_wed/.idea/ss7_thiet_ke_bo_cuc_trang_wed.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../ss8_bootstrap/bai_tap/gallery/Gallery.html" afterDir="false" />
@@ -338,7 +338,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectId" id="29jVQ1etcJlfNB35XAix1ThoALA" />
+  <component name="ProjectId" id="29k268Z3hAYgRb3xQM1Mm0ZOdRg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -351,19 +351,18 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.63" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.63" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8082/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Gradle : org.example : simple-login-1.0-SNAPSHOT.war">
+        <artifact name="Gradle : org.example : simple_dictionarys-1.0-SNAPSHOT.war">
           <settings>
             <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="e0e2c872-ed6c-4190-b9bf-12749eed7ad9" />
-        <option name="HTTP_PORT" value="8082" />
-        <option name="JNDI_PORT" value="1092" />
+        <option name="BASE_DIRECTORY_NAME" value="2811b5d3-ed0f-4a47-99b5-a59ce5091eac" />
+        <option name="HTTP_PORT" value="8081" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -371,7 +370,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56378" />
+        <option name="DEBUG_PORT" value="50392" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -436,7 +435,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : org.example : simple-login-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : org.example : simple_dictionarys-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
@@ -444,12 +443,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="536cf3da-2002-4823-8cbf-000e9f2dd560" name="Changes" comment="" />
-      <created>1653626466018</created>
+      <changelist id="c0f22bfd-e832-494a-9a6a-5bfb9e400a68" name="Changes" comment="" />
+      <created>1653642587205</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1653626466018</updated>
-      <workItem from="1653626485431" duration="604000" />
+      <updated>1653642587205</updated>
+      <workItem from="1653642589469" duration="932000" />
     </task>
     <servers />
   </component>
