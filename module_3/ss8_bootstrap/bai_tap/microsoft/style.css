@@ -1,0 +1,21 @@
+.navbar-brand img {
+    width: 100px;
+}
+
+.navbar-anh1 img {
+    width: 40px;
+    margin-left: 10px;
+}
+
+.navbar-anh2 img {
+    width: 40px;
+    margin-left: 30px;
+}
+
+.navbar-anh3 img {
+    width: 45px;
+    margin-left: 40px;
+}
+.example-element {
+    margin-bottom: 1rem;
+}
