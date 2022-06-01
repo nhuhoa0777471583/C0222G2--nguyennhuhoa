@@ -1,2 +1,4 @@
-package service;public interface IUseService {
+package service;
+
+public interface IUseService {
 }
