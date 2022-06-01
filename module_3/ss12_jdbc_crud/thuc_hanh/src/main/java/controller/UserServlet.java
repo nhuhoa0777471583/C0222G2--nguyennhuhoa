@@ -33,8 +33,8 @@ public class UserServlet extends HttpServlet {
                 case "delete":
                     deleteUser(request, response);
                     break;
-                case "search":
-                    searchCountry(request, response);
+                case "orderByName":
+                    orderByName(request,response);
                     break;
                 default:
                     listUser(request, response);
@@ -59,6 +59,9 @@ public class UserServlet extends HttpServlet {
                     break;
                 case "edit":
                     updateUser(request, response);
+                    break;
+                case "search":
+                    searchCountry(request, response);
                     break;
 
                 default:
@@ -136,9 +139,10 @@ public class UserServlet extends HttpServlet {
 
     // Sắp xếp theo tên
     private void orderByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         List<User> list = userRepository.orderByName();
         request.setAttribute("list", list);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("order_by.jsp");
         dispatcher.forward(request, response);
     }
 }

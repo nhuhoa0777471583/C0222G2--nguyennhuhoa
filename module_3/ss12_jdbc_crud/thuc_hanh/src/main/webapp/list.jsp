@@ -16,8 +16,11 @@
   </form>
 </nav>
 <h2>
-  <a href="/user?action=create">Add New User</a>
+  <a href="/user?action=create">Thêm người dùng</a>
 </h2>
+<h3>
+  <a href="/user?action=orderByName" >Sắp xếp theo tên</a>
+</h3>
 <div align="center">
   <table border="1" cellpadding="5">
     <tr>
