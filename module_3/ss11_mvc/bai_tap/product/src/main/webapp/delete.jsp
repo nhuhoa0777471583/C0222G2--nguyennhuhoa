@@ -1,10 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 31/5/2022
-  Time: 5:10 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -28,8 +23,12 @@
             <td>${product.getGia()}</td>
         </tr>
         <tr>
-            <td>tên:</td>
-            <td>${product.getSoLuong()}</td>
+            <td>mô tả:</td>
+            <td>${product.getMoTa()}</td>
+        </tr>
+        <tr>
+            <td>nhà sản xuất:</td>
+            <td>${product.getNhaSanXuat()}</td>
         </tr>
         <tr>
             <td><input type="submit" value="Delete product"></td>
