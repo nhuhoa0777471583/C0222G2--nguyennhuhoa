@@ -39,23 +39,33 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void update(int id, Product product) {
-      for (Product pro : productList){
-          if(id == pro.getId())
-              pro.setName(product.getName());
-              pro.setGiaBan(product.getGiaBan());
-              pro.setMoTa(product.getMoTa());
-              pro.setNhaSanXuat(product.getNhaSanXuat());
-            }
+        for (Product pro : productList) {
+            if (id == pro.getId())
+                pro.setName(product.getName());
+            pro.setGiaBan(product.getGiaBan());
+            pro.setMoTa(product.getMoTa());
+            pro.setNhaSanXuat(product.getNhaSanXuat());
         }
+    }
 
 
     @Override
     public void remove(int id) {
-        for (Product pro : productList){
-            if(id == pro.getId()){
+        for (Product pro : productList) {
+            if (id == pro.getId()) {
                 productList.remove(pro);
                 break;
             }
         }
+    }
+
+    public List<Product> searchInfo(String name) {
+        List<Product> productListBySearch = new ArrayList<>();
+        for (Product product : productList) {
+            if (product.getName().contains(name)) {
+                productListBySearch.add(product);
+            }
+        }
+        return productListBySearch;
     }
 }

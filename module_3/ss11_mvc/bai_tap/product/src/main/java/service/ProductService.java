@@ -34,4 +34,11 @@ public class ProductService implements IProductService {
     public void remove(int id) {
     this.iProductRepository.remove(id);
     }
+
+    @Override
+    public List<Product> searchInfo(String name) {
+        return iProductRepository.searchInfo(name);
+    }
+
+
 }

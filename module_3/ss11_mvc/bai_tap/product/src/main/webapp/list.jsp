@@ -7,6 +7,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <body>
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline" method="post" action="/product?action=search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" >
+        <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
+    </form>
+</nav>
 <a href="/product?action=create">Create product</a>
 <p>${message}</p>
 <table class="table">

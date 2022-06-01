@@ -32,12 +32,15 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "detail":
                 getInfoProduct(request, response);
+                break;
+
             default:
                 showListProduct(request, response);
                 break;
         }
 
     }
+
 
 
     @Override
@@ -54,6 +57,8 @@ public class ProductServlet extends HttpServlet {
             case "edit":
                 editInfoProduct(request, response);
                 break;
+            case "search" :
+                searchInfoProduct(request,response);
             default:
                 showListProduct(request, response);
                 break;
@@ -116,6 +121,14 @@ public class ProductServlet extends HttpServlet {
         Product product = this.productService.findById(id);
         request.setAttribute("productList", product);
         request.getRequestDispatcher("detail.jsp").forward(request, response);
+    }
+
+//   search thông tin
+    private void searchInfoProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String search = request.getParameter("search");
+        List<Product> product = this.productService.searchInfo(search);
+        request.setAttribute("productList", product);
+        request.getRequestDispatcher("search.jsp").forward(request, response);
     }
 
 }
