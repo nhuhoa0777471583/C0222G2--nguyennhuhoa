@@ -36,6 +36,9 @@ public class UserServlet extends HttpServlet {
                 case "orderByName":
                     orderByName(request,response);
                     break;
+                case "search":
+                    searchCountry(request, response);
+                    break;
                 default:
                     listUser(request, response);
                     break;
@@ -59,9 +62,6 @@ public class UserServlet extends HttpServlet {
                     break;
                 case "edit":
                     updateUser(request, response);
-                    break;
-                case "search":
-                    searchCountry(request, response);
                     break;
 
                 default:
@@ -128,21 +128,21 @@ public class UserServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+
     // Tìm kiếm theo country
     private void searchCountry(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String country = request.getParameter("search");
-        List<User> listUser = userRepository.searchCountry(country);
-        request.setAttribute("list", listUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("search.jsp");
+        String searchCountry = request.getParameter("searchCountry");
+        List<User> users = userRepository.searchCountry(searchCountry);
+        request.setAttribute("list", users);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
         dispatcher.forward(request, response);
     }
 
     // Sắp xếp theo tên
     private void orderByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         List<User> list = userRepository.orderByName();
         request.setAttribute("list", list);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("order_by.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
         dispatcher.forward(request, response);
     }
 }

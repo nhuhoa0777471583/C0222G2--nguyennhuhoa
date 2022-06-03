@@ -11,6 +11,7 @@ public class UserRepositoryImpl implements IUserRepository {
     private String jdbcURL = "jdbc:mysql://localhost:3306/demo_jdbc?useSSL=false";
     private String jdbcUsername = "root";
     private String jdbcPassword = "nhuhoa2303";
+
     private static final String INSERT_USERS_SQL = "INSERT INTO users (name, email, country) VALUES (?, ?, ?);";
     private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
     private static final String SELECT_ALL_USERS = "select * from users";
@@ -148,7 +149,7 @@ public class UserRepositoryImpl implements IUserRepository {
     public List<User> orderByName() {
         List<User> users = new ArrayList<>();
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS_ODER_BY);) {
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS_ODER_BY)) {
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
