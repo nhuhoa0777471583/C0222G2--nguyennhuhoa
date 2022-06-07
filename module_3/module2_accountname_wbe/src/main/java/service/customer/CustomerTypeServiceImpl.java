@@ -1,7 +1,6 @@
 package service.customer;
 
-import model.Customer;
-import model.CustomerType;
+import model.customer.CustomerType;
 import repository.customer.CustomerTypeRepositoryImpl;
 import repository.customer.ICustomerTypeRepository;
 
@@ -11,11 +10,7 @@ public class CustomerTypeServiceImpl implements ICustomerTypeService {
     private ICustomerTypeRepository iCustomerTypeRepository = new CustomerTypeRepositoryImpl();
     @Override
     public List<CustomerType> getAllCustomerType() {
-        return iCustomerTypeRepository.getAllCutomerType();
+        return iCustomerTypeRepository.getAllCustomerType();
     }
 
-    @Override
-    public void save(CustomerType customerType) {
-    this.iCustomerTypeRepository.save(customerType);
-    }
 }

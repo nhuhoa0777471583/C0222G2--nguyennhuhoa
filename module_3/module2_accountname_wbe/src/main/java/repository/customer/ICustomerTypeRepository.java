@@ -1,11 +1,9 @@
 package repository.customer;
 
-import model.Customer;
-import model.CustomerType;
+import model.customer.CustomerType;
 
 import java.util.List;
 
 public interface ICustomerTypeRepository {
-    List<CustomerType> getAllCutomerType();
-    void save(CustomerType customerType);
+    List<CustomerType> getAllCustomerType();
 }

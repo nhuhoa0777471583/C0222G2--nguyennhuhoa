@@ -1,25 +1,23 @@
 package repository.customer;
 
 
-import model.CustomerType;
+import model.customer.CustomerType;
 import repository.BaseRepository;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerTypeRepositoryImpl implements ICustomerTypeRepository {
+    public static final String SELECT_FROM_CUSTOMER_TYPE = " select id_customer_type,name_customer_type from customer_type ";
     private BaseRepository baseRepository = new BaseRepository();
     @Override
-    public List<CustomerType> getAllCutomerType() {
+    public List<CustomerType> getAllCustomerType() {
         List<CustomerType> customerTypeList = new ArrayList<>();
         Connection connection = this.baseRepository.getConnectionJavaTODB();
         try {
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(" select * from customer_type ");
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FROM_CUSTOMER_TYPE);
+            ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Integer id = resultSet.getInt("id_customer_type");
                 String name = resultSet.getString("name_customer_type");
@@ -36,8 +34,4 @@ public class CustomerTypeRepositoryImpl implements ICustomerTypeRepository {
         return customerTypeList;
     }
 
-    @Override
-    public void save(CustomerType customerType) {
-
-    }
 }

@@ -1,11 +1,11 @@
 package repository.employee;
 
-import controller.EmployeeServlet;
-import model.Employee;
+import model.employee.Employee;
 
 import java.util.List;
 
 public interface IEmployyeImpl {
-     List<Employee>  getAll();
-      void save(Employee employee);
+     List<Employee> getAllEmployee();
+     void save(Employee employee);
+     void remove(int id);
 }

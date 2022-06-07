@@ -3,8 +3,58 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
+   <style>
+       nav {
+           background-color: orange;
+           border: 4px solid #3e3c3d;
+       }
 
+       .home {
+           margin-left: 200px;
+           margin-right: 50px;
+           font-size: 20px;
+       }
+
+       .employee {
+           margin-right: 50px;
+           font-size: 20px;
+       }
+
+       .customer {
+           margin-right: 50px;
+           font-size: 20px;
+       }
+
+       .service {
+           margin-right: 50px;
+           font-size: 20px;
+       }
+
+       .contract {
+           margin-right: 50px;
+           font-size: 20px;
+       }
+
+       .article{
+           border: 4px solid #3e3c3d;
+           float: left;
+           height: 700px;
+       }
+       .aside{
+           border: 4px solid #3e3c3d;
+           float: left;
+           height: 700px;
+
+
+       }
+       .footer {
+           border: 4px solid #3e3c3d;
+
+           float: left;
+           width: 100%;
+       }
+
+   </style>
 </head>
 <body>
 
@@ -13,7 +63,7 @@
         <nav class="navbar navbar-light bg-light justify-content-between ">
             <a class="navbar-brand">
                 <img src="https://zoukclub.com/wp-content/uploads/2019/11/Furama-Riverfront-Logo.png"
-                     width="400px" height="100px"></a>
+                     width="400px" height="150px"></a>
             <form class="form-inline">
                 <a class="navbar-brand">Nguyen Nhu Hoa</a>
             </form>
@@ -22,7 +72,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand home" >Home</a>
+        <a class="navbar-brand home" href="/furama" >Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
