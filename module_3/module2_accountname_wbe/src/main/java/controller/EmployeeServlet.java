@@ -1,8 +1,14 @@
 package controller;
 
+import model.employee.Divition;
+import model.employee.Education;
 import model.employee.Employee;
-import service.employee.EmployeeService;
+import model.employee.Position;
 import service.employee.IEmployee;
+import service.employee.impl.DivitionServiceImpl;
+import service.employee.impl.EducationServiceImpl;
+import service.employee.impl.EmployeeServiceImpl;
+import service.employee.impl.PositionServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,13 +16,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "EmployeeServlet", urlPatterns = "/employee")
 public class EmployeeServlet extends HttpServlet {
-    private IEmployee iEmployee = new EmployeeService();
+    private IEmployee iEmployee = new EmployeeServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,7 +30,7 @@ public class EmployeeServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
-//                showEmployee(request, response);
+                showEmployee(request, response);
                 break;
             case "delete":
 //                showCustomer(request, response);
@@ -54,7 +58,7 @@ public class EmployeeServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
-//                showEmployee(request, response);
+                saveEmployee(request, response);
                 break;
             case "delete":
 //                showCustomer(request, response);
@@ -71,11 +75,39 @@ public class EmployeeServlet extends HttpServlet {
         }
     }
 
+
     private void listEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Employee> employeeList = this.iEmployee.getAllEmployee();
         request.setAttribute("employeeList", employeeList);
-        request.getRequestDispatcher("view/employee/listEmployee.jsp").forward(request,response);
-
+        request.getRequestDispatcher("view/employee/listEmployee.jsp").forward(request, response);
     }
+
+    private void showEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Divition> divitionList = new DivitionServiceImpl().getAllDivition();
+        List<Education> educationList = new EducationServiceImpl().getAllEducationService();
+        List<Position> positionList = new PositionServiceImpl().getAllPositionService();
+        request.setAttribute("positionList", positionList);
+        request.setAttribute("educationList", educationList);
+        request.setAttribute("divitionList", divitionList);
+        request.getRequestDispatcher("view/employee/createEmployee.jsp").forward(request, response);
+    }
+
+    private void saveEmployee(HttpServletRequest request, HttpServletResponse response) throws  IOException {
+        String name = request.getParameter("name");
+        String birthday = request.getParameter("birthday");
+        String idCard = request.getParameter("idCard");
+        Double salary = Double.parseDouble(request.getParameter("salary"));
+        String phone = request.getParameter("phone");
+        String email = request.getParameter("email");
+        String address = request.getParameter("address");
+        Integer idPosition = Integer.parseInt(request.getParameter("idPosition"));
+        Integer idEducation = Integer.parseInt(request.getParameter("idEducation"));
+        Integer idDivition = Integer.parseInt(request.getParameter("idDivition"));
+        Employee employee = new Employee(name, birthday, idCard, salary, phone, email, address, idPosition, idEducation, idDivition);
+        this.iEmployee.save(employee);
+        request.setAttribute("message", "them moi thanh cong");
+        response.sendRedirect("employee");
+    }
+
 }
 

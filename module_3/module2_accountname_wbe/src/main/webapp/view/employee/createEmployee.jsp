@@ -18,7 +18,7 @@
         </form>
     </nav>
 </header>
-
+<h2>Create employee</h2>
 <table border="0" class="table table-bordered table-danger">
     <form method="post">
         <tr>
@@ -30,20 +30,14 @@
             <td><input type="text" name="birthday"></td>
         </tr>
 
-        <tr>
-            <td><label>Gender</label></td>
-            <td>
-                <select name="gender">
-                    <option value="1">Nam</option>
-                    <option value="0">Nữ</option>
-                    <option value="2">giới tính thứ 3</option>
-                </select>
-            </td>
-        </tr>
 
         <tr>
             <td><label>id card</label></td>
             <td><input type="text" name="idCard"></td>
+        </tr>
+        <tr>
+            <td><label>salary</label></td>
+            <td><input type="text" name="salary"></td>
         </tr>
         <tr>
             <td><label>phone</label></td>
@@ -59,17 +53,44 @@
             <td><input type="text" name="address"></td>
         </tr>
 
-        <td>
-            <select name="idCustomerType">
-            <c:forEach items="${customerList}" var="temp">
-                <option value="${temp.id}">${temp.nameCustomerType}</option>
-            </c:forEach>
-        </select>
-        </td>
+        <tr>
+            <td>Position</td>
+            <td>
+                <select name="idPosition">
+                    <c:forEach items="${positionList}" var="temp">
+                        <option value="${temp.idPosition}">${temp.namePosition}</option>
+                    </c:forEach>
+                </select>
+            </td>
+        </tr>
 
+        <tr>
+            <td>Education</td>
+            <td>
+                <select name="idEducation">
+                    <c:forEach items="${educationList}" var="temp">
+                        <option value="${temp.idEducation}">${temp.nameEducation}</option>
+                    </c:forEach>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Divition</td>
+            <td>
+                <select name="idDivition">
+                    <c:forEach items="${divitionList}" var="temp">
+                        <option value="${temp.idDivition}">${temp.nameDivition}</option>
+                    </c:forEach>
+                </select>
+            </td>
+        </tr>
+        <td>
+            <button type="submit">Submit</button>
+        </td>
     </form>
 </table>
-<button type="submit">Submit</button>
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

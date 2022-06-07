@@ -53,6 +53,21 @@ public class Employee {
 //        this.userName = userName;
     }
 
+    public Employee(String name, String birthday, String idCard, Double salary, String phone, String email,
+                    String address, Integer idDivition, Integer idEducation, Integer idPosition) {
+        this.name = name;
+        this.birthday = birthday;
+        this.idCard = idCard;
+        this.salary = salary;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.idPosition = idDivition;
+        this.idEducationDegree = idEducation;
+        this.idDivision = idPosition;
+
+    }
+
     public Integer getId() {
         return id;
     }

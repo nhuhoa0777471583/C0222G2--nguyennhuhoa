@@ -38,8 +38,7 @@
 </nav>
 
 <h2>List of Employee</h2>
-
-<h4><a href="/employee?action=create">Create</a></h4>
+<h3><a href="/employee?action=create">Create</a></h3>
 <p>${message}</p>
 
 <table class="table table-bordered table-striped" style="width: 100%" id="tableEmployee">

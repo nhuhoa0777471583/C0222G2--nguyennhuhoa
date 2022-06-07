@@ -75,9 +75,9 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void showCreate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<CustomerType> customerList = new CustomerTypeServiceImpl().getAllCustomerType();
-        request.setAttribute("customerList", customerList);
-        request.getRequestDispatcher("view/customer/create.jsp").forward(request, response);
+        List<CustomerType> customerTypeList = new CustomerTypeServiceImpl().getAllCustomerType();
+        request.setAttribute("customerTypeList", customerTypeList);
+        request.getRequestDispatcher("view/customer/createCustomer.jsp").forward(request, response);
     }
 
     private void saveCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {

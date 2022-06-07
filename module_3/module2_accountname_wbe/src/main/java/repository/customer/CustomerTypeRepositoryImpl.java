@@ -14,8 +14,8 @@ public class CustomerTypeRepositoryImpl implements ICustomerTypeRepository {
     @Override
     public List<CustomerType> getAllCustomerType() {
         List<CustomerType> customerTypeList = new ArrayList<>();
-        Connection connection = this.baseRepository.getConnectionJavaTODB();
-        try {
+
+        try( Connection connection = this.baseRepository.getConnectionJavaTODB()) {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FROM_CUSTOMER_TYPE);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -23,11 +23,6 @@ public class CustomerTypeRepositoryImpl implements ICustomerTypeRepository {
                 String name = resultSet.getString("name_customer_type");
                 customerTypeList.add(new CustomerType(id ,name));
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        try {
-            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

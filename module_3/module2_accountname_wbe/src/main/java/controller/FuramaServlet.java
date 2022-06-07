@@ -1,17 +1,9 @@
 package controller;
 
-import model.customer.Customer;
-import model.employee.Employee;
-import repository.customer.CustomerRepositoryImpl;
-import repository.employee.imlp.EmployeeRepository;
-import service.customer.CustomerServiceImpl;
-import service.employee.EmployeeService;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name = "FuramaServlet", urlPatterns = "/furama")
 public class FuramaServlet extends HttpServlet {

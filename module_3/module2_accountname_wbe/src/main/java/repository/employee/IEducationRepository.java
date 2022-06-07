@@ -4,6 +4,6 @@ import model.employee.Education;
 
 import java.util.List;
 
-public interface IEducation {
+public interface IEducationRepository {
     List<Education> getAllEducation();
 }

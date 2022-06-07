@@ -4,6 +4,6 @@ import model.employee.Divition;
 
 import java.util.List;
 
-public interface IDivition {
+public interface IDivitionRepository {
     List<Divition> getAllDivition();
 }
