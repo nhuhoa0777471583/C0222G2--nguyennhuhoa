@@ -8,7 +8,7 @@ public class Service {
     private Integer maxPeople;
     private String standardRoom;
     private String descriptionOtherConvenience;
-    private Double pool_area;
+    private Double poolArea;
     private Integer numberOfFloat;
     private Integer idRentType;
     private Integer idServiceType;
@@ -24,7 +24,7 @@ public class Service {
         this.maxPeople = maxPeople;
         this.standardRoom = standardRoom;
         this.descriptionOtherConvenience = descriptionOtherConvenience;
-        this.pool_area = pool_area;
+        this.poolArea = pool_area;
         this.numberOfFloat = numberOfFloat;
         this.idRentType = idRentType;
         this.idServiceType = idServiceType;
@@ -86,12 +86,12 @@ public class Service {
         this.descriptionOtherConvenience = descriptionOtherConvenience;
     }
 
-    public Double getPool_area() {
-        return pool_area;
+    public Double getPoolArea() {
+        return poolArea;
     }
 
-    public void setPool_area(Double pool_area) {
-        this.pool_area = pool_area;
+    public void setPoolArea(Double poolArea) {
+        this.poolArea = poolArea;
     }
 
     public Integer getNumberOfFloat() {

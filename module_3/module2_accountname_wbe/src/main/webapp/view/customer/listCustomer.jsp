@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../bootstrap413/css/bootstrap.min.css">
     <link rel="stylesheet" href="../datatables/css/dataTables.bootstrap4.css">
 
@@ -12,8 +12,8 @@
 <body>
 <header>
     <nav class="navbar navbar-light bg-light justify-content-between ">
-        <a class="navbar-brand">
-            <img href="/furama" src="https://zoukclub.com/wp-content/uploads/2019/11/Furama-Riverfront-Logo.png"
+        <a class="navbar-brand" href="/furama">
+            <img src="https://zoukclub.com/wp-content/uploads/2019/11/Furama-Riverfront-Logo.png"
                  width="400px" height="150px"></a>
         <form class="form-inline">
             <a class="navbar-brand">Nguyen Nhu Hoa</a>
@@ -21,21 +21,28 @@
     </nav>
 </header>
 
-<nav class="navbar navbar-light bg-light">
-    <form class="form-inline" action="/customer">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav mr-auto hover">
+        <li class="nav-item active">
+            <a class="nav-link" href="/furama" >Home <span
+                    class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/furama?action=customer">List Customer</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/customer?action=create">Create</a>
+        </li>
+    </ul>
+    <form class="form-inline " action="/customer">
+        <input class="form-control mr-sm-2" type="text" name="nameSearch" value="${nameSearch}" placeholder="nhập tên cần tìm" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="action" value="search">Search</button>
     </form>
 </nav>
 
 
-<h1>List customer</h1>
-
-<h4><a href="/customer?action=create">Create</a></h4>
-<p>${message}</p>
-<caption>List of customer</caption>
-
-<table class="table table-bordered table-striped" style="width: 100%" id="tableCustomer">
+<table class="table table-bordered table-striped col-xl-4 col-lg-4 col-md-4 col-sm-4 " style="width: 100%"
+       id="tableCustomer">
 
     <thead class="thead-dark">
     <tr class="bg-primary">
@@ -80,15 +87,50 @@
                     <c:when test="${temp.idCustomerType == 5}">Member</c:when>
                 </c:choose>
             </th>
+
             <th><a href="/customer?action=edit&id=${temp.id}">Edit</a></th>
-            <th><a href="/customer?action=delete&id=${temp.id}">Delete</a></th>
+
+            <th>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal${temp.id}">
+                    Delete
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal${temp.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p> Do you want delete customer have id is
+                                <p class="text-danger"> ${temp.id}</p> and name is <p
+                                    class="text-danger"> ${temp.name}</p></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">
+                                    <a href="/customer?action=delete&id=${temp.id}">Delete</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </th>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 
-
+</div>
 </body>
+
 <script src="../jquery/jquery-3.5.1.min.js"></script>
 <script src="../datatables/js/jquery.dataTables.min.js"></script>
 <script src="../datatables/js/dataTables.bootstrap4.min.js"></script>

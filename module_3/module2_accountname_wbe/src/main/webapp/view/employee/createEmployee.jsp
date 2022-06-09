@@ -18,7 +18,9 @@
         </form>
     </nav>
 </header>
+
 <h2>Create employee</h2>
+<h3><a href="/customer">Back</a></h3>
 <table border="0" class="table table-bordered table-danger">
     <form method="post">
         <tr>
@@ -27,13 +29,15 @@
         </tr>
         <tr>
             <td><label>Birthday</label></td>
-            <td><input type="text" name="birthday"></td>
+            <td><input type="date" name="birthday"></td>
         </tr>
 
 
         <tr>
             <td><label>id card</label></td>
-            <td><input type="text" name="idCard"></td>
+            <td><input type="text" name="idCard">
+
+
         </tr>
         <tr>
             <td><label>salary</label></td>

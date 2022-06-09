@@ -1,13 +1,30 @@
 package repository.sevice.impl;
 
+import com.mysql.cj.xdevapi.PreparableStatement;
 import model.service.ServiceType;
+import repository.BaseRepository;
 import repository.sevice.IServiceTypeRepository;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ServceTypeRepository implements IServiceTypeRepository {
+    private BaseRepository baseRepository = new BaseRepository();
+    public static final String SELECT_FROM_RENT_TYPE = " select * from service_type ";
+
     @Override
     public List<ServiceType> getAllServiceType() {
-        return null;
+        List<ServiceType> serviceTypeList = new ArrayList<>();
+        Connection connection = baseRepository.getConnectionJavaTODB();
+        PreparableStatement preparableStatement = connection.prepareStatement(SELECT_FROM_RENT_TYPE);
+        ResultSet resultSet = preparableStatement.executeQuery();
+        while (resultSet.next()) {
+            Integer id = resultSet.getInt("id_service_type");
+            String name = resultSet.getString("name_service_type");
+            serviceTypeList.add(new ServiceType(id, name));
+        }
+        return serviceTypeList;
     }
 }

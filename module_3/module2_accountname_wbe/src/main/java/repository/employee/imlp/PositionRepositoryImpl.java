@@ -15,7 +15,7 @@ public class PositionRepositoryImpl implements IPositionRepository {
     public static final String SELECT_POSITION = " select id_position, name_position from position_employee ";
     private BaseRepository baseRepository = new BaseRepository();
     @Override
-    public List<Position> getAllPosition() {
+    public List<Position> getAllPositionService() {
         List<Position> positions = new ArrayList<>();
 
         try( Connection connection = this.baseRepository.getConnectionJavaTODB()) {

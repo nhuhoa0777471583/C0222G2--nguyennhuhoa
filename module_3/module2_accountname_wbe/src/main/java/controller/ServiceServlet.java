@@ -1,7 +1,11 @@
 package controller;
 
+import model.service.RentType;
 import model.service.Service;
+import model.service.ServiceType;
 import service.sevice.IServiceService;
+import service.sevice.impl.RentTypeServiceImpl;
+import service.sevice.impl.ServceTypeServiceImpl;
 import service.sevice.impl.ServiceServiceImpl;
 
 import javax.servlet.RequestDispatcher;
@@ -55,7 +59,11 @@ public class ServiceServlet extends HttpServlet {
 
     private void showService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Service> serviceList = this.iServiceService.getAllService();
+        List<RentType> rentTypeList = new RentTypeServiceImpl().getAllRentType();
+        List<ServiceType> serviceTypeList = new ServceTypeServiceImpl().getAllServiceType();
         request.setAttribute("serviceList",serviceList);
+        request.setAttribute("rentTypeList",rentTypeList);
+        request.setAttribute("serviceTypeList",serviceTypeList);
         request.getRequestDispatcher("view/service/listService.jsp").forward(request,response);
 
     }

@@ -8,5 +8,12 @@ public interface IEmployee {
     void save(Employee employee);
 
     List<Employee> getAllEmployee();
-    void remove(int id);
+
+    void deleteEmployee(Integer id);
+    Employee findById(Integer id);
+
+
+    void update(Employee employeeUpdate);
+
+    List<Employee> searchNameEmployee(String nameSearch);
 }

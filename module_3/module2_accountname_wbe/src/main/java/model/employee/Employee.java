@@ -1,11 +1,7 @@
 package model.employee;
 
-import java.sql.Date;
-
 public class Employee {
-    //  id_employee  int primary key,name_employee varchar(100),birthday_employee date,id_card_employee varchar(50),
-//  salary double,phone varchar(50),email varchar(50),address varchar(50),
-//  id_position int,id_education_degree int,id_division int, username varchar(255),
+
     private Integer id;
     private String name;
     private String birthday;

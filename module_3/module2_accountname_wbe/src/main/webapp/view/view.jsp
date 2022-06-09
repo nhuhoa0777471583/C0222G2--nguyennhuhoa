@@ -3,58 +3,60 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
-   <style>
-       nav {
-           background-color: orange;
-           border: 4px solid #3e3c3d;
-       }
+    <style>
+        nav {
+            background-color: orange;
+            border: 4px solid #3e3c3d;
+        }
 
-       .home {
-           margin-left: 200px;
-           margin-right: 50px;
-           font-size: 20px;
-       }
+        .home {
+            margin-left: 200px;
+            margin-right: 50px;
+            font-size: 20px;
+        }
 
-       .employee {
-           margin-right: 50px;
-           font-size: 20px;
-       }
+        .employee {
+            margin-right: 50px;
+            font-size: 20px;
+        }
 
-       .customer {
-           margin-right: 50px;
-           font-size: 20px;
-       }
+        .customer {
+            margin-right: 50px;
+            font-size: 20px;
+        }
 
-       .service {
-           margin-right: 50px;
-           font-size: 20px;
-       }
+        .service {
+            margin-right: 50px;
+            font-size: 20px;
+        }
 
-       .contract {
-           margin-right: 50px;
-           font-size: 20px;
-       }
+        .contract {
+            margin-right: 50px;
+            font-size: 20px;
+        }
 
-       .article{
-           border: 4px solid #3e3c3d;
-           float: left;
-           height: 700px;
-       }
-       .aside{
-           border: 4px solid #3e3c3d;
-           float: left;
-           height: 700px;
+        .article {
+            border: 2px solid #3e3c3d;
+            float: left;
+            height: 700px;
+        }
+
+        .aside {
+            border: 2px solid #3e3c3d;
+            float: left;
+            height: 700px;
 
 
-       }
-       .footer {
-           border: 4px solid #3e3c3d;
+        }
 
-           float: left;
-           width: 100%;
-       }
+        .footer {
+            border: 4px solid #3e3c3d;
 
-   </style>
+            float: left;
+            width: 100%;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -72,15 +74,17 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand home" href="/furama" >Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand home" href="/furama">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link employee" href="/furama?action=employee">Employee <span class="sr-only">(current)</span></a>
+                    <a class="nav-link employee" href="/furama?action=employee">Employee <span
+                            class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link customer" href="/furama?action=customer">Customer</a>
@@ -101,24 +105,45 @@
 
 
     <div class="row">
-        <div class="col-3 article">
-
+        <div class="col-3 article " style="margin-top: 2%">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Primary card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Secondary card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Secondary card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
         </div>
-        <div class="col-9 aside">
-
+        <div class="col-9 aside ">
+            <img src="https://dulichkhampha24.com/wp-content/uploads/2020/07/Fusion-Maia-Resort-Da-Nang-ch-696x464.png"
+                 style="width: 100%;height: 100%" alt="Card image cap">
         </div>
     </div>
-
-        <footer class="panel panel-default">
-            <div class="panel-heading text-center footer">
-                <p>CodeGym &copy; 2017</p>
-            </div>
-        </footer>
+    <footer class="panel panel-default">
+        <div class="panel-heading text-center footer">
+            <p>CodeGym &copy; 2017</p>
+        </div>
+    </footer>
 
 
 </div>
-
-
 </body>
 <script src="../js/bootstrap.bundle.js"></script>
 </html>

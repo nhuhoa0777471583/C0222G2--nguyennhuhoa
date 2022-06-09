@@ -10,7 +10,7 @@
 <body>
 <header>
     <nav class="navbar navbar-light bg-light justify-content-between ">
-        <a class="navbar-brand">
+        <a class="navbar-brand" href="/customer">
             <img src="https://zoukclub.com/wp-content/uploads/2019/11/Furama-Riverfront-Logo.png"
                  width="400px" height="150px"></a>
         <form class="form-inline">
@@ -23,17 +23,24 @@
     <form method="post">
         <tr>
             <td><label>Name</label></td>
-            <td><input type="text" name="name"></td>
+            <td>
+                <input type="text" name="name">
+                <small style="color: red">${errorMap.name}</small>
+            </td>
         </tr>
         <tr>
             <td><label>Birthday</label></td>
-            <td><input type="text" name="birthday"></td>
+            <td>
+                <input type="date" name="birthday">
+                <small style="color: red">${errorMap.birthday}</small>
+            </td>
         </tr>
 
         <tr>
             <td><label>Gender</label></td>
             <td>
                 <select name="gender">
+                    <small style="color: red">${errorMap.gender}</small>
                     <option value="1">Nam</option>
                     <option value="0">Nữ</option>
                     <option value="2">giới tính thứ 3</option>
@@ -43,32 +50,46 @@
 
         <tr>
             <td><label>id card</label></td>
-            <td><input type="text" name="idCard"></td>
+            <td>
+                <input type="text" name="idCard">
+                <small style="color: red">${errorMap.idCard}</small>
+            </td>
         </tr>
+
         <tr>
             <td><label>phone</label></td>
-            <td><input type="text" name="phone"></td>
+            <td>
+                <input type="text" name="phone">
+                <small style="color: red">${errorMap.phone}</small>
+            </td>
         </tr>
 
         <tr>
             <td><label>email</label></td>
-            <td><input type="text" name="email"></td>
+            <td>
+                <input type="text" name="email">
+                <small style="color: red">${errorMap.email}</small>
+            </td>
         </tr>
         <tr>
             <td><label>address</label></td>
-            <td><input type="text" name="address"></td>
+            <td>
+                <input type="text" name="address">
+                <small style="color: red">${errorMap.address}</small>
+            </td>
         </tr>
 
         <tr>
             <td>Customer Type</td>
             <td>
                 <select name="idCustomerType">
-                    <c:forEach items="${customerTypeList}" var="temp">
+                    <c:forEach items="${customerType}" var="temp">
                         <option value="${temp.idCustomerType}">${temp.nameCustomerType}</option>
                     </c:forEach>
                 </select>
+            </td>
         </tr>
-        </td>
+
         <td>
             <button type="submit">Submit</button>
         </td>

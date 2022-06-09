@@ -20,9 +20,25 @@ public class EmployeeServiceImpl implements IEmployee {
         return iEmployye.getAllEmployee();
     }
 
+
     @Override
-    public void remove(int id) {
-        this.iEmployye.remove(id);
+    public void deleteEmployee(Integer id) {
+        this.iEmployye.deleteEmployee(id);
+    }
+
+    @Override
+    public Employee findById(Integer id) {
+        return iEmployye.findById(id);
+    }
+
+    @Override
+    public void update(Employee employeeUpdate) {
+        this.iEmployye.update(employeeUpdate);
+    }
+
+    @Override
+    public List<Employee> searchNameEmployee(String nameSearch) {
+        return iEmployye.searchNameEmployee(nameSearch);
     }
 
 }
