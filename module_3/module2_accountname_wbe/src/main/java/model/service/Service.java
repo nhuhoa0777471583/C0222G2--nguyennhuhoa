@@ -16,6 +16,19 @@ public class Service {
     public Service() {
     }
 
+    public Service(String nameService, Integer area, Double cost, Integer maxPeople, String standardRoom, String descriptionOtherConvenience, Double poolArea, Integer numberOfFloat, Integer idRentType, Integer idServiceType) {
+        this.nameService = nameService;
+        this.area = area;
+        this.cost = cost;
+        this.maxPeople = maxPeople;
+        this.standardRoom = standardRoom;
+        this.descriptionOtherConvenience = descriptionOtherConvenience;
+        this.poolArea = poolArea;
+        this.numberOfFloat = numberOfFloat;
+        this.idRentType = idRentType;
+        this.idServiceType = idServiceType;
+    }
+
     public Service(Integer idService, String nameService, Integer area, Double cost, Integer maxPeople, String standardRoom, String descriptionOtherConvenience, Double pool_area, Integer numberOfFloat, Integer idRentType, Integer idServiceType) {
         this.idService = idService;
         this.nameService = nameService;

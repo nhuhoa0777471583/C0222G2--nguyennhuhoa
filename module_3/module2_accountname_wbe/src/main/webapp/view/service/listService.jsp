@@ -58,7 +58,9 @@
             <th>${temp.idService}</th>
             <th>${temp.nameService}</th>
             <th>${temp.area}</th>
-            <th>${temp.cost}</th>
+            <th>
+                <fmt:formatNumber pattern="#" value="${temp.cost}"/>
+            </th>
             <th>${temp.maxPeople}</th>
             <th>${temp.standardRoom}</th>
             <th>${temp.descriptionOtherConvenience}</th>
@@ -66,7 +68,7 @@
             <th>${temp.numberOfFloat}</th>
             <th>${temp.idRentType}</th>
             <th>${temp.idServiceType}</th>
-            <th><a href="/employee?action=edit&id=${temp.idService}">Edit</a></th>
+            <th><a href="/service?action=edit&id=${temp.idService}">Edit</a></th>
             <th>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModal${temp.idService}">
@@ -90,7 +92,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary">
-                                    <a href="/employee?action=delete&id=${temp.idService}">Delete</a>
+                                    <a href="/service?action=delete&id=${temp.idService}">Delete</a>
                                 </button>
                             </div>
                         </div>

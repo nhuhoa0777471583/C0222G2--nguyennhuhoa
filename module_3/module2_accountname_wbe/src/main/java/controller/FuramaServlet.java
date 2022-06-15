@@ -15,13 +15,13 @@ public class FuramaServlet extends HttpServlet {
         }
         switch (action) {
             case "employee":
-                new EmployeeServlet().doGet(request,response);
+                new EmployeeServlet().doGet(request, response);
                 break;
             case "customer":
-                new CustomerServlet().doGet(request,response);
+                new CustomerServlet().doGet(request, response);
                 break;
             case "service":
-//                showService(request, response);
+                new ServiceServlet().doGet(request, response);
                 break;
             case "contract":
 //                showContract(request, response);
@@ -37,10 +37,11 @@ public class FuramaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
+
     private void showFurama(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/view.jsp");
-        dispatcher.forward(request,response);
+        dispatcher.forward(request, response);
 
     }
 //

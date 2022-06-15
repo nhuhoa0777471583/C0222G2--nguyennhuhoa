@@ -13,4 +13,24 @@ public class ServiceServiceImpl implements IServiceService {
     public List<Service> getAllService() {
         return iServiceRepository.getAllService();
     }
+
+    @Override
+    public void save(Service service) {
+        this.iServiceRepository.save(service);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        this.iServiceRepository.delete(id);
+    }
+
+    @Override
+    public Service findById(Integer id) {
+        return iServiceRepository.findById(id);
+    }
+
+    @Override
+    public void update(Service service) {
+        this.iServiceRepository.update(service);
+    }
 }

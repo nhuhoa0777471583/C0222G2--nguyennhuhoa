@@ -128,7 +128,7 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
         List<Customer> customerList = new ArrayList<>();
         try (Connection connection = this.baseRepository.getConnectionJavaTODB()) {
             PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_NAME_CUSTOMER);
-            preparedStatement.setString(1,  "%" + nameSearch +"%");
+            preparedStatement.setString(1, "%" + nameSearch + "%");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Integer id = Integer.parseInt(resultSet.getString("id_customer"));
