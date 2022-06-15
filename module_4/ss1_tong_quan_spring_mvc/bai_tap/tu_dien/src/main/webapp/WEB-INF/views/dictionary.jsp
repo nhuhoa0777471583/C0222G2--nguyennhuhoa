@@ -15,12 +15,13 @@
     <table>
         <tr>
             <td>English :</td>
-            <td><input type="text" name="e"></td>
+            <td><input type="text" name="e" value="${e}"></td>
         </tr>
     </table>
+    <button>Dictionary Search</button>
 </form>
-<button>Dictionary Search</button>
 
-<h3>Việt Nam : </h3>
+
+<h3>Việt Nam : ${vn}</h3>
 </body>
 </html>

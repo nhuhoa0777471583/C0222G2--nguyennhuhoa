@@ -1,2 +1,5 @@
-package com.dictionary.service;public interface IDictionaryService {
+package com.dictionary.service;
+
+public interface IDictionaryService {
+    String dictionary(String english);
 }
