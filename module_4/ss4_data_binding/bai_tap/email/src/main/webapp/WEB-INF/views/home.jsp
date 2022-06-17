@@ -12,7 +12,7 @@
                 <label>Languages:</label>
             </td>
             <td>
-                <form:select  path="language" id="languages">
+                <form:select  path="language" >
                     <option>Choose a Languages:</option>
                     <form:option value="english">English</form:option>
                     <form:option value="vietnam">Vietnamese</form:option>

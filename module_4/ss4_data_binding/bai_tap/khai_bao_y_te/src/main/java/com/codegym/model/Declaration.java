@@ -11,12 +11,13 @@ public class Declaration {
     private Integer seats;
     private String startDay;
     private String endDay;
+    private String infoGoToIn14Day;
 
     public Declaration() {
     }
 
-    public Declaration(String name, String birthYear, String gender, String nationality, Integer idCard,
-                       String travelInfor, String idVehicle, Integer seats, String startDay, String endDay) {
+    public Declaration(String name, String birthYear, String gender, String nationality, Integer idCard, String travelInfor,
+                       String idVehicle, Integer seats, String startDay, String endDay, String infoGoToIn14Day) {
         this.name = name;
         this.birthYear = birthYear;
         this.gender = gender;
@@ -27,7 +28,10 @@ public class Declaration {
         this.seats = seats;
         this.startDay = startDay;
         this.endDay = endDay;
+        this.infoGoToIn14Day = infoGoToIn14Day;
     }
+
+
 
     public String getName() {
         return name;
@@ -107,5 +111,13 @@ public class Declaration {
 
     public void setEndDay(String endDay) {
         this.endDay = endDay;
+    }
+
+    public String getInfoGoToIn14Day() {
+        return infoGoToIn14Day;
+    }
+
+    public void setInfoGoToIn14Day(String infoGoToIn14Day) {
+        this.infoGoToIn14Day = infoGoToIn14Day;
     }
 }
