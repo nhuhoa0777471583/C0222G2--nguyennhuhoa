@@ -47,9 +47,9 @@ public class ProductService implements IProductService {
     @Override
     public List<Product> searchByName(String name) {
         List<Product> productList = new ArrayList<>();
-        for (Map.Entry<Integer, Product> pro : products.entrySet()){
-            if(pro.getValue().getNameProduct().contains(name)){
-                productList.add(pro.getValue());
+        for (Product pro : products.values()){
+            if(pro.getNameProduct().contains(name)){
+                productList.add(pro);
             }
         }
         return productList;

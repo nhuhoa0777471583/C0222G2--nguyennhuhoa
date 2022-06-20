@@ -7,8 +7,8 @@
 </head>
 <body>
 <nav class="navbar navbar-light bg-light">
-    <form class="form-inline" action="/product">
-        <input class="form-control mr-sm-2" type="search" name="nameSearch"  placeholder="Search" aria-label="Search">
+    <form class="form-inline" action="/product/search" method="get">
+        <input class="form-control mr-sm-2" type="search"  name="nameSearch" th:value="${nameSearch}"  placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 </nav>

@@ -6,10 +6,7 @@ import com.codegym.service.IProductService;
 import com.codegym.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -73,9 +70,10 @@ public class ProductController {
         return "view";
     }
 
-    @GetMapping("/{nameSearch}/search")
-    public String searchByName(@PathVariable String nameSearch, Model model) {
-        model.addAttribute("product", iProductService.searchByName(nameSearch));
-        return "redirect:/product";
+    @GetMapping("/search")
+    public String searchByName(@RequestParam String nameSearch, Model model) {
+        model.addAttribute("nameSearch",nameSearch);
+        model.addAttribute("products", iProductService.searchByName(nameSearch));
+        return "index";
     }
 }
