@@ -39,8 +39,8 @@
             <td th:text="${m.getNameSinger()}"></td>
             <td th:text="${m.getCategory()}"></td>
             <td th:text="${m.getFileMusic()}"></td>
-            <td><a th:href="@{/music/{id}/edit(id=${m.getId()})}">Edit</a></td>
-            <td><a th:href="@{/music/{id}/delete(id=${m.getId()})}">Delete</a></td>
+            <td><a th:href="@{/music/edit/{id}(id=${m.getId()})}">Edit</a></td>
+            <td><a th:href="@{/music/delete/{id}(id=${m.getId()})}">Delete</a></td>
         </tr>
         </tbody>
     </table>

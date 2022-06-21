@@ -34,7 +34,7 @@ public class MusicRepository implements IMusicRepository {
     }
 
     @Override
-    public void update( Music music) {
+    public void update(Music music) {
         EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
         entityTransaction.begin();
         BaseRepository.entityManager.merge(music);
@@ -46,7 +46,7 @@ public class MusicRepository implements IMusicRepository {
     public void delete(Integer id) {
         EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
         entityTransaction.begin();
-        BaseRepository.entityManager.remove(id);
+        BaseRepository.entityManager.remove(BaseRepository.entityManager.find(Music.class, id));
         entityTransaction.commit();
     }
 }

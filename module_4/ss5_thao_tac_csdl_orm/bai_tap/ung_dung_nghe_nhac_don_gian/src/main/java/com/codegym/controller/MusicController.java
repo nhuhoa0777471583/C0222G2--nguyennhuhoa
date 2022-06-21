@@ -38,7 +38,7 @@ public class MusicController {
         return "redirect:/music";
     }
 
-    @GetMapping("/{id}/edit")
+    @GetMapping("/edit/{id}")
     public String showEdit(@PathVariable Integer id, Model model) {
         model.addAttribute("music", iMusicService.findById(id));
         return "edit";
@@ -51,11 +51,12 @@ public class MusicController {
         return "redirect:/music";
     }
 
-    @GetMapping("/{id}/delete")
+    @GetMapping("/delete/{id}")
     public String showDelete(@PathVariable Integer id, Model model) {
         model.addAttribute("music", iMusicService.findById(id));
         return "delete";
     }
+
 
     @PostMapping("/delete")
     public String delete(Music music, RedirectAttributes redirectAttributes) {
