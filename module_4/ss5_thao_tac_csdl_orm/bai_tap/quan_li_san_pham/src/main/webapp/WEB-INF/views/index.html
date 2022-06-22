@@ -43,7 +43,7 @@
 
         <td th:text="${pro.getNameProduct()}"></td>
         <td th:text="${pro.getPrice()}"></td>
-        <td th:text="${pro.getDescribe()}"></td>
+        <td th:text="${pro.getInformation()}"></td>
         <td th:text="${pro.getMadeIn()}"></td>
         <td><a th:href="@{/product/{id}/edit(id=${pro.getId()})}">edit</a></td>
         <td><a th:href="@{/product/{id}/delete(id=${pro.getId()})}">delete</a></td>
