@@ -1,2 +1,4 @@
-package bai_tap_lam_them.bai_tap_them_123.service;public class ITeacher {
+package bai_tap_lam_them.bai_tap_them_123.service;
+
+public interface ITeacher extends IService {
 }

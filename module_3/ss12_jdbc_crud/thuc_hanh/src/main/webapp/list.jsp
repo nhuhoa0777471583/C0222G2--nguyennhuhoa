@@ -12,10 +12,8 @@
 
 <nav class="navbar navbar-light bg-light">
     <form class="form-inline" method="get" action="/user">
-
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="sea      rchCountry">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchCountry">
             <input class="btn btn-outline-success my-2 my-sm-0" type="submit" name="action" value="search">
-
     </form>
 </nav>
 

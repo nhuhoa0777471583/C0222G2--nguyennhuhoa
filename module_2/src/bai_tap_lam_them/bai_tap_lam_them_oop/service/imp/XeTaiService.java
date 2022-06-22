@@ -1,8 +1,7 @@
-package bai_tap_lam_them_oop.service.imp;
+package bai_tap_lam_them.bai_tap_lam_them_oop.service.imp;
 
-import bai_tap_lam_them_oop.model.Oto;
-import bai_tap_lam_them_oop.model.XeTai;
-import bai_tap_lam_them_oop.service.cac_interface.IXeTaiService;
+import bai_tap_lam_them.bai_tap_lam_them_oop.model.XeTai;
+import bai_tap_lam_them.bai_tap_lam_them_oop.service.cac_interface.IXeTaiService;
 
 import java.util.ArrayList;
 import java.util.List;

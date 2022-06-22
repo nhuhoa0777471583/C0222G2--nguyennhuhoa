@@ -1,7 +1,7 @@
-package bai_tap_lam_them_oop.service.imp;
+package bai_tap_lam_them.bai_tap_lam_them_oop.service.imp;
 
-import bai_tap_lam_them_oop.model.Oto;
-import bai_tap_lam_them_oop.service.cac_interface.IOtoService;
+import bai_tap_lam_them.bai_tap_lam_them_oop.model.Oto;
+import bai_tap_lam_them.bai_tap_lam_them_oop.service.cac_interface.IOtoService;
 
 import java.util.*;
 

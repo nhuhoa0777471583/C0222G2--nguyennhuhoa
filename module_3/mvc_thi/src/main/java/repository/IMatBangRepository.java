@@ -6,8 +6,9 @@ import java.util.List;
 
 public interface IMatBangRepository {
     List<MatBang> getAll();
-    void delete(Integer id);
+    void delete(String id);
     MatBang findById (Integer id);
+    void save(MatBang matBang);
 //    List<MatBang> search()
 
 

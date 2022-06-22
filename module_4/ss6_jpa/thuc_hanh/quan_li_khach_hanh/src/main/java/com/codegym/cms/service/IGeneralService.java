@@ -1,4 +1,13 @@
 package com.codegym.cms.service;
 
-public interface IGeneralService {
+import java.util.List;
+
+public interface IGeneralService<T> {
+    List<T> findAll();
+
+    T findById(Long id);
+
+    void save(T t);
+
+    void remove(Long id);
 }

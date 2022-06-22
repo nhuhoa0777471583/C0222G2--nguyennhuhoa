@@ -1,6 +1,4 @@
-package bai_tap_lam_them_oop.model;
-
-import java.util.Scanner;
+package bai_tap_lam_them.bai_tap_lam_them_oop.model;
 
 public class XeTai extends PhuongTien {
     private String trongTai;

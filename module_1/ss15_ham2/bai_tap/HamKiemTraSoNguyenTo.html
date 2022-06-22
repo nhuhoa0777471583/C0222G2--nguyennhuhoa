@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num=0;
+    soNguyenTo(num);
+    function soNguyenTo(n) {
+        if(n<2){
+            return false;
+        }
+        else{
+            for(let i=2;i<n;i++){
+                if(n%i===0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    while(num<20){
+        if(soNguyenTo(num)){
+            document.write(num+"<br>");
+        }
+        num++;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<form action="calculate.jsp" method="post">
+<form action="/calculate" method="post">
 
   Product Description <input type="text" name="description" placeholder="enter: "/>
   <br>

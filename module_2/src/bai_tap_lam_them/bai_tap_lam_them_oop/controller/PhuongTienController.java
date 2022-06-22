@@ -1,20 +1,14 @@
-package bai_tap_lam_them_oop.controller;
+package bai_tap_lam_them.bai_tap_lam_them_oop.controller;
 
-import bai_tap_lam_them_oop.model.Oto;
-import bai_tap_lam_them_oop.model.PhuongTien;
-import bai_tap_lam_them_oop.model.XeMay;
-import bai_tap_lam_them_oop.model.XeTai;
-import bai_tap_lam_them_oop.service.cac_interface.IPhuongTienService;
-import bai_tap_lam_them_oop.service.cac_interface.IXeMayService;
-import bai_tap_lam_them_oop.service.cac_interface.IXeTaiService;
-import bai_tap_lam_them_oop.service.imp.OtoService;
-import bai_tap_lam_them_oop.service.imp.PhuongTienService;
-import bai_tap_lam_them_oop.service.imp.XeMayService;
-import bai_tap_lam_them_oop.service.imp.XeTaiService;
-import bai_tap_lam_them_oop.service.cac_interface.IOtoService;
+import bai_tap_lam_them.bai_tap_lam_them_oop.service.cac_interface.IPhuongTienService;
+import bai_tap_lam_them.bai_tap_lam_them_oop.service.cac_interface.IXeMayService;
+import bai_tap_lam_them.bai_tap_lam_them_oop.service.cac_interface.IXeTaiService;
+import bai_tap_lam_them.bai_tap_lam_them_oop.service.imp.OtoService;
+import bai_tap_lam_them.bai_tap_lam_them_oop.service.imp.PhuongTienService;
+import bai_tap_lam_them.bai_tap_lam_them_oop.service.imp.XeMayService;
+import bai_tap_lam_them.bai_tap_lam_them_oop.service.imp.XeTaiService;
+import bai_tap_lam_them.bai_tap_lam_them_oop.service.cac_interface.IOtoService;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class PhuongTienController {

@@ -39,7 +39,7 @@ public class HouseService implements IHouse {
         String tieuChuanPhong = sc.nextLine();
         System.out.print("thêm so tầng: ");
         String soTang = sc.nextLine();
-        House house1 = new House(maDichVu,tenDichVu, dienTichSD, chiPhiThue, soNguoi, kieuThue, tieuChuanPhong, soTang);
+        House house1 = new House(maDichVu, tenDichVu, dienTichSD, chiPhiThue, soNguoi, kieuThue, tieuChuanPhong, soTang);
         System.out.println(house1);
         houseMap.put(house1, 1);
         Write.writeHouse(houseMap, false);
@@ -51,6 +51,19 @@ public class HouseService implements IHouse {
         houseMap = Read.readHouse();
         for (Map.Entry<House, Integer> h : houseMap.entrySet()) {
             System.out.println(h);
+        }
+    }
+
+    public static String displayIdHouse() {
+        houseMap = Read.readHouse();
+        while (true) {
+            System.out.println("nhap ma house theo ds house: ");
+            String id = sc.nextLine();
+            for (Map.Entry<House, Integer> h : houseMap.entrySet()) {
+                if (id.equals(h.getKey().getMaDichVu())) {
+                    return id;
+                }
+            }
         }
     }
 

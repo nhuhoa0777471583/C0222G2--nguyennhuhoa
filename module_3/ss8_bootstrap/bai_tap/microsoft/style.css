@@ -16,6 +16,7 @@
     width: 45px;
     margin-left: 40px;
 }
-.example-element {
-    margin-bottom: 1rem;
+.card-deck {
+    margin-left: 10px;
+    margin-right: 10px;
 }

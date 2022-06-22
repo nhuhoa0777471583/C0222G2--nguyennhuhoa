@@ -30,6 +30,7 @@ public class VillaService implements IVilla {
 //        Write.writeVilla(villaMap, true);
 //    }
 
+
     @Override
     public void addVilla() {
 
@@ -103,6 +104,19 @@ public class VillaService implements IVilla {
         villaMap = Read.readVilla();
         for (Map.Entry<Villa, Integer> v : villaMap.entrySet()) {
             System.out.println(v);
+        }
+    }
+
+    public static String displayIdVilla() {
+   villaMap = Read.readVilla();
+        while (true) {
+            System.out.println("nhap ma villa theo ds villa: ");
+            String id = sc.nextLine();
+            for (Map.Entry<Villa, Integer> v : villaMap.entrySet()) {
+                if (id.equals(v.getKey().getMaDichVu())) {
+                    return id;
+                }
+            }
         }
     }
 

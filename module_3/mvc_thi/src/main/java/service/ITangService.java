@@ -1,2 +1,9 @@
-package service.impl;public interface ITangService {
+package service;
+
+import model.Tang;
+
+import java.util.List;
+
+public interface ITangService {
+    List<Tang> getAll();
 }

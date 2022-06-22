@@ -1,6 +1,6 @@
 package case_study2.model.person;
 
-public class Person {
+public abstract class Person {
     //Họ tên, Ngày sinh, Giới tính, Số CMND, Số Điện Thoại, Email
     private Integer id;
     private String hoTen;

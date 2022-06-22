@@ -24,7 +24,7 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
     @Override
     public List<Customer> getAll() {
         List<Customer> customerList = new ArrayList<>();
-        try (Connection connection = this.baseRepository.getConnectionJavaTODB();) {
+        try (Connection connection = this.baseRepository.getConnectionJavaTODB()) {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FROM_CUSTOMER);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {

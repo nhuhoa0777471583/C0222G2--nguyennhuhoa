@@ -45,9 +45,14 @@ public class EmployeeServiceImpl implements IEmployeeService {
         String maNhanVien = sc.nextLine();
 
 
-        String trinhDo = addTrinhDo();
+//        String trinhDo = addTrinhDo();
+//        String viTri = addVitri();
 
-        String viTri = addVitri();
+        System.out.println("thêm trình độ: ");
+        String trinhDo= sc.nextLine();
+
+        System.out.println("thêm vị trí: ");
+        String viTri= sc.nextLine();
 
         System.out.print("them luong: ");
         String luong = sc.nextLine();
@@ -57,90 +62,90 @@ public class EmployeeServiceImpl implements IEmployeeService {
         Write.writeEmployee(employeeList, false);
     }
 
-    private String addVitri() {
-        System.out.print("them vi tri:" +
-                "1.Lễ tân\n" +
-                "2.phục vụ\n" +
-                "3.chuyên viên\n" +
-                "4.giám sát\n" +
-                "5.quản lý\n" +
-                "6.giám đốc\n" );
-        int chosse1;
-        while (true) {
-            try {
-                chosse1 = Integer.parseInt(sc.nextLine());
-                if (chosse1 < 1 || chosse1 > 6) {
-                    throw new Limit("số quá giới hạn ");
-                }
-                break;
-            } catch (Limit e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println("ko nhap ki tu");
-            }
-        }
-        String viTri = null;
-        switch (chosse1){
-            case 1:
-                viTri ="lễ tân";
-                break;
-            case 2:
-                viTri ="phục vụ";
-                break;
-            case 3:
-                viTri ="chuyên viên";
-                break;
-            case 4:
-                viTri ="giám sát";
-                break;
-            case 5:
-                viTri ="quản lý";
-                break;
-            case 6:
-                viTri ="giám đốc";
-                break;
-        }
-        return viTri;
-    }
-
-    private String addTrinhDo() {
-        System.out.print("them trinh do:\n" +
-                "1.Trung cấp\n" +
-                "2.Cao đẳng\n" +
-                "3.Đại học\n" +
-                "4.sau đại học\n" );
-        int chosse;
-        while (true) {
-            try {
-                System.out.println("chon:");
-                chosse = Integer.parseInt(sc.nextLine());
-                if (chosse < 1 || chosse > 4) {
-                    throw new Limit("số quá giới hạn ");
-                }
-                break;
-            } catch (Limit e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println("ko nhap ki tu");
-            }
-        }
-        String trinhDo = null;
-        switch (chosse) {
-            case 1:
-                trinhDo = "Trung cấp";
-                break;
-            case 2:
-                trinhDo = "Cao đẳng";
-                break;
-            case 3:
-                trinhDo = "Đại học";
-                break;
-            case 4:
-                trinhDo = "sau đại học";
-                break;
-        }
-        return trinhDo;
-    }
+//  private String addVitri() {
+//        System.out.print("them vi tri:" +
+//                "1.Lễ tân\n" +
+//                "2.phục vụ\n" +
+//                "3.chuyên viên\n" +
+//                "4.giám sát\n" +
+//                "5.quản lý\n" +
+//                "6.giám đốc\n" );
+//        int chosse1;
+//        while (true) {
+//            try {
+//                chosse1 = Integer.parseInt(sc.nextLine());
+//                if (chosse1 < 1 || chosse1 > 6) {
+//                    throw new Limit("số quá giới hạn ");
+//                }
+//                break;
+//            } catch (Limit e) {
+//                System.out.println(e.getMessage());
+//            } catch (Exception e) {
+//                System.out.println("ko nhap ki tu");
+//            }
+//        }
+//        String viTri = null;
+//        switch (chosse1){
+//            case 1:
+//                viTri ="lễ tân";
+//                break;
+//            case 2:
+//                viTri ="phục vụ";
+//                break;
+//            case 3:
+//                viTri ="chuyên viên";
+//                break;
+//            case 4:
+//                viTri ="giám sát";
+//                break;
+//            case 5:
+//                viTri ="quản lý";
+//                break;
+//            case 6:
+//                viTri ="giám đốc";
+//                break;
+//        }
+//        return viTri;
+//    }
+//
+//    private String addTrinhDo() {
+//        System.out.print("them trinh do:\n" +
+//                "1.Trung cấp\n" +
+//                "2.Cao đẳng\n" +
+//                "3.Đại học\n" +
+//                "4.sau đại học\n" );
+//        int chosse;
+//        while (true) {
+//            try {
+//                System.out.println("chon:");
+//                chosse = Integer.parseInt(sc.nextLine());
+//                if (chosse < 1 || chosse > 4) {
+//                    throw new Limit("số quá giới hạn ");
+//                }
+//                break;
+//            } catch (Limit e) {
+//                System.out.println(e.getMessage());
+//            } catch (Exception e) {
+//                System.out.println("ko nhap ki tu");
+//            }
+//        }
+//        String trinhDo = null;
+//        switch (chosse) {
+//            case 1:
+//                trinhDo = "Trung cấp";
+//                break;
+//            case 2:
+//                trinhDo = "Cao đẳng";
+//                break;
+//            case 3:
+//                trinhDo = "Đại học";
+//                break;
+//            case 4:
+//                trinhDo = "sau đại học";
+//                break;
+//        }
+//        return trinhDo;
+//    }
 
 
 //    private String addTrinhDo() {

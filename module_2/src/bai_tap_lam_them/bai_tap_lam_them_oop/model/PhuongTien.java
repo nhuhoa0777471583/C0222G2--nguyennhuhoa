@@ -1,4 +1,4 @@
-package bai_tap_lam_them_oop.model;
+package bai_tap_lam_them.bai_tap_lam_them_oop.model;
 
 public class PhuongTien {
     private String bienKiemSoat;

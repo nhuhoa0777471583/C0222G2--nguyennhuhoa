@@ -1,2 +1,4 @@
-package crudtaosan.service;public interface IDienThoaiChinhHang {
+package crudtaosan.service;
+
+public interface IDienThoaiChinhHang extends IService{
 }

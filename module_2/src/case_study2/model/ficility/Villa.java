@@ -1,6 +1,6 @@
 package case_study2.model.ficility;
 
-public class Villa extends Facility{
+public class Villa extends Facility {
     //Tiêu chuẩn phòng, Diện tích hồ bơi, Số tầng.
     private String tieuChuanPhong;
     private String dienTichHoBoi;
@@ -55,4 +55,5 @@ public class Villa extends Facility{
         return getMaDichVu()+","+getTenDichVu()+","+getDienTichSuDung()+","+getChiPhiThue()+","+getSoNguoi()+","+
                 getKieuThue()+","+getTieuChuanPhong()+","+getDienTichHoBoi()+","+getSoTang();
     }
+
 }

@@ -1,7 +1,5 @@
 package repository.sevice.impl;
 
-import com.mysql.cj.xdevapi.PreparableStatement;
-import model.customer.Customer;
 import model.service.Service;
 import repository.BaseRepository;
 import repository.sevice.IServiceRepository;
@@ -24,6 +22,7 @@ public class ServiceRepositoryImpl implements IServiceRepository {
             " standard_room = ?," +
             " description_other_convenience = ?,pool_area = ?,number_of_float = ?," +
             " id_rent_type = ? ,id_service_type = ? where id_service = ?  ";
+    public static final String FIND_BY_NAME = " select * from service where name_service like ? ";
     private BaseRepository baseRepository = new BaseRepository();
 
 
@@ -136,5 +135,33 @@ public class ServiceRepositoryImpl implements IServiceRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public  List<Service> searchName(String nameSearchService) {
+        List<Service> service = new ArrayList<>();
+        try(Connection connection = baseRepository.getConnectionJavaTODB()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_NAME);
+            preparedStatement.setString(1,"%" + nameSearchService + "%");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Integer id = resultSet.getInt("id_service");
+                String name = resultSet.getString("name_service");
+                Integer area = resultSet.getInt("area");
+                Double cost = resultSet.getDouble("cost");
+                Integer maxPeople = resultSet.getInt("max_people");
+                String standardRoom = resultSet.getString("standard_room");
+                String descriptionOtherConvenience = resultSet.getString("description_other_convenience");
+                Double poolArea = resultSet.getDouble("pool_area");
+                Integer numberOfFloat = resultSet.getInt("number_of_float");
+                Integer idRentType = resultSet.getInt("id_rent_type");
+                Integer idServiceType = resultSet.getInt("id_service_type");
+                service.add(new Service(id,name, area, cost, maxPeople, standardRoom, descriptionOtherConvenience,
+                        poolArea, numberOfFloat, idRentType, idServiceType));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return service;
     }
 }

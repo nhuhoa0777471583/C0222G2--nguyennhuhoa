@@ -33,4 +33,9 @@ public class ServiceServiceImpl implements IServiceService {
     public void update(Service service) {
         this.iServiceRepository.update(service);
     }
+
+    @Override
+    public  List<Service> searchName(String nameSearchService) {
+        return iServiceRepository.searchName(nameSearchService);
+    }
 }

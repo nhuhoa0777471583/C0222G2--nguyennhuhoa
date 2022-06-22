@@ -8,6 +8,7 @@ import case_study2.serivce.impl.facility.HouseService;
 import case_study2.serivce.impl.facility.RoomService;
 import case_study2.serivce.impl.facility.VillaService;
 
+import java.util.Collections;
 import java.util.Scanner;
 
 public class ControllerFurama {
@@ -108,6 +109,7 @@ public class ControllerFurama {
             switch (chosse4) {
                 case 1:
                     System.out.println("You chosse add new booking");
+                    bookingService.add();
                     break;
                 case 2:
                     System.out.println("You chosse display list booking");

@@ -16,7 +16,7 @@ public class ValidateAll {
     private static final String REGEX_YEAR = "^([2][0]+[0-9]+[0-9]+)$";
 
 
-    public static boolean isMatchesBirth(String birth) {
+    public  static boolean isMatchesBirth(String birth) {
         return  birth.matches(REGEX_DAY + "/" + REGEX_MONTH + "/" + REGEX_YEAR);
     }
 

@@ -113,9 +113,9 @@
                                     class="text-danger"> ${temp.name}</p></p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">
-                                    <a href="/customer?action=delete&id=${temp.id}">Delete</a>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    <a href="/customer?action=delete&id=${temp.id}">Yes</a>
                                 </button>
                             </div>
                         </div>

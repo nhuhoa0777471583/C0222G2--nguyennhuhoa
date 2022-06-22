@@ -1,20 +1,28 @@
 package com.codegym.model;
 
+
+import javax.persistence.*;
+
+@Entity
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "name_product")
     private String nameProduct;
     private Double price;
-    private String describe;
+    private String information;
+    @Column(name = "made_in")
     private String madeIn;
 
     public Product() {
     }
 
-    public Product(Integer id, String nameProduct, Double price, String describe, String madeIn) {
+    public Product(Integer id, String nameProduct, Double price, String information, String madeIn) {
         this.id = id;
         this.nameProduct = nameProduct;
         this.price = price;
-        this.describe = describe;
+        this.information = information;
         this.madeIn = madeIn;
     }
 
@@ -42,12 +50,12 @@ public class Product {
         this.price = price;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getInformation() {
+        return information;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setInformation(String information) {
+        this.information = information;
     }
 
     public String getMadeIn() {

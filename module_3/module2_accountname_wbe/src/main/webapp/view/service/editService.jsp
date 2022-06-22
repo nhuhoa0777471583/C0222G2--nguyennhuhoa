@@ -24,7 +24,7 @@
         <h3><a href="/service">Back</a></h3>
     </form>
 </nav>
-<h2>${message}</h2>
+
 <table border="0" class="table table-bordered w-75 mx-auto">
     <form method="post">
             <tr>
@@ -60,22 +60,34 @@
                 <td>number_of_float</td>
                 <td><input name="numberofFloat" type="text" value="${service.numberOfFloat}"></td>
             </tr>
+
         <tr>
             <td>id_rent_type</td>
             <td>
                 <select name="idRentType">
                     <c:forEach items="${rentTypeList}" var="temp">
-                        <option value="${temp.idRentType}">${temp.nameRentType}</option>
+                        <c:if test="${temp.idRentType == service.idRentType}">
+                            <option value="${temp.idRentType}" selected>${temp.nameRentType}</option>
+                        </c:if>
+                        <c:if test="${temp.idRentType != service.idRentType}">
+                            <option value="${temp.idRentType}" >${temp.nameRentType}</option>
+                        </c:if>
                     </c:forEach>
                 </select>
             </td>
         </tr>
+
         <tr>
             <td>id_service_type</td>
             <td>
                 <select name="idServiceType">
-                    <c:forEach items="${serviceTypeList}" var="temp">
-                        <option value="${temp.idServiceType}">${temp.nameServiceType}</option>
+                    <c:forEach items="${serviceTypeList}" var="i">
+                        <c:if test="${i.idServiceType == service.idServiceType}">
+                            <option value="${i.idServiceType }" selected>${i.nameServiceType}</option>
+                        </c:if>
+                        <c:if test="${i.idServiceType != service.idServiceType}">
+                            <option value="${i.idServiceType }" >${i.nameServiceType}</option>
+                        </c:if>
                     </c:forEach>
                 </select>
             </td>

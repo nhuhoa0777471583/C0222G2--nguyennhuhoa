@@ -24,15 +24,14 @@
 
 
 <nav class="navbar navbar-light bg-light">
+    <h2 class="form-inline">List of Service</h2>
+    <h3 class="form-inline"><a href="/service?action=create">Create</a></h3>
     <form class="form-inline" action="/service">
-        <input class="form-control mr-sm-2" type="search" placeholder="nhập tên cần tìm" value="${nameSearch}"  aria-label="Search" name="nameSearchEmployee" >
+        <input class="form-control mr-sm-2" type="search" placeholder="nhập tên cần tìm" value="${nameSearchService}"
+               aria-label="Search" name="nameSearchService">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="action" value="search">Search</button>
     </form>
 </nav>
-
-<h2>List of Service</h2>
-<h3><a href="/service?action=create">Create</a></h3>
-
 
 <table class="table table-bordered table-striped" style="width: 100%" id="tableService">
     <thead>
@@ -66,9 +65,25 @@
             <th>${temp.descriptionOtherConvenience}</th>
             <th>${temp.poolArea}</th>
             <th>${temp.numberOfFloat}</th>
-            <th>${temp.idRentType}</th>
-            <th>${temp.idServiceType}</th>
+            <th>
+                <c:forEach items="${rentTypeList}" var="items">
+                    <c:if test="${items.idRentType == temp.idRentType}">
+                        ${items.nameRentType}
+                    </c:if>
+                </c:forEach>
+            </th>
+
+            <th>
+                <c:forEach items="${serviceTypeList}" var="item">
+                    <c:if test="${item.idServiceType == temp.idServiceType}">
+                        ${item.nameServiceType}
+                    </c:if>
+                </c:forEach>
+            </th>
+
             <th><a href="/service?action=edit&id=${temp.idService}">Edit</a></th>
+
+
             <th>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModal${temp.idService}">
@@ -76,13 +91,15 @@
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal${temp.idService}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="exampleModal${temp.idService}" tabindex="-1"
+                     aria-labelledby="exampleModalLabel"
                      aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X
+                                </button>
                             </div>
                             <div class="modal-body">
                                 <p> Do you want delete service have id is
@@ -118,9 +135,5 @@
         })
     })
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
+<script src="../../bootstrap413/js/bootstrap.bundle.js"></script>
 </html>

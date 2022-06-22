@@ -149,6 +149,7 @@ public class ServiceServlet extends HttpServlet {
         request.setAttribute("service", service);
         request.setAttribute("serviceTypeList", serviceTypeList);
         request.setAttribute("rentTypeList", rentTypeList);
+
         try {
             request.getRequestDispatcher("view/service/editService.jsp").forward(request, response);
         } catch (ServletException e) {
@@ -178,22 +179,33 @@ public class ServiceServlet extends HttpServlet {
         request.setAttribute("service", service);
         request.setAttribute("serviceTypeList", serviceTypeList);
         request.setAttribute("rentTypeList", rentTypeList);
-        request.setAttribute("message","sửa thành công");
-
-
         try {
-            request.getRequestDispatcher("view/service/editService.jsp").forward(request, response);
+            response.sendRedirect("service");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+//        try {
+//            request.getRequestDispatcher("view/service/editService.jsp").forward(request, response);
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+    }
+
+    private void search(HttpServletRequest request, HttpServletResponse response) {
+        String nameSearchService = request.getParameter("nameSearchService");
+        List<Service> serviceList =  this.iServiceService.searchName(nameSearchService);
+        request.setAttribute("serviceList",serviceList);
+        request.setAttribute("nameSearchService",nameSearchService);
+        try {
+            request.getRequestDispatcher("view/service/listService.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private void search(HttpServletRequest request, HttpServletResponse response) {
-        String name = request.getParameter("name");
-        Service this.iServiceService.search(name);
-
 
 
     }

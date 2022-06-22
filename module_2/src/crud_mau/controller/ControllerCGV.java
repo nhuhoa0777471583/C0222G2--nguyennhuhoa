@@ -19,7 +19,7 @@ public class ControllerCGV {
                         "4.Thoát\n" +
                         "Chọn chức năng: ");
 
-                int choose = sc.nextInt();
+                int choose = Integer.parseInt(sc.nextLine());
                 switch (choose) {
                     case 1:
                         System.out.println("Bạn chọn hiển thị danh sách xuất chiếu");

@@ -1,5 +1,6 @@
 package case_study2.common.read_and_write;
 
+import case_study2.model.Booking;
 import case_study2.model.ficility.House;
 import case_study2.model.ficility.Room;
 import case_study2.model.ficility.Villa;
@@ -19,6 +20,7 @@ public class Write {
     private static final String HOUSE_CSV = "src/case_study2/common/data/house.csv";
     private static final String EMPLOYEE_CSV = "src/case_study2/common/data/employee.csv";
     private static final String CUSTOMER_CSV = "src/case_study2/common/data/customer.csv";
+    public static final String BOOKING_CSV = "src/case_study2/common/data/booking.csv";
 
     public static void writeAll(List<String> stringList, String pathFile, boolean flag) {
         try {
@@ -72,5 +74,12 @@ public class Write {
             stringList.add(entryHouse.getKey().getInfoHouse() + "," + entryHouse.getValue());
         }
         writeAll(stringList, HOUSE_CSV, flag);
+    }
+    public static void writeBooking(List<Booking> bookingList,boolean flag){
+        List<String> stringList= new ArrayList<>();
+        for (Booking b: bookingList){
+            stringList.add(b.getInfoBooking());
+        }
+        writeAll(stringList, BOOKING_CSV,flag);
     }
 }

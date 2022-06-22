@@ -1,5 +1,6 @@
 package case_study2.common.read_and_write;
 
+import case_study2.model.Booking;
 import case_study2.model.ficility.House;
 import case_study2.model.ficility.Room;
 import case_study2.model.ficility.Villa;
@@ -18,6 +19,7 @@ public class Read {
     private static final String HOUSE_CSV = "src/case_study2/common/data/house.csv";
     private static final String EMPLOYEE_CSV = "src/case_study2/common/data/employee.csv";
     private static final String CUSTOMER_CSV = "src/case_study2/common/data/customer.csv";
+    public static final String BOOKING_CSV = "src/case_study2/common/data/booking.csv";
 
     public static List<String> readAll(String pathFile, boolean flag) {
         List<String> stringList = new ArrayList<>();
@@ -102,5 +104,16 @@ public class Read {
             houseMap.put(new House(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5],arr[6],arr[7]),Integer.parseInt(arr[8]));
         }
         return houseMap;
+    }
+    public static List<Booking> readBooking(){
+        List<String>stringList = readAll(BOOKING_CSV,true);
+        List<Booking> bookingList= new ArrayList<>();
+        String[]arr= null;
+        for (String str: stringList){
+            arr=str.split(",");
+            //mã booking, ngày bắt đầu, ngày kết thúc, mã khách hàng, tên dịch vụ, loại dịch vụ.
+            bookingList.add(new Booking(Integer.parseInt(arr[0]),arr[1],arr[2],arr[3],arr[4],arr[5]));
+        }
+        return bookingList;
     }
 }

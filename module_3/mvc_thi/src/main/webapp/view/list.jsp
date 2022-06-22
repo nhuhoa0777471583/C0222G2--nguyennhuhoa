@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Title</title>
@@ -10,105 +11,104 @@
 <body>
 
 <nav class="navbar navbar-light bg-light">
-    <form class="form-inline" action="/employee">
-        <input class="form-control mr-sm-2" type="search" placeholder="nhập tên cần tìm" value="${nameSearch}"  aria-label="Search" name="nameSearchEmployee" >
+    <form class="form-inline" action="/matBang">
+        <input class="form-control mr-sm-2" type="search" placeholder="nhập tên cần tìm" value="${nameSearch}"
+               aria-label="Search" name="nameSearchEmployee">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="action" value="search">Search</button>
     </form>
 </nav>
 
-<h2>List of Employee</h2>
-<h3><a href="/employee?action=create">Create</a></h3>
+<h2>List of product</h2>
+<h3><a href="/matBang?action=create">Create</a></h3>
 
 
 <table class="table table-bordered table-striped" style="width: 100%" id="table">
     <thead>
     <tr class="bg-primary">
-        <th scope="col">id</th>
-        <th scope="col">name</th>
-        <th scope="col">birthday</th>
-        <th scope="col">idCard</th>
-        <th scope="col">salary</th>
-        <th scope="col">phone</th>
-        <th scope="col">email</th>
-        <th scope="col">address</th>
-        <th scope="col">idPosition</th>
-        <th scope="col">idEducationDegree</th>
-        <th scope="col">idDivision</th>
-        <th scope="col">edit</th>
+        <th scope="col">mã mặt bằng</th>
+        <th scope="col">diện tích</th>
+        <th scope="col">mã trạng thái</th>
+        <th scope="col">tầng</th>
+        <th scope="col">mã loại văn phòng</th>
+        <th scope="col">mô tả</th>
+        <th scope="col">giá cho thuê (VNĐ)</th>
+        <th scope="col">ngày bắt đầu</th>
+        <th scope="col">ngày kết thúc</th>
         <th scope="col">delete</th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="temp" items="${employeeList}">
+    <c:forEach var="temp" items="${matBangList}">
         <tr>
-            <th>${temp.id}</th>
-            <th>${temp.name}</th>
-            <th>${temp.birthday}</th>
-            <th>${temp.idCard}</th>
+            <th>${temp.maMatBang}</th>
+            <th>${temp.dienTich}</th>
             <th>
-                <fmt:formatNumber pattern="#" value="${temp.salary}"/></th>
-
-            <th>${temp.phone}</th>
-            <th>${temp.email}</th>
-            <th>${temp.address}</th>
-            <th>
-                <c:choose>
-                    <c:when test="${temp.idPosition == 1}">Lễ tân</c:when>
-                    <c:when test="${temp.idPosition == 2}">phục vụ</c:when>
-                    <c:when test="${temp.idPosition == 3}">chuyên viên</c:when>
-                    <c:when test="${temp.idPosition == 4}">giám sát</c:when>
-                    <c:when test="${temp.idPosition == 5}">quản lý</c:when>
-                    <c:when test="${temp.idPosition == 6}">giám đốc</c:when>
-                </c:choose>
+                <c:forEach items="${trangThaiList}" var="i">
+                    <c:if test="${i.maTrangThai == temp.maTrangThai}">
+                        ${i.tenTrangThai}
+                    </c:if>
+                </c:forEach>
             </th>
             <th>
-                <c:choose>
-                    <c:when test="${temp.idEducationDegree == 1}">Trung cấp</c:when>
-                    <c:when test="${temp.idEducationDegree == 2}">Cao đẳng</c:when>
-                    <c:when test="${temp.idEducationDegree == 3}">Đại học</c:when>
-                    <c:when test="${temp.idEducationDegree == 4}">sau đại học</c:when>
-                </c:choose>
-            </th>
-            <th>
-                <c:choose>
-                    <c:when test="${temp.idDivision == 1}">Sale – Marketing</c:when>
-                    <c:when test="${temp.idDivision == 2}">Hành Chính</c:when>
-                    <c:when test="${temp.idDivision == 3}">Phục vụ</c:when>
-                    <c:when test="${temp.idDivision == 4}">Quản lý</c:when>
-                </c:choose>
+                <c:forEach items="${tangList}" var="i">
+                    <c:if test="${i.maTang==temp.maTang}">
+                        ${i.soTang}
+                    </c:if>
+                </c:forEach>
             </th>
 
-            <th><a href="/employee?action=edit&id=${temp.id}">Edit</a></th>
             <th>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal${temp.id}">
-                    Delete
-                </button>
+                <c:forEach items="${loaiVanPhongList}" var="items">
+                    <c:if test="${items.maLoaiVanPhong == temp.maLoaiVanPhong}">
+                        ${items.tenLoaiVanPhong}
+                    </c:if>
+                </c:forEach>
+            </th>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal${temp.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
-                     aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
-                            </div>
-                            <div class="modal-body">
-                                <p> Do you want delete employee have id is
-                                <p class="text-danger"> ${temp.id}</p> and name is <p
-                                    class="text-danger"> ${temp.name}</p></p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">
-                                    <a href="/employee?action=delete&id=${temp.id}">Delete</a>
-                                </button>
+            <th>${temp.moTaChiTiet}</th>
+            <th>
+                <fmt:formatNumber pattern="#" value="${temp.gia}"/></th>
+            <th>${temp.ngayBatDau}</th>
+            <th>${temp.ngayKetThuc}</th>
+            <td>
+                <div class="container">
+
+                    <button type="button" class="btn btn-danger text-white" data-toggle="modal"
+                            data-target="#myModal${temp.maMatBang}">
+                        Delete
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal${temp.maMatBang}">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-warning">Warning!</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    Ban muon xoa mat bang co id la <strong
+                                        class="text-warning">${temp.maMatBang}</strong> khong?
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">
+                                        <a class="text-white" href="/matBang?action=delete&idDelete=${temp.maMatBang}">Yes</a>
+                                    </button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
+
                 </div>
-            </th>
+            </td>
         </tr>
     </c:forEach>
     </tbody>

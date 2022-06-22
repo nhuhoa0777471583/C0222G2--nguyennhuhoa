@@ -1,2 +1,4 @@
-package crudtaosan.service.impl;public interface IDienThoaiXachTay {
+package crudtaosan.service;
+
+public interface IDienThoaiXachTay extends IService{
 }

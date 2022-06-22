@@ -18,74 +18,66 @@
     </nav>
 </header>
 
-<h2>Create employee</h2>
+<h2>Create mặt bằng</h2>
 <table border="0" class="table table-bordered table-danger  w-75 mx-auto">
     <form method="post">
         <tr>
-            <td><label>Name</label></td>
-            <td><input type="text" name="name"></td>
+            <td><label>mã mặt bằng</label></td>
+            <td><input type="text" name="maMatBang"></td>
         </tr>
         <tr>
-            <td><label>Birthday</label></td>
-            <td><input type="date" name="birthday"></td>
-        </tr>
-
-
-        <tr>
-            <td><label>id card</label></td>
-            <td><input type="text" name="idCard">
-
-
+            <td><label>diện tích</label></td>
+            <td><input type="text" name="dienTich"></td>
         </tr>
         <tr>
-            <td><label>salary</label></td>
-            <td><input type="text" name="salary"></td>
-        </tr>
-        <tr>
-            <td><label>phone</label></td>
-            <td><input type="text" name="phone"></td>
-        </tr>
-
-        <tr>
-            <td><label>email</label></td>
-            <td><input type="text" name="email"></td>
-        </tr>
-        <tr>
-            <td><label>address</label></td>
-            <td><input type="text" name="address"></td>
-        </tr>
-
-        <tr>
-            <td>Position</td>
+            <td><label>Trạng thái</label></td>
             <td>
-                <select name="idPosition">
-                    <c:forEach items="${positionList}" var="temp">
-                        <option value="${temp.idPosition}">${temp.namePosition}</option>
+                <select name="trangThai">
+                    <c:forEach items="${trangThaiList}" var="i">
+                        <option value="${i.maTrangThai}">${i.tenTrangThai}</option>
+                    </c:forEach>
+                </select>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td><label>tầng</label></td>
+            <td>
+                <select name="maTang">
+                    <c:forEach items="${tangList}" var="item">
+                        <option value="${item.maTang}">${item.soTang}</option>
+                    </c:forEach>
+                </select>
+        </tr>
+        <tr>
+            <td><label>loại văn phòng</label></td>
+            <td>
+                <select name="loaiVanPhong">
+                    <c:forEach items="${loaiVanPhongList}" var="temp">
+                        <option value="${temp.maLoaiVanPhong}">${temp.tenLoaiVanPhong}</option>
                     </c:forEach>
                 </select>
             </td>
         </tr>
 
         <tr>
-            <td>Education</td>
-            <td>
-                <select name="idEducation">
-                    <c:forEach items="${educationList}" var="temp">
-                        <option value="${temp.idEducation}">${temp.nameEducation}</option>
-                    </c:forEach>
-                </select>
-            </td>
+            <td><label>mô tả</label></td>
+            <td><input type="text" name="moTa"></td>
         </tr>
 
         <tr>
-            <td>Divition</td>
-            <td>
-                <select name="idDivition">
-                    <c:forEach items="${divitionList}" var="temp">
-                        <option value="${temp.idDivition}">${temp.nameDivition}</option>
-                    </c:forEach>
-                </select>
-            </td>
+            <td><label>giá cho thuê(VNĐ)</label></td>
+            <td><input type="text" name="gia"></td>
+        </tr>
+        <tr>
+            <td><label>ngày bắt đầu</label></td>
+            <td><input type="date" name="ngayBatDau"></td>
+        </tr>
+
+        <tr>
+            <td><label>ngày kết thúc</label></td>
+            <td><input type="date" name="ngayKetThuc"></td>
         </tr>
         <td>
             <button type="submit">Submit</button>

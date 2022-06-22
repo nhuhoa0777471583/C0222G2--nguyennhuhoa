@@ -226,14 +226,19 @@ body {
     float: left;
     margin-top: 35px;
     margin-left: 10px;
+    margin-right: 40px;
 }
 
 .banbe {
     width: 40px;
+    display: inline-block;
+    float: left;
 
 }
 .watch p {
     margin-right: 50px;
+    display: inline-block;
+    float: left;
 }
 
 /*phần giữa của fb*/
@@ -257,19 +262,15 @@ body {
     border-radius: 50px;
 }
 
-.trang-thai img {
-    margin-left: 40px;
-    width: 40px;
-    border-radius: 100px;
-    display: inline-block;
-}
 
 .trang-thai input {
     display: inline-block;
     text-align: center;
     border-radius: 300px;
-    width: 500px;
+    width: 400px;
     height: 20px;
+    margin-left: 100px;
+    margin-top: 20px;
 }
 
 .col-9 {
@@ -281,17 +282,16 @@ body {
 .bai-dang img {
     margin-left: 80px;
     width: 70%;
-
 }
 
 .avtar img {
-    margin-left: 40px;
     width: 40px;
     border-radius: 100px;
     display: inline-block;
 }
-.avtar p {
+.bai-dang p {
     display: inline-block;
+    margin-top: 20px;
 }
 
 

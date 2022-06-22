@@ -1,4 +1,7 @@
 package com.codegym.cms.repository;
 
-public interface ICustomerRepository {
+
+import com.codegym.cms.model.Customer;
+
+public interface ICustomerRepository extends IGeneralRepository<Customer> {
 }

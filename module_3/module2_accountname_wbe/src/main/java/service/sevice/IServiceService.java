@@ -14,4 +14,6 @@ public interface IServiceService {
     Service findById(Integer id);
 
     void update(Service service);
+
+    List<Service> searchName(String nameSearchService);
 }

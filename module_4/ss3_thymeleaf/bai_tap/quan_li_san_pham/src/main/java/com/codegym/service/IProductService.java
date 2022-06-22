@@ -12,7 +12,7 @@ public interface IProductService {
 
     Product findById(Integer id);
 
-    void update(Integer id, Product product);
+    void update( Product product);
 
     void delete(Integer id);
     List<Product> searchByName(String name);
