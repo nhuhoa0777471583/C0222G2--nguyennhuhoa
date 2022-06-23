@@ -63,6 +63,11 @@ public class BlogController {
         re.addFlashAttribute("message", "Remove successfuly");
         return "redirect:/blog";
     }
+    @GetMapping("/view/{id}")
+    public String displayById(@PathVariable Integer id, Model model){
+        model.addAttribute("blog", iBlogService.displayAllById(id));
+        return "detail";
+    }
 
 
 }
