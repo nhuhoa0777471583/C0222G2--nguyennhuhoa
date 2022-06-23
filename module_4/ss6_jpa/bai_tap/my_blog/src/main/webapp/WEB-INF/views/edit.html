@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{layout :: bootstraps}"></th:block>
+</head>
+<body>
+<h3>Edit blog</h3>
+<div class="container">
+    <form th:action="@{/blog/update}" th:object="${blog}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Type Blog</label>
+            <input type="text" th:field="*{typeBlog}" th:value="${blog.typeBlog}" class="form-control"
+                   id="formGroupExampleInput">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Content Blog</label>
+            <input type="text" th:field="*{contentBlog}" th:value="${blog.contentBlog}" class="form-control"
+                   id="formGroupExampleInput1">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Public Day</label>
+            <input type="text" th:field="*{publicDay}" th:value="${blog.publicDay}" class="form-control"
+                   id="formGroupExampleInput2">
+        </div>
+        <button type="submit">Update</button>
+    </form>
+</div>
+</body>
+<th:block th:replace="~{layout :: bootstrapsScript}"></th:block>
+</html>
