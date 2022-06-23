@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>View Blog</h3>
+<div>
+    <a th:href="@{/templates/blog}">
+        back home
+    </a>
+
+</div>
+<div>
+    <div>
+        <label>Type Blog : </label>
+        <label th:text="${blog.getTypeBlog()}"></label>
+    </div>
+    <div>
+        <label>Content Blog: </label>
+        <label th:text="${blog.getContentBlog()}"></label>
+    </div>
+    <div>
+        <label>Public Day: </label>
+        <label th:text="${blog.getPublicDay()}"></label>
+    </div>
+</div>
+</body>
+</html>

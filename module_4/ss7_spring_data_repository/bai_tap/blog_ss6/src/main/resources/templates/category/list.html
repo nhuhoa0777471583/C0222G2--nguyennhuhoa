@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{layout :: bootstraps}"></th:block>
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <a th:href="@{/blog/create}">
+            Create Category
+        </a>
+    </div>
+    <div th:if="${message}">
+       <p th:text="${message}"></p>
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">name type blog</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="b: ${blog}">
+            <td th:text="${b.getId()}"></td>
+            <td th:text="${b.getTypeBlog()}"></td>
+            <td><a th:href="@{/blog/edit/{id}(id=${b.getId()})}">Edit</a></td>
+            <td><a th:href="@{/blog/delete/{id}(id=${b.getId()})}">Delete</a></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<th:block th:replace="~{layout :: bootstrapsScript}"></th:block>
+</html>
