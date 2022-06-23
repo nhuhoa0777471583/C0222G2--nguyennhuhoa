@@ -14,8 +14,8 @@ public class Blog {
     private String publicDay;
 
     @ManyToOne
-    @JoinColumn(name = "id_type_blog", referencedColumnName = "id")
-    private TypeBLog typeBLog;
+    @JoinColumn(name = "id_category_blog", referencedColumnName = "id")
+    private CategoryBlog categoryBlog;
 
     public Blog() {
     }
@@ -44,11 +44,11 @@ public class Blog {
         this.publicDay = publicDay;
     }
 
-    public TypeBLog getTypeBLog() {
-        return typeBLog;
+    public CategoryBlog getCategoryBlog() {
+        return categoryBlog;
     }
 
-    public void setTypeBLog(TypeBLog typeBLog) {
-        this.typeBLog = typeBLog;
+    public void setCategoryBlog(CategoryBlog categoryBlog) {
+        this.categoryBlog = categoryBlog;
     }
 }

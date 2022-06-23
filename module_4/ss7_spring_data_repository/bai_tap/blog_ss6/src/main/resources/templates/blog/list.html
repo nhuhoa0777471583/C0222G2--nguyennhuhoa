@@ -9,21 +9,27 @@
 
 <div class="container">
     <div>
+        <form action="/blog/">
+            <input type="text" name="keyword">
+            <input type="submit" value="Search">
+        </form>
+
+    </div>
+    <div>
         <a th:href="@{/blog/create}">
             Create Blog
         </a>
     </div>
     <div th:if="${message}">
-       <p th:text="${message}"></p>
+        <p th:text="${message}"></p>
     </div>
     <table class="table table-striped">
         <thead>
         <tr>
             <th scope="col">id</th>
-            <th scope="col">type blog</th>
             <th scope="col">content blog</th>
             <th scope="col">day publication</th>
-            <th scope="col">View blog</th>
+            <th scope="col">category</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>
@@ -32,16 +38,34 @@
         <tr th:each="b: ${blog}">
 
             <td th:text="${b.getId()}"></td>
-            <td th:text="${b.getTypeBlog()}"></td>
             <td th:text="${b.getContentBlog()}"></td>
             <td th:text="${b.getPublicDay()}"></td>
-            <td><a th:href="@{/blog/view/{id}(id=${b.getId()})}">view blog</a></td>
+
+            <td
+                    th:text="${b.categoryBlog.nameCategoryBlog}">
+            </td>
             <td><a th:href="@{/blog/edit/{id}(id=${b.getId()})}">Edit</a></td>
             <td><a th:href="@{/blog/delete/{id}(id=${b.getId()})}">Delete</a></td>
 
         </tr>
         </tbody>
     </table>
+
+    <div>
+        <a th:if="${blog.hasPrevious()}"
+           th:href="@{/blog/list(page=${blog.number - 1},keyword=${keywordVal})}">
+            Previous
+        </a>
+        <span th:text="${blog.number + 1}"></span>
+        /
+        <span th:text="${blog.totalPages}"></span>
+        <a th:if="${blog.hasNext()}"
+           th:href="@{/blog/list(page=${blog.number + 1},keyword=${keywordVal})}">
+            Next
+        </a>
+    </div>
+
+
 </div>
 </body>
 <th:block th:replace="~{layout :: bootstrapsScript}"></th:block>

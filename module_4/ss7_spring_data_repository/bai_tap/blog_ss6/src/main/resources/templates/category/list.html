@@ -9,7 +9,7 @@
 
 <div class="container">
     <div>
-        <a th:href="@{/blog/create}">
+        <a th:href="@{/category/create}">
             Create Category
         </a>
     </div>
@@ -20,17 +20,17 @@
         <thead>
         <tr>
             <th scope="col">id</th>
-            <th scope="col">name type blog</th>
+            <th scope="col">name category blog</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="b: ${blog}">
-            <td th:text="${b.getId()}"></td>
-            <td th:text="${b.getTypeBlog()}"></td>
-            <td><a th:href="@{/blog/edit/{id}(id=${b.getId()})}">Edit</a></td>
-            <td><a th:href="@{/blog/delete/{id}(id=${b.getId()})}">Delete</a></td>
+        <tr th:each="c: ${category}">
+            <td th:text="${c.getId()}"></td>
+            <td th:text="${c.getNameCategoryBlog()}"></td>
+            <td><a th:href="@{/category/edit/{id}(id=${c.getId()})}">Edit</a></td>
+            <td><a th:href="@{/category/delete/{id}(id=${c.getId()})}">Delete</a></td>
 
         </tr>
         </tbody>

@@ -5,16 +5,15 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "type_blog")
-public class TypeBLog {
+@Table(name = "category_blog")
+public class CategoryBlog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Integer id;
-    @Column(name = "name_type_blog")
-    private String nameTypeBlog;
+    @Column(name = "name_category_blog")
+    private String nameCategoryBlog;
 
-    @OneToMany(mappedBy = "typeBLog")
+    @OneToMany(mappedBy = "categoryBlog")
     private List<Blog> blogList;
 
 
@@ -27,12 +26,12 @@ public class TypeBLog {
         this.id = idTypeBlog;
     }
 
-    public String getNameTypeBlog() {
-        return nameTypeBlog;
+    public String getNameCategoryBlog() {
+        return nameCategoryBlog;
     }
 
-    public void setNameTypeBlog(String nameTypeBlog) {
-        this.nameTypeBlog = nameTypeBlog;
+    public void setNameCategoryBlog(String nameCategoryBlog) {
+        this.nameCategoryBlog = nameCategoryBlog;
     }
 
     public List<Blog> getBlogList() {
