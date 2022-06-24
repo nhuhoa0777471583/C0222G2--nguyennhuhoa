@@ -24,16 +24,30 @@ public class BlogController {
     @Autowired
     private ICategoryService iCategoryService;
 
+//    @GetMapping("")
+//    public String view(Model model,
+//                       @PageableDefault(value = 2) Pageable pageable) {
+////        String keywordVal = keyword.orElse("");
+//
+////        model.addAttribute("blog", iBlogService.findAllBlogByName(keywordVal, pageable));
+//
+//        model.addAttribute("blog", iBlogService.displayAllBlog(pageable));
+////        model.addAttribute("keywordVal", keywordVal);
+//        return "blog/list";
+//    }
+
     @GetMapping("")
     public String view(Model model,
                        @PageableDefault(value = 2) Pageable pageable,
-                       @RequestParam Optional<String> keyword) {
-        String keywordVal = keyword.orElse("");
+                       @RequestParam Optional<String> nameSearch) {
+        String nameSearchVal = nameSearch.orElse("");
 
-        model.addAttribute("blog", iBlogService.findAllBlogByName(keywordVal, pageable));
-        model.addAttribute("keywordVal", keywordVal);
+        model.addAttribute("blog", iBlogService.displayAllByContentBlog("%"+nameSearchVal+"%", pageable));
+
+        model.addAttribute("nameSearchVal", nameSearchVal);
         return "blog/list";
     }
+
 
     @GetMapping("/create")
     public String showCreate(Model model) {

@@ -42,13 +42,22 @@ public class BlogService implements IBlogService {
         this.iBlogRepository.deleteById(id);
     }
 
-    @Override
-    public Page<Blog> findAll(Pageable pageable) {
-        return this.iBlogRepository.findAll(pageable);
-    }
+//    @Override
+//    public Page<Blog> displayAllBlog(Pageable pageable) {
+//        return this.iBlogRepository.displayAllBlog(pageable);
+//    }
+//
+//
+//
+//
+//
+//    @Override
+//    public Page<Blog> findAllByContentBlogContaining(String name, Pageable pageable) {
+//        return this.iBlogRepository.findAllByContentBlogContaining(name,pageable);
+//    }
 
     @Override
-    public Page<Blog> findAllBlogByName(String keyword, Pageable pageable) {
-        return this.iBlogRepository.findAllBlogByName(keyword, pageable);
+    public Page<Blog> displayAllByContentBlog(String name, Pageable pageable) {
+        return this.iBlogRepository.displayAllByContentBlog(name, pageable);
     }
 }

@@ -8,13 +8,7 @@
 <body>
 
 <div class="container">
-    <div>
-        <form action="/blog/">
-            <input type="text" name="keyword">
-            <input type="submit" value="Search">
-        </form>
-
-    </div>
+<nav th:replace="~{layout :: head}"></nav>
     <div>
         <a th:href="@{/blog/create}">
             Create Blog
@@ -53,18 +47,20 @@
 
     <div>
         <a th:if="${blog.hasPrevious()}"
-           th:href="@{/blog/list(page=${blog.number - 1},keyword=${keywordVal})}">
+           th:href="@{/blog(page=${blog.number - 1}, nameSearch=${nameSearchVal})}">
             Previous
         </a>
         <span th:text="${blog.number + 1}"></span>
         /
         <span th:text="${blog.totalPages}"></span>
+
+
         <a th:if="${blog.hasNext()}"
-           th:href="@{/blog/list(page=${blog.number + 1},keyword=${keywordVal})}">
+           th:href="@{/blog(page=${blog.number + 1}, nameSearch=${nameSearchVal})}">
             Next
         </a>
-    </div>
 
+    </div>
 
 </div>
 </body>

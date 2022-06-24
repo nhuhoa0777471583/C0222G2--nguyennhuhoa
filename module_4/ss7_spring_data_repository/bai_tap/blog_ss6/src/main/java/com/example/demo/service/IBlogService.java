@@ -19,6 +19,10 @@ public interface IBlogService {
 
     void delete(Integer id);
 
-    Page<Blog> findAll(Pageable pageable);
-    Page<Blog> findAllBlogByName(String keyword, Pageable pageable);
+//    Page<Blog> displayAllBlog(Pageable pageable);
+//
+//
+//    Page<Blog>findAllByContentBlogContaining(String name, Pageable pageable);
+//
+    Page<Blog>displayAllByContentBlog(String name, Pageable pageable);
 }

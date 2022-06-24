@@ -20,6 +20,13 @@ public class Blog {
     public Blog() {
     }
 
+    public Blog(Integer id, String contentBlog, String publicDay, CategoryBlog categoryBlog) {
+        this.id = id;
+        this.contentBlog = contentBlog;
+        this.publicDay = publicDay;
+        this.categoryBlog = categoryBlog;
+    }
+
     public Integer getId() {
         return id;
     }
