@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:action="@{/save}" th:object="${userDto}" method="post">
+    <div>
+        <label>first name</label>
+        <input type="text" th:field="*{firstName}">
+    </div>
+
+    <div style="color: red" th:errors="*{firstName}"></div>
+
+    <div>
+        <label>last name</label>
+        <input type="text" th:field="*{lastName}">
+    </div>
+    <div style="color: red" th:errors="*{lastName}"></div>
+    <div>
+        <label>age</label>
+        <input type="text" th:field="*{age}">
+    </div>
+    <div style="color: red" th:errors="*{age}"></div>
+    <div>
+        <label>email</label>
+        <input type="text" th:field="*{emailUser}">
+    </div>
+    <div style="color: red" th:errors="*{emailUser}"></div>
+
+    <div>
+        <label>phone</label>
+        <input type="text" th:field="*{phoneNumber}">
+    </div>
+
+    <div style="color: red" th:errors="*{phoneNumber}"></div>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
