@@ -1,6 +1,5 @@
 package com.codegym.dto;
 
-import javax.persistence.Column;
 import javax.validation.constraints.*;
 
 public class UserDto {
