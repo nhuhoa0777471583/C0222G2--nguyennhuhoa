@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+<h2>
+    <a th:href="@{/home}">
+        Home
+    </a>
+</h2>
 <table border="1">
     <tr>
         <td>id</td>
@@ -13,6 +18,7 @@
         <td>status</td>
         <td>id book</td>
         <td>Borrow</td>
+        <td>Return Book</td>
     </tr>
     <tr th:each="b : ${borrow}">
         <td th:text="${b.id}"></td>
@@ -20,7 +26,8 @@
         <td th:text="${b.price}"></td>
         <td th:text="${b.status}"></td>
         <td th:text="${b.libaryBook.id}"></td>
-        <td>Borrow</td>
+        <td><a th:href="@{/home/borrow/{id}(id=${b.getId()})}">Borrow</a></td>
+        <td><a th:href="@{/home/return/{id}(id=${b.getId()})}">Return Book</a></td>
     </tr>
 </table>
 </body>

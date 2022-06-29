@@ -13,8 +13,13 @@ public interface ILibaryBookRepository extends JpaRepository<LibaryBook,Integer>
 
     @Query(value = " select * from libary_book", nativeQuery= true)
     List<LibaryBook> displayAllBook();
-
-
+//
+//    @Query(value = " select id from libary_book ", nativeQuery= true)
+//    List<LibaryBook> displayAllId();
+//
+//
+//    @Query(value =" select * from libary_book where id =:id", nativeQuery = true)
+//    List<LibaryBook> displayById(Integer id);
 
 
 }

@@ -16,7 +16,7 @@
         <td th:text="${b.id}"></td>
         <td th:text="${b.nameBook}"></td>
         <td th:text="${b.amount}"></td>
-        <td><a th:href="@{/home/detail}">Detail</a></td>
+        <td><a th:href="@{/home/detail/{id}(id=${b.getId()})}">Detail</a></td>
     </tr>
 
 
