@@ -13,9 +13,9 @@ public interface IBorrowBookRepository extends JpaRepository<BorrowBook, Integer
 
     @Query(value = " select * from borrow_book ", nativeQuery = true)
     List<BorrowBook> displayAllBorrowBook();
-
-    @Query(value =" update borrow_book set status = :status", nativeQuery = true)
-    void updateBorrow(@Param("status") String status);
+//
+//    @Query(value =" update borrow_book set status = :status", nativeQuery = true)
+//    void updateBorrow(@Param("status") String status);
 
 
 

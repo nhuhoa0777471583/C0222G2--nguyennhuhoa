@@ -9,6 +9,6 @@ import java.util.List;
 public interface ILibaryBookService {
 
     List<LibaryBook> displayAllBook();
-
-
+    LibaryBook displaybyId(Integer id);
+    void save(LibaryBook libaryBook);
 }

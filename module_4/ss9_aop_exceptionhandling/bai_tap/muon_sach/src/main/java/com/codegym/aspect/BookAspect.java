@@ -1,0 +1,17 @@
+package com.codegym.aspect;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect
+public class BookAspect {
+
+    @AfterReturning(pointcut = " execution(public * com.codegym.controller.BookController.*(..))")
+    public void logHistory(JoinPoint joinPoint){
+        String name =joinPoint.getSignature().getName();
+        System.err.println("Method vừa thực hiện xong: " + name);
+    }
+}

@@ -12,7 +12,7 @@ public class BorrowBook {
     private Integer id;
     private String name;
     private Double price;
-    private String status;
+    private Integer status;
 
     @ManyToOne
     @JoinColumn(name = "id_book", referencedColumnName = "id")
@@ -22,7 +22,7 @@ public class BorrowBook {
     }
 
 
-    public BorrowBook(Integer id, String name, Double price, String status, LibaryBook libaryBook) {
+    public BorrowBook(Integer id, String name, Double price, Integer status, LibaryBook libaryBook) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -62,11 +62,11 @@ public class BorrowBook {
         this.libaryBook = libaryBook;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 }

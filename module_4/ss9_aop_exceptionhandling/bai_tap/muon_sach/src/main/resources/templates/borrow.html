@@ -22,7 +22,7 @@
             <td th:text="${b.price}"></td>
             <td th:text="${b.status}"></td>
             <td th:text="${b.libaryBook.id}"></td>
-            <td><a th:href="@{/home/borrow/{id}(id=${b.getId()})}">Borrow</a></td>
+            <td><a th:href="@{/home/borrow-book/{id}(id=${b.getId()})}">Borrow</a></td>
         </tr>
     </table>
 

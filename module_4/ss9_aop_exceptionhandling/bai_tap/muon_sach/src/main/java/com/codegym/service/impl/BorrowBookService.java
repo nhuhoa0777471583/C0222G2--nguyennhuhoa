@@ -18,10 +18,10 @@ public class BorrowBookService implements IBorrowBookService {
         return this.iBorrowBookRepository.displayAllBorrowBook();
     }
 
-    @Override
-    public void updateBorrow(String status) {
-        this.iBorrowBookRepository.updateBorrow(status);
-    }
+//    @Override
+//    public void updateBorrow(String status) {
+//        this.iBorrowBookRepository.updateBorrow(status);
+//    }
 
     @Override
     public List<BorrowBook> displayById(Integer id) {
@@ -31,5 +31,10 @@ public class BorrowBookService implements IBorrowBookService {
     @Override
     public List<BorrowBook> displayByIdBook(Integer id) {
         return this.iBorrowBookRepository.displayByIdBook(id);
+    }
+
+    @Override
+    public void save(BorrowBook borrowBook) {
+        this.iBorrowBookRepository.save(borrowBook);
     }
 }

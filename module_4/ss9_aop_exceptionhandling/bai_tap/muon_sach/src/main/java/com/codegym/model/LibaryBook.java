@@ -60,16 +60,5 @@ public class LibaryBook {
     }
 
 
-    public void borrowBook(){
-        if(this.amount > 0){
-            this.setAmount(this.amount - 1); ;
-        }
-        else{
-            System.out.println("Error");
-        }
-    }
 
-    public void payBook(){
-        this.setAmount(this.amount + 1);
-    }
 }
