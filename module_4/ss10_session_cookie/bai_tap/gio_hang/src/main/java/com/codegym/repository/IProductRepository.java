@@ -12,9 +12,9 @@ import java.util.Optional;
 @Repository
 public interface IProductRepository extends JpaRepository<Product,Integer> {
 
-    @Query(value = " select * from Product ", nativeQuery = true)
-    Iterable<Product> displayAll();
+    @Query(value = " select * from shop ", nativeQuery = true)
+    List<Product> displayAll();
 
-    @Query(value = " select * from Product where id = :id ", nativeQuery = true)
+    @Query(value = " select * from shop where id = :id ", nativeQuery = true)
     Optional<Product> displayById(@Param("id") Integer id);
 }

@@ -6,9 +6,12 @@ import com.codegym.model.Product;
 import com.codegym.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -23,20 +26,25 @@ public class ProductController {
     }
 
     @GetMapping("/shop")
-    public ModelAndView showShop() {
-        ModelAndView modelAndView = new ModelAndView("/shop");
-        modelAndView.addObject("products", productService.displayAll());
-        return modelAndView;
+    public String showShop(Model model) {
+        model.addAttribute("products", productService.displayAll());
+        return "/shop";
     }
 
     @GetMapping("/add/{id}")
-    public String addToCart(@PathVariable Integer id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
+    public String addToCart(@PathVariable Integer id,
+                            @ModelAttribute Cart cart,
+                            @RequestParam("action") String action) {
         Optional<Product> productOptional = productService.displayById(id);
         if (!productOptional.isPresent()) {
             return "/error.404";
         }
         if (action.equals("show")) {
             cart.addProduct(productOptional.get());
+            return "redirect:/shopping-cart";
+        }
+        if (action.equals("show1")) {
+            cart.reduceProduct(productOptional.get());
             return "redirect:/shopping-cart";
         }
         cart.addProduct(productOptional.get());

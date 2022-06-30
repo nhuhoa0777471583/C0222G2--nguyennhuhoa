@@ -1,11 +1,9 @@
 package com.codegym.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "shop")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +32,6 @@ public class Product {
     public void setImg(String img) {
         this.img = img;
     }
-
 
 
     public Integer getId() {

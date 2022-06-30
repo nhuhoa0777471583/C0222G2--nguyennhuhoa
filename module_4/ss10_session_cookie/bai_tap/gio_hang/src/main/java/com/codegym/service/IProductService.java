@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IProductService {
-    Iterable<Product> displayAll();
+    List<Product> displayAll();
 
     Optional<Product> displayById(Integer id);
 }

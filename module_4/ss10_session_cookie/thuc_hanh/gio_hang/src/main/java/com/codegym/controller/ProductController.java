@@ -39,6 +39,10 @@ public class ProductController {
             cart.addProduct(productOptional.get());
             return "redirect:/shopping-cart";
         }
+        if (action.equals("g")) {
+            cart.giam(productOptional.get());
+            return "redirect:/shopping-cart";
+        }
         cart.addProduct(productOptional.get());
         return "redirect:/shop";
     }

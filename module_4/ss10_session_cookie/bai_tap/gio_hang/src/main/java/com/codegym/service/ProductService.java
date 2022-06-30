@@ -16,7 +16,7 @@ public class ProductService implements IProductService {
 
 
     @Override
-    public Iterable<Product> displayAll() {
+    public List<Product> displayAll() {
         return this.iProductRepository.displayAll();
     }
 
