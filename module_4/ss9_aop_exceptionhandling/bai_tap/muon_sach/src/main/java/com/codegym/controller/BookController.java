@@ -2,6 +2,7 @@ package com.codegym.controller;
 
 import com.codegym.model.BorrowBook;
 import com.codegym.model.LibaryBook;
+import com.codegym.repository.ICountRepository;
 import com.codegym.service.IBorrowBookService;
 import com.codegym.service.ILibaryBookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +23,13 @@ public class BookController {
     private ILibaryBookService iLibaryBookService;
     @Autowired
     private IBorrowBookService iBorrowBookService;
-
+@Autowired
+private ICountRepository iCountRepository;
     @GetMapping("")
     public String home(Model model) {
+
         model.addAttribute("book", iLibaryBookService.displayAllBook());
+        model.addAttribute("count", iCountRepository.displayCount());
         return "home";
     }
 
