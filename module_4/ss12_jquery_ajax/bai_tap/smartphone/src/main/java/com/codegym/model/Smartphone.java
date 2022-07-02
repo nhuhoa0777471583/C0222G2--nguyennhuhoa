@@ -1,12 +1,9 @@
 package com.codegym.model;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name="smartphones")
-
 public class Smartphone {
 
     @Id

@@ -66,18 +66,18 @@
             type: "GET", //GET, DELETE, PUT...
             url: "http://localhost:8080/home/list-blog?page=" + pageNumber,
 
-            success: function (blogObj) {
-                console.log(blogObj);
+            success: function (blogPage) {
+                console.log(blogPage);
 
                 let blogBodyHTML = "";
 
-                for (let i = 0; i < blogObj.content.length; i++) {
+                for (let i = 0; i < blogPage.content.length; i++) {
                     blogBodyHTML += `<tr>
                                 <td>${i}</td>
-                                <td>${blogObj.content[i].id}</td>
-                                <td>${blogObj.content[i].contentBlog}</td>
-                                <td>${blogObj.content[i].publicDay}</td>
-                                <td>${blogObj.content[i].categoryBlog.nameCategoryBlog}</td>
+                                <td>${blogPage.content[i].id}</td>
+                                <td>${blogPage.content[i].contentBlog}</td>
+                                <td>${blogPage.content[i].publicDay}</td>
+                                <td>${blogPage.content[i].categoryBlog.nameCategoryBlog}</td>
                                 <td><a href="#">Edit</a></td>
                                 </tr>`;
                 }
@@ -88,9 +88,7 @@
             }
         });
     }
-
     getListBlog(0);
-
     let pageCur = 0;
     $("#aPrevious").click(function () {
         if (pageCur > 0) {
@@ -104,7 +102,20 @@
         pageCur++;
         getListBlog(pageCur);
     });
-
+    // let i = 5;
+    // getPageBlog(0)
+    // $("#btnSearch").click(function () {
+    //     let searchValue = $("#searchValue").val();
+    //     getPageBlog(0, 5,searchValue);
+    //     i=5;
+    // })
+    // $("#loadMore").click(function () {
+    //     let searchValue = $("#searchValue").val();
+    //     if (i < totalPageTemp) {
+    //         i+=5;
+    //         getPageBlog(0, i,searchValue);
+    //     }
+    // })
 
 
 

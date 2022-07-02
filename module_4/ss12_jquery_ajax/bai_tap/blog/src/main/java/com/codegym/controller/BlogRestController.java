@@ -37,7 +37,7 @@ public class BlogRestController {
 
 
 
-    @GetMapping(value = "/search-blog/{name}")
+    @GetMapping
     public ResponseEntity<Page<Blog>> searchByNameBlog(@PathVariable String name, Pageable pageable){
         Page<Blog> blog = this.iBlogService.searchAllByContentBlog(name, pageable);
         if(!blog.hasContent()){

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="87f7d38f-75f2-4cf6-b38b-5b5081b0fea6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/java/com/codegym/model/customers/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/java/com/codegym/model/customers/CustomerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/java/com/codegym/model/employee/Divison.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/java/com/codegym/model/employee/Education.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/java/com/codegym/model/employee/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/java/com/codegym/model/employee/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/java/com/codegym/repository/customer/ICustomersRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/java/com/codegym/service/customer/CustomerSevice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/java/com/codegym/service/customer/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/resources/templates/customer/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/resources/templates/customer/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/resources/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/configuration/AppConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/configuration/AppInit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/controller/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/repository/CustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/repository/ICustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/repository/IGeneralRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/service/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/service/ICustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/service/IGeneralService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/aspectjrt-1.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/byte-buddy-1.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/classmate-1.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/dom4j-1.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/groovy-2.5.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/groovy-extensions-0.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/hibernate-commons-annotations-5.0.3.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/hibernate-core-5.3.0.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/hibernate-entitymanager-5.3.0.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/jandex-2.0.3.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/javassist-3.22.0-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.0.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/mysql-connector-java-8.0.22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/ognl-3.1.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/slf4j-api-1.7.26.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-aop-5.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-beans-5.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-context-5.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-core-5.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-data-commons-2.4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-data-jpa-2.4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-expression-5.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-jcl-5.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-jdbc-5.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-orm-5.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-tx-5.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-web-5.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/spring-webmvc-5.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/thymeleaf-3.0.11.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/thymeleaf-expression-processor-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/thymeleaf-layout-dialect-2.5.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/lib/thymeleaf-spring5-3.0.11.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/views/create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/views/delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/views/edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/views/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../apache-tomcat-9.0.63/webapps/ROOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/bai_tap/src/main/java/com/codegym/controller/ViewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/bai_tap/src/main/resources/templates/furama.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/bai_tap/src/main/resources/templates/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/java/com/codegym/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/java/com/codegym/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_md4/bai_tap/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_session_cookie/bai_tap/gio_hang/src/main/java/com/codegym/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_session_cookie/bai_tap/gio_hang/src/main/java/com/codegym/model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_session_cookie/bai_tap/gio_hang/src/main/resources/templates/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_session_cookie/bai_tap/gio_hang/src/main/resources/templates/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_wedservice_restful/bai_tap/blog/src/main/java/com/codegym/controller/BlogRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_wedservice_restful/bai_tap/blog/src/main/java/com/codegym/controller/BlogRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_wedservice_restful/bai_tap/blog/src/main/java/com/codegym/repository/IBlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_wedservice_restful/bai_tap/blog/src/main/java/com/codegym/repository/IBlogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_wedservice_restful/bai_tap/blog/src/main/java/com/codegym/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_wedservice_restful/bai_tap/blog/src/main/java/com/codegym/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss11_wedservice_restful/bai_tap/blog/src/main/java/com/codegym/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss11_wedservice_restful/bai_tap/blog/src/main/java/com/codegym/service/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/blog/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/blog/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/controller/BlogRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/controller/BlogRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/model/CategoryBlog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/model/CategoryBlog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/repository/IBlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/repository/IBlogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/blog/src/main/java/com/codegym/service/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/smartphone.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss1_tong_quan_spring_mvc/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_tong_quan_spring_mvc/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_thao_tac_csdl_orm/bai_tap/ung_dung_nghe_nhac_don_gian/src/main/java/com/codegym/controller/MusicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_thao_tac_csdl_orm/bai_tap/ung_dung_nghe_nhac_don_gian/src/main/java/com/codegym/controller/MusicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_thao_tac_csdl_orm/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_thao_tac_csdl_orm/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_spring_data_repository/bai_tap/blog_ss6/src/main/java/com/example/demo/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/bai_tap/blog_ss6/src/main/java/com/example/demo/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_spring_data_repository/bai_tap/blog_ss6/src/main/java/com/example/demo/repository/IBlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/bai_tap/blog_ss6/src/main/java/com/example/demo/repository/IBlogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_spring_data_repository/bai_tap/blog_ss6/src/main/java/com/example/demo/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/bai_tap/blog_ss6/src/main/java/com/example/demo/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_spring_data_repository/bai_tap/blog_ss6/src/main/java/com/example/demo/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/bai_tap/blog_ss6/src/main/java/com/example/demo/service/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_spring_data_repository/bai_tap/blog_ss6/src/main/resources/templates/blog/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/bai_tap/blog_ss6/src/main/resources/templates/blog/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/controller/MusicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/controller/MusicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/dto/AdvanceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/dto/AdvanceInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/dto/BasicInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/dto/BasicInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/dto/MusicDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/dto/MusicDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/repository/IMusicRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/repository/IMusicRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/validation/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/validation/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/validation/AuthorValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/java/com/codegym/validation/AuthorValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/resources/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_validation/bai_tap/validate_info_music/src/main/resources/templates/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_aop_exceptionhandling/thuc_hanh/bai_thuc_hanh1/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss9_aop_exceptionhandling/thuc_hanh/bai_thuc_hanh1/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss9_aop_exceptionhandling/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss9_aop_exceptionhandling/thuc_hanh/customer-management" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2BNJ5oS0o5jh93MYMt4x5QfDeL1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bai_tap/smartphone" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="87f7d38f-75f2-4cf6-b38b-5b5081b0fea6" name="Default Changelist" comment="" />
+      <created>1656740428234</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656740428234</updated>
+      <workItem from="1656740430234" duration="44000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1656740473270">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1656740473270" />
+  </component>
+</project>

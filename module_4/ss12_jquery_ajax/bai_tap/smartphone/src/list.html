@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Smartphone List</h1>
+<table id="smartphoneList" border="1 solid black">
+    <tr>
+        <td>Producer</td>
+        <td>Model</td>
+        <td>Price</td>
+        <td>Action</td>
+        <td>Action</td>
+    </tr>
+    </tr>
+    <tbody id="bodySmartPhone">
+
+    </tbody>
+</table>
+<hr>
+<form id="add-smartphone">
+    <table>
+        <tr>
+            <td>Producer:</td>
+            <td><input type="text" id="producer" placeholder="producer"></td>
+        </tr>
+        <tr>
+            <td>Model:</td>
+            <td><input type="text" id="model" placeholder="model"></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input type="text" id="price" placeholder="price"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="edit" onclick="editSmartPhone()"></td>
+        </tr>
+    </table>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    function getListNumberPhone() {
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "GET",
+            url:"http://localhost:8080/phone/list",
+            success: function (phone) {
+                console.log(phone);
+                    let phoneBodyHTML = "";
+                    for (let i = 0; i < phone.length; i++) {
+                        phoneBodyHTML += `<tr>
+                                    <td>${phone[i].id}</td>
+                                    <td>${phone[i].producer}</td>
+                                    <td>${phone[i].model}</td>
+                                    <td>${phone[i].price}</td>
+                                    <td><a href="#">Delete</a></td>
+                                    <td><a href="${phone[i].id}">Edit</a></td>
+                                    </tr>`;
+                    }
+                    $("#bodySmartPhone").html(phoneBodyHTML);
+            },
+            error: function (resultError) {
+                console.log('có lỗi xảy ra')
+            }
+        });
+    }
+    getListNumberPhone(0);
+
+
+</script>
+</body>
+</html>

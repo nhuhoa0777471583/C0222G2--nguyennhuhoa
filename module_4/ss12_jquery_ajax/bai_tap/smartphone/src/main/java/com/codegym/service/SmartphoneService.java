@@ -6,7 +6,6 @@ import com.codegym.repository.ISmartphoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -14,10 +13,9 @@ public class SmartphoneService implements ISmartphoneService {
     @Autowired
     private ISmartphoneRepository smartPhoneRepository;
 
-
     @Override
-    public List<Smartphone> displayAll() {
-        return smartPhoneRepository.displayAll();
+    public Iterable<Smartphone> findAll() {
+        return smartPhoneRepository.findAll();
     }
 
     @Override

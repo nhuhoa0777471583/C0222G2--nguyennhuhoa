@@ -8,13 +8,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
 @RequestMapping("/phone")
-public class HomeController {
+@CrossOrigin
+public class SmartRestController {
     @Autowired
     private ISmartphoneService smartphoneService;
 
@@ -23,16 +24,24 @@ public class HomeController {
         return new ResponseEntity<>(smartphoneService.save(smartphone), HttpStatus.CREATED);
     }
 
-    @GetMapping
-    public ResponseEntity<Iterable<Smartphone>> allPhones() {
-        return new ResponseEntity<>(smartphoneService.findAll(), HttpStatus.OK);
+    @GetMapping("/list")
+    public ResponseEntity<List<Smartphone>> allPhones() {
+        List<Smartphone> smartphoneList = this.smartphoneService.displayAll();
+        if (smartphoneList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(smartphoneList, HttpStatus.OK);
     }
 
-    @GetMapping("/list")
-    public ModelAndView getAllSmartphonePage() {
-        ModelAndView modelAndView = new ModelAndView("/list");
-        modelAndView.addObject("smartphones", smartphoneService.findAll());
-        return modelAndView;
+
+    @PutMapping("create/{id}")
+    public ResponseEntity<Smartphone> updateSmartphone(@PathVariable Long id, @RequestBody Smartphone smartphone) {
+        Optional<Smartphone> smartphoneOptional = smartphoneService.findById(id);
+        if (!smartphoneOptional.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        smartphone.setId(smartphoneOptional.get().getId());
+        return new ResponseEntity<>(smartphoneService.save(smartphone), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
@@ -45,13 +54,5 @@ public class HomeController {
         return new ResponseEntity<>(smartphoneOptional.get(), HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Smartphone> updateSmartphone(@PathVariable Long id, @RequestBody Smartphone smartphone) {
-        Optional<Smartphone> smartphoneOptional = smartphoneService.findById(id);
-        if (!smartphoneOptional.isPresent()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        smartphone.setId(smartphoneOptional.get().getId());
-        return new ResponseEntity<>(smartphoneService.save(smartphone), HttpStatus.OK);
-    }
+
 }

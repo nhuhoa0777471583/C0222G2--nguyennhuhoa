@@ -24,47 +24,14 @@ public class BlogService implements IBlogService {
     }
 
     @Override
-    public void save(Blog blog) {
-        this.iBlogRepository.save(blog);
-    }
-
-    @Override
-    public void update(Blog blog) {
-        this.iBlogRepository.save(blog);
-    }
-
-    @Override
-    public Blog displayAllById(Integer id) {
-        return null;
-    }
-
-
-    @Override
-    public void delete(Integer id) {
-        this.iBlogRepository.deleteById(id);
-    }
-
-
-
-
-    @Override
     public Page<Blog> displayAllBlog(Pageable pageable) {
-        return this.iBlogRepository.displayAllBlog(pageable);
+        return this.iBlogRepository.findAll(pageable);
     }
 
     @Override
     public Page<Blog> searchAllByContentBlog(String name, Pageable pageable) {
         return this.iBlogRepository.searchAllByContentBlog(name, pageable);
     }
-//
-//
-//
-//
-//
-//    @Override
-//    public Page<Blog> findAllByContentBlogContaining(String name, Pageable pageable) {
-//        return this.iBlogRepository.findAllByContentBlogContaining(name,pageable);
-//    }
 
 
 }
