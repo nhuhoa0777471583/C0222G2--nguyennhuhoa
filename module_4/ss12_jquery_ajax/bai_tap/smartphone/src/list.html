@@ -20,23 +20,23 @@
     </tbody>
 </table>
 <hr>
-<form id="add-smartphone">
+<form id="edit">
     <table>
         <tr>
             <td>Producer:</td>
-            <td><input type="text" id="producer" placeholder="producer"></td>
+            <td><input type="text"  placeholder="producer"></td>
         </tr>
         <tr>
             <td>Model:</td>
-            <td><input type="text" id="model" placeholder="model"></td>
+            <td><input type="text"  placeholder="model"></td>
         </tr>
         <tr>
             <td>Price:</td>
-            <td><input type="text" id="price" placeholder="price"></td>
+            <td><input type="text"  placeholder="price"></td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="edit" onclick="editSmartPhone()"></td>
+            <td><button type="submit" >Update </button></td>
         </tr>
     </table>
 </form>
@@ -56,12 +56,11 @@
                     let phoneBodyHTML = "";
                     for (let i = 0; i < phone.length; i++) {
                         phoneBodyHTML += `<tr>
-                                    <td>${phone[i].id}</td>
-                                    <td>${phone[i].producer}</td>
-                                    <td>${phone[i].model}</td>
-                                    <td>${phone[i].price}</td>
-                                    <td><a href="#">Delete</a></td>
-                                    <td><a href="${phone[i].id}">Edit</a></td>
+                                    <td id="id">${phone[i].id}</td>
+                                    <td id="producer">${phone[i].producer}</td>
+                                    <td id="model">${phone[i].model}</td>
+                                    <td id="price">${phone[i].price}</td>
+                                    <td><button id="btnEdit" type="submit">Edit</a></td>
                                     </tr>`;
                     }
                     $("#bodySmartPhone").html(phoneBodyHTML);
@@ -72,6 +71,31 @@
         });
     }
     getListNumberPhone(0);
+
+
+
+    $("#btnEdit").click(function () {
+        let id =$("#id").val();
+        let producer = $("#producer").val();
+        let model = $("#model").val();
+        let price = $("#price").val();
+        console.log(producer +"" + model + "" + price)
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "PUT",
+            url: "http://localhost:8080/phone/edit/",
+            success: function (data) {
+                console.log(data)
+                a.parent().parent().update();
+            },
+            error: function (resultError) {
+                console.log('có lỗi xảy ra')
+            }
+        });
+    })
 
 
 </script>

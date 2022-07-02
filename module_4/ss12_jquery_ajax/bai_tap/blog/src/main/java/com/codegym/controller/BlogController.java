@@ -31,44 +31,5 @@ public class BlogController {
         model.addAttribute("category", iCategoryService.displayCategoryBlog());
         return "blog/create";
     }
-//
-//    @PostMapping("/save")
-//    public String create(Blog blog, RedirectAttributes redirectAttributes) {
-//        iBlogService.save(blog);
-//        redirectAttributes.addFlashAttribute("message", "Create successfuly");
-//        return "redirect:/blog";
-//    }
-//
-//
-//    @GetMapping("/edit/{id}")
-//    public String showEdit(@PathVariable Integer id, Model model) {
-//        model.addAttribute("blog", iBlogService.displayAllById(id));
-//        return "blog/edit";
-//    }
-//
-//    @PostMapping("/update")
-//    public String update(Blog blog, RedirectAttributes re) {
-//        iBlogService.update(blog);
-//        re.addFlashAttribute("message", "Update successfuly");
-//        return "redirect:/blog";
-//    }
-//
-//    @GetMapping("/delete/{id}")
-//    public String showDelete(@PathVariable Integer id, Model model) {
-//        model.addAttribute("blog", iBlogService.displayAllById(id));
-//        return "blog/delete";
-//    }
-//
-//    @PostMapping("/delete")
-//    public String delete(Blog blog, RedirectAttributes re) {
-//        iBlogService.delete(blog.getId());
-//        re.addFlashAttribute("message", "Remove successfuly");
-//        return "redirect:/blog";
-//    }
-//
-//    @GetMapping("/view/{id}")
-//    public String displayById(@PathVariable Integer id, Model model) {
-//        model.addAttribute("blog", iBlogService.displayAllById(id));
-//        return "blog/detail";
-//    }
+
 }

@@ -25,7 +25,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public Page<Blog> displayAllBlog(Pageable pageable) {
-        return this.iBlogRepository.findAll(pageable);
+        return this.iBlogRepository.displayAllBlog(pageable);
     }
 
     @Override

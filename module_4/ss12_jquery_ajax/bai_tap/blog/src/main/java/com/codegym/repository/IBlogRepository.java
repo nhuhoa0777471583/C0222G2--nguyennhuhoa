@@ -24,9 +24,13 @@ public interface IBlogRepository extends JpaRepository<Blog, Integer> {
 
 
 
-    @Query(value = " select * from blog ", nativeQuery = true,
-            countQuery = "select coun(*) from ( select * from blog ) temp")
+    @Query(value = " select * from blog ", nativeQuery = true)
     Page<Blog> displayAllBlog(Pageable pageable);
+
+
+
+
+
 
     @Query(value = " select * from blog  where content_blog like :keyword ", nativeQuery = true,
             countQuery = " select count(*)  from ( select * from blog  where content_blog like :keyword ) temp")
