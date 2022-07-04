@@ -17,7 +17,8 @@ public interface IBlogService {
 
     Page<Blog> displayAllBlog(Pageable pageable);
 
-    Page<Blog> searchAllByContentBlog(String name,Pageable pageable);
+    Page<Blog> searchAllByContentBlog(String nameSearch,Pageable pageable);
 
+    Page<Blog>findAllByContentBlogContaining(String nameSearch, Pageable pageable);
 
 }

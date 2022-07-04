@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
 
 
 @RequestMapping(value = "/home")
@@ -25,7 +26,7 @@ public class BlogRestController {
     private IBlogService iBlogService;
 
 
-    @GetMapping(value = "/list-blog")
+    @GetMapping("/list")
     public ResponseEntity<Page<Blog>> getPageBlog(@PageableDefault(value = 5)Pageable pageable) {
         Page<Blog> blogPage = this.iBlogService.displayAllBlog(pageable);
 
@@ -37,9 +38,10 @@ public class BlogRestController {
 
 
 
-    @GetMapping
-    public ResponseEntity<Page<Blog>> searchByNameBlog(@PathVariable String name, Pageable pageable){
-        Page<Blog> blog = this.iBlogService.searchAllByContentBlog(name, pageable);
+    @GetMapping(value = "/search")
+    public ResponseEntity<Page<Blog>> searchByNameBlog(@RequestParam Optional<String> nameSearch, Pageable pageable){
+        String nameSearchVal = nameSearch.orElse("");
+        Page<Blog> blog = this.iBlogService.findAllByContentBlogContaining("%"+nameSearchVal+"%", pageable);
         if(!blog.hasContent()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

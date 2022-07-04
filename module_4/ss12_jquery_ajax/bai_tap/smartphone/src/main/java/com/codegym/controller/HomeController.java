@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Optional;
-
+@CrossOrigin
 @Controller
 @RequestMapping("/phone")
 public class HomeController {
@@ -45,13 +45,8 @@ public class HomeController {
 //        return new ResponseEntity<>(smartphoneOptional.get(), HttpStatus.NO_CONTENT);
 //    }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Smartphone> updateSmartphone(@PathVariable Long id, @RequestBody Smartphone smartphone) {
-        Optional<Smartphone> smartphoneOptional = smartphoneService.findById(id);
-        if (!smartphoneOptional.isPresent()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        smartphone.setId(smartphoneOptional.get().getId());
+    @PutMapping("/update")
+    public ResponseEntity<Smartphone> updateSmartphone(@RequestBody Smartphone smartphone) {
         return new ResponseEntity<>(smartphoneService.save(smartphone), HttpStatus.OK);
     }
 }

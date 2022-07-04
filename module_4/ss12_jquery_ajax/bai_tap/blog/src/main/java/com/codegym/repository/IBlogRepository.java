@@ -12,6 +12,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface IBlogRepository extends JpaRepository<Blog, Integer> {
@@ -36,6 +37,8 @@ public interface IBlogRepository extends JpaRepository<Blog, Integer> {
             countQuery = " select count(*)  from ( select * from blog  where content_blog like :keyword ) temp")
     Page<Blog> searchAllByContentBlog(@Param("keyword") String name, Pageable pageable);
 
+
+    Page<Blog> findAllByContentBlogContaining(Optional<String> nameSearch, Pageable pageable);
 //
 //    @Query(value = " select * from blog  where content_blog like :keyword ", nativeQuery = true)
 //    Blog searchByContentBlog(@Param("keyword") String name);

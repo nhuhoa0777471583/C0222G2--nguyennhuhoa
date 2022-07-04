@@ -8,10 +8,10 @@
 <h1>Smartphone List</h1>
 <table id="smartphoneList" border="1 solid black">
     <tr>
+        <td>id</td>
         <td>Producer</td>
         <td>Model</td>
         <td>Price</td>
-        <td>Action</td>
         <td>Action</td>
     </tr>
     </tr>
@@ -24,24 +24,30 @@
     <table>
         <tr>
             <td>Producer:</td>
-            <td><input type="text"  placeholder="producer"></td>
+            <td><input type="text" placeholder="producer"></td>
         </tr>
         <tr>
             <td>Model:</td>
-            <td><input type="text"  placeholder="model"></td>
+            <td><input type="text" placeholder="model"></td>
         </tr>
         <tr>
             <td>Price:</td>
-            <td><input type="text"  placeholder="price"></td>
+            <td><input type="text" placeholder="price"></td>
         </tr>
         <tr>
             <td></td>
-            <td><button type="submit" >Update </button></td>
+            <td>
+                <button type="submit">Create</button>
+            </td>
         </tr>
     </table>
 </form>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
+
+    let phoneListAll = [];
 
     function getListNumberPhone() {
         $.ajax({
@@ -50,53 +56,92 @@
                 'Content-Type': 'application/json'
             },
             type: "GET",
-            url:"http://localhost:8080/phone/list",
+            url: "http://localhost:8080/phone/list",
             success: function (phone) {
                 console.log(phone);
-                    let phoneBodyHTML = "";
-                    for (let i = 0; i < phone.length; i++) {
-                        phoneBodyHTML += `<tr>
-                                    <td id="id">${phone[i].id}</td>
-                                    <td id="producer">${phone[i].producer}</td>
-                                    <td id="model">${phone[i].model}</td>
-                                    <td id="price">${phone[i].price}</td>
-                                    <td><button id="btnEdit" type="submit">Edit</a></td>
+                phoneListAll = phone;
+                let phoneBodyHTML = "";
+                for (let i = 0; i < phone.length; i++) {
+                    phoneBodyHTML += `<tr>
+                                    <td>${phone[i].id}</td>
+                                    <td >${phone[i].producer}</td>
+                                    <td >${phone[i].model}</td>
+                                    <td >${phone[i].price}</td>
+                                    <td><button type="submit" onclick="showEdit(${i})">Edit</button></td>
                                     </tr>`;
-                    }
-                    $("#bodySmartPhone").html(phoneBodyHTML);
+                }
+                $("#bodySmartPhone").html(phoneBodyHTML);
             },
             error: function (resultError) {
                 console.log('có lỗi xảy ra')
             }
         });
     }
-    getListNumberPhone(0);
+
+    getListNumberPhone();
 
 
+    function showEdit(idPhone) {
+        let i = idPhone;
+        let editArea = "";
+        editArea =
+            `<tr>
+                <td><input type="hidden"  id="id${phoneListAll[i].id}"></td>
+                </tr>
+                  <tr>
+                  <td>Producer:</td>
+                  <td><input  id="producer${phoneListAll[i].id}" value="${phoneListAll[i].producer}"> </td>
+                  </tr>
+                  <tr>
+                  <td>Model:</td>
+                  <td><input  id="model${phoneListAll[i].id}"  value="${phoneListAll[i].model}"></td>
+                  </tr>
+                  <tr>
+                   <td>Price:</td>
+                  <td><input id="price${phoneListAll[i].id}" value="${phoneListAll[i].price}"></td>
+                  </tr>
+                  <tr> <td> <button onclick="UpdateSmartPhone(${phoneListAll[i].id})">Update</button></td> </tr>`;
+        $("#edit").html(editArea);
+    }
 
-    $("#btnEdit").click(function () {
-        let id =$("#id").val();
-        let producer = $("#producer").val();
-        let model = $("#model").val();
-        let price = $("#price").val();
-        console.log(producer +"" + model + "" + price)
-        $.ajax({
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            type: "PUT",
-            url: "http://localhost:8080/phone/edit/",
-            success: function (data) {
-                console.log(data)
-                a.parent().parent().update();
-            },
-            error: function (resultError) {
-                console.log('có lỗi xảy ra')
-            }
-        });
-    })
 
+    $(document).ready(function () {
+        function UpdateSmartPhone(id) {
+            debugger
+            let idVal = id;
+            let producerVal = $("#producer" + `${id}`).val();
+            let modelVal = $("#model" + `${id}`).val();
+            let priceVal = $("#price" + `${id}`).val();
+            console.log(producerVal)
+            console.log(modelVal)
+            console.log(priceVal)
+            debugger
+            let phoneObj = {
+                id: idVal,
+                producer: producerVal,
+                model: modelVal,
+                price: priceVal
+            };
+            console.log(phoneObj)
+            // $.ajax({
+            //     headers: {
+            //         'Accept': 'application/json',
+            //         'Content-Type': 'application/json'
+            //     },
+            //     type: "PUT",
+            //     url: "http://localhost:8080/phone/update",
+            //     data: JSON.stringify(phoneObj),
+            //     success: function (data) {
+            //         console.log(data)
+            //         alert("edit thành công")
+            //         getListNumberPhone()
+            //     },
+            //     error: function (resultError) {
+            //         console.log('có lỗi xảy ra')
+            //     }
+            // });
+        }
+    });
 
 </script>
 </body>
