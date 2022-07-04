@@ -80,10 +80,9 @@
                 'Content-Type': 'application/json'
             },
             type: "GET", //GET, DELETE, PUT...
-            url: "http://localhost:8080/home/list?page=" + pageNumber + "&name=" + name,
+            url: "http://localhost:8080/home/search?page=" + pageNumber + "&name=" + name,
 
             success: function (blogPage) {
-                console.log(blogPage);
                 let blogBodyHTML = "";
                 totalPage = blogPage.totalPages;
                 for (let i = 0; i < blogPage.content.length; i++) {
@@ -112,7 +111,7 @@
                 'Content-Type': 'application/json'
             },
             type: "GET", //GET, DELETE, PUT...
-            url: "http://localhost:8080/home/list?page=" + pageNumber + "&name=" + name,
+            url: "http://localhost:8080/home/search?page=" + pageNumber + "&name=" + name,
 
             success: function (blogPage) {
                 console.log(blogPage);
@@ -156,18 +155,18 @@
                 alert("đến trang cuối");
             }
         });
+
         // tải thêm trang
         $("#loadMorePage").click(function () {
             loadPage(++pageCur, name)
 
         })
 
-        //search trong trang
-        $("#nameSearch").on("keyup", function () {
-
-            nameSearch = $(this).val();
+       // search trong trang
+        $("#nameSearch").on("change", function() {
+            let name = $(this).val();
             pageCur = 0;
-            getPageBlog(pageCur, nameSearch);
+            getPageBlog(pageCur,name);
         });
     });
 </script>

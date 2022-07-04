@@ -12,12 +12,9 @@ public interface IBlogService {
     List<Blog> displayAll();
 
 
-//    Blog searchByContentBlog(String name);
-
 
     Page<Blog> displayAllBlog(Pageable pageable);
 
-    Page<Blog> searchAllByContentBlog(String nameSearch,Pageable pageable);
 
     Page<Blog>findAllByContentBlogContaining(String nameSearch, Pageable pageable);
 

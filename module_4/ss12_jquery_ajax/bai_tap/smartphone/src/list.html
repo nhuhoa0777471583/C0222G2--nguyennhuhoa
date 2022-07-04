@@ -37,7 +37,7 @@
         <tr>
             <td></td>
             <td>
-                <button type="submit">Create</button>
+                <button type="button">Create</button>
             </td>
         </tr>
     </table>
@@ -62,12 +62,12 @@
                 phoneListAll = phone;
                 let phoneBodyHTML = "";
                 for (let i = 0; i < phone.length; i++) {
-                    phoneBodyHTML += `<tr>
+                    phoneBodyHTML += `<tr id="row${phone[i].id}">
                                     <td>${phone[i].id}</td>
                                     <td >${phone[i].producer}</td>
                                     <td >${phone[i].model}</td>
                                     <td >${phone[i].price}</td>
-                                    <td><button type="submit" onclick="showEdit(${i})">Edit</button></td>
+                                    <td><button onclick="showEditPhone(${i})">Edit</button></td>
                                     </tr>`;
                 }
                 $("#bodySmartPhone").html(phoneBodyHTML);
@@ -81,67 +81,91 @@
     getListNumberPhone();
 
 
-    function showEdit(idPhone) {
-        let i = idPhone;
+    function showEditPhone(idPhoneEdit) {
+        let i = idPhoneEdit;
         let editArea = "";
         editArea =
-            `<tr>
-                <td><input type="hidden"  id="id${phoneListAll[i].id}"></td>
-                </tr>
-                  <tr>
-                  <td>Producer:</td>
-                  <td><input  id="producer${phoneListAll[i].id}" value="${phoneListAll[i].producer}"> </td>
-                  </tr>
-                  <tr>
-                  <td>Model:</td>
-                  <td><input  id="model${phoneListAll[i].id}"  value="${phoneListAll[i].model}"></td>
-                  </tr>
-                  <tr>
-                   <td>Price:</td>
-                  <td><input id="price${phoneListAll[i].id}" value="${phoneListAll[i].price}"></td>
-                  </tr>
-                  <tr> <td> <button onclick="UpdateSmartPhone(${phoneListAll[i].id})">Update</button></td> </tr>`;
-        $("#edit").html(editArea);
+            `<td id="id${phoneListAll[i].id}">${phoneListAll[i].id}</td>
+              <td><input class="form-control" id="producer${phoneListAll[i].id}" value="${phoneListAll[i].producer}"</td>
+              <td><input class="form-control" id="model${phoneListAll[i].id}" value="${phoneListAll[i].model}"</td>
+              <td><input class="form-control" id="price${phoneListAll[i].id}" value="${phoneListAll[i].price}"</td>
+              <td>
+              <button onclick="getListNumberPhone()">No</button>
+              </td>
+              <td>
+              <button onclick="UpdateSmartPhone(${phoneListAll[i].id})">Yes</button>
+              </td>`;
+        $("#row" + `${phoneListAll[i].id}`).html(editArea);
+    };
+
+    function UpdateSmartPhone(id) {
+        let idVal = id;
+        let producerVal = $("#producer"+`${id}`).val();
+        let modelVal = $("#model"+`${id}`).val();
+        let priceVal = $("#price"+`${id}`).val();
+        let phoneObj = {
+            id: idVal,
+            producer: producerVal,
+            model: modelVal,
+            price: priceVal
+        };
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "PUT",
+            url: "http://localhost:8080/phone/update",
+            data: JSON.stringify(phoneObj),
+            success: function (resultSuccess) {
+                console.log(resultSuccess);
+                alert("Edit thành công")
+                getListNumberPhone();
+            },
+            error: function (resultError) {
+                alert("Edit thất bại");
+            }
+        });
     }
 
-
-    $(document).ready(function () {
-        function UpdateSmartPhone(id) {
-            debugger
-            let idVal = id;
-            let producerVal = $("#producer" + `${id}`).val();
-            let modelVal = $("#model" + `${id}`).val();
-            let priceVal = $("#price" + `${id}`).val();
-            console.log(producerVal)
-            console.log(modelVal)
-            console.log(priceVal)
-            debugger
-            let phoneObj = {
-                id: idVal,
-                producer: producerVal,
-                model: modelVal,
-                price: priceVal
-            };
-            console.log(phoneObj)
-            // $.ajax({
-            //     headers: {
-            //         'Accept': 'application/json',
-            //         'Content-Type': 'application/json'
-            //     },
-            //     type: "PUT",
-            //     url: "http://localhost:8080/phone/update",
-            //     data: JSON.stringify(phoneObj),
-            //     success: function (data) {
-            //         console.log(data)
-            //         alert("edit thành công")
-            //         getListNumberPhone()
-            //     },
-            //     error: function (resultError) {
-            //         console.log('có lỗi xảy ra')
-            //     }
-            // });
-        }
-    });
+    // $(document).ready(function () {
+    //     $("#updateSmartPhone").click(function (id) {
+    //         let idVal = id;
+    //         let producerVal = $("#producer" + `${id}`).val();
+    //         let modelVal = $("#model" + `${id}`).val();
+    //         let priceVal = $("#price" + `${id}`).val();
+    //         console.log(producerVal)
+    //         console.log(modelVal)
+    //         console.log(priceVal)
+    //         debugger
+    //         let phoneObj = {
+    //             id: idVal,
+    //             producer: producerVal,
+    //             model: modelVal,
+    //             price: priceVal
+    //         };
+    //         console.log(phoneObj)
+    //
+    //
+    //         $.ajax({
+    //             headers: {
+    //                 'Accept': 'application/json',
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             type: "PUT",
+    //             url: "http://localhost:8080/phone/update",
+    //             data: JSON.stringify(phoneObj),
+    //             success: function (data) {
+    //                 console.log(data)
+    //                 alert("edit thành công")
+    //                 getListNumberPhone()
+    //             },
+    //             error: function (resultError) {
+    //                 console.log('có lỗi xảy ra')
+    //             }
+    //         });
+    //     })
+    // });
 
 </script>
 </body>

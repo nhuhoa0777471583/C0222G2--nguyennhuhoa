@@ -28,14 +28,11 @@ public class BlogService implements IBlogService {
         return this.iBlogRepository.displayAllBlog(pageable);
     }
 
-    @Override
-    public Page<Blog> searchAllByContentBlog(String nameSearch, Pageable pageable) {
-        return this.iBlogRepository.searchAllByContentBlog(nameSearch, pageable);
-    }
+
 
     @Override
     public Page<Blog> findAllByContentBlogContaining(String nameSearch, Pageable pageable) {
-        return iBlogRepository.findAllByContentBlogContaining(java.util.Optional.ofNullable(nameSearch),pageable);
+        return iBlogRepository.findAllByContentBlogContaining(nameSearch,pageable);
     }
 
 

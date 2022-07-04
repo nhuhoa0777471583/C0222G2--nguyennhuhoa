@@ -17,30 +17,16 @@ import java.util.Optional;
 @Repository
 public interface IBlogRepository extends JpaRepository<Blog, Integer> {
 
-//    @Query(value = " select * from blog ", nativeQuery = true)
-//    List<Blog> displayAll();
-//
-//    @Query(value = " select * from blog where id = :keywork", nativeQuery = true)
-//    Blog displayAllById(@Param("keywork") Integer id);
-
-
-
     @Query(value = " select * from blog ", nativeQuery = true)
     Page<Blog> displayAllBlog(Pageable pageable);
 
 
-
-
-
-
-    @Query(value = " select * from blog  where content_blog like :keyword ", nativeQuery = true,
-            countQuery = " select count(*)  from ( select * from blog  where content_blog like :keyword ) temp")
-    Page<Blog> searchAllByContentBlog(@Param("keyword") String name, Pageable pageable);
-
-
-    Page<Blog> findAllByContentBlogContaining(Optional<String> nameSearch, Pageable pageable);
 //
-//    @Query(value = " select * from blog  where content_blog like :keyword ", nativeQuery = true)
-//    Blog searchByContentBlog(@Param("keyword") String name);
+//    @Query(value = " select * from blog where content_blog like :keyword ", nativeQuery = true,
+//            countQuery = " select count(*)  from ( select * from blog  where content_blog like :keyword ) temp")
+//    Page<Blog> searchAllByContentBlog(@Param("keyword") String name, Pageable pageable);
+
+
+    Page<Blog> findAllByContentBlogContaining(String nameSearch, Pageable pageable);
 
 }
