@@ -57,19 +57,19 @@
         <aside class="col-xl-9 col-lg-9 col-md-9 col-sm-9 midRight">
             <div class="wrapper-editor">
                 <h2>Service</h2>
-                <h3><a th:href="/service/create">create</a></h3>
+                <h3><a th:href="@{/facility/create}">create</a></h3>
                 <table id="dtBasicExample" class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <td>id</td>
                         <td>tên dịch vụ</td>
-                        <td>area</td>
-                        <td>cost</td>
-                        <td>max</td>
-                        <td>stand</td>
-                        <td>des</td>
-                        <td>pool</td>
-                        <td>number</td>
+                        <td>diện tích sử dụng</td>
+                        <td>Chi phí thuê </td>
+                        <td>Số lượng người tối đa </td>
+                        <td>Tiêu chuẩn phòng </td>
+                        <td>Mô tả</td>
+                        <td>Diện tích hồ bơi </td>
+                        <td>Số tầng</td>
                         <td>facility free</td>
                         <td>id rent type</td>
                         <td>id facility</td>
@@ -92,7 +92,36 @@
                         <td th:text="${f.getRentType().name}"></td>
                         <td th:text="${f.getFacilityType().name}"></td>
                         <td><a th:href="@{/service/edit/{id}(id=${f.getId()})}">Edit</a></td>
-                        <td><a th:href="@{/service/delete/{id}(id=${f.getId()})}">Delete</a></td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal${f.getId}">
+                                Delete
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal${f.getId}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p> Do you want delete employee have id is
+                                            <p class="text-danger" th:text="${f.getId}"></p> and name is <p
+                                                class="text-danger" th:text="${f.getName()}"></p></p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">
+                                                <a th:href="@{/service/delete/{id}(id=${f.getId()})}">Delete</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     </tbody>
 
