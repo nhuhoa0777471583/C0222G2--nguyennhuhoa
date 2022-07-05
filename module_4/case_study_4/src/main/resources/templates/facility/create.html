@@ -155,7 +155,7 @@
     <form id="contact" th:action="@{/facility/save}" th:object="${facility}" method="post">
         <h2>Create Facility Form</h2>
         <fieldset>
-            <input placeholder="id" type="text" th:field="*{id}" tabindex="0">
+            <input placeholder="id" type="hidden" th:field="*{id}" tabindex="0">
         </fieldset>
         <fieldset>
             <label>tên dịch vụ</label>

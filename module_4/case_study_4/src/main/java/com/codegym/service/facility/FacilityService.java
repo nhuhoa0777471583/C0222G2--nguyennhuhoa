@@ -36,13 +36,23 @@ public class FacilityService implements IFacilityService {
 
 
     @Override
-    public Page<Facility> displayAll(String name, Pageable pageable) {
-        return iFacilityRepository.findAllByNameContaining(name, pageable);
+    public Page<Facility> displayAll( Pageable pageable) {
+        return iFacilityRepository.displayAll( pageable);
 
     }
 
     @Override
     public void save(Facility facility) {
         this.iFacilityRepository.save(facility);
+    }
+
+    @Override
+    public Facility displayById(Integer id) {
+        return this.iFacilityRepository.displayById(id);
+    }
+
+    @Override
+    public List<Facility> displayAll() {
+        return this.iFacilityRepository.displayAll();
     }
 }

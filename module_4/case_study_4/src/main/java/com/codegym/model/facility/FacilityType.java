@@ -7,7 +7,7 @@ import java.util.List;
 @Table(name = "facility_type")
 public class FacilityType {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     @OneToMany(mappedBy = "facilityType")

@@ -12,7 +12,11 @@ public interface IFacilityService {
     List<FacilityType> displayAllFacilityType();
     List<RentType> displayAllRentType();
 
-    Page<Facility> displayAll(String name, Pageable pageable);
+    Page<Facility> displayAll( Pageable pageable);
 
     void save(Facility facility);
+
+    Facility displayById(Integer id);
+
+    List<Facility> displayAll();
 }
