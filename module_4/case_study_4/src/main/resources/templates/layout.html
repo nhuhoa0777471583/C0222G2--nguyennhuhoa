@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <th:block th:fragment="style">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        <title>Layout</title>
+        <style>
+            .body {
+                height: 900px;
+            }
+
+            .divBig {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .head {
+                height: 100px;
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                border-style: solid;
+            }
+
+            .navbar {
+                margin-top: 0;
+                height: 50px;
+                width: 100%;
+                margin-bottom: 0;
+                border-style: solid;
+
+            }
+
+
+            footer {
+                height: 50px;
+                width: 100%;
+                margin-bottom: 0;
+                float: left;
+                border-style: solid;
+
+            }
+        </style>
+
+    </th:block>
+</head>
+<body class="body">
+<div class="container-fluid divBig" th:fragment="divBig">
+    <header class="row head" th:fragment="head">
+
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="nav">
+        <a class="navbar-brand" href="/home">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/customer/home">Customer <span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/employee">Employee</a>
+                <a class="nav-item nav-link" href="/service">Service</a>
+                <a class="nav-item nav-link" href="/contract">Contract</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <footer th:fragment="footer">
+        <div class="text-center">
+            <p>Nguyen Nhu Hoa 2002</p>
+        </div>
+    </footer>
+</div>
+</body>
+<th:block th:fragment="cdn">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</th:block>
+</html>
