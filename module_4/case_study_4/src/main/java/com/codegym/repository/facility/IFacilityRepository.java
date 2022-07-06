@@ -13,7 +13,11 @@ import java.util.List;
 @Repository
 public interface IFacilityRepository extends JpaRepository<Facility, Integer> {
 
-    @Query(value =" select * from facility ", nativeQuery = true)
+
+//    Page<Facility> findAll(Pageable pageable);
+
+    @Query(value =" select * from facility ", nativeQuery = true,
+            countQuery = " select count(*) from (select * from facility) temp_table ")
     Page<Facility> displayAll(Pageable pageable);
 
     @Query(value = "select * from facility where id = :id", nativeQuery = true)

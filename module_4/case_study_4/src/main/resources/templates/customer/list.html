@@ -15,8 +15,6 @@
         }
 
         .mid {
-            margin-right: 0;
-            margin-left: 0;
             margin-top: 0;
             height: 750px;
             border-style: solid;
@@ -38,10 +36,12 @@
             border-style: solid;
 
         }
-        #dtBasicExample{
+
+        #dtBasicExample {
             margin-top: 16px;
             width: 90%;
         }
+
     </style>
 </head>
 <body class="body">
@@ -49,63 +49,124 @@
     <header th:replace="~{layout :: head}"></header>
     <nav th:replace="~{layout :: nav}"></nav>
 
-    <div class="row mid">
-        <article class="col-xl-3 col-lg-3 col-md-3 col-sm-3 midLeft">
+    <div class="row mid" style="margin-right: 0;margin-left: 0">
+        <aside class="col-xl-12 col-lg-12 col-md-12 col-sm-12 midRight">
+            <div class="container-fluid">
+                <div>
+                    <div><h2>Customer <b>Details</b></h2></div>
+                    <div th:if="${msg}">
+                        <p th:text="${msg}"></p>
+                    </div>
+                    <div>
+                        <a th:href="@{/customer/create}">
+                            <button type="submit" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New
+                            </button>
+                        </a>
+                    </div>
+                </div>
 
-        </article>
-        <aside class="col-xl-9 col-lg-9 col-md-9 col-sm-9 midRight">
-            <div class="wrapper-editor">
+                <table id="dtBasicExample" class="table table-hover table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <td>STT</td>
+                        <td>Tên khách hàng</td>
+                        <td>Ngày sinh</td>
+                        <td>Giới tính</td>
+                        <td>CMND/CCCD</td>
+                        <td>Số Phone</td>
+                        <td>Email</td>
+                        <td>Địa chỉ</td>
+                        <td>Loại khách hàng</td>
+                        <td colspan="2">Action</td>
 
-                <table id="dtBasicExample" class="table table-striped table-bordered">
-                <thead>
-                <tr>
-                    <td>id</td>
-                    <td>Tên khách hàng</td>
-                    <td>Ngày sinh</td>
-                    <td>Giới tính</td>
-                    <td>CMND/CCCD</td>
-                    <td>Số Phone</td>
-                    <td>Email</td>
-                    <td>Address</td>
-                    <td>id customer type</td>
-                    <td>Action</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="c, loop: ${customer}">
+                        <td th:text="${loop.count}"></td>
+                        <td th:text="${c.getName()}"></td>
+                        <td th:text="${c.getBirdthday()}"></td>
+                        <td>
+                           <p th:if="${c.getGender() == 1}">Nam</p>
+                           <p th:if="${c.getGender() == 0}">Nữ</p>
+                        </td>
+                        <td th:text="${c.getIdCard()}"></td>
+                        <td th:text="${c.getPhone()}"></td>
+                        <td th:text="${c.getEmail()}"></td>
+                        <td th:text="${c.getAddress()}"></td>
+                        <td th:text="${c.customerType.nameCustomerType}"></td>
+                        <td><a th:href="@{/customer/edit/{id}(id=${c.getId()})}">Edit</a></td>
+                        <td>
 
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="c: ${customer}">
-                    <td th:text="${c.getId()}"></td>
-                    <td th:text="${c.getName()}"></td>
-                    <td th:text="${c.getBirdthday()}"></td>
-                    <td th:text="${c.getGender()}"></td>
-                    <td th:text="${c.getIdCard()}"></td>
-                    <td th:text="${c.getPhone()}"></td>
-                    <td th:text="${c.getEmail()}"></td>
-                    <td th:text="${c.getAddress()}"></td>
-                    <td th:text="${c.customerType.nameCustomerType}"></td>
-                    <td><a th:href="@{/customer/edit/{id}(id=${c.getId()})}">Edit</a></td>
-                    <td><a th:href="@{/customer/delete/{id}(id=${c.getId()})}">Delete</a></td>
-                </tr>
-                </tbody>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    th:data-target="'#exampleModal'+${c.id}">
+                                Delete
+                            </button>
 
+                            <!-- Modal -->
+                            <div class="modal fade" th:id="'exampleModal'+${c.id}" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p> Do you want delete customers have id is
+                                            <p class="text-danger" th:text="${c.getId()}"></p> have name customers is <p
+                                                class="text-danger" th:text="${c.getName()}"></p></p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No
+                                            </button>
+                                            <form th:action="@{/customer/delete/{id}(id=${c.getId()})}">
+                                                <button type="submit" class="btn btn-primary">Yes</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
                 </table>
 
-<!--                <a th:if="${customer.hasPrevious()}"-->
-<!--                   th:href="@{/customer(page=${customer.number - 1}, nameSearch=${nameSearchVal}">-->
-<!--                    Previous-->
-<!--                </a>-->
-<!--                <span th:text="${blog.number + 1}"></span>-->
-<!--                /-->
-<!--                <span th:text="${blog.totalPages}"></span>-->
 
-
-<!--                <a th:if="${customer.hasNext()}"-->
-<!--                   th:href="@{/customer(page=${customer.number + 1}, nameSearch=${nameSearchVal}">-->
-<!--                    Next-->
-<!--                </a>-->
-
+                <div class="col-2 ">
+                    <ul class="pagination" th:if="${customer.totalPages > 0}">
+                        <li class="page-item">
+                            <a class="page-link" th:if="${customer.hasPrevious()}"
+                               th:href="@{'/customer/home'(page=${customer.number - 1})}">
+                                <<
+                            </a>
+                        </li>
+                        <div th:each="item1, loop : ${#numbers.sequence(1, customer.totalPages )}">
+                            <div th:if="${(customer.number + 1) == item1}">
+                                <li class="page-item active">
+                                    <a class="page-link" href="#" th:text="${item1}"
+                                       th:href="@{/customer/home(page=(${item1}-1))}"></a>
+                                </li>
+                            </div>
+                            <div th:unless="${((customer.number + 1) == item1)}">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" th:text="${item1}"
+                                       th:href="@{/customer/home(page=(${item1}-1))}"></a>
+                                </li>
+                            </div>
+                        </div>
+                        <li class="page-item">
+                            <a class="page-link" th:if="${customer.hasNext()}"
+                               th:href="@{'/customer/home'(page=${customer.number + 1})}">
+                                >>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
         </aside>
     </div>
     <footer th:replace="~{layout ::footer}"></footer>

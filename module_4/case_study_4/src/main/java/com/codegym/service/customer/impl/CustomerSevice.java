@@ -10,16 +10,22 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CustomerSevice implements ICustomerService {
-@Autowired
-private ICustomersRepository iCustomersRepository;
+
+    @Autowired
+    private ICustomersRepository iCustomersRepository;
 
     @Override
-    public Page<Customer> displayCustomer(String name, Pageable pageable) {
-        return iCustomersRepository.findAllByNameContaining(name,pageable);
+    public Page<Customer> findAll(Pageable pageable) {
+        return iCustomersRepository.findAll(pageable);
     }
 
     @Override
     public void create(Customer customer) {
+        iCustomersRepository.save(customer);
+    }
 
+    @Override
+    public Customer displayAllById(Integer id) {
+        return iCustomersRepository.displayAllById(id);
     }
 }

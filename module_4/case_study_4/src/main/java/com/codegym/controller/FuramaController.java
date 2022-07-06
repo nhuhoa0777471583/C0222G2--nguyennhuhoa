@@ -11,8 +11,8 @@ public class FuramaController {
         return "index";
     }
 
-//    @GetMapping("/view")
-//    public String layout(){
-//        return "customer/list";
-//    }
+    @GetMapping("/view")
+    public String layout(){
+        return "customer/edit";
+    }
 }

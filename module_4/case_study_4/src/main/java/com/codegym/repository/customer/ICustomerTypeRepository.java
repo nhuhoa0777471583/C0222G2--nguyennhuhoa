@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface ICustomerTypeRepository extends JpaRepository<CustomerType, Integer> {
-    @Query(value = " select * from customerType", nativeQuery = true)
+    @Query(value = " select * from customer_type", nativeQuery = true)
     List<CustomerType> displayAllCustomerType();
 
 }

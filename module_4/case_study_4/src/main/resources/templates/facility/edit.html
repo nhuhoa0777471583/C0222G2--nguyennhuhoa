@@ -153,7 +153,7 @@
 <body>
 <div class="container">
     <form id="contact" th:action="@{/facility/update}" th:object="${facility}" method="post">
-        <h2>Create Facility Form</h2>
+        <h2>Sửa dịch vụ</h2>
         <fieldset>
             <input placeholder="id" type="text" th:field="*{id}" tabindex="0">
         </fieldset>
@@ -236,6 +236,8 @@
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
         </fieldset>
     </form>
+
+
 </div>
 </body>
 </html>

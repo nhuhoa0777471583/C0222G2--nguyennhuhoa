@@ -51,8 +51,5 @@ public class FacilityService implements IFacilityService {
         return this.iFacilityRepository.displayById(id);
     }
 
-    @Override
-    public List<Facility> displayAll() {
-        return this.iFacilityRepository.displayAll();
-    }
+
 }

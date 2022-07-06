@@ -18,5 +18,5 @@ public interface IFacilityService {
 
     Facility displayById(Integer id);
 
-    List<Facility> displayAll();
+
 }
