@@ -5,6 +5,7 @@
     <title>Title</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
         * {
             margin: 0;
             padding: 0;
@@ -46,7 +47,8 @@
         #contact {
             background: #F9F9F9;
             padding: 25px;
-            margin: 150px 0;
+            margin-top: 5px;
+            margin-bottom: 50px;
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         }
 
@@ -124,7 +126,6 @@
         }
 
 
-
         #contact input:focus,
         #contact textarea:focus {
             outline: 0;
@@ -151,41 +152,42 @@
 <body>
 <div class="container">
     <form id="contact" th:action="@{/customer/update}" th:object="${customer}" method="post">
-        <h2>Create Facility Form</h2>
+        <h2>Edit Facility Form</h2>
         <fieldset>
             <input placeholder="id" type="hidden" th:field="*{id}" tabindex="0">
         </fieldset>
         <fieldset>
-            <label>tên khách hàng</label>
-            <input placeholder="tên khách hàng" type="text" th:field="*{name}" th:value="${customer.name}" tabindex="1">
+            <label>name</label>
+            <input placeholder="name" type="text" th:field="*{name}" th:value="${customer.name}" tabindex="1">
         </fieldset>
         <fieldset>
-            <label>ngày sinh</label>
-            <input placeholder="ngày sinh" type="text"  th:field="*{birdthday}" th:value="${customer.birdthday}" tabindex="2" >
+            <label>birthday</label>
+            <input placeholder="birthday" type="date" th:field="*{birdthday}" th:value="${customer.birdthday}"
+                   tabindex="2">
         </fieldset>
         <fieldset>
-            <label>Giới tính</label>
-            <input placeholder="Giới tính" type="text" th:field="*{gender}" th:value="${customer.gender}" tabindex="3" >
+            <label>gender</label>
+            <input placeholder="gender" type="text" th:field="*{gender}" th:value="${customer.gender}" tabindex="3">
         </fieldset>
         <fieldset>
-            <label>CMMD/CCCD</label>
-            <input placeholder="CMMD/CCCD" type="text"  th:field="*{idCard}" th:value="${customer.idCard}" tabindex="4" >
+            <label>id card</label>
+            <input placeholder="id card" type="text" th:field="*{idCard}" th:value="${customer.idCard}" tabindex="4">
         </fieldset>
         <fieldset>
             <label>Phone</label>
-            <input placeholder="số phone" type="text"  th:field="*{phone}" th:value="${customer.phone}" tabindex="5" >
+            <input placeholder="phone" type="text" th:field="*{phone}" th:value="${customer.phone}" tabindex="5">
         </fieldset>
         <fieldset>
             <label>email</label>
-            <input placeholder="email" type="text"  th:field="*{email}" th:value="${customer.email}" tabindex="6" >
+            <input placeholder="email" type="text" th:field="*{email}" th:value="${customer.email}" tabindex="6">
         </fieldset>
         <fieldset>
-            <label>địa chỉ</label>
-            <input placeholder="địa chỉ" type="text" th:field="*{address}" th:value="${customer.address}" tabindex="7" >
+            <label>address</label>
+            <input placeholder="address" type="text" th:field="*{address}" th:value="${customer.address}" tabindex="7">
         </fieldset>
 
         <fieldset>
-            <label>Loại khách hàng</label>
+            <label>customer type</label>
             <select th:field="*{customerType}">
                 <option th:each="c :${customerType}"
                         th:text="${c.nameCustomerType}"

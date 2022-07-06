@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Divison {
+public class Division {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -12,10 +12,10 @@ public class Divison {
     @OneToMany(mappedBy = "divison")
     private List<Employee> employeeList;
 
-    public Divison() {
+    public Division() {
     }
 
-    public Divison(Integer id, String name, List<Employee> employeeList) {
+    public Division(Integer id, String name, List<Employee> employeeList) {
         this.id = id;
         this.name = name;
         this.employeeList = employeeList;

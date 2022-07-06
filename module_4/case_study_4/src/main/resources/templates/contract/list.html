@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{layout :: style }"></th:block>
+    <style>
+        .body {
+            height: 900px;
+        }
+
+        .divBig {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .mid {
+            margin-top: 0;
+            height: 750px;
+        }
+
+        article {
+            height: 100%;
+            float: left;
+            width: 750px;
+        }
+
+        aside {
+            height: 100%;
+            float: left;
+            width: 750px;
+        }
+
+        #dtBasicExample {
+            margin-top: 16px;
+            width: 90%;
+        }
+
+    </style>
+</head>
+<body class="body">
+<div class="container-fluid divBig">
+    <header th:replace="~{layout :: head}"></header>
+    <nav th:replace="~{layout :: nav}"></nav>
+
+    <div class="row mid" style="margin-right: 0;margin-left: 0">
+        <aside class="col-xl-12 col-lg-12 col-md-12 col-sm-12 midRight">
+            <div class="container-fluid">
+                <div>
+                    <div><h2>Contract</h2></div>
+                    <div th:if="${msg}">
+                        <p th:text="${msg}"></p>
+                    </div>
+                    <div>
+                        <a th:href="@{/contract/create}">
+                            <button type="submit" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <table id="dtBasicExample" class="table table-hover table-striped table-bordered">
+                    <thead class="table-primary">
+                    <tr>
+                        <td>#</td>
+                        <td>service</td>
+                        <td>customer</td>
+                        <td>star day</td>
+                        <td>end day</td>
+                        <td>deposit</td>
+                        <td>mony total</td>
+                        <td colspan="">attach service</td>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Room 01</td>
+                        <td>nguyen nhu hoa</td>
+                        <td>08/12/2020</td>
+                        <td>08/01/2021</td>
+                        <td>0.0</td>
+                        <td>100000000</td>
+                        <td>
+                            <!--Modal add-->
+                            <div>
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                    Add New
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel1">
+                                                    <h2>Create Employee Form</h2>
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container">
+                                                    <form id="contact" th:action="@{/contract/save}"
+                                                          th:object="${contract}"
+                                                          method="post">
+                                                        <table>
+                                                            <tr><input placeholder="id" type="hidden" tabindex="0"></tr>
+                                                            <tr>
+                                                                <td>star day</td>
+                                                                <td><input placeholder="star day" type="date"
+                                                                           tabindex="1">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>end day</td>
+                                                                <td><input placeholder="end day" type="date"
+                                                                           tabindex="1">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>deposit</td>
+                                                                <td><input placeholder="deposit" type="text"
+                                                                           tabindex="1"></td>
+                                                            </tr>
+                                                            <tr class="table-dark">
+                                                                <td>money total</td>
+                                                                <td><input placeholder="money total" type="text"
+                                                                           tabindex="1"></td>
+                                                            <tr>
+                                                                <td>customer rent service</td>
+                                                                <td><select>
+                                                                    <option>choose customer</option>
+                                                                    <option>Vip</option>
+                                                                    <option>Gold</option>
+                                                                </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Service</td>
+                                                                <td><select>
+                                                                    <option>choose service </option>
+                                                                    <option>massa</option>
+                                                                    <option>karaoke</option>
+                                                                    <option>food</option>
+                                                                    <option>drink free</option>
+                                                                    <option>rent car</option>
+                                                                </select>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">No
+                                                            </button>
+                                                            <form th:action="@{/contract/save/}">
+                                                                <button type="submit" class="btn btn-primary">Yes
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>1</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <!--                <div class="col-2 ">-->
+                <!--                    <ul class="pagination" th:if="${customer.totalPages > 0}">-->
+                <!--                        <li class="page-item">-->
+                <!--                            <a class="page-link" th:if="${customer.hasPrevious()}"-->
+                <!--                               th:href="@{'/customer/home'(page=${customer.number - 1})}">-->
+                <!--                                <<-->
+                <!--                            </a>-->
+                <!--                        </li>-->
+                <!--                        <div th:each="item1, loop : ${#numbers.sequence(1, customer.totalPages )}">-->
+                <!--                            <div th:if="${(customer.number + 1) == item1}">-->
+                <!--                                <li class="page-item active">-->
+                <!--                                    <a class="page-link" href="#" th:text="${item1}"-->
+                <!--                                       th:href="@{/customer/home(page=(${item1}-1))}"></a>-->
+                <!--                                </li>-->
+                <!--                            </div>-->
+                <!--                            <div th:unless="${((customer.number + 1) == item1)}">-->
+                <!--                                <li class="page-item">-->
+                <!--                                    <a class="page-link" href="#" th:text="${item1}"-->
+                <!--                                       th:href="@{/customer/home(page=(${item1}-1))}"></a>-->
+                <!--                                </li>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                        <li class="page-item">-->
+                <!--                            <a class="page-link" th:if="${customer.hasNext()}"-->
+                <!--                               th:href="@{'/customer/home'(page=${customer.number + 1})}">-->
+                <!--                                >>-->
+                <!--                            </a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+                <!--                </div>-->
+
+            </div>
+        </aside>
+    </div>
+    <footer th:replace="~{layout ::footer}"></footer>
+</div>
+</body>
+<th:block th:replace="~{layout :: cdn}"></th:block>
+</html>

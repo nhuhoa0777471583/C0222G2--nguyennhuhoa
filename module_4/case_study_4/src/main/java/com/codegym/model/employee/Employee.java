@@ -3,7 +3,6 @@ package com.codegym.model.employee;
 import com.codegym.model.contract.Contract;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -26,13 +25,13 @@ public class Employee {
     private Education education;
     @ManyToOne
     @JoinColumn(name = "id_divison", referencedColumnName = "id")
-    private Divison divison;
+    private Division divison;
     @OneToMany(mappedBy = "employee")
     private List<Contract> contractList;
     public Employee() {
     }
 
-    public Employee(Integer id, String name, String birdthday, String idCard, Double salary, String phone, String email, String address, Position position, Education education, Divison divison, List<Contract> contractList) {
+    public Employee(Integer id, String name, String birdthday, String idCard, Double salary, String phone, String email, String address, Position position, Education education, Division divison, List<Contract> contractList) {
         this.id = id;
         this.name = name;
         this.birdthday = birdthday;
@@ -127,11 +126,11 @@ public class Employee {
         this.education = education;
     }
 
-    public Divison getDivison() {
+    public Division getDivison() {
         return divison;
     }
 
-    public void setDivison(Divison divison) {
+    public void setDivison(Division divison) {
         this.divison = divison;
     }
 

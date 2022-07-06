@@ -46,7 +46,8 @@
         #contact {
             background: #F9F9F9;
             padding: 25px;
-            margin: 150px 0;
+            margin-top: 5px;
+            margin-bottom: 50px;
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         }
 
@@ -153,65 +154,82 @@
 <body>
 <div class="container">
     <form id="contact" th:action="@{/facility/save}" th:object="${facility}" method="post">
-        <h2>Thêm dịch</h2>
+        <h2>Create Service</h2>
         <fieldset>
-            <input placeholder="id" type="hidden" th:field="*{id}" tabindex="0">
+            <input placeholder="id" type="text" th:field="*{id}" tabindex="0">
         </fieldset>
+
         <fieldset>
-            <label>tên dịch vụ</label>
-            <input placeholder="tên dịch vụ" type="text" th:field="*{name}" tabindex="1">
+            <label>name</label>
+            <input placeholder="name" type="text"
+                   th:field="*{name}"   tabindex="1">
         </fieldset>
+
         <fieldset>
-            <label>diện tích sử dụng</label>
-            <input placeholder="diện tích sử dụng" type="text"  th:field="*{area}" tabindex="2" >
+            <label>area</label>
+            <input placeholder="area" type="text"
+                   th:field="*{area}" tabindex="2" >
         </fieldset>
+
         <fieldset>
-            <label>Chi phí thuê </label>
-            <input placeholder="Chi phí thuê " type="text" th:field="*{cost}" tabindex="3" >
+            <label>cost</label>
+            <input placeholder="cost" type="text"
+                   th:field="*{cost}" tabindex="3" >
         </fieldset>
+
         <fieldset>
-            <label>Số lượng người tối đa </label>
-            <input placeholder="Số lượng người tối đa " type="text"  th:field="*{maxPeople}" tabindex="4" >
+            <label>max people</label>
+            <input placeholder="max people" type="text"
+                   th:field="*{maxPeople}"  tabindex="4" >
         </fieldset>
+
         <fieldset>
-            <label>Tiêu chuẩn phòng </label>
-            <input placeholder="Tiêu chuẩn phòng " type="text"  th:field="*{standardRoom}" tabindex="5" >
+            <label>standard room</label>
+            <input placeholder="standard room" type="text"
+                   th:field="*{standardRoom}" tabindex="5" >
         </fieldset>
+
         <fieldset>
-            <label>Mô tả</label>
-            <input placeholder="Mô tả" type="text"  th:field="*{descriptionOtherConvenience}" tabindex="6" >
+            <label>Description</label>
+            <input placeholder="Description" type="text"
+                   th:field="*{descriptionOtherConvenience}"   tabindex="6" >
         </fieldset>
+
         <fieldset>
-            <label>Diện tích hồ bơi </label>
-            <input placeholder="Diện tích hồ bơi " type="text" th:field="*{poolArea}" tabindex="7" >
+            <label>pool area</label>
+            <input placeholder="pool area" type="text"
+                   th:field="*{poolArea}"   tabindex="7" >
         </fieldset>
+
         <fieldset>
-            <label>Số tầng</label>
-            <input placeholder="Số tầng" type="text"  th:field="*{numberOfFloars}" tabindex="8" >
+            <label>number of floars</label>
+            <input placeholder="number of floar" type="text"
+                   th:field="*{numberOfFloars}"   tabindex="8" >
         </fieldset>
+
         <fieldset>
-            <label>Dịch vụ miễn phí đi kèm</label>
-            <input placeholder="Dịch vụ miễn phí đi kèm" type="text" th:field="*{facilityFree}" tabindex="9" >
+            <label>facility free</label>
+            <input placeholder="facility free" type="text"
+                   th:field="*{facilityFree}"  tabindex="9" >
         </fieldset>
+
         <fieldset>
-            <label>Kiểu thuê</label>
+            <label>rent type</label>
             <select th:field="*{rentType}">
                 <option th:each="r :${rentType}"
-                        th:text="${r.name}"
-                        th:value="${r.id}">
-                </option>
-            </select>
-        </fieldset>
-        <fieldset>
-            <label>Loại dịch vụ</label>
-            <select th:field="*{facilityType}">
-                <option th:each="f :${facilityType}"
-                        th:text="${f.name}"
-                        th:value="${f.id}">
+                        th:text="${r.name}" th:value="${r.id}">
                 </option>
             </select>
         </fieldset>
 
+        <fieldset>
+            <label>service type</label>
+            <select th:field="*{facilityType}">
+                <option th:each="f :${facilityType}"
+                        th:text="${f.name}" th:value="${f.id}">
+                </option>
+            </select>
+        </fieldset>
         <fieldset>
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
         </fieldset>

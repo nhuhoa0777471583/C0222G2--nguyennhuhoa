@@ -46,7 +46,8 @@
         #contact {
             background: #F9F9F9;
             padding: 25px;
-            margin: 150px 0;
+            margin-top: 5px;
+            margin-bottom: 50px;
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         }
 
@@ -158,39 +159,40 @@
             <input placeholder="id" type="hidden" th:field="*{id}" tabindex="0">
         </fieldset>
         <fieldset>
-            <label>tên khách hàng</label>
-            <input placeholder="tên khách hàng" type="text" th:field="*{name}" tabindex="1">
+            <label>name</label>
+            <input placeholder="name" type="text" th:field="*{name}" tabindex="1">
         </fieldset>
         <fieldset>
-            <label>ngày sinh</label>
-            <input placeholder="ngày sinh" type="text"  th:field="*{birdthday}" tabindex="2" >
+            <label>birthday</label>
+            <input placeholder="birthday" type="date" th:field="*{birdthday}"
+                   tabindex="2">
         </fieldset>
         <fieldset>
-            <label>Giới tính</label>
-            <input placeholder="Giới tính" type="text" th:field="*{gender}" tabindex="3" >
+            <label>gender</label>
+            <input placeholder="gender" type="text" th:field="*{gender}" tabindex="3">
         </fieldset>
         <fieldset>
-            <label>CMMD/CCCD</label>
-            <input placeholder="CMMD/CCCD" type="text"  th:field="*{idCard}" tabindex="4" >
+            <label>id card</label>
+            <input placeholder="id card" type="text" th:field="*{idCard}"  tabindex="4">
         </fieldset>
         <fieldset>
             <label>Phone</label>
-            <input placeholder="số phone" type="text"  th:field="*{phone}" tabindex="5" >
+            <input placeholder="phone" type="text" th:field="*{phone}"  tabindex="5">
         </fieldset>
         <fieldset>
             <label>email</label>
-            <input placeholder="email" type="text"  th:field="*{email}" tabindex="6" >
+            <input placeholder="email" type="text" th:field="*{email}"  tabindex="6">
         </fieldset>
         <fieldset>
-            <label>địa chỉ</label>
-            <input placeholder="địa chỉ" type="text" th:field="*{address}" tabindex="7" >
+            <label>address</label>
+            <input placeholder="address" type="text" th:field="*{address}"  tabindex="7">
         </fieldset>
+
         <fieldset>
-            <label>Loại khách hàng</label>
+            <label>customer type</label>
             <select th:field="*{customerType}">
                 <option th:each="c :${customerType}"
-                        th:text="${c.nameCustomerType}"
-                        th:value="${c.id}">
+                        th:text="${c.nameCustomerType}" th:value="${c.id}">
                 </option>
             </select>
         </fieldset>
