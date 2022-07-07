@@ -9,11 +9,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/customer")
@@ -25,9 +24,11 @@ public class CustomerController {
 
     @GetMapping("/home")
     public String view(Model model,
+                       @RequestParam Optional<String> nameSearch,
                        @PageableDefault(value = 4) Pageable pageable) {
-
-        model.addAttribute("customer", iCustomerService.findAll(pageable));
+        String nameSearchVal = nameSearch.orElse("");
+        model.addAttribute("customer", iCustomerService.displayAllAndDisplayByNameSearch("%"+nameSearchVal+"%", pageable));
+        model.addAttribute("nameSearchVal", nameSearchVal);
         return "/customer/list";
     }
 
@@ -54,26 +55,26 @@ public class CustomerController {
     }
 
     @PostMapping("/update")
-    public String update(Customer customer,RedirectAttributes redirectAttributes){
+    public String update(Customer customer, RedirectAttributes redirectAttributes) {
         this.iCustomerService.save(customer);
         redirectAttributes.addFlashAttribute("msg", "Update customer successfully!!");
         return "redirect:/customer/home";
 
 
     }
+
     @GetMapping("/delete/{id}")
-    public String showInfoToDelete(Model model,@PathVariable Integer id){
+    public String showInfoToDelete(Model model, @PathVariable Integer id) {
         model.addAttribute("customer", this.iCustomerService.displayAllById(id));
         return "redirect:/customer/home";
     }
 
     @PostMapping("/delete")
-    public String delete(Customer customer,RedirectAttributes redirectAttributes){
+    public String delete(Customer customer, RedirectAttributes redirectAttributes) {
         this.iCustomerService.save(customer);
         redirectAttributes.addFlashAttribute("msg", "Delete customer successfully!!");
         return "redirect:/customer/home";
     }
-
 
 
 }

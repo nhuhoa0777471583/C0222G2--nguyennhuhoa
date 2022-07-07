@@ -12,7 +12,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
+    private String nameCustomer;
     private String birdthday;
     private Integer gender;
     private String idCard;
@@ -30,9 +30,9 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer id, String name, String birdthday, Integer gender, String idCard, String phone, String email, String address, CustomerType customerType, List<Contract> contractList) {
+    public Customer(Integer id, String nameCustomer, String birdthday, Integer gender, String idCard, String phone, String email, String address, CustomerType customerType, List<Contract> contractList) {
         this.id = id;
-        this.name = name;
+        this.nameCustomer = nameCustomer;
         this.birdthday = birdthday;
         this.gender = gender;
         this.idCard = idCard;
@@ -60,11 +60,11 @@ public class Customer {
     }
 
     public String getName() {
-        return name;
+        return nameCustomer;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nameCustomer = name;
     }
 
     public String getBirdthday() {

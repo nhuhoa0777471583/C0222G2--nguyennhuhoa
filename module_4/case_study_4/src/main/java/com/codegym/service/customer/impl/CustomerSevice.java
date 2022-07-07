@@ -15,8 +15,8 @@ public class CustomerSevice implements ICustomerService {
     private ICustomersRepository iCustomersRepository;
 
     @Override
-    public Page<Customer> findAll(Pageable pageable) {
-        return iCustomersRepository.findAll(pageable);
+    public Page<Customer> displayAllAndDisplayByNameSearch(String nameSearch, Pageable pageable) {
+        return iCustomersRepository.displayAllAndDisplayByNameSearch(nameSearch,pageable);
     }
 
     @Override

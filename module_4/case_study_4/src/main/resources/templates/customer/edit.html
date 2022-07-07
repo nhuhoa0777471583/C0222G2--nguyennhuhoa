@@ -154,7 +154,7 @@
 <div class="container">
     <nav th:replace="~{layout :: nav}"></nav>
     <form id="contact" th:action="@{/customer/update}" th:object="${customer}" method="post">
-        <h2>Edit Customer Form</h2>
+        <h2>Edit Customer</h2>
         <fieldset>
             <input class="form-control" placeholder="id" type="hidden" th:field="*{id}" tabindex="0">
         </fieldset>

@@ -156,7 +156,7 @@
 <div class="container">
     <nav th:replace="~{layout :: nav}"></nav>
     <form id="contact" th:action="@{/customer/save}" th:object="${customer}" method="post">
-        <h2>Create Facility Form</h2>
+        <h2>Create Customer</h2>
         <fieldset>
             <input class="form-control" placeholder="id" type="hidden" th:field="*{id}" tabindex="0">
         </fieldset>

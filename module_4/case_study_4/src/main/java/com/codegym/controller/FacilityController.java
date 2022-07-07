@@ -11,8 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.Optional;
-
 @Controller
 @RequestMapping("/facility")
 public class FacilityController {
@@ -24,7 +22,7 @@ public class FacilityController {
     public String view(Model model,
                        @PageableDefault(value = 4) Pageable pageable) {
         model.addAttribute("facility", this.iFacilityService.displayAll(pageable));
-        return "/facility/list";
+        return "facility/list";
     }
 
 
