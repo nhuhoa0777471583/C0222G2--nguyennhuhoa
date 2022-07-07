@@ -6,12 +6,14 @@ import com.example.demo.service.IBlogService;
 import com.example.demo.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -36,14 +38,19 @@ public class BlogController {
 //        return "blog/list";
 //    }
 
+//    @GetMapping("")
+//    public String viewSort(Model model,@RequestParam("field")Optional<String> field){
+//        Sort sort = Sort.by(Sort.Direction.ASC,field.orElse("contentBlog"));
+//        List<Blog> blogList = this.iBlogService.displayAll(sort);
+//        return "blog/list";
+//    }
+
     @GetMapping("")
     public String view(Model model,
                        @PageableDefault(value = 2) Pageable pageable,
                        @RequestParam Optional<String> nameSearch) {
         String nameSearchVal = nameSearch.orElse("");
-
         model.addAttribute("blog", iBlogService.displayAllByContentBlog("%"+nameSearchVal+"%", pageable));
-
         model.addAttribute("nameSearchVal", nameSearchVal);
         return "blog/list";
     }

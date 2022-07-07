@@ -1,4 +1,4 @@
 package com.codegym.dto;
 
-public interface FirstInfo {
+public interface BasicInfo {
 }

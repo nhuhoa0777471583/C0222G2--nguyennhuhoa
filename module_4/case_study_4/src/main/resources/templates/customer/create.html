@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <th:block th:replace="~{layout :: style }"></th:block>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
         * {
@@ -24,7 +25,7 @@
             font-size: 12px;
             line-height: 30px;
             color: #777;
-            background: #4CAF50;
+            background: #F6FBF4;
         }
 
         .container {
@@ -46,7 +47,7 @@
         #contact {
             background: #F9F9F9;
             padding: 25px;
-            margin-top: 5px;
+            margin-top: 40%;
             margin-bottom: 50px;
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         }
@@ -153,23 +154,28 @@
 </head>
 <body>
 <div class="container">
+    <nav th:replace="~{layout :: nav}"></nav>
     <form id="contact" th:action="@{/customer/save}" th:object="${customer}" method="post">
         <h2>Create Facility Form</h2>
         <fieldset>
-            <input placeholder="id" type="hidden" th:field="*{id}" tabindex="0">
+            <input class="form-control" placeholder="id" type="hidden" th:field="*{id}" tabindex="0">
         </fieldset>
         <fieldset>
             <label>name</label>
-            <input placeholder="name" type="text" th:field="*{name}" tabindex="1">
+            <input class="form-control" placeholder="name" type="text" th:field="*{name}" tabindex="1">
         </fieldset>
         <fieldset>
             <label>birthday</label>
-            <input placeholder="birthday" type="date" th:field="*{birdthday}"
+            <input class="form-control" placeholder="birthday" type="date" th:field="*{birdthday}"
                    tabindex="2">
         </fieldset>
         <fieldset>
             <label>gender</label>
-            <input placeholder="gender" type="text" th:field="*{gender}" tabindex="3">
+            <select class="form-control">
+                <option>Chọn giới tính</option>
+                <option th:value="1">Nam</option>
+                <option th:value="0">Nữ</option>
+            </select>
         </fieldset>
         <fieldset>
             <label>id card</label>
@@ -190,7 +196,7 @@
 
         <fieldset>
             <label>customer type</label>
-            <select th:field="*{customerType}">
+            <select class="form-select" th:field="*{customerType}">
                 <option th:each="c :${customerType}"
                         th:text="${c.nameCustomerType}" th:value="${c.id}">
                 </option>
@@ -201,5 +207,6 @@
         </fieldset>
     </form>
 </div>
+<th:block th:replace="~{layout :: cdn}"></th:block>
 </body>
 </html>

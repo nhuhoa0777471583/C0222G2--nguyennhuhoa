@@ -6,63 +6,71 @@
     <th:block th:replace="~{layout :: bootstraps}"></th:block>
 </head>
 <body>
-
 <div class="container">
-<nav th:replace="~{layout :: head}"></nav>
-    <div>
-        <a th:href="@{/blog/create}">
-            Create Blog
-        </a>
+    <nav th:replace="~{layout :: head}"></nav>
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8"><h2>Blog <b>Details</b></h2></div>
+                <div class="col-sm-4">
+                    <a th:href="@{/blog/create}" class="btn btn-info add-new">
+                        Add New
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm-12" th:if="${message}">
+                <p th:text="${message}"></p>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">
+                    <a th:href="@{/blog(sort='id,asc')}">
+                        id
+                    </a></th>
+                <th scope="col">
+                    <a th:href="@{/blog(sort='content_blog,asc')}">
+                        content blog
+                    </a>
+                </th>
+                <th scope="col"> day publication
+
+                </th>
+                <th scope="col">category</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="b: ${blog}">
+                <td th:text="${b.getId()}"></td>
+                <td th:text="${b.getContentBlog()}"></td>
+                <td th:text="${b.getPublicDay()}"></td>
+                <td th:text="${b.categoryBlog.nameCategoryBlog}">
+                </td>
+                <td><a th:href="@{/blog/edit/{id}(id=${b.getId()})}">Edit</a></td>
+                <td><a th:href="@{/blog/delete/{id}(id=${b.getId()})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-    <div th:if="${message}">
-        <p th:text="${message}"></p>
-    </div>
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th scope="col">id</th>
-            <th scope="col">content blog</th>
-            <th scope="col">day publication</th>
-            <th scope="col">category</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="b: ${blog}">
-
-            <td th:text="${b.getId()}"></td>
-            <td th:text="${b.getContentBlog()}"></td>
-            <td th:text="${b.getPublicDay()}"></td>
-
-            <td
-                    th:text="${b.categoryBlog.nameCategoryBlog}">
-            </td>
-            <td><a th:href="@{/blog/edit/{id}(id=${b.getId()})}">Edit</a></td>
-            <td><a th:href="@{/blog/delete/{id}(id=${b.getId()})}">Delete</a></td>
-
-        </tr>
-        </tbody>
-    </table>
-
-    <div>
-        <a th:if="${blog.hasPrevious()}"
-           th:href="@{/blog(page=${blog.number - 1}, nameSearch=${nameSearchVal})}">
-            Previous
-        </a>
-        <span th:text="${blog.number + 1}"></span>
-        /
-        <span th:text="${blog.totalPages}"></span>
-
-
-        <a th:if="${blog.hasNext()}"
-           th:href="@{/blog(page=${blog.number + 1}, nameSearch=${nameSearchVal})}">
-            Next
-        </a>
-
-    </div>
-
 </div>
+    <a th:if="${blog.hasPrevious()}"
+       th:href="@{/blog(page=${blog.number - 1}, nameSearch=${nameSearchVal},sort='content_blog,asc')}">
+        Previous
+    </a>
+    <span th:text="${blog.number + 1}"></span>
+    /
+    <span th:text="${blog.totalPages}"></span>
+
+
+    <a th:if="${blog.hasNext()}"
+       th:href="@{/blog(page=${blog.number + 1}, nameSearch=${nameSearchVal}, sort='content_blog,asc')}">
+        Next
+    </a>
+
 </body>
 <th:block th:replace="~{layout :: bootstrapsScript}"></th:block>
 </html>

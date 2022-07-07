@@ -44,6 +44,11 @@ public class BlogService implements IBlogService {
         this.iBlogRepository.deleteById(id);
     }
 
+    @Override
+    public Blog searchByContentBlog(String name) {
+        return iBlogRepository.searchByContentBlog(name);
+    }
+
 //    @Override
 //    public Page<Blog> displayAllBlog(Pageable pageable) {
 //        return this.iBlogRepository.displayAllBlog(pageable);

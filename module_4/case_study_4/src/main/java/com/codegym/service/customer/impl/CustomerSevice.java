@@ -20,12 +20,17 @@ public class CustomerSevice implements ICustomerService {
     }
 
     @Override
-    public void create(Customer customer) {
+    public void save(Customer customer) {
         iCustomersRepository.save(customer);
     }
 
     @Override
     public Customer displayAllById(Integer id) {
         return iCustomersRepository.displayAllById(id);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        this.iCustomersRepository.deleteById(id);
     }
 }

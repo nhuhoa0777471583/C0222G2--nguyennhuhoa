@@ -65,12 +65,4 @@ public class BlogRestController {
         return new ResponseEntity<>(categoryBlog,HttpStatus.OK);
     }
 
-
-    
-
-
-
-
-
-
 }

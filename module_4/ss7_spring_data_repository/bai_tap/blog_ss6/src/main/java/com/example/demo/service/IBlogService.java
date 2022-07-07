@@ -5,6 +5,7 @@ package com.example.demo.service;
 import com.example.demo.model.Blog;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -25,4 +26,5 @@ public interface IBlogService {
 //    Page<Blog>findAllByContentBlogContaining(String name, Pageable pageable);
 //
     Page<Blog>displayAllByContentBlog(String name, Pageable pageable);
+
 }

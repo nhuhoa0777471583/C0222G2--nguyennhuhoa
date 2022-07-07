@@ -40,7 +40,7 @@ public class CustomerController {
 
     @PostMapping("/save")
     public String save(Customer customer, RedirectAttributes redirectAttributes) {
-        iCustomerService.create(customer);
+        iCustomerService.save(customer);
         redirectAttributes.addFlashAttribute("msg", "Create customer successfully!!");
         return "redirect:/customer/home";
     }
@@ -51,6 +51,27 @@ public class CustomerController {
         model.addAttribute("customer", iCustomerService.displayAllById(id));
         model.addAttribute("customerType", iCustomerTypeService.displayAllCustomerType());
         return "/customer/edit";
+    }
+
+    @PostMapping("/update")
+    public String update(Customer customer,RedirectAttributes redirectAttributes){
+        this.iCustomerService.save(customer);
+        redirectAttributes.addFlashAttribute("msg", "Update customer successfully!!");
+        return "redirect:/customer/home";
+
+
+    }
+    @GetMapping("/delete/{id}")
+    public String showInfoToDelete(Model model,@PathVariable Integer id){
+        model.addAttribute("customer", this.iCustomerService.displayAllById(id));
+        return "redirect:/customer/home";
+    }
+
+    @PostMapping("/delete")
+    public String delete(Customer customer,RedirectAttributes redirectAttributes){
+        this.iCustomerService.save(customer);
+        redirectAttributes.addFlashAttribute("msg", "Delete customer successfully!!");
+        return "redirect:/customer/home";
     }
 
 

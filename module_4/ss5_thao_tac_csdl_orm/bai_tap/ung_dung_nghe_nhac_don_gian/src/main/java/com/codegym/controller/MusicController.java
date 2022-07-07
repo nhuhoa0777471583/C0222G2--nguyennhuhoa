@@ -64,4 +64,7 @@ public class MusicController {
         redirectAttributes.addFlashAttribute("message", "Remove product successfully!");
         return "redirect:/music";
     }
+
+
+
 }

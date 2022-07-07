@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <th:block th:replace="~{layout :: style }"></th:block>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 
@@ -25,7 +26,7 @@
             font-size: 12px;
             line-height: 30px;
             color: #777;
-            background: #4CAF50;
+            background: #F6FBF4;
         }
 
         .container {
@@ -47,7 +48,7 @@
         #contact {
             background: #F9F9F9;
             padding: 25px;
-            margin-top: 5px;
+            margin-top: 40%;
             margin-bottom: 50px;
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         }
@@ -151,44 +152,45 @@
 </head>
 <body>
 <div class="container">
+    <nav th:replace="~{layout :: nav}"></nav>
     <form id="contact" th:action="@{/customer/update}" th:object="${customer}" method="post">
-        <h2>Edit Facility Form</h2>
+        <h2>Edit Customer Form</h2>
         <fieldset>
-            <input placeholder="id" type="hidden" th:field="*{id}" tabindex="0">
+            <input class="form-control" placeholder="id" type="hidden" th:field="*{id}" tabindex="0">
         </fieldset>
         <fieldset>
             <label>name</label>
-            <input placeholder="name" type="text" th:field="*{name}" th:value="${customer.name}" tabindex="1">
+            <input class="form-control" placeholder="name" type="text" th:field="*{name}" th:value="${customer.name}" tabindex="1">
         </fieldset>
         <fieldset>
             <label>birthday</label>
-            <input placeholder="birthday" type="date" th:field="*{birdthday}" th:value="${customer.birdthday}"
+            <input class="form-control" placeholder="birthday" type="date" th:field="*{birdthday}" th:value="${customer.birdthday}"
                    tabindex="2">
         </fieldset>
         <fieldset>
             <label>gender</label>
-            <input placeholder="gender" type="text" th:field="*{gender}" th:value="${customer.gender}" tabindex="3">
+            <input class="form-control" placeholder="gender" type="text" th:field="*{gender}" th:value="${customer.gender}" tabindex="3">
         </fieldset>
         <fieldset>
             <label>id card</label>
-            <input placeholder="id card" type="text" th:field="*{idCard}" th:value="${customer.idCard}" tabindex="4">
+            <input class="form-control" placeholder="id card" type="text" th:field="*{idCard}" th:value="${customer.idCard}" tabindex="4">
         </fieldset>
         <fieldset>
             <label>Phone</label>
-            <input placeholder="phone" type="text" th:field="*{phone}" th:value="${customer.phone}" tabindex="5">
+            <input class="form-control" placeholder="phone" type="text" th:field="*{phone}" th:value="${customer.phone}" tabindex="5">
         </fieldset>
         <fieldset>
             <label>email</label>
-            <input placeholder="email" type="text" th:field="*{email}" th:value="${customer.email}" tabindex="6">
+            <input class="form-control" placeholder="email" type="text" th:field="*{email}" th:value="${customer.email}" tabindex="6">
         </fieldset>
         <fieldset>
             <label>address</label>
-            <input placeholder="address" type="text" th:field="*{address}" th:value="${customer.address}" tabindex="7">
+            <input class="form-control" placeholder="address" type="text" th:field="*{address}" th:value="${customer.address}" tabindex="7">
         </fieldset>
 
         <fieldset>
             <label>customer type</label>
-            <select th:field="*{customerType}">
+            <select class="form-control" th:field="*{customerType}">
                 <option th:each="c :${customerType}"
                         th:text="${c.nameCustomerType}"
                         th:value="${c.id}">
@@ -200,5 +202,6 @@
         </fieldset>
     </form>
 </div>
+<th:block th:replace="~{layout :: cdn}"></th:block>
 </body>
 </html>

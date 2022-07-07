@@ -21,7 +21,8 @@ public class EmployeeController {
 
     @GetMapping("/home")
     public String view(Model model, @PageableDefault(value = 4) Pageable pageable) {
-        model.addAttribute("employee", this.iEmployeeService.findAll(pageable));
+        model.addAttribute("employeeList", this.iEmployeeService.findAll(pageable));
+        model.addAttribute("employee", new Employee());
         return "/employee/list";
     }
 

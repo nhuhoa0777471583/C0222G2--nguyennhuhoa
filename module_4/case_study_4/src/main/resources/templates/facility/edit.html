@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <th:block th:replace="~{layout :: style }"></th:block>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
         * {
@@ -24,7 +25,7 @@
             font-size: 12px;
             line-height: 30px;
             color: #777;
-            background: #4CAF50;
+            background: #F6FBF4;
         }
 
         .container {
@@ -44,11 +45,11 @@
         }
 
         #contact {
-            background: #F9F9F9;
+            background: #eaf6f6;
             padding: 25px;
 
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-            margin-top: 5px;
+            margin-top: 40%;
             margin-bottom: 50px;
         }
 
@@ -154,6 +155,7 @@
 </head>
 <body>
 <div class="container">
+    <nav th:replace="~{layout :: nav}"></nav>
     <form id="contact" th:action="@{/facility/update}" th:object="${facility}" method="post">
         <h2>Edit Service</h2>
         <fieldset>
@@ -238,8 +240,9 @@
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
         </fieldset>
     </form>
-
-
 </div>
+
+
+<th:block th:replace="~{layout :: cdn}"></th:block>
 </body>
 </html>

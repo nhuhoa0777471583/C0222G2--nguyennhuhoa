@@ -20,9 +20,8 @@ public interface IBlogService {
     void delete(Integer id);
 
 //    Page<Blog> displayAllBlog(Pageable pageable);
-//
-//
-//    Page<Blog>findAllByContentBlogContaining(String name, Pageable pageable);
+
+    Blog searchByContentBlog(String name);
 //
     Page<Blog> displayAllByContentBlog(String name, Pageable pageable);
 

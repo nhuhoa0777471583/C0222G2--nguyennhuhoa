@@ -6,6 +6,7 @@ import com.example.demo.repository.IBlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -60,4 +61,6 @@ public class BlogService implements IBlogService {
     public Page<Blog> displayAllByContentBlog(String name, Pageable pageable) {
         return this.iBlogRepository.displayAllByContentBlog(name, pageable);
     }
+
+
 }

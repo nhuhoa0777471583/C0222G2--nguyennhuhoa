@@ -7,6 +7,7 @@ import com.codegym.model.facility.Facility;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -27,19 +28,14 @@ public class Contract {
     @JoinColumn(name = "id_facility", referencedColumnName = "id")
     private Facility facility;
 
-    @ManyToMany
-    @JoinTable(name = "contract_detail",
-            joinColumns =@JoinColumn(name="id_contract"),
-            inverseJoinColumns = @JoinColumn(name = "id_attach_facility"))
-    private Set<AttachFacility> attachFacilitySet;
-
-
+    @OneToMany(mappedBy = "contract")
+    private List<ContractDetail> contractDetailList;
 
 
     public Contract() {
     }
 
-    public Contract(Integer id, String startDate, String endDate, Double deposit, Employee employee, Customer customer, Facility facility, Set<AttachFacility> attachFacilitySet) {
+    public Contract(Integer id, String startDate, String endDate, Double deposit, Employee employee, Customer customer, Facility facility, List<ContractDetail> contractDetailList) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -47,7 +43,7 @@ public class Contract {
         this.employee = employee;
         this.customer = customer;
         this.facility = facility;
-        this.attachFacilitySet = attachFacilitySet;
+        this.contractDetailList = contractDetailList;
     }
 
     public Integer getId() {
@@ -106,11 +102,11 @@ public class Contract {
         this.facility = facility;
     }
 
-    public Set<AttachFacility> getAttachFacilitySet() {
-        return attachFacilitySet;
+    public List<ContractDetail> getContractDetailList() {
+        return contractDetailList;
     }
 
-    public void setAttachFacilitySet(Set<AttachFacility> attachFacilitySet) {
-        this.attachFacilitySet = attachFacilitySet;
+    public void setContractDetailList(List<ContractDetail> contractDetailList) {
+        this.contractDetailList = contractDetailList;
     }
 }

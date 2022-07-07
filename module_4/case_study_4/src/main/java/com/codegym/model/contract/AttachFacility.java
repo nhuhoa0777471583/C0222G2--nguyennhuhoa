@@ -1,6 +1,7 @@
 package com.codegym.model.contract;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -12,19 +13,19 @@ public class AttachFacility {
     private Double cost;
     private String unit;
     private String status;
-    @ManyToMany(mappedBy = "attachFacilitySet")
-    private Set<Contract> contractSet;
+    @OneToMany(mappedBy = "attachFacility")
+    private List<ContractDetail> contractDetailList;
 
     public AttachFacility() {
     }
 
-    public AttachFacility(Integer id, String name, Double cost, String unit, String status, Set<Contract> contractSet) {
+    public AttachFacility(Integer id, String name, Double cost, String unit, String status, List<ContractDetail> contractDetailList) {
         this.id = id;
         this.name = name;
         this.cost = cost;
         this.unit = unit;
         this.status = status;
-        this.contractSet = contractSet;
+        this.contractDetailList = contractDetailList;
     }
 
     public Integer getId() {
@@ -67,11 +68,11 @@ public class AttachFacility {
         this.status = status;
     }
 
-    public Set<Contract> getContractSet() {
-        return contractSet;
+    public List<ContractDetail> getContractDetailList() {
+        return contractDetailList;
     }
 
-    public void setContractSet(Set<Contract> contractSet) {
-        this.contractSet = contractSet;
+    public void setContractDetailList(List<ContractDetail> contractDetailList) {
+        this.contractDetailList = contractDetailList;
     }
 }

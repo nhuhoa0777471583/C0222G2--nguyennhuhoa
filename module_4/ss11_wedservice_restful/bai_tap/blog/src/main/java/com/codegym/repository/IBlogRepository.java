@@ -29,4 +29,7 @@ public interface IBlogRepository extends JpaRepository<Blog, Integer> {
     Page<Blog> displayAllByContentBlog(@Param("keyword") String name, Pageable pageable);
 
 
+    @Query(value = " select * from blog  where content_blog like :keyword ", nativeQuery = true)
+    Blog searchByContentBlog(@Param("keyword") String name);
+
 }

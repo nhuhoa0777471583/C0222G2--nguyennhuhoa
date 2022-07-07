@@ -1,34 +1,41 @@
 package com.codegym.dto;
 
+import com.codegym.validation.Author;
+
+import javax.validation.GroupSequence;
 import javax.validation.constraints.*;
 
+
+@GroupSequence(value = {MusicDto.class, BasicInfo.class, AdvanceInfo.class})
 public class MusicDto {
-    @NotEmpty(message = "ko đc để trống")
-    @Size(min = 0,max= 800, message = "ko đc quá 800")
-    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "tên ko chứa kí tự đặc biệt")
+
+    @NotBlank(message = "ko đc để trống", groups = BasicInfo.class)
+    @Size(max = 800, message = "ko đc quá 800")
+
+    @Pattern(regexp = "^(\\p{L}|\\d|,)+((\\p{L}|\\d|,)+)*$",
+            groups = AdvanceInfo.class,
+            message = "tên ko chứa kí tự đặc biệt")
+
+    @Author
     private String nameMusic;
 
-    @NotEmpty(message = "ko đc để trống")
-    @Size(min = 0,max= 800, message = "ko đc quá 800")
 
-    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "tên ko chứa kí tự đặc biệt")
+    @NotBlank(message = "ko đc để trống", groups = BasicInfo.class)
+    @Size(max = 800, message = "ko đc quá 800")
+    @Pattern(regexp = "^(\\p{L}|\\d|,)+( (\\p{L}|\\d|,)+)*$", groups = AdvanceInfo.class, message = "tên ko chứa kí tự đặc biệt")
     private String singger;
 
-    @NotEmpty(message = "ko đc để trống")
-    @Size(min = 0,max= 800, message = "ko đc quá 800")
 
-    @Pattern(regexp = "^[A-Za-z0-9,]+$", message = "tên ko chứa kí tự đặc biệt (ngoại trừ dấu ,)")
+    @NotBlank(message = "ko đc để trống", groups = BasicInfo.class)
+    @Size(max = 800, message = "ko đc quá 800")
+    @Pattern(regexp = "^(\\p{L}|\\d|,)+( (\\p{L}|\\d|,)+)*$",  groups = AdvanceInfo.class, message = "tên ko chứa kí tự đặc biệt")
     private String typeMusic;
 
-    public MusicDto(@NotEmpty(message = "ko đc để trống")
-                    @Size(min = 0, max = 800, message = "ko đc quá 800")
-                    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "tên ko chứa kí tự đặc biệt") String nameMusic,
-                    @NotEmpty(message = "ko đc để trống")
-                    @Size(min = 0, max = 800, message = "ko đc quá 800")
-                    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "tên ko chứa kí tự đặc biệt") String singger,
-                    @NotEmpty(message = "ko đc để trống")
-                    @Size(min = 0, max = 800, message = "ko đc quá 800")
-                    @Pattern(regexp = "^[A-Za-z0-9,]+$", message = "tên ko chứa kí tự đặc biệt (ngoại trừ dấu ,)") String typeMusic) {
+
+
+    public MusicDto(@NotBlank(message = "ko đc để trống", groups = BasicInfo.class) @Size(max = 800, message = "ko đc quá 800") @Pattern(regexp = "^(\\p{L}|\\d|,)+( (\\p{L}|\\d|,)+)*$",
+            groups = AdvanceInfo.class,
+            message = "tên ko chứa kí tự đặc biệt") String nameMusic, @NotBlank(message = "ko đc để trống", groups = BasicInfo.class) @Size(max = 800, message = "ko đc quá 800") @Pattern(regexp = "^(\\p{L}|\\d|,)+( (\\p{L}|\\d|,)+)*$", message = "tên ko chứa kí tự đặc biệt") String singger, @NotBlank(message = "ko đc để trống", groups = BasicInfo.class) @Size(max = 800, message = "ko đc quá 800") @Pattern(regexp = "^(\\p{L}|\\d|,)+( (\\p{L}|\\d|,)+)*$", groups = AdvanceInfo.class, message = "tên ko chứa kí tự đặc biệt") String typeMusic) {
         this.nameMusic = nameMusic;
         this.singger = singger;
         this.typeMusic = typeMusic;

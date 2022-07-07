@@ -48,7 +48,7 @@ public class Cart {
 
     public void reduceProduct(Product product){
         if (!checkItemInCart(product)){
-            products.put(product,1);
+            products.put(product,0);
         } else {
             Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
             Integer newQuantity = itemEntry.getValue() - 1;
