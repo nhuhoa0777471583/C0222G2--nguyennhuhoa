@@ -16,14 +16,15 @@ public interface IFacilityRepository extends JpaRepository<Facility, Integer> {
 
 //    Page<Facility> findAll(Pageable pageable);
 
-    @Query(value =" select * from facility ", nativeQuery = true,
-            countQuery = " select count(*) from (select * from facility) temp_table ")
-    Page<Facility> displayAll(Pageable pageable);
+    @Query(value =" select * from facility where name_facility like :key",
+            countQuery = " select count(*) from ( select * from facility where name_facility like :key) temp_table ",
+            nativeQuery = true)
+    Page<Facility> displayAll(@Param("key")String nameSearch,Pageable pageable);
 
     @Query(value = "select * from facility where id = :id", nativeQuery = true)
     Facility displayById(@Param("id") Integer id);
 
-    @Query(value ="select * from facility", nativeQuery = true)
-    List<Facility> displayAll();
+//    @Query(value ="select * from facility", nativeQuery = true)
+//    List<Facility> displayAll();
 
 }

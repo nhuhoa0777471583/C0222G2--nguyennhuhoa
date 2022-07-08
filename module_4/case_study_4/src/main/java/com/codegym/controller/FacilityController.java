@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/facility")
 public class FacilityController {
@@ -19,9 +21,12 @@ public class FacilityController {
     private IFacilityService iFacilityService;
 
     @GetMapping("/home")
-    public String view(Model model,
+    public String view(Model model, @RequestParam Optional<String> nameSearch,
                        @PageableDefault(value = 4) Pageable pageable) {
-        model.addAttribute("facility", this.iFacilityService.displayAll(pageable));
+        String nameSearchVal = nameSearch.orElse("");
+        model.addAttribute("facility",
+                this.iFacilityService.displayAllAndDisplayByName("%" + nameSearchVal + "%", pageable));
+        model.addAttribute("nameSearchVal", nameSearchVal);
         return "facility/list";
     }
 
@@ -37,7 +42,7 @@ public class FacilityController {
     @PostMapping("/save")
     public String save(Facility facility, RedirectAttributes redirectAttributes) {
         this.iFacilityService.save(facility);
-        redirectAttributes.addFlashAttribute("msg", "create facility successfully!!");
+        redirectAttributes.addFlashAttribute("msg", "Create facility successfully!!");
         return "redirect:/facility/home";
     }
 
@@ -49,4 +54,17 @@ public class FacilityController {
         return "/facility/edit";
     }
 
+    @PostMapping("/update")
+    public String update(Facility facility, RedirectAttributes redirectAttributes) {
+        this.iFacilityService.save(facility);
+        redirectAttributes.addFlashAttribute("msg", "Update facility successfully!!");
+        return "redirect:/facility/home";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
+        this.iFacilityService.deleteById(id);
+        redirectAttributes.addFlashAttribute("msg", "Delete facility successfully");
+        return "redirect:/facility/home";
+    }
 }

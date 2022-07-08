@@ -12,11 +12,12 @@ public interface IFacilityService {
     List<FacilityType> displayAllFacilityType();
     List<RentType> displayAllRentType();
 
-    Page<Facility> displayAll( Pageable pageable);
+    Page<Facility> displayAllAndDisplayByName(String nameSearch,Pageable pageable);
 
     void save(Facility facility);
 
     Facility displayById(Integer id);
 
 
+    void deleteById(Integer id);
 }

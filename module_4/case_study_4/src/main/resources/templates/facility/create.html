@@ -6,6 +6,7 @@
     <th:block th:replace="~{layout :: style }"></th:block>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
         * {
             margin: 0;
             padding: 0;
@@ -49,7 +50,6 @@
             padding: 25px;
 
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-            margin-top: 40%;
             margin-bottom: 50px;
         }
 
@@ -156,69 +156,40 @@
 <body>
 <div class="container">
     <nav th:replace="~{layout :: nav}"></nav>
-    <form id="contact" th:action="@{/facility/update}" th:object="${facility}" method="post">
+   <div style="margin-top: 35%"><h2><a th:href="@{/facility/home}" style="color: cornflowerblue">Back Home</a></h2></div>
+    <form id="contact" th:action="@{/facility/save}" th:object="${facility}" method="post">
         <h2>Add Service</h2>
         <fieldset>
-            <input placeholder="id" type="hidden"  tabindex="0">
+            <input placeholder="id" type="hidden" tabindex="0">
         </fieldset>
 
         <fieldset>
             <label>name</label>
-            <input placeholder="name" type="text"
-                   th:field="*{name}"   tabindex="1">
+            <input  class="form-control" placeholder="name" type="text"
+                   th:field="*{name}" tabindex="1">
         </fieldset>
 
         <fieldset>
             <label>area</label>
-            <input placeholder="area" type="text"
-                   th:field="*{area}"   tabindex="2" >
+            <input  class="form-control" placeholder="area" type="text"
+                   th:field="*{area}" tabindex="2">
         </fieldset>
 
         <fieldset>
             <label>cost</label>
-            <input placeholder="cost" type="text"
-                   th:field="*{cost}"  tabindex="3" >
+            <input  class="form-control" placeholder="cost" type="text"
+                   th:field="*{cost}" tabindex="3">
         </fieldset>
 
         <fieldset>
             <label>max people</label>
-            <input placeholder="max people" type="text"
-                   th:field="*{maxPeople}"  tabindex="4" >
-        </fieldset>
-
-        <fieldset>
-            <label>standard room</label>
-            <input placeholder="standard room" type="text"
-                   th:field="*{standardRoom}"  tabindex="5" >
-        </fieldset>
-
-        <fieldset>
-            <label>Description</label>
-            <input placeholder="Description" type="text"
-                   th:field="*{descriptionOtherConvenience}" tabindex="6" >
-        </fieldset>
-
-        <fieldset>
-            <label>pool area</label>
-            <input placeholder="pool area" type="text"
-                   th:field="*{poolArea}"  tabindex="7" >
-        </fieldset>
-
-        <fieldset>
-            <label>number of floars</label>
-            <input placeholder="number of floar" type="text"
-                   th:field="*{numberOfFloars}"  tabindex="8" >
-        </fieldset>
-
-        <fieldset>
-            <label>facility free</label>
-            <input placeholder="facility free" type="text"
-                   th:field="*{facilityFree}"   tabindex="9" >
+            <input  class="form-control" placeholder="max people" type="text"
+                   th:field="*{maxPeople}" tabindex="4">
         </fieldset>
 
         <fieldset>
             <label>rent type</label>
-            <select th:field="*{rentType}">
+            <select  class="form-control" th:field="*{rentType}">
                 <option th:each="r :${rentType}"
                         th:text="${r.name}"
                         th:value="${r.id}">
@@ -228,13 +199,45 @@
 
         <fieldset>
             <label>service type</label>
-            <select th:field="*{facilityType}">
-                <option th:each="f :${facilityType}"
-                        th:text="${f.name}"
-                        th:value="${f.id}">
-                </option>
+            <select  class="form-control" id="facilityType" th:field="*{facilityType}">
+                <option value="0">Choose facility service</option>
+                <option th:value="1">Villa</option>
+                <option th:value="2">House</option>
+                <option th:value="3">Room</option>
             </select>
         </fieldset>
+
+
+            <fieldset style="display:none;" id="standardRoom" >
+                <label>standard room</label>
+                <input  class="form-control" placeholder="standard room" type="text"
+                       th:field="*{standardRoom}" tabindex="5">
+            </fieldset>
+
+            <fieldset style="display:none;" id="description" >
+                <label>Description</label>
+                <input  class="form-control" placeholder="Description" type="text"
+                       th:field="*{descriptionOtherConvenience}" tabindex="6">
+            </fieldset>
+
+            <fieldset style="display:none;" id="poolArea">
+                <label>pool area</label>
+                <input class="form-control"  placeholder="pool area" type="text"
+                       th:field="*{poolArea}" tabindex="7">
+            </fieldset>
+
+            <fieldset style="display:none;" id="numberOfFloars">
+                <label>number of floars</label>
+                <input class="form-control"  placeholder="number of floar" type="text"
+                       th:field="*{numberOfFloars}" tabindex="8">
+            </fieldset>
+
+            <fieldset style="display:none;"  id="facilityFree">
+                <label>facility free</label>
+                <input class="form-control" placeholder="facility free" type="text"
+                       th:field="*{facilityFree}" tabindex="9">
+            </fieldset>
+
 
         <fieldset>
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
@@ -244,5 +247,35 @@
 
 
 <th:block th:replace="~{layout :: cdn}"></th:block>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $("#facilityType").on('change', function () {
+        let temp = $("#facilityType").val();
+        switch (Number(temp)) {
+            case 1:
+                $('#standardRoom').show();
+                $('#description').show();
+                $('#poolArea').show();
+                $('#numberOfFloars').show();
+                $('#facilityFree').hide();
+                break;
+            case 2:
+                $('#standardRoom').show();
+                $('#description').show();
+                $('#numberOfFloars').show();
+                $('#facilityFree').hide();
+                break;
+            case 3:
+                $('#facilityFree').show();
+                $('#standardRoom').hide();
+                $('#description').hide();
+                $('#poolArea').hide();
+                $('#numberOfFloars').hide();
+                break;
+        }
+    })
+</script>
+
 </body>
 </html>

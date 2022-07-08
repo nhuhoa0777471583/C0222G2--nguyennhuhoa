@@ -47,7 +47,6 @@
         #contact {
             background: #F9F9F9;
             padding: 25px;
-            margin-top: 40%;
             margin-bottom: 50px;
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         }
@@ -155,6 +154,8 @@
 <body>
 <div class="container">
     <nav th:replace="~{layout :: nav}"></nav>
+    <div style="margin-top: 35%"><h2><a th:href="@{/customer/home}" style="color: cornflowerblue">Back Home</a></h2></div>
+
     <form id="contact" th:action="@{/customer/save}" th:object="${customer}" method="post">
         <h2>Create Customer</h2>
         <fieldset>
@@ -171,8 +172,7 @@
         </fieldset>
         <fieldset>
             <label>gender</label>
-            <select class="form-control">
-                <option>Chọn giới tính</option>
+            <select class="form-control" th:field="*{gender}">
                 <option th:value="1">Nam</option>
                 <option th:value="0">Nữ</option>
             </select>
