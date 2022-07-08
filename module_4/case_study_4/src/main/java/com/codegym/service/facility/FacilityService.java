@@ -36,7 +36,7 @@ public class FacilityService implements IFacilityService {
 
 
     @Override
-    public Page<Facility> displayAllAndDisplayByName(String nameSearch,Pageable pageable) {
+    public Page<Facility> displayAllAndDisplayByName(String nameSearch, Pageable pageable) {
         return iFacilityRepository.displayAll(nameSearch, pageable);
 
     }
@@ -54,6 +54,11 @@ public class FacilityService implements IFacilityService {
     @Override
     public void deleteById(Integer id) {
         this.iFacilityRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Facility> findAll() {
+        return this.iFacilityRepository.findAll();
     }
 
 

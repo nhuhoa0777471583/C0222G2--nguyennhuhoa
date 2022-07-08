@@ -42,7 +42,7 @@ public class FacilityController {
     @PostMapping("/save")
     public String save(Facility facility, RedirectAttributes redirectAttributes) {
         this.iFacilityService.save(facility);
-        redirectAttributes.addFlashAttribute("msg", "Create facility successfully!!");
+        redirectAttributes.addFlashAttribute("msg", "Add new facility successfully!!");
         return "redirect:/facility/home";
     }
 

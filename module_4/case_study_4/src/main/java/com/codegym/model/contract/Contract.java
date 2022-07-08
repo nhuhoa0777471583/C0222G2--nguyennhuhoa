@@ -6,9 +6,7 @@ import com.codegym.model.employee.Employee;
 import com.codegym.model.facility.Facility;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Contract {

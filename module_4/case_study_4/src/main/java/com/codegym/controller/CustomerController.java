@@ -43,7 +43,7 @@ public class CustomerController {
     @PostMapping("/save")
     public String save(Customer customer, RedirectAttributes redirectAttributes) {
         iCustomerService.save(customer);
-        redirectAttributes.addFlashAttribute("msg", "Create customer successfully!!");
+        redirectAttributes.addFlashAttribute("msg", "Add new customer successfully!!");
         return "redirect:/customer/home";
     }
 

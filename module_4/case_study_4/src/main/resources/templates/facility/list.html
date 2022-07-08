@@ -283,11 +283,35 @@
                 </ul>
             </div>
 
-
         </div>
     </div>
+    <!--         Modal message -->
+
+    <div th:if="${msg != null}" class="modal fade" id="messModal1" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-danger" th:text="${msg}"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+<footer th:replace="~{layout ::footer}"></footer>
+<th:block th:replace="~{layout :: cdn}"></th:block>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#messModal1').modal('show')
+    })
+
+</script>
 </body>
 
-<th:block th:replace="~{layout :: cdn}"></th:block>
+
 </html>

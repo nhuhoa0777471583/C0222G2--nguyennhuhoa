@@ -178,7 +178,7 @@
                             <form action="/customer/home">
                                 <i class="material-icons">&#xE8B6;</i>
                                 <input type="text" placeholder="Search&hellip;"
-                                       th:value="${nameSearchVal}"  name="nameSearch">
+                                       th:value="${nameSearchVal}" name="nameSearch">
                                 <button type="submit" class="btn btn-primary">Search</button>
                             </form>
                         </div>
@@ -279,19 +279,35 @@
                     </li>
                 </ul>
             </div>
+            <!--         Modal message -->
 
-
+            <div th:if="${msg != null}" class="modal fade" id="messModal1" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body text-danger" th:text="${msg}"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-</body>
-
+<footer th:replace="~{layout ::footer}"></footer>
 <th:block th:replace="~{layout :: cdn}"></th:block>
 
-<!--<script>-->
-<!--    $(document).ready(function () {-->
-<!--        $('#nameSearch').search('show');-->
-<!--    })-->
-<!--</script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#messModal1').modal('show')
+    })
+
+</script>
+</body>
+
+
 
 </html>

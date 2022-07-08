@@ -20,4 +20,6 @@ public interface IFacilityService {
 
 
     void deleteById(Integer id);
+
+    List<Facility> findAll();
 }

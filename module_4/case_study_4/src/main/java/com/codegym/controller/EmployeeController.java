@@ -30,7 +30,7 @@ public class EmployeeController {
     @PostMapping("/save")
     public String save(Employee employee, RedirectAttributes redirectAttributes) {
         this.iEmployeeService.save(employee);
-        redirectAttributes.addFlashAttribute("msg", "create employee successfully!!");
+        redirectAttributes.addFlashAttribute("msg", "Add new employee successfully!!");
         return "redirect:/employee/home";
     }
 

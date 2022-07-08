@@ -16,98 +16,6 @@
             <div>
                 <div>
                     <div><h2>Employee <b>Details</b></h2></div>
-                    <!--Modal employee-->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Add new employee
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" th:id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <form id="contact" th:action="@{/employee/save}" th:object="${employee}"
-                                          method="post">
-                                        <table>
-                                            <tr>
-                                                <td><input class="form-control" placeholder="id"
-                                                           type="hidden" th:field="*{id}" tabindex="0"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>name</td>
-                                                <td><input class="form-control" placeholder="name"
-                                                           type="text"  th:field="*{name}" tabindex="1"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>day of birth</td>
-                                                <td><input class="form-control" placeholder="day of birth"
-                                                           type="date"  th:field="*{birdthday}" tabindex="1">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>id card</td>
-                                                <td><input class="form-control" placeholder="id card"
-                                                           type="text"  th:field="*{idCard}"  tabindex="1">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>salary</td>
-                                                <td><input class="form-control" placeholder="salary" type="text"
-                                                           th:field="*{salary}"  tabindex="1">
-                                                </td>
-                                            <tr>
-                                                <td>phone</td>
-                                                <td><input class="form-control" placeholder="phone" type="text"
-                                                           th:field="*{phone}"  tabindex="1">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>email</td>
-                                                <td><input class="form-control" placeholder="email" type="text"
-                                                           th:field="*{email}"  tabindex="1">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>address</td>
-                                                <td><input class="form-control" placeholder="address"
-                                                           th:field="*{address}"  type="text" tabindex="1">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>position</td>
-                                                <td><input class="form-control" placeholder="position"
-                                                           type="text" tabindex="1">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>education</td>
-                                                <td><input class="form-control" placeholder="education"
-                                                           type="text" tabindex="1">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>divition</td>
-                                                <td><input class="form-control" placeholder="divition"
-                                                           type="text" tabindex="1">
-                                                </td>
-                                            </tr>
-                                        </table>
-
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">No
-                                            </button>
-                                            <form th:action="@{/employee/save/}">
-                                                <button type="submit" class="btn btn-primary">Yes</button>
-                                            </form>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
 
                     <table id="dtBasicExample" class="table table-hover table-striped table-bordered container-fluid">
                         <thead>
@@ -119,105 +27,76 @@
                             <td>end day</td>
                             <td>deposit</td>
                             <td>mony total</td>
-                            <td colspan="">attach service</td>
+                            <td colspan="3">attach service</td>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="y, loop: ${employeeList}">
+                        <tr th:each="contract, loop: ${contractPage}">
                             <td th:text="${loop.count}"></td>
-                            <td th:text="${y.name}"></td>
-                            <td th:text="${y.birdthday}"></td>
-                            <td th:text="${y.idCard}"></td>
-                            <td th:text="${y.salary}"></td>
-                            <td th:text="${y.phone}"></td>
-                            <td th:text="${y.email}"></td>
-                            <td th:text="${y.address}"></td>
-                            <td th:text="${y.divison.name}"></td>
-                            <td th:text="${y.education.name}"></td>
-                            <td th:text="${y.position.name}"></td>
-                            <td>
-                                <!--  Modal edit-->
+                            <td th:text="${contract.facility.name}"></td>
+                            <td th:text="${contract.customer.name}"></td>
+                            <td th:text="${contract.startDate}"></td>
+                            <td th:text="${contract.endDate}"></td>
+                            <td th:text="${contract.deposit}"></td>
+                            <td>0</td>
 
+                            <td>
+                                <!--Modal add-->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#editModal">
-                                    Edit
+                                        data-bs-target="#exampleModal">
+                                    Add(+)
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="editModal" tabindex="-1"
+                                <div class="modal fade" th:id="exampleModal" tabindex="-1"
                                      aria-labelledby="exampleModalLabel"
                                      aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-body">
-                                                <form id="edit" th:action="@{/employee/update}" th:object="${employee}"
+                                                <form id="contact" th:action="@{/contract/save}" th:object="${contract}"
                                                       method="post">
                                                     <table>
                                                         <tr>
                                                             <td><input class="form-control" placeholder="id"
-                                                                       type="hidden"
+                                                                       type="hidden" th:field="*{id}" tabindex="0"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>name service</td>
+                                                            <td><input class="form-control"
+                                                                       placeholder="nhap ten dich vu"
+                                                                       type="text" th:field="*{facility.name}"
                                                                        tabindex="0"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>name</td>
-                                                            <td><input class="form-control" placeholder="name"
-                                                                       type="text"
-                                                                       tabindex="1"></td>
+                                                            <td>name customer</td>
+                                                            <td><input class="form-control"
+                                                                       placeholder="nhap ten khach hang"
+                                                                       type="text" th:field="*{customer.name}"
+                                                                       tabindex="0"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>start day</td>
+                                                            <td><input class="form-control" placeholder="start day"
+                                                                       type="date" th:field="*{startDate}" tabindex="1">
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             <td>day of birth</td>
                                                             <td><input class="form-control" placeholder="day of birth"
-                                                                       type="date"
-                                                                       tabindex="1">
+                                                                       type="date" th:field="*{endDate}" tabindex="1">
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>id card</td>
                                                             <td><input class="form-control" placeholder="id card"
-                                                                       type="text" tabindex="1">
+                                                                       type="text" th:field="*{deposit}" tabindex="1">
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td>salary</td>
-                                                            <td><input class="form-control" placeholder="salary"
+                                                            <td>total</td>
+                                                            <td><input class="form-control" placeholder="total monney"
                                                                        type="text"
                                                                        tabindex="1">
-                                                            </td>
-                                                        <tr>
-                                                            <td>phone</td>
-                                                            <td><input class="form-control" placeholder="phone"
-                                                                       type="text"
-                                                                       tabindex="1">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>email</td>
-                                                            <td><input class="form-control" placeholder="email"
-                                                                       type="text"
-                                                                       tabindex="1">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>address</td>
-                                                            <td><input class="form-control" placeholder="address"
-                                                                       type="text" tabindex="1">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>position</td>
-                                                            <td><input class="form-control" placeholder="position"
-                                                                       type="text" tabindex="1">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>education</td>
-                                                            <td><input class="form-control" placeholder="education"
-                                                                       type="text" tabindex="1">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>divition</td>
-                                                            <td><input class="form-control" placeholder="divition"
-                                                                       type="text" tabindex="1">
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -227,7 +106,7 @@
                                                         <button type="button" class="btn btn-secondary"
                                                                 data-dismiss="modal">No
                                                         </button>
-                                                        <form th:action="@{/employee/update/}">
+                                                        <form th:action="@{/contract/save/}">
                                                             <button type="submit" class="btn btn-primary">Yes</button>
                                                         </form>
                                                     </div>
@@ -236,42 +115,32 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </td>
-
-
                             <td>
                                 <!--   Modal delete-->
-                                <!-- Button trigger modal -->
+
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        th:data-target="'#exampleModal'+${y.getId()}">
+                                        th:data-target="'#exampleModal'+${contract.id}">
                                     Delete
                                 </button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" th:id="'exampleModal'+${y.getId()}" tabindex="-1"
+                                <div class="modal fade" th:id="'exampleModal'+${contract.id}" tabindex="-1"
                                      role="dialog"
                                      aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
                                             <div class="modal-body">
-                                                <p> Do you want delete customers have stt is
-                                                <p class="text-danger" th:text="${y.getId()}">
+                                                <p> Do you want delete contract have stt is
+                                                <p class="text-danger" th:text="+${contract.id}">
                                                 </p> have name customers is <p
-                                                    class="text-danger" th:text="${y.getName()}"></p></p>
+                                                    class="text-danger" th:text="+${contract.customer.name}"></p></p>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                         data-dismiss="modal">No
                                                 </button>
-                                                <form th:action="@{/employee/delete(id=${y.getId()})}">
+                                                <form th:action="@{/contract/delete(id=${contract.id})}">
                                                     <button type="submit" class="btn btn-primary">Yes</button>
                                                 </form>
                                             </div>
@@ -280,61 +149,59 @@
                                 </div>
                             </td>
                         </tr>
-                        </tbody>
                     </table>
-
-
-                    <div class="col-2 ">
-                        <ul class="pagination justify-content-end" th:if="${employee.totalPages > 0}">
-                            <li class="page-item">
-                                <a class="page-link" th:if="${employee.hasPrevious()}"
-                                   th:href="@{'/employee/home'(page=${employee.number - 1})}">
-                                    <<
-                                </a>
-                            </li>
-                            <div th:each="item1, loop : ${#numbers.sequence(1, employee.totalPages )}">
-                                <div th:if="${(employee.number + 1) == item1}">
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#" th:text="${item1}"
-                                           th:href="@{/employee/home(page=(${item1}-1))}"></a>
-                                    </li>
-                                </div>
-                                <div th:unless="${((employee.number + 1) == item1)}">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" th:text="${item1}"
-                                           th:href="@{/employee/home(page=(${item1}-1))}"></a>
-                                    </li>
-                                </div>
-                            </div>
-                            <li class="page-item">
-                                <a class="page-link" th:if="${employee.hasNext()}"
-                                   th:href="@{'/employee/home'(page=${employee.number + 1})}">
-                                    >>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-
                 </div>
-            </div>
-        </aside>
-    </div>
 
-    <!--         Modal message -->
-    <div>
-        <div th:if="${msg != null}" class="modal fade" id="messModal1" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body text-danger" th:text="${msg}"></div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
+                <div class="col-2 ">
+                    <ul class="pagination justify-content-end" th:if="${contractPage.totalPages > 0}">
+                        <li class="page-item">
+                            <a class="page-link" th:if="${contractPage.hasPrevious()}"
+                               th:href="@{'/contract/home'(page=${contractPage.number - 1}, nameSearch = ${nameSearchVal})}">
+                                <<
+                            </a>
+                        </li>
+                        <div th:each="item1, loop : ${#numbers.sequence(1, contractPage.totalPages )}">
+                            <div th:if="${(contractPage.number + 1) == item1}">
+                                <li class="page-item active">
+                                    <a class="page-link" href="#" th:text="${item1}"
+                                       th:href="@{/contract/home(page=(${item1}-1))}"></a>
+                                </li>
+                            </div>
+                            <div th:unless="${((contractPage.number + 1) == item1)}">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" th:text="${item1}"
+                                       th:href="@{/contract/home(page=(${item1}-1))}"></a>
+                                </li>
+                            </div>
+                        </div>
+                        <li class="page-item">
+                            <a class="page-link" th:if="${contractPage.hasNext()}"
+                               th:href="@{'/contract/home'(page=${contractPage.number + 1}, nameSearch = ${nameSearchVal})}">
+                                >>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+    </aside>
+</div>
+
+<!--         Modal message -->
+<div>
+    <div th:if="${msg != null}" class="modal fade" id="messModal1" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-danger" th:text="${msg}"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 <footer th:replace="~{layout ::footer}"></footer>
 <th:block th:replace="~{layout :: cdn}"></th:block>
