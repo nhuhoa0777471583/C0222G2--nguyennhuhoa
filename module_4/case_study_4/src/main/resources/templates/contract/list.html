@@ -195,7 +195,7 @@
                 </thead>
                 <tbody>
                 <tr th:each="contract, loop: ${contractPage}">
-                    <td th:text="${loop.count}"></td>
+                    <td th:text="${loop.count + contractPage.number * contractPage.size}"></td>
                     <td th:text="${contract.facility.name}"></td>
                     <td th:text="${contract.customer.name}"></td>
                     <td th:text="${contract.startDate}"></td>
@@ -216,8 +216,8 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        <p th:each="attach : ${attachFacility}"
-                                           th:text="${attach.name}" th:value="${attach.id}"></p>
+                                        <p th:each="con : ${contract.contractDetailList}"
+                                           th:text="${con.attachFacility.name}" th:value="${con.attachFacility.id}"></p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
@@ -247,7 +247,7 @@
                                     <div class="modal-footer">
                                         <form method="post" th:action="@{/contract/delete/{id}(id=${contract.id})}">
                                             <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                Close
+                                                Yes
                                             </button>
                                         </form>
 

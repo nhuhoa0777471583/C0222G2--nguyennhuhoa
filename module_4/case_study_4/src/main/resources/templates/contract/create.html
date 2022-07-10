@@ -204,8 +204,8 @@
         <fieldset>
             <label>attach service</label>
             <select class="form-control">
-                <option th:each="a :${attachFacility}"
-                        th:text="${a.name}" th:value="${a.id}">
+                <option th:each="a :${contract.contractDetailList}"
+                        th:text="${a.attachFacility.name}" th:value="${a.attachFacility.id}">
                 </option>
             </select>
         </fieldset>

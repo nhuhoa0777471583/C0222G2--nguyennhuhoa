@@ -32,7 +32,7 @@ public class ContractService implements IContractService {
     }
 
     @Override
-    public void delete(Integer id) {
+    public void deleteById(Integer id) {
         this.iContractRepository.deleteById(id);
     }
 }

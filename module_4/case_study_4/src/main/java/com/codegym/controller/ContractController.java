@@ -37,6 +37,7 @@ public class ContractController {
         model.addAttribute("contractDetail", this.iContractDetailService.displayAll());
         model.addAttribute("attachFacility", this.iAttachFacilityServicel.displayAll());
         model.addAttribute("contract", new Contract());
+        model.addAttribute("contractDetail", new ContractDetail());
 
         return "/contract/list";
     }
@@ -49,7 +50,6 @@ public class ContractController {
         model.addAttribute("customer", this.iCustomerService.findAll());
         model.addAttribute("contractDetail", new ContractDetail());
         model.addAttribute("attachFacility", this.iAttachFacilityServicel.displayAll());
-
         return "/contract/create";
     }
 
@@ -64,7 +64,7 @@ public class ContractController {
 
     @PostMapping("delete/{id}")
     public String delete(@PathVariable Integer id, RedirectAttributes redirectAttributes){
-        this.iContractService.delete(id);
+        this.iContractService.deleteById(id);
         redirectAttributes.addFlashAttribute("msg", "Delete contract successfully!!");
         return "/contract/create";
 

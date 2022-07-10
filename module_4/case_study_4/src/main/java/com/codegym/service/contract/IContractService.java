@@ -15,6 +15,6 @@ public interface IContractService {
 
     Optional<Contract> findById(Integer id);
 
-    void delete(Integer id);
+    void deleteById(Integer id);
 
 }
