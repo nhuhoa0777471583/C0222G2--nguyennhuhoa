@@ -17,9 +17,11 @@ public class ContractService implements IContractService {
     private IContractRepository iContractRepository;
 
     @Override
-    public Page<Contract> findAll( Pageable pageable) {
-        return this.iContractRepository.findAll( pageable);
+    public Page<Contract> findAllByDepositContaining(String name, Pageable pageable) {
+        return this.iContractRepository.findAllByDepositContaining(name, pageable);
+
     }
+
 
     @Override
     public void save(Contract contract) {

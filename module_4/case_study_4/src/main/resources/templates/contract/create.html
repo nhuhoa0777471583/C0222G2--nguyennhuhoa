@@ -202,15 +202,33 @@
         </fieldset>
 
         <fieldset>
-            <label>attach service</label>
-            <select class="form-control">
-                <option th:each="a :${contract.contractDetailList}"
-                        th:text="${a.attachFacility.name}" th:value="${a.attachFacility.id}">
-                </option>
-            </select>
+            <label>attach facility</label>
+                <!-- Button them dịch vu di kem -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#addModal">
+                    +
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" th:id="addModal" tabindex="-1"
+                     aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <select class="form-control">
+                                    <option>Please choose</option>
+                                <option th:each="a :${attachFacility}"
+                                        th:text="${a.name}" th:value="${a.id}">
+                                </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </fieldset>
         <fieldset>
-            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Create Contract</button>
         </fieldset>
     </form>
 </div>

@@ -6,6 +6,7 @@
     <th:block th:replace="~{layout :: style }"></th:block>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
         * {
             margin: 0;
             padding: 0;
@@ -154,22 +155,26 @@
 <body>
 <div class="container">
     <nav th:replace="~{layout :: nav}"></nav>
-    <div style="margin-top: 35%"><h2><a th:href="@{/customer/home}" style="color: cornflowerblue">Back Home</a></h2></div>
+    <div style="margin-top: 35%"><h2><a th:href="@{/customer/home}" style="color: cornflowerblue">Back Home</a></h2>
+    </div>
 
-    <form id="contact" th:action="@{/customer/save}" th:object="${customer}" method="post">
+    <form id="contact" th:action="@{/customer/save}" th:object="${customerDTO}" method="post">
         <h2>Create Customer</h2>
-        <fieldset>
-            <input class="form-control" placeholder="id" type="hidden" th:field="*{id}" tabindex="0">
-        </fieldset>
+        <input class="form-control"  type="hidden" th:field="*{id}" tabindex="1">
         <fieldset>
             <label>name</label>
             <input class="form-control" placeholder="name" type="text" th:field="*{name}" tabindex="1">
         </fieldset>
+<!--        <p style="color:red;" th:errors="*{nameCustomer}" tabindex="1">-->
+
+
         <fieldset>
             <label>birthday</label>
             <input class="form-control" placeholder="birthday" type="date" th:field="*{birdthday}"
                    tabindex="2">
         </fieldset>
+<!--        <p style="color:red;" th:errors="*{birdthday}" tabindex="1">-->
+
         <fieldset>
             <label>gender</label>
             <select class="form-control" th:field="*{gender}">
@@ -179,21 +184,28 @@
         </fieldset>
         <fieldset>
             <label>id card</label>
-            <input placeholder="id card" type="text" th:field="*{idCard}"  tabindex="4">
+            <input placeholder="phone" type="text" th:field="*{idCard}" tabindex="5">
         </fieldset>
+        <p style="color:red;" th:errors="*{idCard}" tabindex="1">
+
+<!--            <input th:errors="*{idCard}" tabindex="4">-->
+
         <fieldset>
             <label>Phone</label>
-            <input placeholder="phone" type="text" th:field="*{phone}"  tabindex="5">
+            <input placeholder="phone" type="text" th:field="*{phone}" tabindex="5">
         </fieldset>
+<!--        <p style="color:red;" th:errors="*{phone}" tabindex="1">-->
+
         <fieldset>
             <label>email</label>
-            <input placeholder="email" type="text" th:field="*{email}"  tabindex="6">
+            <input placeholder="email" type="text" th:field="*{email}" tabindex="6">
         </fieldset>
+<!--        <p style="color:red;" th:errors="*{email}" tabindex="1">-->
+
         <fieldset>
             <label>address</label>
-            <input placeholder="address" type="text" th:field="*{address}"  tabindex="7">
+            <input placeholder="address" type="text" th:field="*{address}" tabindex="7">
         </fieldset>
-
         <fieldset>
             <label>customer type</label>
             <select class="form-select" th:field="*{customerType}">

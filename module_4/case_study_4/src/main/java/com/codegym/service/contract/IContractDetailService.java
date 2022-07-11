@@ -9,4 +9,7 @@ public interface IContractDetailService {
 
     List<ContractDetail> displayAll();
 
+    void save(ContractDetail contractDetail);
+
+    List<ContractDetail> findAll();
 }

@@ -35,23 +35,38 @@ public class CustomerController {
 
     @GetMapping("/create")
     public String create(Model model) {
-        model.addAttribute("customer", new Customer());
+        model.addAttribute("customerDTO", new Customer());
         model.addAttribute("customerType", iCustomerTypeService.displayAllCustomerType());
         return "/customer/create";
     }
 
+//    @PostMapping("/save")
+//    public String save(@Validated @ModelAttribute CustomerDTO customerDTO,
+//                       BindingResult bindingResult,
+//                       RedirectAttributes redirectAttributes, Model model) {
+//        if (bindingResult.hasErrors()) {
+//            model.addAttribute("customerType", iCustomerTypeService.displayAllCustomerType());
+//            return "/customer/create";
+//        }
+//        Customer customer = new Customer();
+//        BeanUtils.copyProperties(customerDTO, customer);
+//        iCustomerService.save(customer);
+//        model.addAttribute("customerType", iCustomerTypeService.displayAllCustomerType());
+//        redirectAttributes.addFlashAttribute("msg", "Add new customer successfully!!");
+//        return "redirect:/customer/home";
+//    }
+
     @PostMapping("/save")
     public String save(Customer customer, RedirectAttributes redirectAttributes) {
-        iCustomerService.save(customer);
-        redirectAttributes.addFlashAttribute("msg", "Add new customer successfully!!");
+        this.iCustomerService.save(customer);
+        redirectAttributes.addFlashAttribute("msg", "Create customer successfully!!");
         return "redirect:/customer/home";
     }
-
 
     @GetMapping("/edit/{id}")
     public String edit(Model model, @PathVariable("id") Integer id) {
         model.addAttribute("customer", iCustomerService.displayAllById(id));
-        model.addAttribute("customerType", iCustomerTypeService.displayAllCustomerType());
+        model.addAttribute("customerTypeList", iCustomerTypeService.displayAllCustomerType());
         return "/customer/edit";
     }
 
@@ -70,6 +85,4 @@ public class CustomerController {
         redirectAttributes.addFlashAttribute("msg", "Delete customer successfully!!");
         return "redirect:/customer/home";
     }
-
-
 }

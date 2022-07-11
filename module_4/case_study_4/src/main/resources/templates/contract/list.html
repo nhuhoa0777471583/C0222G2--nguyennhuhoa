@@ -168,7 +168,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="search-box">
-                            <form action="/facility/home">
+                            <form action="/contract/home">
                                 <i class="material-icons">&#xE8B6;</i>
                                 <input type="text" name="nameSearch" th:value="${nameSearchVal}"
                                        placeholder="Search&hellip;">
@@ -189,7 +189,7 @@
                     <td>end day</td>
                     <td>deposit</td>
                     <td>mony total</td>
-                    <td>attach service</td>
+                    <td colspan="2">attach service</td>
                     <td>Delete</td>
                 </tr>
                 </thead>
@@ -203,10 +203,63 @@
                     <td th:text="${contract.deposit}"></td>
                     <td>0</td>
                     <td>
+                        <!-- Button them dịch vu di kem -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                th:data-bs-target="'#addModal'+${contract.id}"
+                                th:onclick="'getIdContract('+${contract.id}+')'">
+                            +
+                        </button>
+
+                        <!-- Modal -->
+                        <form th:action="@{/contract/saveContractDetail}" method="post"
+                              th:object="${contractDetail}">
+                            <div class="modal fade" th:id="'addModal'+${contract.id}" tabindex="-1"
+                                 aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+
+                                            <input type="hidden" th:field="*{contract.id}"
+                                                   th:id="'contractId'+${contract.id}">
+                                            <table class="table table-hover">
+                                                <tr>
+                                                    <td>Attach service</td>
+                                                    <td>Quantity</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <select th:field="*{attachFacility.id}" class="form-select">
+                                                            <option value="">Please choose</option>
+                                                            <option th:each="a :${attachFacility}"
+                                                                    th:value="${a.id}"
+                                                                    th:text="${a.name}">
+                                                            </option>
+                                                        </select>
+                                                    </td>
+
+                                                    <td>
+                                                        <input th:field="*{quantity}" class="form-control">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No
+                                            </button>
+                                            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Yes
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
                         <!-- Button danh sach dịch vu di kem -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 th:data-bs-target="'#exampleModal'+${contract.id}">
-                            List combo service
+                            List service
                         </button>
 
                         <!-- Modal -->
@@ -216,9 +269,22 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        <p th:each="con : ${contract.contractDetailList}"
-                                           th:text="${con.attachFacility.name}" th:value="${con.attachFacility.id}"></p>
+                                        <table th:each="ccl : ${contract.contractDetailList}">
+                                            <tr>
+                                                <td>Attach service</td>
+                                                <td class="form-control" th:text="${ccl.attachFacility.name}"
+                                                    th:value="${ccl.attachFacility.id}">
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Quantity</td>
+                                                <td class="form-control" th:text="${ccl.quantity}"
+                                                    th:value="${ccl.id}"></td>
+                                            </tr>
+                                        </table>
                                     </div>
+
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
                                         </button>
@@ -241,10 +307,14 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        <p>Do you want to delete
-                                            <span style="color: red" th:text="${contract.customer.name}"></span>?</p>
+                                        <p>Do you want to delete have name is
+                                            <span style="color: red" th:text="${contract.customer.name}"></span>
+                                            and id contract is <span style="color: red" th:text="${contract.id}"></span>?
+                                        </p>
                                     </div>
                                     <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                                        </button>
                                         <form method="post" th:action="@{/contract/delete/{id}(id=${contract.id})}">
                                             <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 Yes
@@ -264,7 +334,7 @@
                 <ul class="pagination" th:if="${contractPage.totalPages > 0}">
                     <li class="page-item">
                         <a class="page-link" th:if="${contractPage.hasPrevious()}"
-                           th:href="@{'/contract/home'(page=${contractPage.number - 1})}">
+                           th:href="@{'/contract/home'(page=${contractPage.number - 1}, nameSeach = ${nameSearchVal})}">
                             <<
                         </a>
                     </li>
@@ -284,7 +354,7 @@
                     </div>
                     <li class="page-item">
                         <a class="page-link" th:if="${contractPage.hasNext()}"
-                           th:href="@{'/contract/home'(page=${contractPage.number + 1})}">
+                           th:href="@{'/contract/home'(page=${contractPage.number + 1}, nameSeach = ${nameSearchVal})}">
                             >>
                         </a>
                     </li>

@@ -250,8 +250,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-
-        let temp = $("#inputFacilityType").val();
+    $("#facilityType").on('change', function () {
+        let temp = $("#facilityType").val();
         switch (Number(temp)) {
             case 1:
                 $('#standardRoom').show();
@@ -274,7 +274,7 @@
                 $('#numberOfFloars').hide();
                 break;
         }
-
+    })
 </script>
 </body>
 </html>

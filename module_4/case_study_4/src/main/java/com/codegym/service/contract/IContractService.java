@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface IContractService {
 
-    Page<Contract> findAll(Pageable pageable);
+    Page<Contract> findAllByDepositContaining(String name , Pageable pageable);
 
     void save(Contract contract);
 
