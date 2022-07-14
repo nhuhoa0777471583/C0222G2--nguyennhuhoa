@@ -40,7 +40,7 @@ public class MusicController {
     }
 
     @PostMapping("/save")
-    public String saveMusic( @ModelAttribute @Validated MusicDto musicDto,
+    public String saveMusic(@ModelAttribute @Validated MusicDto musicDto,
                             BindingResult bindingResult,
                             RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {

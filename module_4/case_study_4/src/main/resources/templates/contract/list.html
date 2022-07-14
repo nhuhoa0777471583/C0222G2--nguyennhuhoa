@@ -189,7 +189,7 @@
                     <td>end day</td>
                     <td>deposit</td>
                     <td>mony total</td>
-                    <td colspan="2">attach service</td>
+                    <td>attach service</td>
                     <td>Delete</td>
                 </tr>
                 </thead>
@@ -211,7 +211,7 @@
                         </button>
 
                         <!-- Modal -->
-                        <form th:action="@{/contract/saveContractDetail}" method="post"
+                        <form action="/contract/saveContractDetail" method="post"
                               th:object="${contractDetail}">
                             <div class="modal fade" th:id="'addModal'+${contract.id}" tabindex="-1"
                                  aria-labelledby="exampleModalLabel"
@@ -231,7 +231,7 @@
                                                     <td>
                                                         <select th:field="*{attachFacility.id}" class="form-select">
                                                             <option value="">Please choose</option>
-                                                            <option th:each="a :${attachFacility}"
+                                                            <option th:each="a :${attachFacilityList}"
                                                                     th:value="${a.id}"
                                                                     th:text="${a.name}">
                                                             </option>
@@ -239,22 +239,68 @@
                                                     </td>
 
                                                     <td>
-                                                        <input th:field="*{quantity}" class="form-control">
+                                                        <input type="text" th:field="*{quantity}" class="form-control">
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </div>
-                                        <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No
                                             </button>
-                                            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Yes
+                                            <button type="submit" class="btn btn-secondary" >Yes
                                             </button>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </form>
+
+<!--                        &lt;!&ndash; Button them dịch vu di kem &ndash;&gt;-->
+<!--                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"-->
+<!--                                data-bs-target="#addModal">-->
+<!--                            +-->
+<!--                        </button>-->
+
+<!--                        &lt;!&ndash; Modal &ndash;&gt;-->
+
+<!--                            <div class="modal fade" id="addModal" tabindex="-1"-->
+<!--                                 aria-labelledby="exampleModalLabel"-->
+<!--                                 aria-hidden="true">-->
+<!--                                <div class="modal-dialog">-->
+<!--                                    <div class="modal-content">-->
+<!--                                        <div class="modal-body">-->
+<!--                                            <form action="/contract/saveContractDetail" method="post"-->
+<!--                                                  th:object="${contractDetail}">-->
+<!--                                            <table class="table table-hover">-->
+<!--                                                <tr>-->
+<!--                                                    <td>Attach service</td>-->
+<!--                                                    <td>Quantity</td>-->
+<!--                                                </tr>-->
+<!--                                                <tr>-->
+<!--                                                    <td>-->
+<!--                                                        <select th:field="*{attachFacility.id}" class="form-select">-->
+<!--                                                            <option value="">Please choose</option>-->
+<!--                                                            <option th:each="a :${attachFacilityList}"-->
+<!--                                                                    th:value="${a.id}"-->
+<!--                                                                    th:text="${a.name}">-->
+<!--                                                            </option>-->
+<!--                                                        </select>-->
+<!--                                                    </td>-->
+
+<!--                                                    <td>-->
+<!--                                                        <input type="text" th:field="*{quantity}" class="form-control">-->
+<!--                                                    </td>-->
+<!--                                                </tr>-->
+<!--                                            </table>-->
+<!--                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No-->
+<!--                                            </button>-->
+<!--                                            <button type="submit" class="btn btn-secondary" >Yes-->
+<!--                                            </button>-->
+<!--                                            </form>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+
 
                         <!-- Button danh sach dịch vu di kem -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -385,6 +431,12 @@
     $(document).ready(function () {
         $('#messModal1').modal('show')
     })
+
+    function getIdContract(id) {
+        console.log(id);
+        $("#contractId" + `${id}`).val(id);
+    }
+
 
 </script>
 </body>

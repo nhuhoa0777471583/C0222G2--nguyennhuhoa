@@ -37,6 +37,7 @@ public class ContractController {
     private IFacilityService iFacilityService;
 
     @GetMapping("/home")
+
     public String view(Model model,
                        @PageableDefault(value = 4) Pageable pageable,
                        @RequestParam Optional<String> nameSearch) {
@@ -46,7 +47,7 @@ public class ContractController {
         model.addAttribute("nameSearchVal", nameSearchVal);
 
         model.addAttribute("contractDetaiAllList", this.iContractDetailService.displayAll());
-        model.addAttribute("attachFacility", this.iAttachFacilityServicel.displayAll());
+        model.addAttribute("attachFacilityList", this.iAttachFacilityServicel.displayAll());
         model.addAttribute("contract", new Contract());
         model.addAttribute("contractDetail", new ContractDetail());
 
@@ -96,5 +97,4 @@ public class ContractController {
         return "redirect:/contract/home";
 
     }
-
 }

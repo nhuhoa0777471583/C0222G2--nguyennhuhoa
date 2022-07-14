@@ -132,7 +132,7 @@
                             <td th:text="${y.name}"></td>
                             <td th:text="${y.birdthday}"></td>
                             <td th:text="${y.idCard}"></td>
-                            <td th:text="${y.salary}"></td>
+                            <td th:text="${#numbers.formatDecimal(y.salary, 0, 'DEFAULT', 0, 'DEFAULT')}"></td>
                             <td th:text="${y.phone}"></td>
                             <td th:text="${y.email}"></td>
                             <td th:text="${y.address}"></td>

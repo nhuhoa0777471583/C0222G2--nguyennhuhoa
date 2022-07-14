@@ -44,16 +44,17 @@ public class CustomerController {
 //    public String save(@Validated @ModelAttribute CustomerDTO customerDTO,
 //                       BindingResult bindingResult,
 //                       RedirectAttributes redirectAttributes, Model model) {
-//        if (bindingResult.hasErrors()) {
+//        if (!bindingResult.hasErrors()) {
+//            Customer customer = new Customer();
+//            BeanUtils.copyProperties(customerDTO, customer);
+//            iCustomerService.save(customer);
 //            model.addAttribute("customerType", iCustomerTypeService.displayAllCustomerType());
+//            redirectAttributes.addFlashAttribute("msg", "Add new customer successfully!!");
+//            return "redirect:/customer/home";
+//        } else {
+//
 //            return "/customer/create";
 //        }
-//        Customer customer = new Customer();
-//        BeanUtils.copyProperties(customerDTO, customer);
-//        iCustomerService.save(customer);
-//        model.addAttribute("customerType", iCustomerTypeService.displayAllCustomerType());
-//        redirectAttributes.addFlashAttribute("msg", "Add new customer successfully!!");
-//        return "redirect:/customer/home";
 //    }
 
     @PostMapping("/save")

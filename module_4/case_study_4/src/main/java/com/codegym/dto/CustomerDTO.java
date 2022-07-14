@@ -3,8 +3,6 @@ package com.codegym.dto;
 import com.codegym.model.contract.Contract;
 import com.codegym.model.customers.CustomerType;
 
-import javax.persistence.Basic;
-import javax.persistence.OneToMany;
 import javax.validation.GroupSequence;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
