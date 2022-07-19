@@ -1,20 +1,19 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { FontSizeEditorComponent } from './font-size-editor-thuc-hanh-ss3/font-size-editor.component';
-import { AngularShowPetComponent } from './angular-show-pet-thuc-hanh-ss3/angular-show-pet.component';
-import { TestComponent } from './test/test.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {FontSizeEditorComponent} from './ss3/font-size-editor/font-size-editor.component';
+import {AngularShowPetComponent} from './ss3/angular-show-pet/angular-show-pet.component';
+import {TestComponent} from './test/test.component';
 import {FormsModule} from "@angular/forms";
-import { ProductComponent } from './product-thuc-hanh-ss3/product.component';
-import { CalculatorComponent } from './calculator-bai-tap-ss3/calculator.component';
-import { ColorComponent } from './color-bai-tap-ss3/color.component';
-import { ArticleComponent } from './article-th-4/article.component';
-import { LikeComponent } from './like_th_4/like.component';
-import { NavbaComponent } from './navba/navba.component';
-import { NavbarComponent } from './navbar-bai-tap-4/navbar.component';
-import { FooterComponent } from './footer-bai-tap-4/footer.component';
+import {ProductComponent} from './ss3/product/product.component';
+import {CalculatorComponent} from './ss3/calculator/calculator.component';
+import {ColorComponent} from './ss4/color/color.component';
+import {ArticleComponent} from './ss4/article/article.component';
+import {LikeComponent} from './ss4/like/like.component';
+import {NavbarComponent} from './ss4/navbar/navbar.component';
+import {FooterComponent} from './ss4/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { FooterComponent } from './footer-bai-tap-4/footer.component';
     ColorComponent,
     ArticleComponent,
     LikeComponent,
-    NavbaComponent,
     NavbarComponent,
     FooterComponent
   ],
@@ -39,4 +37,5 @@ import { FooterComponent } from './footer-bai-tap-4/footer.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

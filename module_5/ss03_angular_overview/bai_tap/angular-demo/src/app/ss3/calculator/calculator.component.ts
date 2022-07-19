@@ -20,7 +20,11 @@ export class CalculatorComponent {
       case '-':
         return this.result = this.number1 - this.number2;
       case '/':
-        return this.result = this.number1 / this.number2;
+        if(this.number2 != 0){
+          return this.result = this.number1 / this.number2;
+        }else {
+          return "no number is divisible by 0!"
+        }
       case '*':
         return this.result = this.number1 * this.number2;
     }
