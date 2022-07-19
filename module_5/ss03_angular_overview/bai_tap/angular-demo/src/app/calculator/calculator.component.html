@@ -1,0 +1,13 @@
+<div class="text-center">
+  <h2>Calculator</h2>
+  <input [(ngModel)]="number1" type="number">
+  <br>
+  <input [(ngModel)]="number2"  type="number">
+  <br>
+  <button type="button" class="btn btn-warning" (click)="cal('+')" >+</button>
+  <button type="button" class="btn btn-info" (click)="cal('-')">-</button>
+  <button type="button" class="btn btn-light" (click)="cal('/')">/</button>
+  <button type="button" class="btn btn-dark" (click)="cal('*')">*</button>
+
+  <h2>Result: {{result}}</h2>
+</div>
