@@ -1,22 +1,141 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <header class="head ">
   <img style="height: 300px; width: 100%" src="/assets/img/head.png" height="580" width="1888"/>
 </header>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
-  <div class="container">
-    <a class="navbar-brand" href="/index.html"><p>FURAMA</p></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
-      <i class="fas fa-bars ms-1"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="list-service.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="list-customer.html">Customer</a></li>
-        <li class="nav-item"><a class="nav-link" href="list-contract.html">Contact</a></li>
-      </ul>
+<div class="container style-table">
+  <div class="table-wrapper">
+    <h2>Customer <b>Details</b></h2>
+  </div>
+  <div class="table-title">
+    <div class="row">
+      <div class="col-sm-6">
+        <a href="add-customer.html" class="btn btn-outline-success">Add new</a>
+      </div>
+      <div class="col-sm-6">
+        <div class="search-box">
+          <form action="/customer/home">
+            <i class="material-icons">&#xE8B6;</i>
+            <input type="text" placeholder="Search&hellip;"
+                   name="nameSearch">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-</nav>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered table-responsive" style="font-size: 15px">
+      <thead>
+      <tr class="table-danger">
+        <td>#</td>
+        <td>Name</td>
+        <td>Birthday</td>
+        <td>Gender</td>
+        <td>Id card</td>
+        <td>Phone</td>
+        <td>Email</td>
+        <td>Address</td>
+        <td>Customer type</td>
+        <td colspan="2">Action</td>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>Hoa</td>
+        <td>2002-03-23</td>
+        <td>nam</td>
+        <td>123456</td>
+        <td>077789456</td>
+        <td>hoa23@gmail.com</td>
+        <td>dn</td>
+        <td>vip</td>
+        <td><a href="edit-customer.html" class="btn btn-outline-success">Edit</a></td>
+
+        <td>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Delete
+          </button>
+
+        </td>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>Hoa</td>
+        <td>2002-03-23</td>
+        <td>nam</td>
+        <td>123456</td>
+        <td>077789456</td>
+        <td>hoaaaaaaaaaaaaaaaaaaaaaaaaaa23@gmail.com</td>
+        <td>dn</td>
+        <td>vip</td>
+        <td><a href="edit-customer.html" class="btn btn-outline-success">Edit</a></td>
+
+        <td>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Delete
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Hoa</td>
+        <td>2002-03-23</td>
+        <td>nam</td>
+        <td>123456</td>
+        <td>077789456</td>
+        <td>hoaaaaaaaaaaaaaaaaaaaaaaaaaa23@gmail.com</td>
+        <td>dn</td>
+        <td>vip</td>
+        <td><a href="edit-customer.html" class="btn btn-outline-success">Edit</a></td>
+
+        <td>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Delete
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1"><</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">></a>
+      </li>
+    </ul>
+  </nav>
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        You may want to delete?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
