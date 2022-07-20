@@ -31,7 +31,7 @@ export class ArticleComponent implements OnInit {
       url: 'https://ruslanspivak.com/lsbaws-part1/'
     }
   ];
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
