@@ -14,6 +14,12 @@ import {ArticleComponent} from './ss4/article/article.component';
 import {LikeComponent} from './ss4/like/like.component';
 import {NavbarComponent} from './ss4/navbar/navbar.component';
 import {FooterComponent} from './ss4/footer/footer.component';
+import { ChildComponent } from './test-angular-child-parent/child/child.component';
+import { DemoChileComponent } from './test-angular-child-parent/demo-chile/demo-chile.component';
+import { NameCardComponent } from './ss5/name-card/name-card.component';
+import { ProgressBarComponent } from './ss5/progress-bar/progress-bar.component';
+import { RatingBarComponent } from './ss5/rating-bar/rating-bar.component';
+import { CountdownTimerComponent } from './ss5/countdown-timer/countdown-timer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,13 @@ import {FooterComponent} from './ss4/footer/footer.component';
     ArticleComponent,
     LikeComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ChildComponent,
+    DemoChileComponent,
+    NameCardComponent,
+    ProgressBarComponent,
+    RatingBarComponent,
+    CountdownTimerComponent
   ],
   imports: [
     BrowserModule,
