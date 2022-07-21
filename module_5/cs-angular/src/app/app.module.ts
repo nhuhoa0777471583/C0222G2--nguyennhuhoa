@@ -7,7 +7,7 @@ import { ContractListComponent } from './contract-manager/contract-list/contract
 import { CustomerListComponent } from './customer-manager/customer-list/customer-list.component';
 import { ServiceListComponent } from './service-manager/service-list/service-list.component';
 import { HomePageComponent } from './home/home-page/home-page.component';
-import { NabarComponent } from './home/nabar/nabar.component';
+
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { ServiceAddComponent } from './service-manager/service-add/service-add.component';
@@ -23,7 +23,6 @@ import { ContractAddComponent } from './contract-manager/contract-add/contract-a
     CustomerListComponent,
     ServiceListComponent,
     HomePageComponent,
-    NabarComponent,
     NavbarComponent,
     FooterComponent,
     ServiceAddComponent,

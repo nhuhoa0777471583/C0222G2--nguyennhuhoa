@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="table-responsive">
-    <table class="table table-striped table-hover table-bordered table-responsive" style="font-size: 15px">
+    <table class="table table-striped table-hover table-bordered table-responsive" style="font-size: 20px">
       <thead>
       <tr class="table-danger">
         <td>#</td>
@@ -43,37 +43,19 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>Hoa</td>
-        <td>2002-03-23</td>
-        <td>nam</td>
-        <td>123456</td>
-        <td>077789456</td>
-        <td>hoa23@gmail.com</td>
-        <td>dn</td>
-        <td>vip</td>
-        <td><a [routerLink]="['/customer-edit']" class="btn btn-outline-success">Edit</a></td>
-
+      <tr *ngFor="let c of customer">
+        <td>{{c.id}}</td>
+        <td>{{c.name}}</td>
+        <td>{{c.birthday | date:'dd-MM-yyyy'}}</td>
         <td>
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Delete
-          </button>
-
+          <div *ngIf="c.gender ==1">Nam</div>
+          <div *ngIf="c.gender ==0 ">Nữ</div>
         </td>
-      </tr>
-
-      <tr>
-        <td>1</td>
-        <td>Hoa</td>
-        <td>2002-03-23</td>
-        <td>nam</td>
-        <td>123456</td>
-        <td>077789456</td>
-        <td>hoaaaaaaaaaaaaaaaaaaaaaaaaaa23@gmail.com</td>
-        <td>dn</td>
-        <td>vip</td>
+        <td>{{c.idCard}}</td>
+        <td>{{c.phone}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.address}}</td>
+        <td>{{c.customerType}}</td>
         <td><a [routerLink]="['/customer-edit']" class="btn btn-outline-success">Edit</a></td>
 
         <td>
@@ -81,25 +63,7 @@
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Delete
           </button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Hoa</td>
-        <td>2002-03-23</td>
-        <td>nam</td>
-        <td>123456</td>
-        <td>077789456</td>
-        <td>hoaaaaaaaaaaaaaaaaaaaaaaaaaa23@gmail.com</td>
-        <td>dn</td>
-        <td>vip</td>
-        <td><a [routerLink]="['/customer-edit']" class="btn btn-outline-success">Edit</a></td>
 
-        <td>
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Delete
-          </button>
         </td>
       </tr>
       </tbody>
