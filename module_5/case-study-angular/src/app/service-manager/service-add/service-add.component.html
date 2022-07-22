@@ -1,0 +1,65 @@
+<div class="bodyy-form">
+  <div class="container container-form">
+    <div style="margin-top: 35%"><h2><a [routerLink]="['/service']" style="color: cornflowerblue">Back Home</a></h2></div>
+    <form id="contact" action="@{/facility/save}"  method="post">
+      <h2>Add Service</h2>
+      <fieldset>
+        <input placeholder="id" type="hidden" value="1" tabindex="0">
+      </fieldset>
+
+      <fieldset>
+        <label>name</label>
+        <input class="form-control" placeholder="name" type="text"
+               tabindex="1">
+      </fieldset>
+
+      <fieldset>
+        <label>area</label>
+        <input class="form-control" placeholder="area" type="text"
+               tabindex="2">
+      </fieldset>
+
+      <fieldset>
+        <label>cost</label>
+        <input class="form-control" placeholder="cost" type="text"
+               tabindex="3">
+      </fieldset>
+
+      <fieldset>
+        <label>max people</label>
+        <input class="form-control" placeholder="max people" type="text"
+               tabindex="4">
+      </fieldset>
+
+      <fieldset>
+        <label>rent type</label>
+        <input class="form-control" placeholder="rent type" type="text"
+               tabindex="4">
+      </fieldset>
+
+      <fieldset>
+        <label>service type</label>
+        <input class="form-control" placeholder="service type" type="text"
+               tabindex="4">
+      </fieldset>
+
+      <fieldset style="display: none" id="standardRoom">
+        <label>standard room</label>
+        <input class="form-control" placeholder="standard room" type="text"
+               tabindex="5">
+      </fieldset>
+
+
+      <fieldset>
+        <label>facility free</label>
+        <input class="form-control" placeholder="facility free" type="text"
+               tabindex="9">
+      </fieldset>
+
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+    </form>
+
+  </div>
+</div>

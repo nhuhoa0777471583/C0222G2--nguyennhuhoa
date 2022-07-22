@@ -1,0 +1,66 @@
+
+<div class="bodyy-form">
+  <div class="container container-form">
+    <div style="margin-top: 35%"><h2><a [routerLink]="['/customer']" style="color: cornflowerblue">Back Home</a></h2></div>
+    <form id="contact" action="@{/facility/save}"  method="post">
+      <h2>Add Customer</h2>
+      <fieldset>
+        <input placeholder="id" type="hidden" value="1" tabindex="0">
+      </fieldset>
+
+      <fieldset>
+        <label>Name</label>
+        <input class="form-control" placeholder="name" type="text"
+               tabindex="1">
+      </fieldset>
+
+      <fieldset>
+        <label>Birthday</label>
+        <input class="form-control" placeholder="Birthday" type="text"
+               tabindex="2">
+      </fieldset>
+
+      <fieldset>
+        <label>Gender</label>
+        <input class="form-control" placeholder="Gender" type="text"
+               tabindex="3">
+      </fieldset>
+
+      <fieldset>
+        <label>Id card</label>
+        <input class="form-control" placeholder="Id card" type="text"
+               tabindex="4">
+      </fieldset>
+
+      <fieldset>
+        <label>Phone</label>
+        <input class="form-control" placeholder="Phone" type="text"
+               tabindex="4">
+      </fieldset>
+
+      <fieldset>
+        <label>Email</label>
+        <input class="form-control" placeholder="Email" type="text"
+               tabindex="4">
+      </fieldset>
+
+      <fieldset>
+        <label>Address</label>
+        <input class="form-control" placeholder="Address" type="text"
+               tabindex="5">
+      </fieldset>
+
+
+      <fieldset>
+        <label>Customer type</label>
+        <input class="form-control" placeholder="Customer type" type="text"
+               tabindex="9">
+      </fieldset>
+
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+    </form>
+
+  </div>
+</div>
