@@ -37,8 +37,8 @@ export class RegisterFormComponent implements OnInit {
   validCustomConfirmPassword(abstractControl: AbstractControl) {
     console.log(abstractControl);
       let temp = abstractControl.value;
-      if (temp.password == temp.confirmPassword) {
-        return {'validEqual': false}
+      if (temp.password != temp.confirmPassword) {
+        return {'validEqual': true}
       }
       return null;
   }

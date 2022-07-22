@@ -13,6 +13,7 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   todos: Todo[] = [];
   content = new FormControl();
   toggleTodo(i: number) {

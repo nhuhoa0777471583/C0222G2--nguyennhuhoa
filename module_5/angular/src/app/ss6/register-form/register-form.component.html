@@ -24,6 +24,7 @@
              *ngIf="registerForm.controls.group.get('password').hasError('minlength')&&registerForm.controls.group.get('password').touched">
             password phải có ít nhất 6 kí tự</p>
         </div>
+
         <div class="mb-3">
           <label for="confirmPassword" class="form-label">Confirm password</label>
           <input formControlName="confirmPassword" class="form-control" id="confirmPassword">
@@ -34,9 +35,10 @@
              *ngIf="registerForm.controls.group.get('confirmPassword').hasError('minlength')&&registerForm.controls.group.get('confirmPassword').touched">
             confirm password phải có ít nhất 6 kí tự</p>
           <p style="color: red"
-             *ngIf="registerForm.controls.group.get('confirmPassword').hasError('validEqual')&&registerForm.controls.group.get('confirmPassword').touched">
+             *ngIf="registerForm.controls.group.hasError('validEqual')&&registerForm.controls.group.get('confirmPassword').touched">
             confirm password trùng password</p>
         </div>
+
 
       </div>
 
