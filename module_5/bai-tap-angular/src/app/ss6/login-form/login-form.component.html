@@ -1,0 +1,26 @@
+<div class="container">
+  <div><h2>Login </h2></div>
+  <div class="col-5">
+    <form [formGroup]="loginForm" (ngSubmit)="createForm()" novalidate>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" formControlName="email" class="form-control" id="email">
+        <p style="color: red" *ngIf="loginForm.controls.email.hasError('required') && loginForm.controls.email.touched">
+          Email is empty</p>
+        <p style="color: red" *ngIf="loginForm.controls.email.hasError('email') && loginForm.controls.email.touched">
+          Email for example abc123@gmail.com </p>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="text" formControlName="password" name="password" class="form-control" id="exampleInputPassword1">
+        <p style="color: red"
+           *ngIf="loginForm.controls.password.hasError('required') && loginForm.controls.email.touched">password is
+          empty </p>
+        <p style="color: red" *ngIf="loginForm.controls.password.hasError('min') && loginForm.controls.email.touched">
+          password > 6 </p>
+
+      </div>
+      <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
