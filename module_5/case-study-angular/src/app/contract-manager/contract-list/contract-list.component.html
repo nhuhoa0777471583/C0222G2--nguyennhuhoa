@@ -40,8 +40,8 @@
     <tbody>
     <tr *ngFor="let c of contract, index as i">
       <td>{{i + 1}}</td>
-      <td>{{c.customer}}</td>
-      <td>{{c.service}}</td>
+      <td>{{c.customer.name}}</td>
+      <td>{{c.service.name}}</td>
       <td>{{c.starDay | date:'dd-MM-yyyy'}}</td>
       <td>{{c.endDay | date:'dd-MM-yyyy'}}</td>
       <td>{{c.deposit}}</td>

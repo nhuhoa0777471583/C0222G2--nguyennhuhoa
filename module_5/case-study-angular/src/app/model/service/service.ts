@@ -1,3 +1,4 @@
+
 export interface Service {
   id?:number,
   name?:string,
@@ -5,8 +6,6 @@ export interface Service {
   cost?:number,
   maxPeople?:number,
   rentType?:string,
-  serviceType?:string,
-  standardRoom?:string,
-  facilityFree?:string,
+
 
 }
