@@ -23,13 +23,22 @@ const routes: Routes = [
   //     path: 'id', component: YoutubePlayerComponent
   //   }]
   // },
-  {path: 'product/list',component: ProductListComponent},
-  {path: 'product/create',component: ProductCreateComponent},
+  {path: 'product/list', component: ProductListComponent},
+  {path: 'product/create', component: ProductCreateComponent},
   {path: 'product/edit/:id', component: ProductEditComponent},
   {path: 'product/delete/:id', component: ProductDeleteComponent},
 
   {path: 'list', component: DictionaryPageComponent},
-  {path: 'info/:id', component: DictionaryDetailPageComponent}
+  {path: 'info/:id', component: DictionaryDetailPageComponent},
+
+  {
+    path: 'product',
+    loadChildren: () => import('./thuc-hanh-ss9/product/product.module').then(module => module.ProductModule)
+  },
+  {
+    path: 'category',
+    loadChildren: () => import('./thuc-hanh-ss9/category/category.module').then(module => module.CategoryModule)
+  }
 ];
 
 @NgModule({

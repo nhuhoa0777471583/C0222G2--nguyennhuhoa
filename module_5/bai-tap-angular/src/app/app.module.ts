@@ -18,6 +18,9 @@ import { DictionaryPageComponent } from './bai_tap_ss7/dictionary-page/dictionar
 import { DictionaryDetailPageComponent } from './bai_tap_ss7/dictionary-detail-page/dictionary-detail-page.component';
 import { ProductEditComponent } from './ss7/product/product-edit/product-edit.component';
 import { ProductDeleteComponent } from './ss7/product/product-delete/product-delete.component';
+import {SharedModule} from './thuc-hanh-ss9/shared/shared.module';
+import { TodoSs9Component } from './bai-tap-todo-ss9/todo-ss9/todo-ss9.component';
+
 
 @NgModule({
   declarations: [
@@ -34,14 +37,16 @@ import { ProductDeleteComponent } from './ss7/product/product-delete/product-del
     DictionaryPageComponent,
     DictionaryDetailPageComponent,
     ProductEditComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    TodoSs9Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
