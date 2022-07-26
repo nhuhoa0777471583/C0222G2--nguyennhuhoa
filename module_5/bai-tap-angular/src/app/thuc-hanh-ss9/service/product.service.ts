@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 })
 export class ProductService {
 
-  private URL_PRODUCT = 'http://localhost:3000/product';
+  private URL_PRODUCT = 'http://localhost:3000/product/';
 
   constructor(private httpClient: HttpClient) {
   }
@@ -22,17 +22,15 @@ export class ProductService {
     return this.httpClient.post<Product>(this.URL_PRODUCT, product);
   }
 
-  findById(id: number): Observable<Product>  {
+  findById(id: number): Observable<Product> {
     return this.httpClient.get<Product>(this.URL_PRODUCT + id);
   }
 
   updateProduct(id: number, product: Product): Observable<Product> {
-    return this.httpClient.put<Product>(this.URL_PRODUCT + id, product)
+    return this.httpClient.put<Product>(this.URL_PRODUCT + id, product);
   }
 
   deleteProduct(id: number) {
-    // this.products = this.products.filter(product => {
-    //   return product.id !== id;
-    // });
+    return this.httpClient.delete(this.URL_PRODUCT + id);
   }
 }

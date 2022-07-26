@@ -18,6 +18,10 @@ export class TodoSs9Component implements OnInit {
   }
 
   ngOnInit() {
+    this.getAllTodo();
+  }
+
+  private getAllTodo() {
     this.todoSs9Service.getAll().subscribe(data => {
       this.todos = data;
     }, error => {
@@ -35,7 +39,7 @@ export class TodoSs9Component implements OnInit {
     this.todos[i].complete = !this.todos[i].complete;
   }
 
-  change() {
+  add() {
     const value = this.content.value;
     if (value) {
       const todo: Todo = {
@@ -43,8 +47,23 @@ export class TodoSs9Component implements OnInit {
         content: value,
         complete: false
       };
-      this.todos.push(todo);
-      this.content.reset();
+      this.todoSs9Service.addTodo(value).subscribe(data => {
+      }, error1 => {
+      }, () => {
+        this.ngOnInit();
+        alert('thêm mới thành công');
+      });
     }
   }
+
+  deleteTodo(id: number) {
+    this.todoSs9Service.delete(id).subscribe(data => {
+    }, error1 => {
+    }, () => {
+      this.ngOnInit();
+      alert('xóa thành công');
+    });
+  }
+
+
 }

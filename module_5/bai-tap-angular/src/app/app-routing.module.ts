@@ -9,6 +9,7 @@ import {DictionaryPageComponent} from './bai_tap_ss7/dictionary-page/dictionary-
 import {DictionaryDetailPageComponent} from './bai_tap_ss7/dictionary-detail-page/dictionary-detail-page.component';
 import {ProductEditComponent} from './ss7/product/product-edit/product-edit.component';
 import {ProductDeleteComponent} from './ss7/product/product-delete/product-delete.component';
+import {TodoSs9Service} from './bai-tap-todo-ss9/service/todo-ss9.service';
 
 
 const routes: Routes = [
@@ -38,6 +39,9 @@ const routes: Routes = [
   {
     path: 'category',
     loadChildren: () => import('./thuc-hanh-ss9/category/category.module').then(module => module.CategoryModule)
+  },
+  {
+    path: 'todo', component: TodoSs9Service
   }
 ];
 

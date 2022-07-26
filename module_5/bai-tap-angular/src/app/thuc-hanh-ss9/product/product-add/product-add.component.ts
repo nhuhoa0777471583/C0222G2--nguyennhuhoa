@@ -38,7 +38,6 @@ export class ProductAddComponent implements OnInit {
     },error => {
 
     }, () => {
-      console.log(this.categoryAdd);
       product.category = this.categoryAdd;
       this.productService.saveProduct(product).subscribe(() => {
         this.productForm.reset();

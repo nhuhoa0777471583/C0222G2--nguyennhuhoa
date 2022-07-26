@@ -7,7 +7,7 @@ import {Todo} from '../model/todo';
   providedIn: 'root'
 })
 export class TodoSs9Service {
-  private URL_TODO = ' http://localhost:3000/todo';
+  private URL_TODO = ' http://localhost:3000/todo/';
 
   constructor(private httpClient: HttpClient) {
   }
@@ -26,7 +26,7 @@ export class TodoSs9Service {
   }
 
   delete(id: number): Observable<Todo> {
-    return this.httpClient.delete<Todo>(this.URL_TODO + '/delete' + id);
+    return this.httpClient.delete<Todo>(this.URL_TODO + id);
   }
 
   update(todo): Observable<Todo> {

@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ProductService} from '../../service/product.service';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {Category} from '../../model/category';
 import {CategoryService} from '../../service/category.service';
+import {Product} from '../../../model/product';
 
 @Component({
   selector: 'app-product-edit',
@@ -15,6 +16,8 @@ export class ProductEditComponent implements OnInit {
   productForm: FormGroup;
   id: number;
   categorys: Category [] = [];
+  product: Product = {};
+  categoriesEdit: Category = {};
 
   constructor(private productService: ProductService, private categoryService: CategoryService,
               private activatedRoute: ActivatedRoute) {
@@ -30,19 +33,26 @@ export class ProductEditComponent implements OnInit {
         name: new FormControl(product.name),
         price: new FormControl(product.price),
         description: new FormControl(product.description),
-        category: new FormControl(product.category.id)
+        category: new FormControl(product.category.nameCategory)
       });
     });
   }
 
   updateProduct(id: number) {
     const product = this.productForm.value;
-    product.category = {
-      id: product.category
-    };
-    this.productService.updateProduct(id, product).subscribe(() => {
-      alert('Cập nhật thành công');
+    this.categoryService.findById(product.category).subscribe(data => {
+      this.categoriesEdit = data;
+    }, error => {
+    }, () => {
+      product.category = this.categoriesEdit;
+      this.productService.updateProduct(id, product).subscribe(() => {
+      }, error => {
+      }, () => {
+        alert('Cập nhật thành công');
+      });
     });
+
+
   }
 
 

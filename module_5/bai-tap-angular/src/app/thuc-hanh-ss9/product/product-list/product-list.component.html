@@ -10,7 +10,7 @@
         <td>Price</td>
         <td>Detail</td>
         <td>Category</td>
-        <td colspan="2"></td>
+        <td colspan="2">Action</td>
       </tr>
       </thead>
       <tbody>
@@ -20,8 +20,8 @@
         <td>{{product.price}}</td>
         <td>{{product.description}}</td>
         <td>{{product.category.nameCategory}}</td>
-        <td><a [routerLink]="['/product/edit',product.id]">Edit</a></td>
-        <td><a [routerLink]="['/product/delete',product.id]">Delete</a></td>
+        <td><a class="btn btn-dark" [routerLink]="['/product9/edit',product.id]">Edit</a></td>
+        <td><a class="btn btn-dark" (click)="deleteProduct(product.id)">Delete</a></td>
       </tr>
       </tbody>
     </table>
