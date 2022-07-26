@@ -32,7 +32,7 @@ const routes: Routes = [
   {path: 'info/:id', component: DictionaryDetailPageComponent},
 
   {
-    path: 'product',
+    path: 'product9',
     loadChildren: () => import('./thuc-hanh-ss9/product/product.module').then(module => module.ProductModule)
   },
   {

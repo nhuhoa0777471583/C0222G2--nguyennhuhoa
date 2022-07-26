@@ -12,7 +12,7 @@
    <tbody>
    <tr *ngFor="let category of categories; index as i">
      <td>{{i + 1}}</td>
-     <td>{{category.nameCategoryBlog}}</td>
+     <td>{{category.nameCategory}}</td>
      <td><a class="btn btn-outline-danger" [routerLink]="['/category/edit',category.id]">Edit</a></td>
      <td><a class="btn btn-outline-danger" [routerLink]="['/category/delete',category.id]">Delete</a></td>
    </tr>

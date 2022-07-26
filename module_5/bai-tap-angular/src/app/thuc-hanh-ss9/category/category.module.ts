@@ -12,7 +12,8 @@ import {CategoryAddComponent} from './category-add/category-add.component';
 
 @NgModule({
 
-  declarations: [CategoryListComponent, CategoryAddComponent, CategoryEditComponent, CategoryDeleteComponent],
+  declarations: [
+    CategoryListComponent, CategoryAddComponent, CategoryEditComponent, CategoryDeleteComponent],
   imports: [
     CommonModule,
     CategoryRoutingModule,

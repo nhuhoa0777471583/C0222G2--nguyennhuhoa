@@ -1,23 +1,29 @@
 <div class="container">
   <div class="col-5">
     <h1>Danh sách sản phẩm</h1>
-    <a routerLink="/product/create">Tạo mới sản phẩm</a>
-    <table>
+    <a routerLink="/product9/create">Tạo mới sản phẩm</a>
+    <table class="table table-hover table-bordered">
+      <thead>
       <tr>
         <td>STT</td>
-        <td>Tên</td>
-        <td>Giá</td>
-        <td>Mô tả</td>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Detail</td>
+        <td>Category</td>
         <td colspan="2"></td>
       </tr>
+      </thead>
+      <tbody>
       <tr *ngFor="let product of products; index as i">
         <td>{{i + 1}}</td>
         <td>{{product.name}}</td>
         <td>{{product.price}}</td>
         <td>{{product.description}}</td>
+        <td>{{product.category.nameCategory}}</td>
         <td><a [routerLink]="['/product/edit',product.id]">Edit</a></td>
         <td><a [routerLink]="['/product/delete',product.id]">Delete</a></td>
       </tr>
+      </tbody>
     </table>
   </div>
 </div>

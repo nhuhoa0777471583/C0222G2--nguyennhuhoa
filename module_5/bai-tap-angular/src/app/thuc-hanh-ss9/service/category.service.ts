@@ -5,14 +5,12 @@ import {Observable} from 'rxjs';
 import {Category} from '../model/category';
 
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-private readonly API_URL = 'http://localhost:8080/home/list-category';
+  private readonly API_URL = 'http://localhost:3000/category/';
+
   constructor(private http: HttpClient) {
   }
 
@@ -25,7 +23,7 @@ private readonly API_URL = 'http://localhost:8080/home/list-category';
   }
 
   findById(id: number): Observable<Category> {
-    return this.http.get<Category>(`${this.API_URL}/categories/${id}`);
+      return this.http.get<Category>(this.API_URL + id);
   }
 
   updateCategory(id: number, category: Category): Observable<Category> {
