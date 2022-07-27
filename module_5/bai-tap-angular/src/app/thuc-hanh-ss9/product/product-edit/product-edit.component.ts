@@ -38,7 +38,7 @@ export class ProductEditComponent implements OnInit {
     });
   }
 
-  updateProduct(id: number) {
+    updateProduct(id: number) {
     const product = this.productForm.value;
     this.categoryService.findById(product.category).subscribe(data => {
       this.categoriesEdit = data;
@@ -51,16 +51,11 @@ export class ProductEditComponent implements OnInit {
         alert('Cập nhật thành công');
       });
     });
-
-
   }
-
 
   ngOnInit() {
     this.getAllCategory();
   }
-
-
   private getAllCategory() {
     this.categoryService.getAll().subscribe(data => {
       this.categorys = data;

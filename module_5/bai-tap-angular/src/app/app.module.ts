@@ -20,6 +20,8 @@ import { ProductEditComponent } from './ss7/product/product-edit/product-edit.co
 import { ProductDeleteComponent } from './ss7/product/product-delete/product-delete.component';
 import {SharedModule} from './thuc-hanh-ss9/shared/shared.module';
 import { TodoSs9Component } from './bai-tap-todo-ss9/todo-ss9/todo-ss9.component';
+import {ImageGalleryModule} from './thuc_hanh_ss8/image-gallery/image-gallery.module';
+import {GalleryConfig} from './thuc_hanh_ss8/image-gallery/token';
 
 
 @NgModule({
@@ -46,9 +48,12 @@ import { TodoSs9Component } from './bai-tap-todo-ss9/todo-ss9/todo-ss9.component
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    ImageGalleryModule
   ],
-  providers: [],
+  providers: [
+    {provide: GalleryConfig, useValue: 3}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
