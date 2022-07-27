@@ -1,65 +1,126 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-<div class="bodyy-form">
+<header class="head ">
+  <img style="height: 300px; width: 100%" src="/assets/img/head.png" height="580" width="1888"/>
+</header>
+<div class="body-form">
   <div class="container container-form">
-    <div style="margin-top: 35%"><h2><a [routerLink]="['/customer']" style="color: cornflowerblue">Back Home</a></h2></div>
-    <form id="contact" action="@{/facility/save}"  method="post">
+    <div style="margin-top: 35%">
+      <h2>
+        <a [routerLink]="['/customer']" style="color: cornflowerblue">Back Home </a>
+      </h2>
+    </div>
+    <form id="contact" [formGroup]="addCustomerForm" (ngSubmit)="submit()">
       <h2>Add Customer</h2>
       <fieldset>
-        <input placeholder="id" type="hidden" value="1" tabindex="0">
-      </fieldset>
-
-      <fieldset>
-        <label>Name</label>
-        <input class="form-control" placeholder="name" type="text"
-               tabindex="1">
-      </fieldset>
-
-      <fieldset>
-        <label>Birthday</label>
-        <input class="form-control" placeholder="Birthday" type="text"
-               tabindex="2">
-      </fieldset>
-
-      <fieldset>
-        <label>Gender</label>
-        <input class="form-control" placeholder="Gender" type="text"
-               tabindex="3">
-      </fieldset>
-
-      <fieldset>
-        <label>Id card</label>
-        <input class="form-control" placeholder="Id card" type="text"
-               tabindex="4">
-      </fieldset>
-
-      <fieldset>
-        <label>Phone</label>
-        <input class="form-control" placeholder="Phone" type="text"
-               tabindex="4">
-      </fieldset>
-
-      <fieldset>
-        <label>Email</label>
-        <input class="form-control" placeholder="Email" type="text"
-               tabindex="4">
-      </fieldset>
-
-      <fieldset>
-        <label>Address</label>
-        <input class="form-control" placeholder="Address" type="text"
-               tabindex="5">
+        <input formControlName="id" placeholder="id" type="hidden" tabindex="0">
       </fieldset>
 
 
-      <fieldset>
-        <label>Customer type</label>
-        <input class="form-control" placeholder="Customer type" type="text"
-               tabindex="9">
-      </fieldset>
+      <div>
+        <fieldset>
+          <label>Name</label>
+          <input formControlName="name" name="name" class="form-control" placeholder="name" type="text"
+                 tabindex="1">
+        </fieldset>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.name.hasError('required')&&addCustomerForm.controls.name.touched">
+          name not empty.</p>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.name.hasError('pattern')&&addCustomerForm.controls.name.touched">
+          name no number and character first must uppercase.</p>
+      </div>
+      <div>
+        <fieldset>
+          <label>Birthday</label>
+          <input formControlName="birthday" name="birthday" class="form-control" type="date"
+                 tabindex="2">
+        </fieldset>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.birthday.hasError('required')&&addCustomerForm.controls.birthday.touched">
+          birthday not empty.</p>
+      </div>
+      <div>
+        <fieldset>
+          <label>Gender</label>
+          <select formControlName="gender" class="form-control">
+            <option value="" selected>Chosse</option>
+            <option value="1">Nam</option>
+            <option value="0">Nữ</option>
+          </select>
+        </fieldset>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.gender.hasError('required')&&addCustomerForm.controls.gender.touched">
+          gender not empty.</p>
+      </div>
+      <div>
+        <fieldset>
+          <label>Id card</label>
+          <input formControlName="idCard" name="idCard" class="form-control" placeholder="Id card" type="text"
+                 tabindex="4">
+        </fieldset>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.idCard.hasError('required')&&addCustomerForm.controls.idCard.touched">
+          idCard not empty.</p>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.idCard.hasError('pattern')&&addCustomerForm.controls.idCard.touched">
+          idCard must is 9 or 10 number.</p>
+      </div>
+      <div>
+        <fieldset>
+          <label>Phone</label>
+          <input formControlName="phone" name="phone" class="form-control" placeholder="Phone" type="text"
+                 tabindex="4">
+        </fieldset>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.phone.hasError('required')&&addCustomerForm.controls.phone.touched">
+          phone not empty.</p>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.phone.hasError('pattern')&&addCustomerForm.controls.phone.touched">
+          phone must is 090 or 091 or (84)+90 or (84)+91 and + 7 number.</p>
+      </div>
+      <div>
+        <fieldset>
+          <label>Email</label>
+          <input formControlName="email" name="email" class="form-control" placeholder="Email" type="text"
+                 tabindex="4">
+        </fieldset>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.email.hasError('required')&&addCustomerForm.controls.email.touched">
+          email not empty.</p>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.email.hasError('email')&&addCustomerForm.controls.email.touched">
+          email must be in the correct format.</p>
+      </div>
+      <div>
+        <fieldset>
+          <label>Address</label>
+          <input formControlName="address" name="address" class="form-control" placeholder="Address" type="text"
+                 tabindex="5">
+        </fieldset>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.address.hasError('required')&&addCustomerForm.controls.address.touched">
+          address not empty.</p>
+      </div>
+
+      <div>
+        <fieldset>
+          <label>Customer type</label>
+          <select class="form-control" formControlName="customerType">
+            <option disabled="disabled">Chosse</option>
+            <option *ngFor="let c of customers" [ngValue]="c">{{c.name}}</option>
+          </select>
+        </fieldset>
+        <p style="color: red"
+           *ngIf="addCustomerForm.controls.customerType.hasError('required')&&addCustomerForm.controls.customerType.touched">
+          customerType not empty.</p>
+      </div>
 
       <fieldset>
         <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
       </fieldset>
+
     </form>
 
   </div>

@@ -1,66 +1,126 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+<header class="head ">
+  <img style="height: 300px; width: 100%" src="/assets/img/head.png" height="580" width="1888"/>
+</header>
 <div class="bodyy-form">
   <div class="container container-form">
-    <div style="margin-top: 35%"><h2><a [routerLink]="['/customer']" style="color: cornflowerblue">Back Home</a></h2></div>
-    <form id="contact" action="@{/facility/save}"  method="post">
+    <div style="margin-top: 35%"><h2><a [routerLink]="['/customer']" style="color: cornflowerblue">Back Home</a></h2>
+    </div>
+    <form id="contact" [formGroup]="editForm" (ngSubmit)="update(id)">
       <h2>Edit Customer</h2>
       <fieldset>
-        <input placeholder="id" type="hidden" value="1" tabindex="0">
+        <input placeholder="id" type="hidden" value="1" tabindex="0" formControlName="id">
       </fieldset>
 
-      <fieldset>
-        <label>Name</label>
-        <input class="form-control" placeholder="name" type="text" value="Ly"
-               tabindex="1">
-      </fieldset>
+      <div>
+        <fieldset>
+          <label>Name</label>
+          <input class="form-control" formControlName="name" type="text"
+                 tabindex="1">
+        </fieldset>
+        <p style="color: red"
+           *ngIf="editForm.controls.name.hasError('required')&&editForm.controls.name.touched">
+          name not empty.</p>
+        <p style="color: red"
+           *ngIf="editForm.controls.name.hasError('pattern')&&editForm.controls.name.touched">
+          name no number and character first must uppercase.</p>
+      </div>
 
-      <fieldset>
-        <label>Birthday</label>
-        <input class="form-control" placeholder="Birthday" type="text" value="2002-03-25"
-               tabindex="2">
-      </fieldset>
+      <div>
+        <fieldset>
+          <label>Birthday</label>
+          <input class="form-control" formControlName="birthday" type="date"
+                 tabindex="2">
+        </fieldset>
+        <p style="color: red"
+           *ngIf="editForm.controls.birthday.hasError('required')&&editForm.controls.birthday.touched">
+          birthday not empty.</p>
+      </div>
 
-      <fieldset>
-        <label>Gender</label>
-        <input class="form-control" placeholder="Gender" type="text" value="nữ"
-               tabindex="3">
-      </fieldset>
+      <div>
+        <fieldset>
+          <label>Gender</label>
+          <select class="form-select" formControlName="gender" tabindex="3">
+            <option value="1">Nam</option>
+            <option value="0">Nữ</option>
+          </select>
+        </fieldset>
+        <p style="color: red"
+           *ngIf="editForm.controls.gender.hasError('required')&&editForm.controls.gender.touched">
+          gender not empty.</p>
+      </div>
 
-      <fieldset>
-        <label>Id card</label>
-        <input class="form-control" placeholder="Id card" type="text" value="1111111"
-               tabindex="4">
-      </fieldset>
+      <div>
+        <fieldset>
+          <label>Id card</label>
+          <input class="form-control" formControlName="idCard" type="text"
+                 tabindex="4">
+        </fieldset>
+        <p style="color: red"
+           *ngIf="editForm.controls.idCard.hasError('required')&&editForm.controls.idCard.touched">
+          idCard not empty.</p>
+        <p style="color: red"
+           *ngIf="editForm.controls.idCard.hasError('pattern')&&editForm.controls.idCard.touched">
+          idCard must is 9 or 10 number.</p>
+      </div>
 
-      <fieldset>
-        <label>Phone</label>
-        <input class="form-control" placeholder="Phone" type="text" value="0111111111"
-               tabindex="4">
-      </fieldset>
+      <div>
+        <fieldset>
+          <label>Phone</label>
+          <input class="form-control" formControlName="phone" type="text"
+                 tabindex="4">
+        </fieldset>
+        <p style="color: red"
+           *ngIf="editForm.controls.phone.hasError('required')&&editForm.controls.phone.touched">
+          phone not empty.</p>
+        <p style="color: red"
+           *ngIf="editForm.controls.phone.hasError('pattern')&&editForm.controls.phone.touched">
+          phone must is 090 or 091 or (84)+90 or (84)+91 and + 7 number.</p>
+      </div>
 
-      <fieldset>
-        <label>Email</label>
-        <input class="form-control" placeholder="Email" type="text" value="ly25@gmail.com"
-               tabindex="4">
-      </fieldset>
+      <div>
+        <fieldset>
+          <label>Email</label>
+          <input class="form-control" formControlName="email" type="text"
+                 tabindex="4">
+        </fieldset>
+        <p style="color: red"
+           *ngIf="editForm.controls.email.hasError('required')&&editForm.controls.email.touched">
+          email not empty.</p>
+        <p style="color: red"
+           *ngIf="editForm.controls.email.hasError('email')&&editForm.controls.email.touched">
+          email must be in the correct format.</p>
+      </div>
 
-      <fieldset>
-        <label>Address</label>
-        <input class="form-control" placeholder="Address" type="text" value="qtri"
-               tabindex="5">
-      </fieldset>
+      <div>
+        <fieldset>
+          <label>Address</label>
+          <input class="form-control" formControlName="address" type="text"
+                 tabindex="5">
+        <p style="color: red"
+           *ngIf="editForm.controls.address.hasError('required')&&editForm.controls.address.touched">
+          address not empty.</p>
+        </fieldset>
+      </div>
 
 
-      <fieldset>
-        <label>Customer type</label>
-        <input class="form-control" placeholder="Customer type" type="text" value="gold"
-               tabindex="9">
-      </fieldset>
-
+      <div>
+        <fieldset>
+          <label>Customer type</label>
+          <select class="form-select" formControlName="customerType" [compareWith]="defaultSelectCustomerType"
+                  tabindex="9">
+            <option *ngFor="let c of customerTypeList" [ngValue]="c">{{c.name}}</option>
+          </select>
+        </fieldset>
+        <p style="color: red"
+           *ngIf="editForm.controls.customerType.hasError('required')&&editForm.controls.customerType.touched">
+          customerType not empty.</p>
+      </div>
       <fieldset>
         <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
       </fieldset>
     </form>
-
   </div>
 </div>

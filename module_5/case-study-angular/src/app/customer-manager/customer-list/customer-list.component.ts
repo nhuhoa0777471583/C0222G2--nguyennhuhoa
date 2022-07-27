@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Customer} from "../../model/customer/customer";
+import {CustomerService} from "../../service/customerService";
+import {CustomerTypeService} from "../../service/customerTypeService";
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-customer-list',
@@ -8,83 +12,36 @@ import {Customer} from "../../model/customer/customer";
 })
 export class CustomerListComponent implements OnInit {
   customer: Customer[] = [];
+  idDelete: number;
+  nameDelete: string;
+  p: number = 1;
 
-  constructor() {
+  constructor(private customerService: CustomerService,
+              private customerTypeService: CustomerTypeService,
+              private toas: ToastrService) {
+  }
 
-    this.customer.push({
-      id: 1,
-      name: 'hòa',
-      birthday: '2002-03-23',
-      gender: 1,
-      idCard: '123456789',
-      phone: '0777123456',
-      email: 'hoa23@gmail.com',
-      address: 'da nang',
-      customerType:
-        {
-          id: 1,
-          name: 'vip'
-        }
-    })
-    this.customer.push({
-      id: 2,
-      name: 'tuyến',
-      birthday: '1994-03-23',
-      gender: 0,
-      idCard: '123456789',
-      phone: '0777123456',
-      email: 'tuyen@gmail.com',
-      address: 'ha noi',
-      customerType: {
-        id: 2,
-        name: 'gold'
-      }
-    })
-    this.customer.push({
-      id: 3,
-      name: 'bảo',
-      birthday: '1997-03-23',
-      gender: 1,
-      idCard: '123456789',
-      phone: '0777123456',
-      email: 'bao@gmail.com',
-      address: 'sai gon',
-      customerType: {
-        id: 3,
-        name: 'diamond'
-      }
-    })
-    this.customer.push({
-      id: 4,
-      name: 'đảm',
-      birthday: '1996-03-23',
-      gender: 0,
-      idCard: '123456789',
-      phone: '0777123456',
-      email: 'dam@gmail.com',
-      address: 'quang nam',
-      customerType: {
-        id: 2,
-        name: 'pro'
-      }
-    })
-    this.customer.push({
-      id: 5,
-      name: 'phúc',
-      birthday: '1995-03-23',
-      gender: 1,
-      idCard: '123456789',
-      phone: '0777123456',
-      email: 'phuc@gmail.com',
-      address: 'quang binh',
-      customerType: {
-        id: 1,
-        name: 'vip'
-      }
+  ngOnInit() {
+    this.getAll();
+  }
+
+  private getAll() {
+    this.customerService.getAll().subscribe(data => {
+      this.customer = data
     })
   }
 
-  ngOnInit(): void {
+  deleteCustomer() {
+    this.customerService.deleteCustomer(this.idDelete).subscribe(data => {
+    }, error => {
+    }, () => {
+      this.ngOnInit();
+      this.toas.success("Xóa thành công", "Thành công!!");
+    })
   }
 
+  showDelete(c: Customer) {
+    this.idDelete = c.id;
+    this.nameDelete = c.name
+  }
 }

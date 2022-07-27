@@ -5194,7 +5194,11 @@ textarea.form-control-lg {
 .toast.hide {
   display: none;
 }
-
+.toast-success {
+  padding-left: 80px;
+  text-align: center;
+  background-position: 35% !important;
+}
 .toast-container {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -5202,9 +5206,9 @@ textarea.form-control-lg {
   max-width: 100%;
   pointer-events: none;
 }
-.toast-container > :not(:last-child) {
-  margin-bottom: 0.75rem;
-}
+/*.toast-container > :not(:last-child) {*/
+/*  margin-bottom: 0.75rem;*/
+/*}*/
 
 .toast-header {
   display: flex;

@@ -1,0 +1,110 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Vip"
+    },
+    {
+      "id": 2,
+      "name": "Pro"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Nomarl"
+    },
+    {
+      "id": 5,
+      "name": "Diamond"
+    }
+  ],
+  "customer": [
+    {
+      "id": 11,
+      "name": "Hoa",
+      "email": "nguyennhuhoa2303@gmail.com",
+      "address": "da nang",
+      "birthday": "1998-05-05",
+      "gender": "1",
+      "phone": "1231441341",
+      "idCard": "123456",
+      "customerType": {
+        "id": 2,
+        "name": "Pro"
+      }
+    },
+    {
+      "id": 12,
+      "name": "2",
+      "email": "nguyennhuhoa2303@gmail.com",
+      "address": "da nang",
+      "birthday": "1998-05-05",
+      "gender": "1",
+      "phone": "1231441341",
+      "idCard": "123456",
+      "customerType": {
+        "id": 2,
+        "name": "Pro"
+      }
+    },
+    {
+      "id": 13,
+      "name": "3",
+      "email": "nguyennhuhoa2303@gmail.com",
+      "address": "da nang",
+      "birthday": "1998-05-05",
+      "gender": "1",
+      "phone": "1231441341",
+      "idCard": "123456",
+      "customerType": {
+        "id": 2,
+        "name": "Pro"
+      }
+    },
+    {
+      "id": 14,
+      "name": "4",
+      "email": "nguyennhuhoa2303@gmail.com",
+      "address": "da nang",
+      "birthday": "1998-05-05",
+      "gender": "1",
+      "phone": "1231441341",
+      "idCard": "123456",
+      "customerType": {
+        "id": 2,
+        "name": "Pro"
+      }
+    },
+    {
+      "id": 16,
+      "name": "",
+      "email": "",
+      "address": "",
+      "birthday": "",
+      "gender": 0,
+      "phone": "",
+      "idCard": "",
+      "customerType": ""
+    },
+    {
+      "id": 17,
+      "name": "Hoa Nguyen",
+      "email": "nguyen@gmail.com",
+      "address": "da nang",
+      "birthday": "2022-07-27",
+      "gender": 1,
+      "phone": "0901234565",
+      "idCard": "1478965111",
+      "customerType": {
+        "id": 1,
+        "name": "Vip"
+      }
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
