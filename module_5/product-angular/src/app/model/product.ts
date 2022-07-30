@@ -1,7 +1,7 @@
-export interface SanPham {
+export interface Product {
   id?: number;
-  tenSanPham?: string;
-  xuatSu?: string;
-  giaTien?: number;
-  donVi?: string;
+  name?: string;
+  madeIn?: string;
+  price?: number;
+  unit?: string;
 }

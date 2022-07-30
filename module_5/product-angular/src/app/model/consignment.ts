@@ -1,11 +1,11 @@
-import {SanPham} from "./sanPham";
+import {Product} from "./product";
 
-export interface LoHang {
+export interface Consignment {
   id?: number;
-  maLoHang?: string
-  sanPham?: SanPham
-  soLuong?: number
-  ngayNhapHang?: string
-  ngaySanXuat?: string
-  ngayHetHan?: string
+  codeConsignment?: string
+  product?: Product
+  amount?: number
+  dateAdd?: string
+  dateOfManuFacture?: string
+  dateEnd?: string
 }

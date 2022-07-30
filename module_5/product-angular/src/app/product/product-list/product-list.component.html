@@ -1,0 +1,27 @@
+<div class="container" style="margin-top: 50px">
+  <div class="col-12">
+    <div><h2>Product list</h2></div>
+
+    <table class="table table-bordered table-hover border-danger">
+      <thead>
+      <tr class="table-primary">
+        <td>#</td>
+        <td>Name</td>
+        <td>Made in</td>
+        <td>Price</td>
+        <td>Unit</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let pro of productList | paginate: { itemsPerPage: 3, currentPage: p} , index as i">
+        <td>{{i + 1}}</td>
+        <td>{{pro.name}}</td>
+        <td>{{pro.madeIn}}</td>
+        <td>{{pro.price}}</td>
+        <td>{{pro.unit}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
