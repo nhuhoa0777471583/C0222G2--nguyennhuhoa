@@ -1,0 +1,25 @@
+<div class="container" style="margin-top: 50px">
+  <div class="col-9">
+    <div><h2>Class list</h2></div>
+    <div>
+
+    </div>
+    <table class="table table-bordered table-hover border-danger">
+      <thead>
+      <tr class="table-primary">
+        <td>#</td>
+        <td>Name Clas</td>
+        <td colspan="2">Action</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let class of classList | paginate: { itemsPerPage: 3, currentPage: p} , index as i">
+        <td>{{i + 1}}</td>
+        <td>{{class.name}}</td>
+        <td><a class="btn btn-outline-dark">Delete</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

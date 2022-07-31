@@ -8,17 +8,33 @@ import {Product} from '../model/product';
   providedIn: 'root'
 })
 export class ConsignmentService {
-  private URL_CONSIGNMENT = 'http://localhost:8080/home/consignment-list';
-  private URL_PRODUCT = 'http://localhost:8080/home/product-list';
+  private URL_CONSIGNMENT = 'http://localhost:8080/home/consignment/';
+  private URL_PRODUCT = 'http://localhost:8080/home/product/';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getAll(): Observable<Consignment[]> {
-    return this.httpClient.get<Consignment[]>(this.URL_CONSIGNMENT);
+  // getAll(): Observable<Consignment[]> {
+  //   return this.httpClient.get<Consignment[]>(this.URL_CONSIGNMENT);
+  // }
+
+  getAllByPage(pageNumber: number): Observable<Consignment[]> {
+    return this.httpClient.get<Consignment[]>(this.URL_CONSIGNMENT + `?page=${pageNumber}`);
   }
 
   getAllProduct(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.URL_PRODUCT);
+  }
+
+  delete(idDelete: number): Observable<Consignment> {
+    return this.httpClient.delete<Consignment>(this.URL_CONSIGNMENT + idDelete);
+  }
+
+  addConsignment(consignment): Observable<Consignment> {
+    return this.httpClient.post(this.URL_CONSIGNMENT, consignment);
+  }
+
+  getId(id: number): Observable<Consignment> {
+    return this.httpClient.get(this.URL_CONSIGNMENT + id);
   }
 }

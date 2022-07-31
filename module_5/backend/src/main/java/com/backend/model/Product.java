@@ -1,5 +1,7 @@
 package com.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,6 +14,9 @@ public class Product {
     private String madeIn;
     private Double price;
     private String unit;
+    //chặn ở đây tránh gọi lại bị vòng lặp
+    //nếu chặn bên consignment thì ko thể gọi đc thành phần của product
+    @JsonBackReference
     @OneToMany(mappedBy = "product")
     private List<Consignment> consignmentList;
 

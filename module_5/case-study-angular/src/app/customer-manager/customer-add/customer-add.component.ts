@@ -60,7 +60,6 @@ export class CustomerAddComponent implements OnInit {
    }else {
      this.toas.error("Chưa thêm mới","Lỗi!!")
    }
-
   }
 
   private getAllCustomerType() {

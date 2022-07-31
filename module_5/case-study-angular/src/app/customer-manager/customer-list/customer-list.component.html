@@ -15,12 +15,11 @@
       </div>
       <div class="col-sm-6">
         <div class="search-box">
-          <!--          <form action="/customer/home">-->
-          <i class="material-icons">&#xE8B6;</i>
-          <input type="text" placeholder="Search&hellip;"
-                 name="nameSearch">
-          <button type="submit" class="btn  btn-outline-dark" style="border-radius: 40px">Search</button>
-          <!--          </form>-->
+          <form [formGroup]="searchFormName" (ngSubmit)="goSearch()">
+            <i class="material-icons">&#xE8B6;</i>
+            <input type="text" formControlName="nameSearch">
+            <button type="submit" class="btn btn-outline-dark" style="border-radius: 40px">Search</button>
+          </form>
         </div>
       </div>
     </div>
@@ -70,20 +69,6 @@
     </table>
   </div>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
-<!--  <nav aria-label="Page navigation example">-->
-<!--    <ul class="pagination justify-content-end">-->
-<!--      <li class="page-item disabled">-->
-<!--        <a class="page-link" href="#" tabindex="-1"><</a>-->
-<!--      </li>-->
-<!--      <li class="page-item"><a class="page-link" href="#">1</a></li>-->
-<!--      <li class="page-item"><a class="page-link" href="#">2</a></li>-->
-<!--      <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-<!--      <li class="page-item">-->
-<!--        <a class="page-link" href="#">></a>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--  </nav>-->
-
 </div>
 
 <!-- Modal -->

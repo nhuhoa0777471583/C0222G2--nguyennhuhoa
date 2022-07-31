@@ -13,7 +13,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let pro of productList | paginate: { itemsPerPage: 3, currentPage: p} , index as i">
+      <tr *ngFor="let pro of productList , index as i">
         <td>{{i + 1}}</td>
         <td>{{pro.name}}</td>
         <td>{{pro.madeIn}}</td>
@@ -24,4 +24,4 @@
     </table>
   </div>
 </div>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->

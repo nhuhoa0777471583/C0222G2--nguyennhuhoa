@@ -1,19 +1,19 @@
 <div class="container" style="margin-top: 50px">
   <div class="col-12">
     <div><h2>Consignment List</h2></div>
-<!--    <form [formGroup]="formSearch" (ngSubmit)="search()">-->
-      <div class="d-flex flex-nowrap">
-        <div class="p-1">
-          <input class="form-control" formControlName="nameSearch" type="text" placeholder="Search Name"
-                 aria-label="Search">
-        </div>
-        <div class="p-1">
-          <button class="btn btn-outline-dark">Search</button>
-        </div>
+    <!--    <form [formGroup]="formSearch" (ngSubmit)="search()">-->
+    <div class="d-flex flex-nowrap">
+      <div class="p-1">
+        <input class="form-control" formControlName="nameSearch" type="text" placeholder="Search Name"
+               aria-label="Search">
       </div>
-<!--    </form>-->
-    <div><a class="btn btn-outline-dark mb-3" [routerLink]="['/lo-hang-add']">Nhập hàng</a></div>
-    <table class="table table-bordered table-hover border-danger">
+      <div class="p-1">
+        <button class="btn btn-outline-dark">Search</button>
+      </div>
+    </div>
+    <!--    </form>-->
+    <div><a class="btn btn-outline-dark mb-3" [routerLink]="['/consignment-add']">Add</a></div>
+    <table class="table table-bordered table-hover border-info">
       <thead>
       <tr class="table-primary">
         <td>#</td>
@@ -29,49 +29,86 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let c of consignmentList | paginate: { itemsPerPage: 3, currentPage: p} , index as i">
+      <tr *ngFor="let c of consignmentList ; index as i">
         <td>{{i + 1}}</td>
         <td>{{c.codeConsignment}}</td>
         <td>{{c.product.name}}</td>
-        <td>{{c.product.price}}</td>
+        <td>{{c.product.price | currency : 'VND'}}</td>
         <td>{{c.product.unit}}</td>
-        <td>{{c.amount}}</td>
+        <td style="text-align: center">{{c.amount}}</td>
         <td style="text-align: center">{{c.dateAdd | date : 'dd-MM-yyyy'}}</td>
         <td style="text-align: center">{{c.dateOfManuFacture | date : 'dd-MM-yyyy'}}</td>
         <td style="text-align: center">{{c.dateEnd | date : 'dd-MM-yyyy'}}</td>
-<!--        <td>-->
-<!--          <div>-->
-<!--            &lt;!&ndash;       Button trigger modal &ndash;&gt;-->
-<!--            <button type="button" (click)="showDelete(loHang)" class="btn btn-primary" data-bs-toggle="modal"-->
-<!--                    data-bs-target="#exampleModal">-->
-<!--              Delete-->
-<!--            </button>-->
-<!--          </div>-->
+        <td>
+          <div>
+            <a class="btn btn-outline-primary" style="margin-right: 0.5rem" [routerLink]="['/consignment-edit', c.id]">Edit</a>
+            <!--       Button trigger modal -->
+            <button type="button" (click)="showDelete(c)" class="btn btn-outline-primary " data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+              Delete
+            </button>
+          </div>
       </tr>
       </tbody>
     </table>
-<!--    <ng-template #tableEmpty>-->
-<!--      <td>No have Data</td>-->
-<!--    </ng-template>-->
+    <!--    <ng-template #tableEmpty>-->
+    <!--      <td>No have Data</td>-->
+    <!--    </ng-template>-->
+
+    <div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+          <ng-container *ngIf="firtPage; else hasPreviousPage">
+            <li class="page-item">
+              <div class="page-link" style="pointer-events: none; color: #8a8a8a">Previous</div>
+            </li>
+          </ng-container>
+          <ng-template #hasPreviousPage>
+            <li class="page-item">
+              <a class="page-link" (click)="previousPage()">Previous</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" (click)="previousPage()">{{numberPage}}</a>
+            </li>
+          </ng-template>
+          <li class="page-item"><a class="page-link" (click)="previousPage()">{{numberPage + 1}}</a></li>
+          <ng-container *ngIf="lastPage; else hasNextPage">
+            <li class="page-item">
+              <div class="page-link" style="pointer-events: none; color: #8a8a8a">Next</div>
+            </li>
+          </ng-container>
+          <ng-template #hasNextPage>
+            <li class="page-item">
+              <a class="page-link" (click)="nextPage()">{{numberPage + 2}}</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" (click)="nextPage()">Next</a>
+            </li>
+          </ng-template>
+        </ul>
+      </nav>
+    </div>
+
   </div>
 </div>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
 
-<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--  <div class="modal-dialog">-->
-<!--    <div class="modal-content">-->
-<!--      <div class="modal-header">-->
-<!--        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
-<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--      </div>-->
-<!--      <div class="modal-body">-->
-<!--        Bạn có muốn xóa thông tin lô hàng là: <span style="color: red">{{nameDelete}}</span>-->
-<!--        <br>  được nhập vào ngày : <span style="color: red">{{dateDelete}}</span>-->
-<!--      </div>-->
-<!--      <div class="modal-footer">-->
-<!--        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>-->
-<!--        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete()">Yes</button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        You want delete info consignment have name is: <span style="color: red">{{nameDelete}}</span>
+        <br> and date add is: <span style="color: red">{{dateDelete}}</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,8 +11,8 @@ export class LoHangService {
   private URL_HANG = 'http://localhost:3000/lo-hang/'
   private URL_SP = 'http://localhost:3000/san-pham/'
 
-  constructor(private httpClient: HttpClient) {
-  }
+    constructor(private httpClient: HttpClient) {
+    }
 
   getAll(): Observable<LoHang[]> {
     return this.httpClient.get<LoHang[]>(this.URL_HANG)
@@ -22,9 +22,6 @@ export class LoHangService {
     return this.httpClient.get<SanPham[]>(this.URL_SP)
   }
 
-  findById(id: number): Observable<any> {
-    return
-  }
 
   add(sanPham): Observable<SanPham> {
     return this.httpClient.post<SanPham>(this.URL_HANG, sanPham)
@@ -32,5 +29,9 @@ export class LoHangService {
 
   delete(id: number): Observable<LoHang> {
     return this.httpClient.delete<LoHang>(this.URL_HANG + id)
+  }
+
+  search(nameSearch: string): Observable<LoHang[]> {
+    return this.httpClient.get<LoHang[]>('http://localhost:3000/lo-hang?sanPham.tenSanPham_like=' + nameSearch)
   }
 }

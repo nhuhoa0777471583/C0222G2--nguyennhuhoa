@@ -1,0 +1,160 @@
+{
+  "san-pham": [
+    {
+      "id": 1,
+      "tenSanPham": "banh",
+      "xuatSu": "Vn",
+      "giaTien": 1000,
+      "donVi": "thung"
+    },
+    {
+      "id": 2,
+      "tenSanPham": "keo",
+      "xuatSu": "Vn",
+      "giaTien": 1000,
+      "donVi": "thung"
+    },
+    {
+      "id": 3,
+      "tenSanPham": "sua",
+      "xuatSu": "Vn",
+      "giaTien": 1000,
+      "donVi": "thung"
+    },
+    {
+      "id": 4,
+      "tenSanPham": "bia",
+      "xuatSu": "Vn",
+      "giaTien": 1000,
+      "donVi": "thung"
+    },
+    {
+      "id": 5,
+      "tenSanPham": "gao",
+      "xuatSu": "Vn",
+      "giaTien": 1000,
+      "donVi": "thung"
+    },
+    {
+      "id": 6,
+      "tenSanPham": "nutri foot",
+      "xuatSu": "Vn",
+      "giaTien": 1000,
+      "donVi": "thung"
+    },
+    {
+      "id": 7,
+      "tenSanPham": "dau goi",
+      "xuatSu": "Vn",
+      "giaTien": 1000,
+      "donVi": "thung"
+    }
+  ],
+  "lo-hang": [
+    {
+      "id": 2,
+      "maLoHang": "Lh-0002",
+      "sanPham": {
+        "id": 1,
+        "tenSanPham": "gao",
+        "giaTien": 1000000,
+        "donVi": "thung"
+      },
+      "soLuong": 33,
+      "ngayNhapHang": "2020-02-23",
+      "ngaySanXuat": "2020-02-02",
+      "ngayHetHan": "2020-02-02"
+    },
+    {
+      "id": 5,
+      "maLoHang": "LH-0005",
+      "sanPham": {
+        "id": 1,
+        "tenSanPham": "keo",
+        "giaTien": 1000000,
+        "donVi": "thung"
+      },
+      "soLuong": 4,
+      "ngayNhapHang": "2020-02-02",
+      "ngaySanXuat": "2020-02-02",
+      "ngayHetHan": "2020-02-02"
+    },
+    {
+      "id": 6,
+      "maLoHang": "LH-0005",
+      "sanPham": {
+        "id": 1,
+        "tenSanPham": "banh",
+        "giaTien": 1000000,
+        "donVi": "thung"
+      },
+      "soLuong": 3,
+      "ngayNhapHang": "2020-02-02",
+      "ngaySanXuat": "2020-02-02",
+      "ngayHetHan": "2020-02-02"
+    },
+    {
+      "maLoHang": "LH-1212",
+      "sanPham": {
+        "id": 1,
+        "tenSanPham": "banh",
+        "xuatSu": "Vn",
+        "giaTien": 1000,
+        "donVi": "thung"
+      },
+      "soLuong": "-1",
+      "ngayNhapHang": "2022-07-28",
+      "ngaySanXuat": "2021-07-30",
+      "ngayHetHan": "2023-07-30",
+      "id": 8
+    },
+    {
+      "maLoHang": "LH-2222",
+      "sanPham": {
+        "id": 2,
+        "tenSanPham": "keo",
+        "xuatSu": "Vn",
+        "giaTien": 1000,
+        "donVi": "thung"
+      },
+      "soLuong": "100",
+      "ngayNhapHang": "2022-07-30",
+      "ngaySanXuat": "2021-07-28",
+      "ngayHetHan": "2030-08-05",
+      "id": 9
+    },
+    {
+      "maLoHang": "LH-3333",
+      "sanPham": {
+        "id": 6,
+        "tenSanPham": "nutri foot",
+        "xuatSu": "Vn",
+        "giaTien": 1000,
+        "donVi": "thung"
+      },
+      "soLuong": "5",
+      "ngayNhapHang": "2022-07-28",
+      "ngaySanXuat": "2022-07-28",
+      "ngayHetHan": "2022-07-31",
+      "id": 10
+    },
+    {
+      "maLoHang": "LH-1111",
+      "sanPham": {
+        "id": 4,
+        "tenSanPham": "bia",
+        "xuatSu": "Vn",
+        "giaTien": 1000,
+        "donVi": "thung"
+      },
+      "soLuong": "4",
+      "ngayNhapHang": "2022-07-01",
+      "ngaySanXuat": "2022-07-19",
+      "ngayHetHan": "2022-07-17",
+      "id": 11
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -10,7 +10,7 @@ public class Consignment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String codeConsignment;
-    @JsonBackReference
+
     @ManyToOne
     @JoinColumn(name = "id_product", referencedColumnName = "id")
     private Product product;

@@ -8,7 +8,7 @@
   <div class="container container-form">
     <div style="margin-top: 35%"><h2><a [routerLink]="['/customer']" style="color: cornflowerblue">Back Home</a></h2>
     </div>
-    <form id="contact" [formGroup]="editForm" (ngSubmit)="update(id)">
+    <form id="contact" [formGroup]="editFormGroup" (ngSubmit)="update(id)">
       <h2>Edit Customer</h2>
       <fieldset>
         <input placeholder="id" type="hidden" value="1" tabindex="0" formControlName="id">
@@ -21,10 +21,10 @@
                  tabindex="1">
         </fieldset>
         <p style="color: red"
-           *ngIf="editForm.controls.name.hasError('required')&&editForm.controls.name.touched">
+           *ngIf="editFormGroup.controls.name.hasError('required')&&editFormGroup.controls.name.touched">
           name not empty.</p>
         <p style="color: red"
-           *ngIf="editForm.controls.name.hasError('pattern')&&editForm.controls.name.touched">
+           *ngIf="editFormGroup.controls.name.hasError('pattern')&&editFormGroup.controls.name.touched">
           name no number and character first must uppercase.</p>
       </div>
 
@@ -35,7 +35,7 @@
                  tabindex="2">
         </fieldset>
         <p style="color: red"
-           *ngIf="editForm.controls.birthday.hasError('required')&&editForm.controls.birthday.touched">
+           *ngIf="editFormGroup.controls.birthday.hasError('required')&&editFormGroup.controls.birthday.touched">
           birthday not empty.</p>
       </div>
 
@@ -48,7 +48,7 @@
           </select>
         </fieldset>
         <p style="color: red"
-           *ngIf="editForm.controls.gender.hasError('required')&&editForm.controls.gender.touched">
+           *ngIf="editFormGroup.controls.gender.hasError('required')&&editFormGroup.controls.gender.touched">
           gender not empty.</p>
       </div>
 
@@ -59,10 +59,10 @@
                  tabindex="4">
         </fieldset>
         <p style="color: red"
-           *ngIf="editForm.controls.idCard.hasError('required')&&editForm.controls.idCard.touched">
+           *ngIf="editFormGroup.controls.idCard.hasError('required')&&editFormGroup.controls.idCard.touched">
           idCard not empty.</p>
         <p style="color: red"
-           *ngIf="editForm.controls.idCard.hasError('pattern')&&editForm.controls.idCard.touched">
+           *ngIf="editFormGroup.controls.idCard.hasError('pattern')&&editFormGroup.controls.idCard.touched">
           idCard must is 9 or 10 number.</p>
       </div>
 
@@ -73,10 +73,10 @@
                  tabindex="4">
         </fieldset>
         <p style="color: red"
-           *ngIf="editForm.controls.phone.hasError('required')&&editForm.controls.phone.touched">
+           *ngIf="editFormGroup.controls.phone.hasError('required')&&editFormGroup.controls.phone.touched">
           phone not empty.</p>
         <p style="color: red"
-           *ngIf="editForm.controls.phone.hasError('pattern')&&editForm.controls.phone.touched">
+           *ngIf="editFormGroup.controls.phone.hasError('pattern')&&editFormGroup.controls.phone.touched">
           phone must is 090 or 091 or (84)+90 or (84)+91 and + 7 number.</p>
       </div>
 
@@ -87,10 +87,10 @@
                  tabindex="4">
         </fieldset>
         <p style="color: red"
-           *ngIf="editForm.controls.email.hasError('required')&&editForm.controls.email.touched">
+           *ngIf="editFormGroup.controls.email.hasError('required')&&editFormGroup.controls.email.touched">
           email not empty.</p>
         <p style="color: red"
-           *ngIf="editForm.controls.email.hasError('email')&&editForm.controls.email.touched">
+           *ngIf="editFormGroup.controls.email.hasError('email')&&editFormGroup.controls.email.touched">
           email must be in the correct format.</p>
       </div>
 
@@ -100,7 +100,7 @@
           <input class="form-control" formControlName="address" type="text"
                  tabindex="5">
         <p style="color: red"
-           *ngIf="editForm.controls.address.hasError('required')&&editForm.controls.address.touched">
+           *ngIf="editFormGroup.controls.address.hasError('required')&&editFormGroup.controls.address.touched">
           address not empty.</p>
         </fieldset>
       </div>
@@ -115,7 +115,7 @@
           </select>
         </fieldset>
         <p style="color: red"
-           *ngIf="editForm.controls.customerType.hasError('required')&&editForm.controls.customerType.touched">
+           *ngIf="editFormGroup.controls.customerType.hasError('required')&&editFormGroup.controls.customerType.touched">
           customerType not empty.</p>
       </div>
       <fieldset>

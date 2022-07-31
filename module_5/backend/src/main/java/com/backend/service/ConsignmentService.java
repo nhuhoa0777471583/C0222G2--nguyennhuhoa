@@ -14,13 +14,29 @@ public class ConsignmentService implements IConsignmentService {
     @Autowired
     private IConsignmentRepository iConsignmentRepository;
 
+
     @Override
-    public Page<Consignment> getAllAndSearchName(String nameSearch, Pageable pageable) {
-        return null;
+    public Page<Consignment> displayByName(String nameSearch, Pageable pageable) {
+        return this.iConsignmentRepository.getAllAndSearchNameProduct(nameSearch, pageable);
     }
 
     @Override
-    public List<Consignment> display() {
-        return this.iConsignmentRepository.findAll();
+    public Page<Consignment> getAllByPage(Pageable pageable) {
+        return this.iConsignmentRepository.findAll(pageable);
+    }
+
+    @Override
+    public void deleteById(Integer idDelete) {
+        this.iConsignmentRepository.deleteById(idDelete);
+    }
+
+    @Override
+    public void save(Consignment consignment) {
+        this.iConsignmentRepository.save(consignment);
+    }
+
+    @Override
+    public Consignment findById(Integer id) {
+      return this.iConsignmentRepository.findById(id).orElse(null);
     }
 }

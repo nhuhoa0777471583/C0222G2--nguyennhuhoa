@@ -7,7 +7,16 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface IConsignmentService {
-    Page<Consignment> getAllAndSearchName(String nameSearch, Pageable pageable);
 
-    List<Consignment> display();
+
+    Page<Consignment> displayByName(String nameSearch, Pageable pageable);
+
+    Page<Consignment> getAllByPage(Pageable pageable);
+
+    void deleteById(Integer idDelete);
+
+    void save(Consignment consignment);
+
+    Consignment findById(Integer id);
+
 }

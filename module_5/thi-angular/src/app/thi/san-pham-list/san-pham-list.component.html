@@ -1,0 +1,27 @@
+<div class="container" style="margin-top: 50px">
+  <div class="col-12">
+    <div><h2>Danh Sách Sản Phẩm</h2></div>
+
+    <table class="table table-bordered table-hover border-danger">
+      <thead>
+      <tr class="table-primary">
+        <td>#</td>
+        <td>Tên sản phẩm</td>
+        <td>Xuất sứ</td>
+        <td>Giá tiền</td>
+        <td>Đơn vị</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let sp of sanPhamList | paginate: { itemsPerPage: 3, currentPage: p} , index as i">
+        <td>{{i + 1}}</td>
+        <td>{{sp.tenSanPham}}</td>
+        <td>{{sp.xuatSu}}</td>
+        <td>{{sp.giaTien}}</td>
+        <td>{{sp.donVi}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

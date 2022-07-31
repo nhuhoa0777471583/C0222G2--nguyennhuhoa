@@ -8,4 +8,6 @@ export interface Consignment {
   dateAdd?: string
   dateOfManuFacture?: string
   dateEnd?: string
+
+
 }

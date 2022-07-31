@@ -108,7 +108,7 @@
         <fieldset>
           <label>Customer type</label>
           <select class="form-control" formControlName="customerType">
-            <option disabled="disabled">Chosse</option>
+            <option value="" disabled="disabled">Chosse</option>
             <option *ngFor="let c of customers" [ngValue]="c">{{c.name}}</option>
           </select>
         </fieldset>

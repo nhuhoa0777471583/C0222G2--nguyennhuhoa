@@ -20,23 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfabb7da-d940-4939-a4c0-1c6d76846e63" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/controller/ConsignmentRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/model/Consignment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/repository/IConsignmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/repository/IProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/service/ConsignmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/service/IConsignmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/service/IProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../product-angular/src/app/model/consignment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../product-angular/src/app/model/product.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thi-angular/src/app/thi/model/loHang.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thi-angular/src/app/thi/model/sanPham.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../thi-angular/src/app/thi/service/loHangService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/configuration/AppConfig.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/configuration/AppInit.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.63/webapps/ROOT/WEB-INF/classes/com/codegym/cms/controller/CustomerController.class" beforeDir="false" />
@@ -160,6 +143,14 @@
       <change beforePath="$PROJECT_DIR$/../angular/tsconfig.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../angular/tsconfig.spec.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../angular/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/controller/ConsignmentRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/controller/ConsignmentRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/model/Consignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/model/Consignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/repository/IConsignmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/repository/IConsignmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/service/ConsignmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/service/ConsignmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/service/IConsignmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/service/IConsignmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../case-study-angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/customer-manager/customer-add/customer-add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/app/customer-manager/customer-add/customer-add.component.html" afterDir="false" />
@@ -173,12 +164,27 @@
       <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/service/customerService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/app/service/customerService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../case-study-angular/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../case-study-angular/src/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/model/consignment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/src/app/model/consignment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/product/consignment-add/consignment-add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/src/app/product/consignment-add/consignment-add.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/product/consignment-add/consignment-add.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/product/consignment-add/consignment-add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/src/app/product/consignment-add/consignment-add.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/product/consignment-edit/consignment-edit.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/product/consignment-list/consignment-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/src/app/product/consignment-list/consignment-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/product/consignment-list/consignment-list.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/product/consignment-list/consignment-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/src/app/product/consignment-list/consignment-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/product/product-list/product-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/src/app/product/product-list/product-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/product/product-list/product-list.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/product/product-list/product-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/src/app/product/product-list/product-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product-angular/src/app/service/consignmentService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/src/app/service/consignmentService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../thi-angular/src/app/test/model/classRoom.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../thi-angular/src/app/test/model/classRoom.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../thi-angular/src/app/test/model/studentService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../thi-angular/src/app/test/model/studentService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../thi-angular/src/app/test/service/classService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../thi-angular/src/app/test/service/classService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thi-angular/src/app/thi/model/file1.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../product-angular/src/app/service/consignmentService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thi-angular/src/app/thi/model/file2.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thi-angular/src/app/thi/service/service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thi-angular/src/app/thi/service/loHangService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../thi-angular/src/app/thi/service/loHangService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +223,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../module_4/case_study_4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../module_4/ss11_wedservice_restful/bai_tap/blog" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -238,7 +245,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659172909713</updated>
-      <workItem from="1659172927522" duration="6145000" />
+      <workItem from="1659172927522" duration="20223000" />
     </task>
     <servers />
   </component>
@@ -261,49 +268,85 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="312" y="43" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1659178641501" />
-    <state x="525" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1659180758053">
+    <state x="525" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1659287107554">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="525" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1659180758053" />
-    <state x="500" y="139" key="FileChooserDialogImpl" timestamp="1659179005817">
+    <state x="525" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1659287107554" />
+    <state x="475" y="87" key="#xdebugger.evaluate" timestamp="1659194728818">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="500" y="139" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1659179005817" />
-    <state width="1190" height="356" key="GridCell.Tab.0.bottom" timestamp="1659182165496">
+    <state x="475" y="87" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1659194728818" />
+    <state x="500" y="139" key="FileChooserDialogImpl" timestamp="1659286905211">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1190" height="356" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1659182165496" />
-    <state width="1190" height="356" key="GridCell.Tab.0.center" timestamp="1659182165495">
+    <state x="500" y="139" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1659286905211" />
+    <state width="1190" height="43" key="GridCell.Tab.0.bottom" timestamp="1659288999234">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1190" height="356" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1659182165495" />
-    <state width="1190" height="356" key="GridCell.Tab.0.left" timestamp="1659182165495">
+    <state width="1190" height="43" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1659288999234" />
+    <state width="1190" height="43" key="GridCell.Tab.0.center" timestamp="1659288999233">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1190" height="356" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1659182165495" />
-    <state width="1190" height="356" key="GridCell.Tab.0.right" timestamp="1659182165495">
+    <state width="1190" height="43" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1659288999233" />
+    <state width="1190" height="43" key="GridCell.Tab.0.left" timestamp="1659288999232">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1190" height="356" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1659182165495" />
-    <state width="1190" height="356" key="GridCell.Tab.1.bottom" timestamp="1659182165497">
+    <state width="1190" height="43" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1659288999232" />
+    <state width="1190" height="43" key="GridCell.Tab.0.right" timestamp="1659288999233">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1190" height="356" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1659182165497" />
-    <state width="1190" height="356" key="GridCell.Tab.1.center" timestamp="1659182165496">
+    <state width="1190" height="43" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1659288999233" />
+    <state width="1190" height="43" key="GridCell.Tab.1.bottom" timestamp="1659288999236">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1190" height="356" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1659182165496" />
-    <state width="1190" height="356" key="GridCell.Tab.1.left" timestamp="1659182165496">
+    <state width="1190" height="43" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1659288999236" />
+    <state width="1190" height="43" key="GridCell.Tab.1.center" timestamp="1659288999235">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1190" height="356" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1659182165496" />
-    <state width="1190" height="356" key="GridCell.Tab.1.right" timestamp="1659182165497">
+    <state width="1190" height="43" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1659288999235" />
+    <state width="1190" height="43" key="GridCell.Tab.1.left" timestamp="1659288999235">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1190" height="356" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1659182165497" />
+    <state width="1190" height="43" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1659288999235" />
+    <state width="1190" height="43" key="GridCell.Tab.1.right" timestamp="1659288999235">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1190" height="43" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1659288999235" />
+    <state width="1190" height="203" key="GridCell.Tab.2.bottom" timestamp="1659288611392">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1190" height="203" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1659288611392" />
+    <state width="1190" height="203" key="GridCell.Tab.2.center" timestamp="1659288611392">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1190" height="203" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1659288611392" />
+    <state width="1190" height="203" key="GridCell.Tab.2.left" timestamp="1659288611392">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1190" height="203" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1659288611392" />
+    <state width="1190" height="203" key="GridCell.Tab.2.right" timestamp="1659288611392">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1190" height="203" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1659288611392" />
     <state width="204" height="457" key="HiddenNamespacesPopup" timestamp="1659178670004">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="204" height="457" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1659178670004" />
+    <state x="195" y="141" width="1050" height="487" key="dock-window-1" timestamp="1659234693315">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="195" y="141" width="1050" height="487" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1659234693315" />
+    <state x="195" y="141" width="1050" height="487" key="dock-window-2" timestamp="1659234693316">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="195" y="141" width="1050" height="487" key="dock-window-2/0.0.1366.728@0.0.1366.728" timestamp="1659234693316" />
+    <state x="195" y="141" width="1050" height="487" key="dock-window-3" timestamp="1659234693316">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="195" y="141" width="1050" height="487" key="dock-window-3/0.0.1366.728@0.0.1366.728" timestamp="1659234693316" />
+    <state x="195" y="141" width="1050" height="487" key="dock-window-4" timestamp="1659234693316">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="195" y="141" width="1050" height="487" key="dock-window-4/0.0.1366.728@0.0.1366.728" timestamp="1659234693316" />
   </component>
 </project>
