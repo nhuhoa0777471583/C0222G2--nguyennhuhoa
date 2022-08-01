@@ -14,10 +14,6 @@ export class ConsignmentService {
   constructor(private httpClient: HttpClient) {
   }
 
-  // getAll(): Observable<Consignment[]> {
-  //   return this.httpClient.get<Consignment[]>(this.URL_CONSIGNMENT);
-  // }
-
   getAllByPage(pageNumber: number): Observable<Consignment[]> {
     return this.httpClient.get<Consignment[]>(this.URL_CONSIGNMENT + `?page=${pageNumber}`);
   }
@@ -35,6 +31,14 @@ export class ConsignmentService {
   }
 
   getId(id: number): Observable<Consignment> {
-    return this.httpClient.get(this.URL_CONSIGNMENT + id);
+    return this.httpClient.get(this.URL_CONSIGNMENT + 'edit/' + id);
+  }
+
+  getIdProduct(id: number): Observable<Product> {
+    return this.httpClient.get<Product>(this.URL_PRODUCT + id);
+  }
+
+  edit(cons: any): Observable<Consignment> {
+    return this.httpClient.put<Consignment>(this.URL_CONSIGNMENT + "edit" , cons);
   }
 }

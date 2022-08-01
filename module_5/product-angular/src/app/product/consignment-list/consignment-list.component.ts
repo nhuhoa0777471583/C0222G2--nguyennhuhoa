@@ -15,51 +15,54 @@ export class ConsignmentListComponent implements OnInit {
   nameDelete: string;
   dateDelete: string;
   idDelete: number;
-  numberPage: number = 0;
-  firtPage: boolean;
-  lastPage: boolean;
+
+  numberPage: number;
+  totalPage: number;
+  countTotalPage: number[];
 
   constructor(private consignmentService: ConsignmentService, private toast: ToastrService) {
   }
 
   ngOnInit(): void {
-    // this.getAll();
     this.getAllPage(this.numberPage);
   }
 
-  // private getAll() {
-  //   this.consignmentService.getAll().subscribe(data => {
-  //     this.consignmentList = data;
-  //     console.log(this.consignmentList);
-  //   });
-  // }
 
   private getAllPage(numberPage: number) {
-    this.consignmentService.getAllByPage(numberPage).subscribe(data => {
+    this.consignmentService.getAllByPage(numberPage).subscribe((data: Consignment[]) => {
       // @ts-ignore
       this.consignmentList = data.content;
-      console.log(this.consignmentList);
       // @ts-ignore
-      this.firtPage = data.first;
-      console.log(this.firtPage);
+      this.totalPage = data.totalPages;
       // @ts-ignore
-      this.lastPage = data.last;
-      console.log(this.lastPage);
+      this.countTotalPage = new Array(data.totalPages);
+      // @ts-ignore
+      this.numberPage = data.number;
+
     }, error => {
     }, () => {
     });
   }
 
   previousPage() {
-    this.numberPage -= 1;
-    this.getAllPage(this.numberPage);
+    let number: number = this.numberPage;
+    if (number > 0) {
+      number--;
+      this.getAllPage(number);
+    }
   }
 
   nextPage() {
-    this.numberPage += 1;
-    this.getAllPage(this.numberPage);
+    let number: number = this.numberPage;
+    if (number < this.totalPage) {
+      number++;
+      this.getAllPage(number);
+    }
   }
 
+  item(i: number) {
+    this.getAllPage(i);
+  }
 
   showDelete(c: Consignment) {
     this.idDelete = c.id;

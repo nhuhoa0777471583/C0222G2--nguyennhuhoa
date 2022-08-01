@@ -12,6 +12,12 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import {ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {environment} from '../environments/environment';
+
+import {AngularFireModule} from '@angular/fire';
+
+
 
 @NgModule({
   declarations: [
@@ -29,6 +35,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     HttpClientModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
