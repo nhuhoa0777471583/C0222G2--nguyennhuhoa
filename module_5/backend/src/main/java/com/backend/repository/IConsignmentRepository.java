@@ -10,12 +10,12 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IConsignmentRepository extends JpaRepository<Consignment, Integer> {
-    @Query(value = " select * from consignment join product on product.id = consginment.id_product where product.name like :key ",
-            countQuery = " select count(*) from ( select * from consignment join product on product.id = consginment.id_product where product.name like :key ) temp",
+    @Query(value = " select consignment.* from consignment join product on product.id = consignment.id_product where product.name like :key ",
+            countQuery = " select count(*) from ( select consignment.* from consignment join product on product.id = consignment.id_product where product.name like :key ) temp",
             nativeQuery = true)
     Page<Consignment> getAllAndSearchNameProduct(@Param("key") String nameSearch, Pageable pageable);
 
-    @Query(value = " select * from consignment where id = :id ", nativeQuery = true)
-    Consignment displayFindById(Integer id);
+//    @Query(value = " select * from consignment where id = :id ", nativeQuery = true)
+//    Consignment displayFindById(Integer id);
 
 }

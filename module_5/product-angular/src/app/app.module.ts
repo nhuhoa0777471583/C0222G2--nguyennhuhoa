@@ -14,10 +14,11 @@ import {ToastrModule} from 'ngx-toastr';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {environment} from '../environments/environment';
-
 import {AngularFireModule} from '@angular/fire';
-
-
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireMessagingModule} from '@angular/fire/messaging';
+import {MessagingService} from './service/messagingService';
+import {AsyncPipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {AngularFireModule} from '@angular/fire';
     ConsignmentAddComponent,
     ConsignmentEditComponent,
     ProductListComponent,
-    NavbarComponent
+    NavbarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -36,9 +38,11 @@ import {AngularFireModule} from '@angular/fire';
     ToastrModule.forRoot(),
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireMessagingModule
   ],
-  providers: [],
+  providers: [MessagingService, AsyncPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

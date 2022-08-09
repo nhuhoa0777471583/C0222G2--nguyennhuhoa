@@ -18,11 +18,11 @@ public class Consignment {
     private String dateAdd;
     private String dateOfManuFacture;
     private String dateEnd;
-
+    private String img;
     public Consignment() {
     }
 
-    public Consignment(Integer id, String codeConsignment, Product product, Integer amount, String dateAdd, String dateOfManuFacture, String dateEnd) {
+    public Consignment(Integer id, String codeConsignment, Product product, Integer amount, String dateAdd, String dateOfManuFacture, String dateEnd, String img) {
         this.id = id;
         this.codeConsignment = codeConsignment;
         this.product = product;
@@ -30,6 +30,7 @@ public class Consignment {
         this.dateAdd = dateAdd;
         this.dateOfManuFacture = dateOfManuFacture;
         this.dateEnd = dateEnd;
+        this.img = img;
     }
 
     public Integer getId() {
@@ -86,5 +87,13 @@ public class Consignment {
 
     public void setDateEnd(String dateEnd) {
         this.dateEnd = dateEnd;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }

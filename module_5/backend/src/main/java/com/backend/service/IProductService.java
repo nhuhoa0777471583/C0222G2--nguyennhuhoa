@@ -7,4 +7,7 @@ import java.util.List;
 public interface IProductService {
 
     List<Product> displayProduct();
+
+    Product findById(Integer id);
+
 }

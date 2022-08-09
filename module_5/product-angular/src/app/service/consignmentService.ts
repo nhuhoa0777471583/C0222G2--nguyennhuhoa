@@ -39,6 +39,10 @@ export class ConsignmentService {
   }
 
   edit(cons: any): Observable<Consignment> {
-    return this.httpClient.put<Consignment>(this.URL_CONSIGNMENT + "edit" , cons);
+    return this.httpClient.put<Consignment>(this.URL_CONSIGNMENT + 'edit', cons);
+  }
+
+  searchName(nameSearch: string): Observable<Consignment[]> {
+    return this.httpClient.get<Consignment[]>('http://localhost:8080/home/consignment?product.name=' + +nameSearch);
   }
 }
