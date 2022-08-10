@@ -6,13 +6,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyAaK5ATKkJTWYrXzjjFATxZ80A2OjiIi3k",
-    authDomain: "messaging-73159.firebaseapp.com",
-    projectId: "messaging-73159",
-    storageBucket: "messaging-73159.appspot.com",
-    messagingSenderId: "636309756883",
-    appId: "1:636309756883:web:1c91645b41bf6cc5d3ad26",
-    measurementId: "G-ZNGYK9V0GF"
+    apiKey: "AIzaSyBSoUt-Kz8CzIEtD6QX9wS5mH9Tq5KuwbY",
+    authDomain: "test-push-notification-509a2.firebaseapp.com",
+    projectId: "test-push-notification-509a2",
+    storageBucket: "test-push-notification-509a2.appspot.com",
+    messagingSenderId: "915257226033",
+    appId: "1:915257226033:web:93473649e2ce10cf19f610",
+    measurementId: "G-1WYBJL8VL0"
   },
   // firebaseConfig : {
   //   apiKey: "AIzaSyD14csKFt52Pms1jdBfNQX6FDZzfl583V4",

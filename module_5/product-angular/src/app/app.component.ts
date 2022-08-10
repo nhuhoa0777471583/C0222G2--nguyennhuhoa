@@ -8,12 +8,10 @@ import {MessagingService} from './service/messagingService';
 })
 export class AppComponent implements OnInit  {
   title = 'product-angular';
-  message: any;
-  constructor(private messagingService: MessagingService) {
+
+  constructor() {
   }
   ngOnInit(){
-    this.messagingService.requestPermission();
-    this.messagingService.receiveMessaging();
-    this.message = this.messagingService.currentMessage;
+
   }
 }

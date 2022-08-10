@@ -4,6 +4,7 @@ import {ConsignmentService} from '../../service/consignmentService';
 import {Product} from '../../model/product';
 import {ToastrService} from 'ngx-toastr';
 import {FormControl, FormGroup} from '@angular/forms';
+import {MessagingService} from '../../service/messagingService';
 
 @Component({
   selector: 'app-consignment-list',
@@ -21,13 +22,17 @@ export class ConsignmentListComponent implements OnInit {
   totalPage: number;
   countTotalPage: number[];
   formSearch: FormGroup;
+  message: any;
 
-  constructor(private consignmentService: ConsignmentService, private toast: ToastrService) {
+  constructor(private consignmentService: ConsignmentService,
+              private toast: ToastrService,
+              private messagingService: MessagingService) {
   }
 
   ngOnInit(): void {
     this.getAllPage(this.numberPage);
     this.getFormSearch();
+
   }
 
 
@@ -93,5 +98,11 @@ export class ConsignmentListComponent implements OnInit {
     this.formSearch = new FormGroup({
       nameSearch: new FormControl(),
     });
+  }
+
+  getMess() {
+    this.messagingService.requestPermission();
+    this.messagingService.receiveMessaging();
+    this.message = this.messagingService.currentMessage;
   }
 }
