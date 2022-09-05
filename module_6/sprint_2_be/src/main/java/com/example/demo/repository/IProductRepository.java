@@ -33,7 +33,7 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
 
   @Query(value=" select id,cost, `create_date`, `image`," +
           " `is_delete`, `made_in`, `name`," +
-          " `price`,`specifications` ,`status_product`,id_category " +
+          " `price`,`price_sale`,`specifications` ,`status_product`,id_category " +
           " from product  " +
           " where id_category = 2 and is_delete = 0 ", nativeQuery = true)
   List<Product> getPhone();

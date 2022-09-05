@@ -19,6 +19,7 @@ public class Product {
     private Date createDate;
     private Integer cost;
     private Double price;
+    private Double priceSale;
     private String madeIn;
     private String specifications;
     @ManyToOne
