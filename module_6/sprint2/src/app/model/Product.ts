@@ -6,6 +6,7 @@ export interface Product {
   createDate?: string,
   cost?: number,
   price?: number,
+  priceSale?: number,
   madeIn?: string,
   description?: string,
   specifications?: string,
