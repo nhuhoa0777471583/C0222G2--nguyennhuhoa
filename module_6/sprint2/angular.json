@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "sprint2": {
@@ -21,12 +21,16 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/js/main2.js",
+              "src/assets/mail/contact.js"
+
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +123,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "sprint2"
 }
