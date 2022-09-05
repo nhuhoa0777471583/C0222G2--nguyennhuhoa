@@ -1,0 +1,62 @@
+<div class="container" style="margin-top: 50px">
+  <div class="col-12">
+    <div><h2>Product List</h2></div>
+
+    <div><a class="btn btn-outline-dark mb-3" [routerLink]="['/product-save']">Add</a></div>
+    <table class="table table-bordered table-hover border-primary">
+      <thead>
+      <tr class="table-primary">
+        <td>#</td>
+        <td>Code product</td>
+        <td>Name product</td>
+        <td>Price</td>
+        <td>Status</td>
+        <td>Date create</td>
+        <td>Action</td>
+      </tr>
+      </thead>
+      <tbody *ngFor="let p of productList  | paginate: { itemsPerPage: 3, currentPage: p}  ; index as i ">
+      <tr>
+        <td>{{i + 1}}</td>
+        <td>{{p.codeProduct}}</td>
+        <td>{{p.productType.rentType.name}}</td>
+        <td>{{p.productType.price}}</td>
+        <td>{{p.statusProduct}}</td>
+        <td>{{p.creationDate | date : 'dd-MM-yyyy'}}</td>
+        <td>
+          <div>
+            <!--       Button trigger modal -->
+            <button type="button" (click)="show(p)" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+              Delete
+            </button>
+          </div>
+      </tr>
+      </tbody>
+    </table>
+    <ng-template #tableEmpty>
+      <td>No have Data</td>
+    </ng-template>
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn có muốn xóa thông tin sản phẩm có tên là: <span style="color: red">{{codeProduct}}</span>
+        <br> được nhập vào ngày : <span style="color: red">{{dateDelete}}</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Khong</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete()">Có</button>
+      </div>
+    </div>
+  </div>
+</div>

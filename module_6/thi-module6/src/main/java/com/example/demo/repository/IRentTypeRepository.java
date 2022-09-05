@@ -1,4 +1,7 @@
 package com.example.demo.repository;
 
-public interface IRentTypeRepository {
+import com.example.demo.model.product.RentType;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IRentTypeRepository extends JpaRepository<RentType, Integer> {
 }

@@ -1,7 +1,9 @@
-package com.javainuse.model;
+package com.example.demo.model;
+
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
-
+@Component
 public class JwtResponse implements Serializable {
 
 	private static final long serialVersionUID = -8091879091924046844L;

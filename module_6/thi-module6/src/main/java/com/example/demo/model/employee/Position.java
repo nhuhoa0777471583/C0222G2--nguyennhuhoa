@@ -13,12 +13,12 @@ import java.util.List;
 @Setter
 @Getter
 @RequiredArgsConstructor
-public class Positition {
+public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String tenViTri;
-    @OneToMany(mappedBy = "viTri")
+    private String namePosition;
+    @OneToMany(mappedBy = "position")
     @JsonBackReference
-    private List<Employee> nhanVienList;
+    private List<Employee> employeeList;
 }

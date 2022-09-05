@@ -1,0 +1,77 @@
+<div class="container" style="margin-top: 50px">
+  <div class="col-12">
+    <div><h2>Product Type List</h2></div>
+<!--    <form [formGroup]="formSearch" (ngSubmit)="search()">-->
+<!--      <div class="d-flex flex-nowrap">-->
+<!--        <div class="p-1">-->
+<!--          <input class="form-control" formControlName="nameSearch" type="text" placeholder="Search Name"-->
+<!--                 aria-label="Search">-->
+<!--        </div>-->
+<!--        <div class="p-1">-->
+<!--          <button class="btn btn-outline-dark">Search</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </form>-->
+    <div><a class="btn btn-outline-dark mb-3" [routerLink]="['/lo-hang-add']">Nhập hàng</a></div>
+    <table class="table table-bordered table-hover border-danger">
+      <thead>
+      <tr class="table-primary">
+        <td>#</td>
+        <td>Mã lô hàng</td>
+        <td>Tên sản phẩm</td>
+        <td>Giá tiền</td>
+        <td>Đơn vị</td>
+        <td>Số lượng</td>
+        <td>Ngày nhập</td>
+        <td>Ngày sản xuất</td>
+        <td>Ngày hết hạn</td>
+        <td colspan="2">Action</td>
+      </tr>
+      </thead>
+<!--      <tbody>-->
+<!--      <tr>-->
+<!--        <td>{{i + 1}}</td>-->
+<!--        <td>{{loHang.maLoHang}}</td>-->
+<!--        <td>{{loHang.sanPham.tenSanPham}}</td>-->
+<!--        <td>{{loHang.sanPham.giaTien}}</td>-->
+<!--        <td>{{loHang.sanPham.donVi}}</td>-->
+<!--        <td>{{loHang.soLuong}}</td>-->
+<!--        <td style="text-align: center">{{loHang.ngayNhapHang | date : 'dd-MM-yyyy'}}</td>-->
+<!--        <td style="text-align: center">{{loHang.ngaySanXuat | date : 'dd-MM-yyyy'}}</td>-->
+<!--        <td style="text-align: center">{{loHang.ngayHetHan | date : 'dd-MM-yyyy'}}</td>-->
+<!--        <td>-->
+<!--          <div>-->
+<!--            &lt;!&ndash;       Button trigger modal &ndash;&gt;-->
+<!--            <button type="button" (click)="showDelete(loHang)" class="btn btn-primary" data-bs-toggle="modal"-->
+<!--                    data-bs-target="#exampleModal">-->
+<!--              Delete-->
+<!--            </button>-->
+<!--          </div>-->
+<!--      </tr>-->
+<!--      </tbody>-->
+    </table>
+    <ng-template #tableEmpty>
+      <td>No have Data</td>
+    </ng-template>
+  </div>
+</div>
+<!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+
+<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
+<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<!--        Bạn có muốn xóa thông tin lô hàng là: <span style="color: red">{{nameDelete}}</span>-->
+<!--        <br>  được nhập vào ngày : <span style="color: red">{{dateDelete}}</span>-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>-->
+<!--        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete()">Yes</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

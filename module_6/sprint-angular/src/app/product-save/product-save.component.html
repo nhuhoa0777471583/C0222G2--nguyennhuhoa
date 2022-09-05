@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="col-6">
+    <form [formGroup]="nameForm" (ngSubmit)="submit()">
+      <div class="mb-3">
+        <input type="text" hidden formControlName="codeProduct" class="form-control" id="codeProduct" aria-describedby="emailHelp">
+        <label for="codeProduct" class="form-label">Code product</label>
+        <input type="text" formControlName="codeProduct" class="form-control" id="codeProduct" aria-describedby="emailHelp">
+<!--        <p style="color: red"-->
+<!--           *ngIf="nameForm.controls.maLoHang.hasError('required')&&nameForm.controls.maLoHang.touched">-->
+<!--          Mã lô hàng không được để trống.</p>-->
+<!--        <p style="color: red"-->
+<!--           *ngIf="nameForm.controls.maLoHang.hasError('pattern')&&nameForm.controls.maLoHang.touched">-->
+<!--          Mã lô hàng phải là LH-XXXX (X là số từ 0-9).</p>-->
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name product</label>
+        <select formControlName="name" class="form-select" id="name" aria-describedby="emailHelp">
+          <option value="">Chosse</option>
+          <option *ngFor="let p of productType" [ngValue]="p">{{p.name}}</option>
+        </select>
+<!--        <p style="color: red"-->
+<!--           *ngIf="nameForm.controls.sanPham.hasError('required')&&nameForm.controls.sanPham.touched">-->
+<!--          Sản phẩm không được để trống.</p>-->
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <select formControlName="price" class="form-select" id="price" aria-describedby="emailHelp">
+          <option value="">Chosse</option>
+          <option *ngFor="let p of productType" [ngValue]="p">{{p.price}}</option>
+        </select>
+
+<!--        <p style="color: red"-->
+<!--           *ngIf="nameForm.controls.soLuong.hasError('required')&&nameForm.controls.soLuong.touched">-->
+<!--          Số lượng không được để trống.</p>-->
+<!--        <p style="color: red"-->
+<!--           *ngIf="nameForm.controls.soLuong.hasError('min')&&nameForm.controls.soLuong.touched">-->
+<!--          Số lượng phải là số dương.</p>-->
+      </div>
+      <div class="mb-3">
+        <label for="statusProduct" class="form-label">Status </label>
+        <input type="text" formControlName="statusProduct" class="form-control" id="statusProduct"
+               aria-describedby="emailHelp">
+<!--        <p style="color: red"-->
+<!--           *ngIf="nameForm.controls.ngayNhapHang.hasError('required')&&nameForm.controls.ngayNhapHang.touched">-->
+<!--          Ngày nhập hàng không được để trống.</p>-->
+      </div>
+      <div class="mb-3">
+        <label for="creationDate" class="form-label">Creation date</label>
+        <input type="date" formControlName="creationDate" class="form-control" id="creationDate"
+               aria-describedby="emailHelp">
+<!--        <p style="color: red"-->
+<!--           *ngIf="nameForm.controls.ngaySanXuat.hasError('required')&&nameForm.controls.ngaySanXuat.touched">-->
+<!--          Ngày sản xuất không được để trống.</p>-->
+      </div>
+
+      <div class="mb-3">
+        <button type="submit" class="btn btn-outline-dark">Add</button>
+        <button class="btn btn-outline-dark" [routerLink]="['/product-list']">back</button>
+      </div>
+    </form>
+  </div>
+</div>

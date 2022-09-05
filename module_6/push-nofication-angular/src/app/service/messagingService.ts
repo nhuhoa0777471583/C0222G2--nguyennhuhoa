@@ -3,7 +3,6 @@ import {BehaviorSubject} from 'rxjs';
 import {AngularFireMessaging} from '@angular/fire/messaging';
 
 
-
 @Injectable()
 export class MessagingService {
   currentMessage = new BehaviorSubject(null);
@@ -14,7 +13,7 @@ export class MessagingService {
         _messaging.onMessage = _messaging.onMessage.bind(_messaging);
         _messaging.onTokenRefresh = _messaging.onTokenRefresh.bind(_messaging);
       }
-    )
+    );
   }
 
   requestPermission() {
@@ -31,8 +30,8 @@ export class MessagingService {
   receiveMessage() {
     this.angularFireMessaging.messages.subscribe(
       (payload) => {
-        console.log("new message received. ", payload);
+        console.log('new message received. ', payload);
         this.currentMessage.next(payload);
-      })
+      });
   }
 }

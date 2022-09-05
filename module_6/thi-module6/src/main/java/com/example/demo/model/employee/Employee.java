@@ -10,13 +10,13 @@ import javax.persistence.*;
 @Setter
 @Getter
 @RequiredArgsConstructor
-public class NhanVien {
-
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String maNhanVien;
+    private String codeEmployee;
+    private String name;
     @ManyToOne
-    @JoinColumn(name = "idVitri", referencedColumnName = "id")
-    private ViTri viTri;
+    @JoinColumn(name = "id_position", referencedColumnName = "id")
+    private Position position;
 }
