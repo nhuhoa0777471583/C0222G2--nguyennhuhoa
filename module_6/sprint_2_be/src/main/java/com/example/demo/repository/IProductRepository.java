@@ -24,17 +24,26 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
 //  List<ProductDto> getLaptop();
 
 
-  @Query(value=" select id,cost, `create_date`, `image`," +
-          " `is_delete`, `made_in`, `name`," +
-          " `price`,`specifications` ,`status_product`,id_category " +
-          " from product  " +
-          " where id_category = 1 and is_delete = 0 ", nativeQuery = true)
-  List<Product> getLaptop();
+    @Query(value = " select id,cost, `create_date`, `image`," +
+            " `is_delete`, `made_in`, `name`," +
+            " `price`,`price_sale`,`specifications` ,`status_product`,id_category " +
+            " from product  " +
+            " where id_category = 1 and is_delete = 0 ", nativeQuery = true)
+    List<Product> getLaptop();
 
-  @Query(value=" select id,cost, `create_date`, `image`," +
-          " `is_delete`, `made_in`, `name`," +
-          " `price`,`price_sale`,`specifications` ,`status_product`,id_category " +
-          " from product  " +
-          " where id_category = 2 and is_delete = 0 ", nativeQuery = true)
-  List<Product> getPhone();
+    @Query(value = " select id,cost, `create_date`, `image`," +
+            " `is_delete`, `made_in`, `name`," +
+            " `price`,`price_sale`,`specifications` ,`status_product`,id_category " +
+            " from product  " +
+            " where id_category = 2 and is_delete = 0 ", nativeQuery = true)
+    List<Product> getPhone();
+
+    @Query(value = "SELECT id, cost, `create_date`, `image`," +
+            " `is_delete`, `made_in`, `name`," +
+            " `price`,`price_sale`,`specifications` ,`status_product`,id_category " +
+            " FROM product " +
+            " ORDER BY ABS( DATEDIFF( create_date, NOW() ) ) limit 8 ", nativeQuery = true)
+    List<Product> getProductNearTheDay();
+
+
 }

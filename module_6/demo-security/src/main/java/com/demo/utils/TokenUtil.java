@@ -9,5 +9,4 @@ import java.util.Map;
 @Data
 public class TokenUtil {
     private Map<String, String> tokenMap = new HashMap<>();
-
 }

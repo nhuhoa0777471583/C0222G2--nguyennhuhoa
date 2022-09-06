@@ -2,8 +2,6 @@ package com.demo.service.jwt;
 
 import com.demo.model.account.AppUser;
 import com.demo.model.account.UserRole;
-import com.demo.repository.IAppUserRepository;
-import com.demo.repository.IUserRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class AppUserDetailsService implements UserDetailsService {
+public class AppUserDetailsService  implements UserDetailsService {
 
     @Autowired
     private IAppUserRepository iAppUserRepository;
@@ -41,4 +39,5 @@ public class AppUserDetailsService implements UserDetailsService {
         }
         return new User(appUser.getUserName(), appUser.getPassword(), grantList);
     }
+
 }

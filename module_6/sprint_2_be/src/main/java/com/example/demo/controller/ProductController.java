@@ -45,4 +45,14 @@ public class ProductController {
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
 
+    @GetMapping("/near-day")
+    public ResponseEntity<List<Product>> displayProductNearDay(){
+        List<Product> products = this.iProductRepository.getProductNearTheDay();
+        if (products == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+
 }

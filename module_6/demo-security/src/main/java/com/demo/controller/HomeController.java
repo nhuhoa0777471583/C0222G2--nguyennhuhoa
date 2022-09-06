@@ -51,7 +51,7 @@ public class HomeController {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
         final UserDetails userDetails = userService.loadUserByUsername(jwtRequest.getUseName());
-        if(userDetails ==null){ 
+        if(userDetails ==null){
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 
