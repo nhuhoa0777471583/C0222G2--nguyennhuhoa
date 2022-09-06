@@ -2,6 +2,8 @@ package com.demo.service.jwt;
 
 import com.demo.model.account.AppUser;
 import com.demo.model.account.UserRole;
+import com.demo.repository.IAppUserRepository;
+import com.demo.repository.IUserRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -1,4 +1,5 @@
 import java.sql.Array;
+import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class Test {
@@ -58,6 +59,9 @@ public class Test {
         int b = a;
         System.out.println(b);
 
+
+        int[] arrInt = {1,2,4,1,2,3,5,6};
+        
     }
 
 

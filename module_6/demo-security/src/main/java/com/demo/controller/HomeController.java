@@ -45,6 +45,7 @@ public class HomeController {
         return "Hello JWT";
     }
 
+
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public ResponseEntity<?> creatAuthen(@RequestBody JwtRequest jwtRequest) throws Exception {
         if (jwtRequest.getUseName() == null || jwtRequest.getPassword() == null){

@@ -20,9 +20,8 @@ export class HttpClientService {
   ) {
   }
 
-  getEmployees()
-  {
-   return this.httpClient.get<Employee[]>('http://localhost:8080/employees');
+  getEmployees(){
+    return this.httpClient.get<Employee[]>('http://localhost:8080/employees');
   }
 
 

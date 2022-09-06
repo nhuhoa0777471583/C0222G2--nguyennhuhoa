@@ -48,7 +48,7 @@ public class JwtUtils implements Serializable {
         return expiration.before(new Date());
     }
 
-    //generate token for user
+    //tạo token từ user
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
         return doGenerateToken(claims, userDetails.getUsername());

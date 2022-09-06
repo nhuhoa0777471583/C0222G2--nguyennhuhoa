@@ -9,16 +9,15 @@ import { HttpClientService, Employee } from '../service/httpclient.service';
 export class EmployeeComponent implements OnInit {
 
   employees:Employee[];
-    
-   
+
+
   constructor(
     private httpClientService:HttpClientService
   ) { }
 
   ngOnInit() {
      this.httpClientService.getEmployees().subscribe(
-      response =>this.handleSuccessfulResponse(response),
-     );
+      response =>this.handleSuccessfulResponse(response),);
   }
 
 handleSuccessfulResponse(response)

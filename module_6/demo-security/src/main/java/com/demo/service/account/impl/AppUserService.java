@@ -1,6 +1,7 @@
 package com.demo.service.account.impl;
 
 import com.demo.model.account.AppUser;
+import com.demo.repository.IAppUserRepository;
 import com.demo.service.account.IAppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

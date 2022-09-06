@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ProductService} from "../service/ProductService";
+import {Product} from "../model/Product";
 
 @Component({
   selector: 'app-smart-phone',
@@ -6,11 +8,19 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./smart-phone.component.css']
 })
 export class SmartPhoneComponent implements OnInit {
+  phoneList: Product[] = [];
+  p: number = 0;
 
-  constructor() {
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit(): void {
+    this.getPhone();
   }
 
+  private getPhone() {
+    this.productService.getPhone().subscribe(d =>{
+      this.phoneList = d;
+    })
+  }
 }

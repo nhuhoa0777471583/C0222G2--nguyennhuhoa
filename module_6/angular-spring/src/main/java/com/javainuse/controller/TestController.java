@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.javainuse.model.User;
 import com.javainuse.model.Employee;
 
 @CrossOrigin()
@@ -24,6 +25,12 @@ public class TestController {
 	@GetMapping(produces = "application/json")
 	public List<Employee> firstPage() {
 		return employees;
+	}
+
+	@GetMapping(produces = "application/json")
+	@RequestMapping({ "/validateLogin" })
+	public User validateLogin() {
+		return new User("User successfully authenticated");
 	}
 
 	@DeleteMapping(path = { "/{id}" })
