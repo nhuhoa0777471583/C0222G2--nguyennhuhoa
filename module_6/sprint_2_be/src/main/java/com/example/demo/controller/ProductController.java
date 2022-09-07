@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.ProductDto;
 import com.example.demo.model.Product;
 import com.example.demo.repository.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;

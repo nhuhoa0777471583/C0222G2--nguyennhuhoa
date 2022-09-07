@@ -62,12 +62,23 @@ INSERT INTO `product`
 (26, 100, '2022-05-02', 'https://cdn.tgdd.vn/Products/Images/42/271717/oppo-reno7-z-5g-thumb-1-1-600x600.jpg', 0, 'TQ', 'Oppo Ren8 5G', 22000000,19000000,'6.6 inch', 'còn hàng', 2),
 (27, 100, '2022-05-02', 'https://toanmobile.vn/userdata/8264/wp-content/uploads/2021/10/oppo-reno6-z-5g-aurora-1-600x600.jpg', 0, 'TQ', 'Oppo Find X', 22000000,18888000,'6.6 inch', 'còn hàng', 2);
 
-select product.id, product.cost, product.`create_date`, product.`image`,
- product.`is_delete`, product.`made_in`, product.`name`,
- product.`price`,product.`specifications` ,product.`status_product`, category.`name` from product 
-join category on product.id_category = category.id where category.`name` like "%laptop%";
+INSERT INTO `app_role` (`role_name`) VALUES ('ADMIN');
+INSERT INTO `app_role` (`role_name`) VALUES ('USER');
 
-select product.id, product.cost, product.`create_date`, product.`image`,
- product.`is_delete`, product.`made_in`, product.`name`,
- product.`price`,product.`specifications` ,product.`status_product`, category.`name` from product 
-join category on product.id_category = category.id where category.`name` like "%Điện thoại%";
+INSERT INTO `app_user` (`password`, `user_name`, `creation_date`) VALUES
+ ('$2a$10$IL2WaXZmZLChaV2yoBbS4erqkc9HSjdIEVnbjFYLscSqP7GyMJuCO', 'admin', '2022-08-08'),
+ ('$2a$10$IL2WaXZmZLChaV2yoBbS4erqkc9HSjdIEVnbjFYLscSqP7GyMJuCO', 'user', '2022-08-09');
+
+INSERT INTO `user_role` (`role_id`, `user_id`) VALUES ('1', '1');
+INSERT INTO `user_role` (`role_id`, `user_id`) VALUES ('2', '2');
+INSERT INTO `user_role` (`role_id`, `user_id`) VALUES ('2', '1');
+
+-- select product.id, product.cost, product.`create_date`, product.`image`,
+--  product.`is_delete`, product.`made_in`, product.`name`,
+--  product.`price`,product.`specifications` ,product.`status_product`, category.`name` from product
+-- join category on product.id_category = category.id where category.`name` like "%laptop%";
+--
+-- select product.id, product.cost, product.`create_date`, product.`image`,
+--  product.`is_delete`, product.`made_in`, product.`name`,
+--  product.`price`,product.`specifications` ,product.`status_product`, category.`name` from product
+-- join category on product.id_category = category.id where category.`name` like "%Điện thoại%";
