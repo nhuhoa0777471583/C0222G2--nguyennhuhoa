@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../service/ProductService";
 import {Product} from "../model/Product";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-home-page',
@@ -12,7 +13,8 @@ export class HomePageComponent implements OnInit {
   p: number = 1;
   productNearDayList: Product[] = [];
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService,private tile: Title) {
+    this.tile.setTitle("Trang chủ")
   }
 
   ngOnInit(): void {

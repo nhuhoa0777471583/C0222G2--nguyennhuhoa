@@ -132,13 +132,13 @@
             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+            <a class="btn btn-outline-dark btn-square" [routerLink]="['/detail/', p.id]"><i class="fa fa-search"></i></a>
           </div>
         </div>
         <div class="text-center py-4">
-          <a class="h6 text-decoration-none text-truncate" routerLink="/cart">{{p.name}}</a>
+          <a class="h6 text-decoration-none text-truncate"  [routerLink]="['/detail/:id']">{{p.name}}</a>
           <div class="d-flex align-items-center justify-content-center mt-2">
-            <h5>{{p.priceSale}}</h5><h6 class="text-muted ml-2"><del>{{p.price}}</del></h6>
+            <h5>{{p.priceSale | currency: 'VND': ''}}đ</h5><h6 class="text-muted ml-2"><del>{{p.price | currency: 'VND': ''}}đ</del></h6>
           </div>
           <div class="d-flex align-items-center justify-content-center mb-1">
             <small class="fa fa-star text-primary mr-1"></small>
@@ -171,11 +171,11 @@
             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+            <a class="btn btn-outline-dark btn-square" [routerLink]="['/detail/',productNearDay.id]"><i class="fa fa-search"></i></a>
           </div>
         </div>
         <div class="text-center py-4">
-          <a class="h6 text-decoration-none text-truncate" href="">{{productNearDay.name}}</a>
+          <a class="h6 text-decoration-none text-truncate" [routerLink]="['/detail/',productNearDay.id]">{{productNearDay.name}}</a>
           <div class="d-flex align-items-center justify-content-center mt-2">
             <h5>{{productNearDay.price | currency: 'VND': ''}}đ</h5><h6 class="text-muted ml-2"><del>{{productNearDay.priceSale | currency: 'VND': ''}}đ</del></h6>
           </div>

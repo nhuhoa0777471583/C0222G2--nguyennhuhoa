@@ -15,11 +15,11 @@ const API_URL = `${environment.apiUrl}`
 
 export class ProductService {
 
-  // private ALL = 'http://localhost:8080/product';
   private ALL = API_URL + 'product';
   private LAPTOP = API_URL + 'laptop';
   private PHONE = API_URL + 'phone';
   private NEAR_DAY = API_URL + 'near-day';
+  private DETAIL = API_URL + 'detail/';
 
   constructor(private httpClient: HttpClient) {
   }
@@ -40,5 +40,8 @@ export class ProductService {
     return this.httpClient.get<Product[]>(this.NEAR_DAY);
   }
 
+  getProductById(id: number):Observable<Product>{
+    return this.httpClient.get<Product>(this.DETAIL + `${id}`);
+  }
 
 }

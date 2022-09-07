@@ -6,15 +6,18 @@ import {ScreenDetailComponent} from "./screen-detail/screen-detail.component";
 import {LoginComponent} from "./login/login.component";
 import {CartProductComponent} from "./cart-product/cart-product.component";
 import {HomePageComponent} from "./home-page/home-page.component";
+import {AuthGaurdService} from "./service/AuthGaurdService";
+import {LogoutComponent} from "./logout/logout.component";
 
 
 const routes: Routes = [
-  {path: "", component: HomePageComponent},
+  {path: "", component: HomePageComponent,},
   {path: "laptop", component: LaptopComponent},
   {path: "smartphone", component: SmartPhoneComponent},
-  {path: "detail", component: ScreenDetailComponent},
+  {path: "detail/:id", component: ScreenDetailComponent},
   {path: "login", component: LoginComponent},
-  {path: "cart", component: CartProductComponent},
+  {path: "cart", component: CartProductComponent, },
+  {path:"logout", component:LogoutComponent, canActivate: [AuthGaurdService]}
 ];
 
 @NgModule({
