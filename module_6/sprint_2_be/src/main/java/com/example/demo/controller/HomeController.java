@@ -57,15 +57,15 @@ public class HomeController {
         }
 
         authenticate(jwtRequest.getUsername(), jwtRequest.getPassword());
-        AppUser appUser = this.iAppUserService.findAppUserByUsername(jwtRequest.getUsername());
-        System.out.println(appUser.getCreationDate());
-        Date date = new Date(System.currentTimeMillis());
+//        AppUser appUser = this.iAppUserService.findAppUserByUsername(jwtRequest.getUsername());
+//        System.out.println(appUser.getCreationDate());
+//        Date date = new Date(System.currentTimeMillis());
 
-        System.out.println(appUser.getCreationDate().toLocalDate().plusDays(30));
-        // Check Password Expired
-        if (date.toLocalDate().compareTo(appUser.getCreationDate().toLocalDate().plusDays(30)) >= 0) {
-            return new ResponseEntity<>("PasswordExpired", HttpStatus.UNAUTHORIZED);
-        }
+//        System.out.println(appUser.getCreationDate().toLocalDate().plusDays(30));
+//        // Check Password Expired
+//        if (date.toLocalDate().compareTo(appUser.getCreationDate().toLocalDate().plusDays(30)) >= 0) {
+//            return new ResponseEntity<>("PasswordExpired", HttpStatus.UNAUTHORIZED);
+//        }
         // Get roles list
         List<String> grantList = userDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)

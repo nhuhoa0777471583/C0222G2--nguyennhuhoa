@@ -13,12 +13,10 @@ import {CartProductComponent} from './cart-product/cart-product.component';
 import {LoginComponent} from './login/login.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import {NgxPaginationModule} from 'ngx-pagination';
-import {FormsModule} from "@angular/forms";
-import {BasicAuthHtppInterceptorService} from "./service/BasicAuthHtppInterceptorService";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LogoutComponent } from './logout/logout.component';
-
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,16 +30,26 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     LogoutComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        NgxPaginationModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(
+      {
+        timeOut: 2000,
+        closeButton: true,
+        progressBar: true,
+        positionClass: 'toast-top-left',
+        preventDuplicates: true,
+      }
+    ),
+  ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: BasicAuthHtppInterceptorService, multi: true}
+
   ],
   bootstrap: [AppComponent]
 })
