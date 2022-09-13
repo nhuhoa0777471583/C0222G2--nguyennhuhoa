@@ -21,27 +21,32 @@
       <div class="bg-light p-4 mb-30">
         <div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" checked id="price-all"  (input)="searchPrice('0','9999999999', $event)">
+            <input type="radio" name="radio" class="custom-control-input" checked id="price-all"
+                   (input)="searchPrice('0','9999999999', $event)">
             <label class="custom-control-label" for="price-all">Tất cả</label>
             <span class="badge border font-weight-normal">1000</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" id="price-1"  (input)="searchPrice('5000000','8000000', $event)">
-            <label class="custom-control-label" for="price-1" >Từ 5 triệu - 8 triệu</label>
+            <input type="radio" name="radio" class="custom-control-input" id="price-1"
+                   (input)="searchPrice('5000000','8000000', $event)">
+            <label class="custom-control-label" for="price-1">Từ 5 triệu - 8 triệu</label>
             <span class="badge border font-weight-normal">150</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" id="price-2"  (input)="searchPrice('8000000','20000000', $event)">
+            <input type="radio" name="radio" class="custom-control-input" id="price-2"
+                   (input)="searchPrice('8000000','20000000', $event)">
             <label class="custom-control-label" for="price-2">Từ 8 triệu - 20 triệu</label>
             <span class="badge border font-weight-normal">295</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" id="price-4"  (input)="searchPrice('30000000','50000000', $event)">
+            <input type="radio" name="radio" class="custom-control-input" id="price-4"
+                   (input)="searchPrice('30000000','50000000', $event)">
             <label class="custom-control-label" for="price-4">Từ 20 triệu - 50 triệu</label>
             <span class="badge border font-weight-normal">145</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
-            <input  type="radio" name="radio" class="custom-control-input" id="price-5"  (input)="searchPrice('50000000','1000000000', $event)">
+            <input type="radio" name="radio" class="custom-control-input" id="price-5"
+                   (input)="searchPrice('50000000','1000000000', $event)">
             <label class="custom-control-label" for="price-5">Từ 50 triệu ++ </label>
             <span class="badge border font-weight-normal">168</span>
           </div>
@@ -56,32 +61,38 @@
       <div class="bg-light p-4 mb-30">
         <div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" checked id="color-all"  (input)="searchName('', $event)">
+            <input type="radio" name="radio" class="custom-control-input" checked id="color-all"
+                   (input)="searchName('', $event)">
             <label class="custom-control-label" for="color-all">Tất cả</label>
             <span class="badge border font-weight-normal">1000</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" id="color-1" (input)="searchName('Lenovo', $event)">
+            <input type="radio" name="radio" class="custom-control-input" id="color-1"
+                   (input)="searchName('Lenovo', $event)">
             <label class="custom-control-label" for="color-1">Lenovo</label>
             <span class="badge border font-weight-normal">150</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" id="color-2"  (input)="searchName('Macbook', $event)">
+            <input type="radio" name="radio" class="custom-control-input" id="color-2"
+                   (input)="searchName('Macbook', $event)">
             <label class="custom-control-label" for="color-2">Mac</label>
             <span class="badge border font-weight-normal">295</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" id="color-3"  (input)="searchName('Acer', $event)">
+            <input type="radio" name="radio" class="custom-control-input" id="color-3"
+                   (input)="searchName('Acer', $event)">
             <label class="custom-control-label" for="color-3">Acer</label>
             <span class="badge border font-weight-normal">246</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" id="color-4"  (input)="searchName('Asus', $event)">
+            <input type="radio" name="radio" class="custom-control-input" id="color-4"
+                   (input)="searchName('Asus', $event)">
             <label class="custom-control-label" for="color-4">Asus</label>
             <span class="badge border font-weight-normal">145</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
-            <input  type="radio" name="radio" class="custom-control-input" id="color-5"  (input)="searchName('Dell', $event)">
+            <input type="radio" name="radio" class="custom-control-input" id="color-5"
+                   (input)="searchName('Dell', $event)">
             <label class="custom-control-label" for="color-5">Dell</label>
             <span class="badge border font-weight-normal">168</span>
           </div>
@@ -100,27 +111,27 @@
             <span class="badge border font-weight-normal">1000</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" id="size-1">
+            <input type="radio" name="radio" class="custom-control-input" id="size-1">
             <label class="custom-control-label" for="size-1">Intel i3</label>
             <span class="badge border font-weight-normal">150</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" id="size-2">
+            <input type="radio" name="radio" class="custom-control-input" id="size-2">
             <label class="custom-control-label" for="size-2">Intel i5</label>
             <span class="badge border font-weight-normal">295</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" id="size-3">
+            <input type="radio" name="radio" class="custom-control-input" id="size-3">
             <label class="custom-control-label" for="size-3">Intel i7</label>
             <span class="badge border font-weight-normal">246</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-            <input  type="radio" name="radio" class="custom-control-input" id="size-4">
+            <input type="radio" name="radio" class="custom-control-input" id="size-4">
             <label class="custom-control-label" for="size-4">Amd ryzen 5</label>
             <span class="badge border font-weight-normal">145</span>
           </div>
           <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
-            <input  type="radio" name="radio" class="custom-control-input" id="size-5">
+            <input type="radio" name="radio" class="custom-control-input" id="size-5">
             <label class="custom-control-label" for="size-5">Amd ryzen 7</label>
             <span class="badge border font-weight-normal">168</span>
           </div>
@@ -130,9 +141,8 @@
     </div>
 
 
-
     <!-- Shop Product Start -->
-    <div class="col-lg-9 col-md-8" >
+    <div class="col-lg-9 col-md-8">
       <div class="row pb-3">
         <div class="col-12 pb-1">
           <div class="d-flex align-items-center justify-content-between mb-2">
@@ -153,22 +163,26 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 pb-1"  *ngFor="let laptop of laptopList">
+        <div class="col-lg-4 col-md-6 col-sm-6 pb-1" *ngFor="let laptop of laptopList">
           <div class="product-item bg-light mb-4">
-            <div class="product-img position-relative overflow-hidden" >
+            <div class="product-img position-relative overflow-hidden">
               <img class="img-fluid w-100" style="height: 200px" src="{{laptop.image}}" alt="">
               <div class="product-action">
                 <a class="btn btn-outline-dark btn-square" href=""><i
                   class="fa fa-shopping-cart"></i></a>
-                <a class="btn btn-outline-dark btn-square"  *ngIf="role ===  'ADMIN'" href=""><i class="fa-sharp fa-solid fa-pen text-primary"
-                                                                      style="font-size: 22px; color: black!important;"></i></a>
-                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i class="fa-sharp fa-solid fa-trash text-danger "
-                                                                      style="font-size: 22px; color: black!important;"></i></a>
-                <a class="btn btn-outline-dark btn-square"  [routerLink]="['/detail/', laptop.id]"><i class="fa fa-search"></i></a>
+                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
+                  class="fa-sharp fa-solid fa-pen text-primary"
+                  style="font-size: 22px; color: black!important;"></i></a>
+                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
+                  class="fa-sharp fa-solid fa-trash text-danger "
+                  style="font-size: 22px; color: black!important;"></i></a>
+                <a class="btn btn-outline-dark btn-square" [routerLink]="['/detail/', laptop.id]"><i
+                  class="fa fa-search"></i></a>
               </div>
             </div>
             <div class="text-center py-4">
-              <a class="h6 text-decoration-none text-truncate"  [routerLink]="['/detail/', laptop.id]">{{laptop.name}}</a>
+              <a class="h6 text-decoration-none text-truncate"
+                 [routerLink]="['/detail/', laptop.id]">{{laptop.name}}</a>
               <div class="d-flex align-items-center justify-content-center mt-2">
                 <h5>{{laptop.priceSale | currency: 'VND': ''}}đ</h5>
                 <h6 class="text-muted ml-2">
@@ -182,19 +196,20 @@
           </div>
 
         </div>
-        <div class="col-12 text-center" style="font-size: 20px; margin-top: 100px" *ngIf="laptopList.length == '' || laptopList.length == null ">
+        <div class="col-12 text-center" style="font-size: 20px; margin-top: 100px "
+             *ngIf="laptopList.length == 0  ">
           Không có dữ liệu về sản phẩm đó
         </div>
 
-        <div class="col-12" *ngIf="laptopList.length != ''">
+        <div class="col-12" *ngIf="laptopList.length != 0 ">
           <nav>
             <ul class="pagination justify-content-center">
-              <li class="page-item"><a class="page-link" *ngIf="numberPage == 0" hidden ><span>Trước</span></a></li>
+              <li class="page-item"><a class="page-link" *ngIf="numberPage == 0" hidden><span>Trước</span></a></li>
               <li class="page-item"><a class="page-link" *ngIf="numberPage != 0 " (click)="previousPage($event)"><span>Trước</span></a>
               </li>
               <li class="page-item"><a class="page-link" (click)="goItem(page)">
                 <span> {{numberPage + 1}} | {{totalPage}}</span></a>
-              <li class="page-item "><a class="page-link" *ngIf="numberPage == totalPage" ><span>Sau</span></a></li>
+              <li class="page-item "><a class="page-link" *ngIf="numberPage == totalPage"><span>Sau</span></a></li>
               <li class="page-item "><a class="page-link" *ngIf="numberPage != totalPage - 1"
                                         (click)="nextPage($event)"><span>Sau</span></a></li>
             </ul>

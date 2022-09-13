@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: "smartphone", component: SmartPhoneComponent},
   {path: "detail/:id", component: ScreenDetailComponent},
   {path: "login", component: HomeLoginComponent},
-  {path: "cart", component: CartProductComponent, canActivate: [UserGuard]},
+  {path: "cart", component: CartProductComponent},
   {path: "product-add", component: ProductAddComponent, canActivate: [AdminGuard]},
 ];
 
