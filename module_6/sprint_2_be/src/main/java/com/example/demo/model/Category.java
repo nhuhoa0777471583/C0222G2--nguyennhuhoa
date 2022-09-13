@@ -17,6 +17,8 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String image;
+    private Integer quantity;
     @OneToMany(mappedBy = "category")
     @JsonBackReference
     private List<Product> productList;
