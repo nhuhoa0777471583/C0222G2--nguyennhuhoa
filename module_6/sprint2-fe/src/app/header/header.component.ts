@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {Subscription} from "rxjs";
+import {Subscription} from 'rxjs';
 
-import {ToastrService} from "ngx-toastr";
-import {Router} from "@angular/router";
+import {ToastrService} from 'ngx-toastr';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {CookieService} from '../login/service/cookie.service';
 import {LogoutService} from '../login/service/logout.service';
 import {CommonService} from '../login/service/common.service';
-
+import {ProductService} from '../service/ProductService';
+import {FormControl, FormGroup} from '@angular/forms';
 
 
 @Component({
@@ -23,12 +24,15 @@ export class HeaderComponent implements OnInit {
   // selected = false;
   // notificationNotHandle=[];
   private subscriptionName: Subscription;
+  formSearch: FormGroup;
 
   constructor(private cookieService: CookieService,
               private toastrService: ToastrService,
               private logoutService: LogoutService,
               private router: Router,
-              private commonService: CommonService) {
+              private commonService: CommonService,
+              private productService: ProductService,
+              private activate: ActivatedRoute) {
     this.role = this.readCookieService('role');
     this.username = this.readCookieService('username');
     this.token = this.readCookieService('jwToken');
@@ -42,6 +46,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.searchForm();
 
   }
 
@@ -51,7 +56,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogout() {
-    setTimeout(()=> {
+    setTimeout(() => {
       if (this.cookieService.getCookie('jwToken') != null) {
         this.logoutService.onLogout(this.cookieService.getCookie('jwToken')).subscribe(() => {
           this.cookieService.deleteAllCookies();
@@ -86,9 +91,9 @@ export class HeaderComponent implements OnInit {
       } else {
         this.toastrService.warning('Bạn chưa đăng nhập!');
       }
-    }, 1000)
-    this.router.navigateByUrl("/loading").then(() => {
-    })
+    }, 1000);
+    this.router.navigateByUrl('/loading').then(() => {
+    });
   }
 
   ngOnDestroy(): void {
@@ -101,5 +106,34 @@ export class HeaderComponent implements OnInit {
   }
 
 
+  searchForm() {
+    this.formSearch = new FormGroup({
+      nameSearch: new FormControl('')
+    });
+  }
+
+  searchNameProduct() {
+    this.productService.searchProduct(this.formSearch.value.nameSearch).subscribe(d => {
+        console.log(this.formSearch.value.nameSearch);
+        console.log(d);
+      }
+    );
+  }
+
+
+  // searchNameProduct() {
+  //   let key: string ;
+  //   this.activate.paramMap.subscribe((paramMap: ParamMap) => {
+  //     key = paramMap.get(this.formSearch.value.nameSearch);
+  //     console.log('key = ' + key);
+  //   }, error => {
+  //   }, () => {
+  //     console.log(key);
+  //     // this.productService.searchProduct().subscribe(d => {
+  //     //     console.log(d);
+  //     //   }
+  //     // );
+  //   });
+  // }
 
 }

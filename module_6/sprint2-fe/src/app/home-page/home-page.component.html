@@ -117,21 +117,20 @@
   <h2 class=" position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Tất cả sản phẩm</span></h2>
   <div class="row px-xl-5 pb-3">
     <div class="col-lg-3 col-md-4 col-sm-6 pb-1"
-         *ngFor="let p of productList| paginate: { itemsPerPage: 12, currentPage: p }">
+         *ngFor="let c of categoryList">
       <a class="text-decoration-none" href="">
         <div class="cat-item d-flex align-items-center mb-4">
           <div class="overflow-hidden" style="width: 100px; height: 100px;">
-            <img class="img-fluid" style="height: 100%" src="{{p.image}}" alt="">
+            <img class="img" style="height: 100%" src="{{c.image}}">
           </div>
           <div class="flex-fill pl-3">
-            <h6>{{p.name}}</h6>
-            <small class="text-body">{{p.cost}}</small>
+            <h6>{{c.name}}</h6>
+            <small class="text-body">{{c.quantity}}</small>
           </div>
         </div>
       </a>
     </div>
   </div>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 <!-- Categories End -->
 
@@ -142,16 +141,18 @@
   </h2>
   <div class="row px-xl-5">
     <div class="col-lg-3 col-md-4 col-sm-6 pb-1"
-         *ngFor="let p of productList | paginate: { itemsPerPage: 12, currentPage: p }">
+         *ngFor="let p of productList">
       <div class="product-item bg-light mb-4">
         <div class="product-img position-relative overflow-hidden">
           <img class="img-fluid" style=" height: 200px" src="{{p.image}}" alt="">
           <div class="product-action">
             <a class="btn btn-outline-dark btn-square" [routerLink]="['/cart']"><i class="fa fa-shopping-cart"></i></a>
-            <a class="btn btn-outline-dark btn-square" href=""><i class="fa-sharp fa-solid fa-pen text-primary"
-                                                                  style="font-size: 22px; color: black!important;"></i></a>
-            <a class="btn btn-outline-dark btn-square" href=""><i class="fa-sharp fa-solid fa-trash text-danger "
-                                                                  style="font-size: 22px; color: black!important;"></i></a>
+            <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
+              class="fa-sharp fa-solid fa-pen text-primary"
+              style="font-size: 22px; color: black!important;"></i></a>
+            <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'"><i
+              class="fa-sharp fa-solid fa-trash text-danger "
+              style="font-size: 22px; color: black!important;"></i></a>
             <a class="btn btn-outline-dark btn-square" [routerLink]="['/detail/', p.id]"><i
               class="fa fa-search"></i></a>
           </div>
@@ -177,7 +178,18 @@
     </div>
 
   </div>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <nav>
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled"><a class="page-link" *ngIf="numberPage == 0" ><span>Trước</span></a></li>
+      <li class="page-item"><a class="page-link" *ngIf="numberPage != 0" (click)="previousPage($event)"><span>Trước</span></a>
+      </li>
+      <li class="page-item"><a class="page-link" (click)="goItem(page)">
+        <span> {{numberPage + 1}} | {{totalPage}}</span></a>
+      <li class="page-item "><a class="page-link" *ngIf="numberPage == totalPage" ><span>Sau</span></a></li>
+      <li class="page-item "><a class="page-link" *ngIf="numberPage != totalPage - 1"
+                                (click)="nextPage($event)"><span>Sau</span></a></li>
+    </ul>
+  </nav>
 </div>
 <!-- Products End -->
 
@@ -192,10 +204,12 @@
           <img class="img-fluid w-100" style="height: 200px" src="{{productNearDay.image}}" alt="">
           <div class="product-action">
             <a class="btn btn-outline-dark btn-square" [routerLink]="['/cart']"><i class="fa fa-shopping-cart"></i></a>
-            <a class="btn btn-outline-dark btn-square" href=""><i class="fa-sharp fa-solid fa-pen text-primary"
-                                                                  style="font-size: 22px; color: black!important;"></i></a>
-            <a class="btn btn-outline-dark btn-square" href=""><i class="fa-sharp fa-solid fa-trash text-danger "
-                                                                  style="font-size: 22px; color: black!important;"></i></a>
+            <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
+              class="fa-sharp fa-solid fa-pen text-primary"
+              style="font-size: 22px; color: black!important;"></i></a>
+            <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
+              class="fa-sharp fa-solid fa-trash text-danger "
+              style="font-size: 22px; color: black!important;"></i></a>
             <a class="btn btn-outline-dark btn-square" [routerLink]="['/detail/',productNearDay.id]"><i
               class="fa fa-search"></i></a>
           </div>

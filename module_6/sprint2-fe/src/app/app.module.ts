@@ -18,6 +18,7 @@ import {LaptopComponent} from './laptop/laptop.component';
 import {ScreenDetailComponent} from './screen-detail/screen-detail.component';
 import {CartProductComponent} from './cart-product/cart-product.component';
 import {HomeLoginComponent} from './login/home-login/home-login.component';
+import { ProductAddComponent } from './product-add/product-add.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {HomeLoginComponent} from './login/home-login/home-login.component';
     LaptopComponent,
     ScreenDetailComponent,
     CartProductComponent,
-    HomeLoginComponent
+    HomeLoginComponent,
+    ProductAddComponent
 
   ],
   imports: [

@@ -7,6 +7,7 @@ import {ScreenDetailComponent} from './screen-detail/screen-detail.component';
 import {CartProductComponent} from './cart-product/cart-product.component';
 import {HomeLoginComponent} from './login/home-login/home-login.component';
 import {AdminGuard} from './login/authguard/admin.guard';
+import {ProductAddComponent} from './product-add/product-add.component';
 
 const routes: Routes = [
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: "detail/:id", component: ScreenDetailComponent},
   {path: "login", component: HomeLoginComponent},
   {path: "cart", component: CartProductComponent},
+  {path: "product-add", component: ProductAddComponent, canActivate: [AdminGuard]},
 
 ];
 

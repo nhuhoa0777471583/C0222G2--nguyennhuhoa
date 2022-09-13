@@ -12,7 +12,9 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 export class ScreenDetailComponent implements OnInit {
   product: Product = {};
 
-  constructor(private productService: ProductService, private tile: Title, private activate: ActivatedRoute) {
+  constructor(private productService: ProductService,
+              private tile: Title,
+              private activate: ActivatedRoute) {
     this.tile.setTitle("Chi tiết sản phẩm")
   }
 
