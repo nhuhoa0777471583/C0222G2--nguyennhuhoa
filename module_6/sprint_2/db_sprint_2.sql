@@ -39,7 +39,7 @@ INSERT INTO `category` ( `name`, `image`, `quantity`) VALUES
 
 
 INSERT INTO `product` 
-(`id`, `cost`, `create_date`, `image`, `is_delete`, `made_in`, `name`, `price`,`price_sale`,`specifications` ,`status_product`, `id_category`) VALUES 
+(`id`, `cost`, `create_date`, `image`, `is_delete`, `made_in`, `name`, `price`,`price_sale`,`specifications` ,`status_product`, `id_category`,`id_`) VALUES 
 (1, 100, '2022-03-02', 'https://todaypc.vn/image/catalog/csm-xps-15-left-angle-black-4e2d97a989.jpg', 0, 'TQ', 'Lenovo 14', 20000000,18000000,'15.6 inch, 1920 x 1080 Pixels, IPS, 144 Hz, Anti-glare LED-backlit', 'còn hàng', 1),
 (2, 100, '2022-03-02', 'https://laptop365.vn/pic/product/dell-xps-13-9380-4-1602066716-1_637544748158395295.jpg', 0, 'TQ', 'Acer 14', 20000000,18000000,'15.6 inch, 1920 x 1080 Pixels, IPS, 60 Hz, 300 nits, IPS LCD LED Backlit, True Tone', 'còn hàng', 1),
 (3, 100, '2022-03-02', 'https://suanhanh247.com/wp-content/uploads/2021/07/6531_54516_laptop_msi_gaming_ge66_raider_10sfs_474vn_xam_bac_8.jpg', 0, 'TQ', 'Acer 21', 22000000,18000000,'15.6 inch, 1920 x 1080 Pixels, IPS, 144 Hz, Anti-glare LED-backlit', 'còn hàng', 1),
@@ -78,8 +78,8 @@ INSERT INTO `app_role` (`role_name`) VALUES ('ADMIN');
 INSERT INTO `app_role` (`role_name`) VALUES ('USER');
 
 INSERT INTO `app_user` (`password`, `user_name`, `creation_date`) VALUES
- ('$2a$10$UxWffsQosNSJzzswQzVsieLldtYx14QetnsECnzFiZYXuEvT7DjM.', 'admin', '2022-08-08'),
- ('$10$UxWffsQosNSJzzswQzVsieLldtYx14QetnsECnzFiZYXuEvT7DjM.', 'user', '2022-08-09');
+ ('$2a$10$IzCBmgzFSLMZ3km0s3EkV.Dr3FG0XJmvPZzUVxKwMTLdy1fjTEXSS', 'admin', '2022-08-08'),
+ ('$2a$10$IzCBmgzFSLMZ3km0s3EkV.Dr3FG0XJmvPZzUVxKwMTLdy1fjTEXSS', 'user', '2022-08-09');
 
 INSERT INTO `user_role` (`role_id`, `user_id`) VALUES ('1', '1');
 INSERT INTO `user_role` (`role_id`, `user_id`) VALUES ('2', '2');

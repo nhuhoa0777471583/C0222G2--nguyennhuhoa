@@ -22,6 +22,10 @@ export class HeaderComponent implements OnInit {
   messageReceived: any;
   private subscriptionName: Subscription;
   formSearch: FormGroup;
+  nameSearch: string = '';
+  beforePrice: string = '';
+  afterPrice: string = '';
+
 
   constructor(private cookieService: CookieService,
               private toastrService: ToastrService,
@@ -43,6 +47,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.searchForm();
   }
 
 
@@ -101,22 +106,19 @@ export class HeaderComponent implements OnInit {
   }
 
 
+  searchForm() {
+    this.formSearch = new FormGroup({
+      nameSearch: new FormControl('')
+    });
+  }
 
+  searchNameProduct() {
+    this.nameSearch = this.formSearch.value.nameSearch.trim();
+    console.log(this.nameSearch);
+    // this.router.navigate(['/' , this.nameSearch]).then();
+    // this.router.navigate(['/laptop/' , this.nameSearch]).then();
+    // this.router.navigate(['/phone/' , this.nameSearch]).then();
+  }
 
-
-  // searchNameProduct() {
-  //   let key: string ;
-  //   this.activate.paramMap.subscribe((paramMap: ParamMap) => {
-  //     key = paramMap.get(this.formSearch.value.nameSearch);
-  //     console.log('key = ' + key);
-  //   }, error => {
-  //   }, () => {
-  //     console.log(key);
-  //     // this.productService.searchProduct().subscribe(d => {
-  //     //     console.log(d);
-  //     //   }
-  //     // );
-  //   });
-  // }
 
 }

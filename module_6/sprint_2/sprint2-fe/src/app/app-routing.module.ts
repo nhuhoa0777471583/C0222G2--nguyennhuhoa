@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {HomePageComponent} from './home-page/home-page.component';
 import {LaptopComponent} from './laptop/laptop.component';
 import {SmartPhoneComponent} from './smart-phone/smart-phone.component';
@@ -12,13 +12,16 @@ import {UserGuard} from './login/authguard/user.guard';
 
 const routes: Routes = [
 
-  {path: "", component: HomePageComponent},
-  {path: "laptop", component: LaptopComponent},
-  {path: "smartphone", component: SmartPhoneComponent},
-  {path: "detail/:id", component: ScreenDetailComponent},
-  {path: "login", component: HomeLoginComponent},
-  {path: "cart", component: CartProductComponent},
-  {path: "product-add", component: ProductAddComponent, canActivate: [AdminGuard]},
+  {path: '', component: HomePageComponent},
+  // {path: "/:nameSearch", component: HomePageComponent},
+  {path: 'laptop', component: LaptopComponent},
+  {path: 'laptop/:name', component: LaptopComponent},
+  {path: 'smartphone', component: SmartPhoneComponent},
+  // {path: "smartphone/:nameSearch", component: SmartPhoneComponent},
+  {path: 'detail/:id', component: ScreenDetailComponent},
+  {path: 'login', component: HomeLoginComponent},
+  {path: 'cart', component: CartProductComponent},
+  {path: 'product-add', component: ProductAddComponent, canActivate: [AdminGuard]},
 ];
 
 @NgModule({
@@ -26,4 +29,5 @@ const routes: Routes = [
   exports: [RouterModule]
 
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

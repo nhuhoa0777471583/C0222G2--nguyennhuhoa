@@ -19,7 +19,8 @@
           <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item btn" type="button" [routerLink]="['/login']" *ngIf="token === ''">Đăng nhập</a>
             <a class="dropdown-item btn" type="button" *ngIf="token !== ''">Thông tin chi tiết</a>
-            <button class="dropdown-item" type="button" (click)="onLogout()">Đăng xuất</button>
+            <button class="dropdown-item" type="button" *ngIf="token !== ''" (click)="onLogout()">Đăng xuất</button>
+            <button class="dropdown-item" type="button" *ngIf="token == ''" hidden>Đăng xuất</button>
           </div>
         </div>
       </div>
@@ -46,7 +47,7 @@
       </a>
     </div>
     <div class="col-lg-4 col-6 text-left">
-      <div>
+      <form [formGroup]="formSearch" (ngSubmit)="searchNameProduct()">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Tìm kiếm tên sản phẩm">
           <div class="input-group-append">
@@ -55,7 +56,7 @@
                             </span>
           </div>
         </div>
-      </div>
+      </form>
     </div>
     <div class="col-lg-2 col-3 text-right">
       <p class="m-0">Hotline</p>

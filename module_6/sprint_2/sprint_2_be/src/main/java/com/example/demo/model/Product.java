@@ -1,11 +1,14 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+
 @Setter
 @Getter
 @RequiredArgsConstructor
@@ -30,4 +33,8 @@ public class Product {
     @Column(columnDefinition = "bit(1) default 0")
     private Boolean isDelete;
     private String statusProduct;
+
+    @OneToMany(mappedBy = "product")
+    @JsonIgnore
+    private List<Cart> cartList;
 }
