@@ -1,4 +1,5 @@
 import {Product} from './Product';
+import {Customer} from './Customer';
 
 export interface Cart {
   id?: number,
@@ -7,5 +8,6 @@ export interface Cart {
   priceSale?: number,
   total?: number,
   image?: string,
-  product?: Product
+  product?: Product,
+  customer?: Customer
 }

@@ -4,6 +4,11 @@ import {Product} from '../model/Product';
 import {Title} from '@angular/platform-browser';
 import {CookieService} from '../login/service/cookie.service';
 import {Category} from '../model/Category';
+import {Cart} from '../model/Cart';
+import {Customer} from '../model/Customer';
+import {ToastrService} from 'ngx-toastr';
+import {CartService} from '../service/CartService';
+import {CustomerService} from '../service/CustomerService';
 
 @Component({
   selector: 'app-home-page',
@@ -22,16 +27,21 @@ export class HomePageComponent implements OnInit {
   numberPage: number = 0;
 
   categoryList: Category [] = [];
-
+  customer: Customer;
+  public inforStatus: boolean = false;
 
   constructor(private productService: ProductService,
+              private customerService: CustomerService,
+              private cartService: CartService,
               private tile: Title,
-              private cookieService: CookieService) {
+              private cookieService: CookieService,
+              private toas: ToastrService) {
     this.tile.setTitle('Trang chủ');
 
     this.role = this.readCookieService('role');
     this.username = this.readCookieService('username');
     this.token = this.readCookieService('jwToken');
+    this.getCustomerByUserName(this.username);
   }
 
   ngOnInit(): void {
@@ -100,8 +110,35 @@ export class HomePageComponent implements OnInit {
     this.productService.getAllCategory().subscribe(data => {
       this.categoryList = data;
 
-    })
+    });
   }
 
+  getCustomerByUserName(username: string) {
+    this.customerService.getCustomerByUserName(username).subscribe(d => {
+      this.customer = d;
+      if (d == null) {
+        this.inforStatus = true;
+      } else {
+        this.inforStatus = d.appUser.isDeleted;
+
+      }
+    });
+  }
+
+  addToCart(product: Product) {
+    let carts: Cart = {
+      customer: this.customer,
+      product: product,
+      quantity: 1
+    };
+    this.cartService.addOrder(carts).subscribe((ca: Cart) => {
+      this.toas.success('Đã thêm sản phẩm ' + ca.product.name, 'Thành công');
+
+    }, error => {
+      if (error.error.message == 'quantity') {
+        this.toas.warning('Bạn đã thêm vượt quá số lượng sản phẩm!');
+      }
+    });
+  }
 
 }

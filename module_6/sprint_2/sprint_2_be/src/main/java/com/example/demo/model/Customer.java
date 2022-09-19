@@ -1,15 +1,15 @@
-package com.example.demo.model.account;
+package com.example.demo.model;
 
-
-import com.example.demo.model.Customer;
+import com.example.demo.model.account.AppUser;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.sql.Date;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -17,36 +17,39 @@ import java.util.Objects;
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class AppUser {
-
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(unique = true, nullable = false)
-    private String userName;
+    private String name;
+    private String email;
+    private String phoneNumber;
 
-    @Column(nullable = false)
-    private String password;
+    @Column(columnDefinition = "text")
+    private String address;
 
-    private Date creationDate;
+    @Column(columnDefinition = "text")
+    private String image;
 
     @Column(columnDefinition = "bit(1) default 0")
-    private Boolean isDeleted;
+    private Boolean isDelete;
 
-    @OneToMany(mappedBy = "appUser")
+
+    @OneToMany(mappedBy = "customer")
     @JsonIgnore
-    private List<UserRole> userRoles;
-    @JsonIgnore
-    @OneToOne(mappedBy = "appUser")
-    private Customer customer;
+    private List<Cart> cartList;
+
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private AppUser appUser;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        AppUser appUser = (AppUser) o;
-        return id != null && Objects.equals(id, appUser.id);
+        Customer customer = (Customer) o;
+        return id != null && Objects.equals(id, customer.id);
     }
 
     @Override

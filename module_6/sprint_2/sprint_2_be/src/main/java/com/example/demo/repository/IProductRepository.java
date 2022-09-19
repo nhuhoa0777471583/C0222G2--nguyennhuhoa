@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import com.example.demo.model.Cart;
 import com.example.demo.model.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -53,13 +54,22 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
 
 // hiện thị danh sách sản phẩm gần đây
 
-    @Query(value = " SELECT id, cost, `create_date`, `image`," +
-            " `is_delete`, `made_in`, `name`," +
-            " `price`,`price_sale`,`specifications` ,`status_product`,id_category " +
-            " FROM product where product.is_delete = 0 " +
+    @Query(value = " SELECT * FROM product where product.is_delete = 0 " +
             " ORDER BY ABS( DATEDIFF( create_date, NOW() ) ) limit 8 ",
             nativeQuery = true)
     List<Product> getProductNearTheDay();
 
+    @Modifying
+    @Transactional
+    @Query(value = " UPDATE `product` " +
+            " SET `quantity` = (`quantity` - :quantity) " +
+            " WHERE (`id` = :id) ", nativeQuery = true)
+    void updateQuantity(Integer quantity, Integer id);
+
+    @Modifying
+    @Transactional
+    @Query(value = " UPDATE `product` SET `is_deleted` = 1 " +
+            " WHERE (`id` = :id) ", nativeQuery = true)
+    void updateIsDeleted(@Param("id") Integer id);
 
 }

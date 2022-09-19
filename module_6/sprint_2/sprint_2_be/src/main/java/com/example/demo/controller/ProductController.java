@@ -36,10 +36,7 @@ public class ProductController {
 
     @Autowired
     private IProductService iProductService;
-    @Autowired
-    private ICartRepository iCartRepository;
-    @Autowired
-    private ICartService iCartService;
+
 
     /*
     dùng để lấy danh sách laptop vừa phân trang vừa tìm kiếm các trường : giá, tên sản phẩm
@@ -160,59 +157,4 @@ public class ProductController {
         return new ResponseEntity<>(OK);
     }
 
-
-    //    //hiển thị danh sách sản phẩm trong giỏ hàng
-    @GetMapping("/cart")
-    public ResponseEntity<List<ICartDto>> displayProductInCart() {
-        List<ICartDto> carts = this.iCartRepository.displayProductInCart();
-        if (carts.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(carts, HttpStatus.OK);
-    }
-
-    //    //hiển thị tổng tiền cần phải thanh toán
-    @GetMapping("/cart/total")
-    public ResponseEntity<ICartDto> displayTotalPayment() {
-        ICartDto carts = this.iCartRepository.displayTotalPayment();
-        if (carts == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(carts, HttpStatus.OK);
-    }
-
-    @GetMapping("/cart/find-by-id/{id}")
-    public ResponseEntity<Optional<Product>> getProductById(@PathVariable Integer id) {
-        Optional<Product> product = this.iProductRepository.findById(id);
-        if (product == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(product, HttpStatus.OK);
-    }
-
-    /**
-     * Xóa sản phẩm trong giỏ hàng dựa vào id_product
-     *
-     * @param id
-     * @return
-     */
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
-        Optional<Cart> cart = this.iCartRepository.findById(id);
-        if (cart == null) {
-            return new ResponseEntity<>(NOT_FOUND);
-        }
-        this.iCartRepository.deleteByIdProduct(id);
-        return new ResponseEntity<>(OK);
-    }
-
-    @PostMapping("/add/cart")
-    public ResponseEntity<?> addToCard(@RequestBody Cart cart) {
-        ErrorDTO err = this.iCartService.saveCart(cart);
-
-        if (err.getMessage() != null) {
-            return new ResponseEntity<>(err, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-        return new ResponseEntity<>(cart, HttpStatus.OK);
-    }
 }

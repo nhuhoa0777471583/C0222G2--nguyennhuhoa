@@ -20,7 +20,7 @@ public class Product {
     private String name;
     @Column(columnDefinition = "date")
     private Date createDate;
-    private Integer cost;
+    private Integer quantity;
     private Double price;
     private Double priceSale;
     private String madeIn;

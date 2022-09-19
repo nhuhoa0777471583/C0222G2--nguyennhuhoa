@@ -146,7 +146,7 @@
         <div class="product-img position-relative overflow-hidden">
           <img class="img-fluid" style=" height: 200px" src="{{p.image}}" alt="">
           <div class="product-action">
-            <a class="btn btn-outline-dark btn-square" [routerLink]="['/cart']"><i class="fa fa-shopping-cart"></i></a>
+            <a class="btn btn-outline-dark btn-square" (click)="addToCart(p)"><i class="fa fa-shopping-cart"></i></a>
             <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
               class="fa-sharp fa-solid fa-pen text-primary"
               style="font-size: 22px; color: black!important;"></i></a>
@@ -180,12 +180,13 @@
   </div>
   <nav>
     <ul class="pagination justify-content-center">
-      <li class="page-item disabled"><a class="page-link" *ngIf="numberPage == 0" ><span>Trước</span></a></li>
-      <li class="page-item"><a class="page-link" *ngIf="numberPage != 0" (click)="previousPage($event)"><span>Trước</span></a>
+      <li class="page-item disabled"><a class="page-link" *ngIf="numberPage == 0"><span>Trước</span></a></li>
+      <li class="page-item"><a class="page-link" *ngIf="numberPage != 0"
+                               (click)="previousPage($event)"><span>Trước</span></a>
       </li>
       <li class="page-item"><a class="page-link" (click)="goItem(page)">
         <span> {{numberPage + 1}} | {{totalPage}}</span></a>
-      <li class="page-item "><a class="page-link" *ngIf="numberPage == totalPage" ><span>Sau</span></a></li>
+      <li class="page-item "><a class="page-link" *ngIf="numberPage == totalPage"><span>Sau</span></a></li>
       <li class="page-item "><a class="page-link" *ngIf="numberPage != totalPage - 1"
                                 (click)="nextPage($event)"><span>Sau</span></a></li>
     </ul>
@@ -203,7 +204,8 @@
         <div class="product-img position-relative overflow-hidden">
           <img class="img-fluid w-100" style="height: 200px" src="{{productNearDay.image}}" alt="">
           <div class="product-action">
-            <a class="btn btn-outline-dark btn-square" [routerLink]="['/cart']"><i class="fa fa-shopping-cart"></i></a>
+            <a class="btn btn-outline-dark btn-square" (click)="addToCart(productNearDay)"><i
+              class="fa fa-shopping-cart"></i></a>
             <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
               class="fa-sharp fa-solid fa-pen text-primary"
               style="font-size: 22px; color: black!important;"></i></a>

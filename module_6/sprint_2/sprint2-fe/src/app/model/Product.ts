@@ -4,7 +4,7 @@ export interface Product {
   id?: number,
   name?: number,
   createDate?: string,
-  cost?: number,
+  quantity?: number,
   price?: number,
   priceSale?: number,
   madeIn?: string,

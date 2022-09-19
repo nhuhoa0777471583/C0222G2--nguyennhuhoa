@@ -8,6 +8,10 @@ import {LogoutService} from '../login/service/logout.service';
 import {CommonService} from '../login/service/common.service';
 import {ProductService} from '../service/ProductService';
 import {FormControl, FormGroup} from '@angular/forms';
+import {CartService} from '../service/CartService';
+import {Cart} from '../model/Cart';
+import {CustomerService} from '../service/CustomerService';
+import {Customer} from '../model/Customer';
 
 
 @Component({
@@ -23,17 +27,21 @@ export class HeaderComponent implements OnInit {
   private subscriptionName: Subscription;
   formSearch: FormGroup;
   nameSearch: string = '';
-  beforePrice: string = '';
-  afterPrice: string = '';
+  quantityProductInCart: Cart[] = [];
+  customer: Customer;
+  inforStatus: boolean = false;
+  user: string;
+  quantity: number;
 
 
   constructor(private cookieService: CookieService,
-              private toastrService: ToastrService,
+              private toasService: ToastrService,
               private logoutService: LogoutService,
               private router: Router,
               private commonService: CommonService,
               private productService: ProductService,
-              private activate: ActivatedRoute) {
+              private activate: ActivatedRoute,
+              private cartService: CartService, private customerService: CustomerService) {
     this.role = this.readCookieService('role');
     this.username = this.readCookieService('username');
     this.token = this.readCookieService('jwToken');
@@ -42,18 +50,22 @@ export class HeaderComponent implements OnInit {
       this.messageReceived = message;
       this.role = this.readCookieService('role');
       this.username = this.readCookieService('username');
+      this.user = this.username;
       this.token = this.readCookieService('jwToken');
+      this.getCustomerByUserName(this.username);
     });
   }
 
   ngOnInit(): void {
     this.searchForm();
+    this.getCustomerByUserName(this.username);
   }
 
 
   readCookieService(key: string): string {
     return this.cookieService.getCookie(key);
   }
+
 
   onLogout() {
     setTimeout(() => {
@@ -64,12 +76,12 @@ export class HeaderComponent implements OnInit {
         }, error => {
           switch (error.error) {
             case 'isLogout':
-              this.toastrService.warning('Bạn chưa đăng nhập!');
+              this.toasService.warning('Bạn chưa đăng nhập!');
               break;
             case 'LoginExpired':
               this.cookieService.deleteAllCookies();
               this.router.navigateByUrl('/login').then(() => {
-                this.toastrService.warning('Hết phiên đăng nhập vui lòng đăng nhập lại!');
+                this.toasService.warning('Hết phiên đăng nhập vui lòng đăng nhập lại!');
                 this.sendMessage();
               });
               break;
@@ -77,19 +89,19 @@ export class HeaderComponent implements OnInit {
               this.cookieService.deleteAllCookies();
               this.cookieService.removeAllCookies();
               this.router.navigateByUrl('/login').then(() => {
-                this.toastrService.warning('Hết phiên đăng nhập vui lòng đăng nhập lại!');
+                this.toasService.warning('Hết phiên đăng nhập vui lòng đăng nhập lại!');
                 this.sendMessage();
               });
               break;
           }
         }, () => {
           this.router.navigateByUrl('/login').then(() => {
-            this.toastrService.success('Đăng xuất thành công!');
+            this.toasService.success('Đăng xuất thành công!');
             this.sendMessage();
           });
         });
       } else {
-        this.toastrService.warning('Bạn chưa đăng nhập!');
+        this.toasService.warning('Bạn chưa đăng nhập!');
       }
     }, 1000);
     this.router.navigateByUrl('/loading').then(() => {
@@ -115,10 +127,31 @@ export class HeaderComponent implements OnInit {
   searchNameProduct() {
     this.nameSearch = this.formSearch.value.nameSearch.trim();
     console.log(this.nameSearch);
-    // this.router.navigate(['/' , this.nameSearch]).then();
-    // this.router.navigate(['/laptop/' , this.nameSearch]).then();
-    // this.router.navigate(['/phone/' , this.nameSearch]).then();
   }
 
+  getCustomerByUserName(username: string) {
+    this.customerService.getCustomerByUserName(username).subscribe(d => {
+      this.customer = d;
+      if (d == null) {
+        this.inforStatus = true;
+      } else {
+        this.displayQuantityProductInCart(d);
+        this.inforStatus = d.appUser.isDeleted;
+      }
+    });
+  }
 
+  displayQuantityProductInCart(customer: Customer) {
+    this.quantity = 0;
+    this.cartService.displayQuantityProductInCart(customer).subscribe(d => {
+      if (d != null) {
+        this.quantityProductInCart = d;
+        for (let i = 0; i < d.length; i++) {
+          this.quantity += d[i].quantity;
+        }
+      } else {
+        this.quantityProductInCart = [];
+      }
+    });
+  }
 }
