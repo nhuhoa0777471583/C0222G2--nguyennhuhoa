@@ -47,11 +47,6 @@ export class CartProductComponent implements OnInit {
     this.role = this.readCookieService('role');
     this.username = this.readCookieService('username');
     this.token = this.readCookieService('jwToken');
-    this.getCustomerByUserName(this.username);
-  }
-
-  ngOnInit(): void {
-    this.getProductInCart(this.customer);
 
   }
 
@@ -59,33 +54,25 @@ export class CartProductComponent implements OnInit {
     return this.cookieService.getCookie(key);
   }
 
-  showModale(pr: Cart) {
-    this.id = pr.id;
-    console.log(this.id);
-    this.nameProduct = pr.name;
-    console.log(this.nameProduct);
+  ngOnInit(): void {
+    this.getCustomerByUserName(this.username);
+    this.paypal();
   }
 
-  delete(id: number) {
-    this.productService.deleteByIdProduct(id).subscribe(d => {
+  delete(productCart: Cart) {
+    this.productService.deleteProductInCard(productCart).subscribe((d: Cart[]) => {
+      this.productInCartList = d;
+      console.log(d);
+      this.calculation(d);
+      this.toast.success('Đã xóa ' + productCart.product.name, 'Thành công');
+      $('#deleteMinusModal' + productCart.product.id).modal('hide');
+      $('#deleteModal' + productCart.product.id).modal('hide');
     }, error => {
     }, () => {
       this.productInCartList = [];
-      this.toast.success('Sản phẩm đã xóa', 'Thành công');
     });
   }
 
-  payment() {
-    this.router.navigateByUrl('/loading').then(() => {
-      this.cartService.goPayment(this.customer).subscribe(() => {
-        setTimeout(() => {
-          this.router.navigateByUrl('/list-product').then(() => {
-            this.toast.success('Thanh toán thành công!');
-          });
-        }, 500);
-      });
-    });
-  }
 
   getCustomerByUserName(username: string) {
     this.customerService.getCustomerByUserName(username).subscribe(d => {
@@ -101,9 +88,14 @@ export class CartProductComponent implements OnInit {
 
   getProductInCart(c: Customer) {
     this.cartService.getProductInCart(c).subscribe((d: Cart[]) => {
-      this.productInCartList = d;
-      console.log(d);
-      this.calculation(d);
+      if (c != null) {
+        this.productInCartList = d;
+        console.log(d);
+        this.calculation(d);
+      } else {
+        this.productInCartList = [];
+      }
+
     });
   }
 
@@ -113,39 +105,59 @@ export class CartProductComponent implements OnInit {
       this.totalProduct += (productCart[i].quantity * productCart[i].product.priceSale);
       this.totalPayment = this.ship + this.totalProduct;
     }
-    this.totalPayment = (this.ship + this.totalProduct)  ;
+    this.totalPayment = (this.ship + this.totalProduct);
     this.moneyDola = this.totalPayment / 23000;
-    render(
-      {
-        id: '#payments',
-        currency: 'VND',
-        value: '1000000.00',
-        onApprove: (details) => {
-
-        }
-      }
-    );
+    this.paypal();
   }
 
+  paypal() {
+    if (this.totalPayment > 0) {
+      const target = $('#paymentsbt');
+      target.remove('#payments');
+      target.html('<div id="payments"></div>');
+      render(
+        {
+          id: '#payments',
+          currency: 'VND',
+          value: String((this.moneyDola).toFixed(2)),
+          onApprove: (details) => {
+            if (details.status == 'COMPLETED') {
+              this.payment();
+            }
+          }
+        }
+      );
+    }
+  }
 
-  // getTotalMoneyPayment() {
-  //   this.totalProduct = 0;
-  //   this.moneyDola = 0;
-  //   this.totalPayment = 0;
-  //     if (this.totalProduct > 0) {
-  //       this.totalPayment = this.totalProduct + this.ship;
-  //       this.moneyDola = this.totalPayment / 23000;
-  //     }
-  // }
-
+  payment() {
+    this.cartService.goPayment(this.customer).subscribe(d => {
+      setTimeout(() => {
+        this.router.navigateByUrl('/cart').then(() => {
+          this.toast.success('Thanh toán thành công!');
+        });
+      }, 500);
+      this.toast.success('Thanh toán thành công!');
+    });
+  }
 
 
   minusQuantity(productOrder: Cart) {
     this.cartService.minusQuantity(productOrder).subscribe(value => {
       this.productInCartList = value;
-      console.log(value);
       this.quantity = value;
-      console.log(value);
+      this.calculation(value);
+    });
+  }
+
+  plusQuantity(productOrder: Cart) {
+    this.cartService.plusQuantity(productOrder).subscribe(value => {
+      this.productInCartList = value;
+      this.calculation(value);
+    }, error => {
+      if (error.error.message == 'maximum') {
+        this.toast.warning('Số lượng sản phẩm đã tối đa.');
+      }
     });
   }
 }

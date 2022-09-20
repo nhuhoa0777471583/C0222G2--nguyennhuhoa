@@ -58,20 +58,16 @@ public class CartRestController {
         return new ResponseEntity<>(product, HttpStatus.OK);
     }
 
-    /**
-     * Xóa sản phẩm trong giỏ hàng dựa vào id_product
-     *
-     * @param id
-     * @return
-     */
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
-        Optional<Cart> cart = this.iCartRepository.findById(id);
-        if (cart == null) {
-            return new ResponseEntity<>(NOT_FOUND);
+    @PostMapping("/cart/delete")
+    public ResponseEntity<?> deleteProductInCart(@RequestBody Cart productOrder) {
+        Boolean check = this.iCartService.findProductOrder(productOrder);
+        if (check) {
+            List<Cart> productOrderList = this.iCartService.displayProductInCart(productOrder.getCustomer());
+            return new ResponseEntity<>(productOrderList, HttpStatus.OK);
         }
-        this.iCartRepository.deleteByIdProduct(id);
-        return new ResponseEntity<>(OK);
+        ErrorDTO errorDto = new ErrorDTO();
+        errorDto.setMessage("notfound");
+        return new ResponseEntity<>(errorDto, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @PostMapping("/add/cart")
@@ -84,9 +80,9 @@ public class CartRestController {
         return new ResponseEntity<>(cart, HttpStatus.OK);
     }
 
-//    @PostMapping("/cart/payment")
-//    public ResponseEntity<?> goPayment(@RequestBody Customer customer) throws MessagingException {
-//        PaymentDto paymentDto = this.iCartService.goPayment(customer);
+    @PostMapping("/cart/payment")
+    public ResponseEntity<?> goPayment(@RequestBody Customer customer) throws MessagingException {
+        PaymentDto paymentDto = this.iCartService.goPayment(customer);
 //        MimeMessage message = emailSender.createMimeMessage();
 //
 //        MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
@@ -99,9 +95,9 @@ public class CartRestController {
 //        helper.setSubject("[LOZODO SHOP] Hóa đơn thanh toán");
 //
 //        this.emailSender.send(message);
-//
-//        return new ResponseEntity<>(paymentDto, HttpStatus.OK);
-//    }
+
+        return new ResponseEntity<>(paymentDto, HttpStatus.OK);
+    }
 
 
     @PostMapping("/quantity")
@@ -115,15 +111,28 @@ public class CartRestController {
 
     @PostMapping("/minus/quantity")
     public ResponseEntity<?> minusQuantityCart(@RequestBody Cart productOrder) {
-        Cart productOrderList = this.iCartRepository.findProductOrderListByCustomerAndProduct(productOrder);
+        List<Cart> cartList = this.iCartService.displayProductInCart(productOrder.getCustomer());
         Boolean check = this.iCartService.minusQuantity(productOrder);
         if (check) {
-            return new ResponseEntity<>(productOrderList, HttpStatus.OK);
+            return new ResponseEntity<>(cartList, HttpStatus.OK);
         }
         ErrorDTO errorDto = new ErrorDTO();
         errorDto.setMessage("minimum");
         return new ResponseEntity<>(errorDto, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @PostMapping("/plus/quantity")
+    public ResponseEntity<?> plusQuantityCart(@RequestBody Cart productOrder) {
+        List<Cart> cartList = this.iCartService.displayProductInCart(productOrder.getCustomer());
+        Boolean check = this.iCartService.plusQuantity(productOrder);
+        if (check) {
+            return new ResponseEntity<>(cartList, HttpStatus.OK);
+        }
+        ErrorDTO errorDto = new ErrorDTO();
+        errorDto.setMessage("minimum");
+        return new ResponseEntity<>(errorDto, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 
 //    private String createHTMLMailForm(PaymentDto paymentDto) {
 //        String template = "<!DOCTYPE html>\n" +

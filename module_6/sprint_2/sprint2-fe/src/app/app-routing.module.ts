@@ -9,6 +9,8 @@ import {HomeLoginComponent} from './login/home-login/home-login.component';
 import {AdminGuard} from './login/authguard/admin.guard';
 import {ProductAddComponent} from './product-add/product-add.component';
 import {UserGuard} from './login/authguard/user.guard';
+import {HistoryListComponent} from './history-list/history-list.component';
+import {InforCustomerComponent} from './infor-customer/infor-customer.component';
 
 const routes: Routes = [
 
@@ -21,6 +23,8 @@ const routes: Routes = [
   {path: 'detail/:id', component: ScreenDetailComponent},
   {path: 'login', component: HomeLoginComponent},
   {path: 'cart', component: CartProductComponent},
+  {path: 'history-bill', component: HistoryListComponent},
+  {path: 'info-customer', component: InforCustomerComponent},
   {path: 'product-add', component: ProductAddComponent, canActivate: [AdminGuard]},
 ];
 

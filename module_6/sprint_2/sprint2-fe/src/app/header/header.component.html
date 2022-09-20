@@ -18,8 +18,9 @@
           </button>
           <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item btn" type="button" [routerLink]="['/login']" *ngIf="token === ''">Đăng nhập</a>
-            <a class="dropdown-item btn" type="button" *ngIf="token !== ''">Thông tin chi tiết</a>
-            <a class="dropdown-item btn" type="button" *ngIf="token !== ''">Lịch sử giao dịch</a>
+            <a class="dropdown-item btn" type="button" *ngIf="token !== ''" routerLink="/info-customer">Thông tin chi tiết</a>
+            <a class="dropdown-item btn" type="button" *ngIf="token !== ''" routerLink="/history-bill">Lịch sử giao
+              dịch</a>
             <button class="dropdown-item" type="button" *ngIf="token !== ''" (click)="onLogout()">Đăng xuất</button>
             <button class="dropdown-item" type="button" *ngIf="token == ''" hidden>Đăng xuất</button>
           </div>

@@ -6,6 +6,8 @@ import com.example.demo.service.product.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CustomerService implements ICustomerService {
     @Autowired
@@ -15,4 +17,5 @@ public class CustomerService implements ICustomerService {
     public Customer getCustomerByUserName(String userName) {
         return this.iCustomerRepository.getCustomerByUserName(userName);
     }
+
 }

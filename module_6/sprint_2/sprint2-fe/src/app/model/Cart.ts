@@ -1,5 +1,6 @@
 import {Product} from './Product';
 import {Customer} from './Customer';
+import {Bill} from './Bill';
 
 export interface Cart {
   id?: number,
@@ -10,4 +11,5 @@ export interface Cart {
   image?: string,
   product?: Product,
   customer?: Customer
+  bill?: Bill
 }

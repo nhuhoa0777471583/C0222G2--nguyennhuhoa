@@ -19,6 +19,8 @@ import {CartProductComponent} from './cart-product/cart-product.component';
 import {HomeLoginComponent} from './login/home-login/home-login.component';
 import {ProductAddComponent} from './product-add/product-add.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { HistoryListComponent } from './history-list/history-list.component';
+import { InforCustomerComponent } from './infor-customer/infor-customer.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     ScreenDetailComponent,
     CartProductComponent,
     HomeLoginComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    HistoryListComponent,
+    InforCustomerComponent
 
   ],
   imports: [

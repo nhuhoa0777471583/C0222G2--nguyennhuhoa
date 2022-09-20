@@ -1,0 +1,38 @@
+<div class="container" style="background-color: #D8D8D8; height: 500px">
+  <div style="text-align: center; padding-top: 2%"><h2>Thông tin khách hàng</h2></div>
+  <div class="row" style="padding-top: 1%">
+    <div class="col-6">
+      <img src="{{customer.image}}" style="height: 250px; width: 400px; border-radius: 30%">
+    </div>
+    <div class="col-6">
+      <div class="row css_input">
+        <div class="col-6 d-flex flex-column ">
+          <label class="p-2">Tên khách hàng:</label>
+          <input class="p-2" value="{{customer.name}}" readonly>
+        </div>
+        <div class="col-6 d-flex flex-column ">
+          <label class="p-2">Tên tài khoản:</label>
+          <input class="p-2" value="{{customer.appUser.userName}}" readonly>
+        </div>
+        <div class="col-5 d-flex flex-column">
+          <label class="p-2">Ngày sinh:</label>
+          <input class="p-2" value="{{customer.birthday}}" readonly>
+        </div>
+        <div class="col-3 d-flex flex-column">
+          <label class="p-2">Giới tính:</label>
+          <input class="p-2" value="{{customer.gender}}" readonly>
+        </div>
+        <div class="col-4 d-flex flex-column">
+          <label class="p-2">Số điện thoại:</label>
+          <input class="p-2" value="{{customer.phoneNumber}}" readonly>
+        </div>
+        <div class="col-12 d-flex flex-column">
+          <label class="p-2">Địa chỉ:</label>
+          <input class="p-2" value="{{customer.address}}" readonly>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

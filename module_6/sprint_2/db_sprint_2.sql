@@ -2,26 +2,6 @@
 -- create database demo_sprint_2;
 use demo_sprint_2;
 
--- create table category (
--- id int auto_increment primary key,
--- name varchar(255)
--- );
-
--- create table product (
--- id int auto_increment primary key,
--- cost int,
--- create_date date,
--- image varchar(255),
--- `is_deleted` bit(1) default 0,
--- made_in varchar(255),
--- name varchar(255),
--- price double,
--- price_sale double,
--- specifications varchar(255),
--- status_product varchar(255),
--- `category_id` int default null,
--- foreign key (`category_id`) references `category` (`id`)
--- );
 
 INSERT INTO `category` ( `name`, `image`, `quantity`) VALUES 
 ('Laptop','https://cdn.hubs.vn/pv-blog/2020/09/Dell-XPS-15-1024x572.jpg', 999),
@@ -39,7 +19,7 @@ INSERT INTO `category` ( `name`, `image`, `quantity`) VALUES
 
 
 INSERT INTO `product` 
-(`id`, `cost`, `create_date`, `image`, `is_delete`, `made_in`, `name`, `price`,`price_sale`,`specifications` ,`status_product`, `id_category`,`id_`) VALUES 
+(`id`, `quantity`, `create_date`, `image`, `is_delete`, `made_in`, `name`, `price`,`price_sale`,`specifications` ,`status_product`, `id_category`) VALUES 
 (1, 100, '2022-03-02', 'https://todaypc.vn/image/catalog/csm-xps-15-left-angle-black-4e2d97a989.jpg', 0, 'TQ', 'Lenovo 14', 20000000,18000000,'15.6 inch, 1920 x 1080 Pixels, IPS, 144 Hz, Anti-glare LED-backlit', 'còn hàng', 1),
 (2, 100, '2022-03-02', 'https://laptop365.vn/pic/product/dell-xps-13-9380-4-1602066716-1_637544748158395295.jpg', 0, 'TQ', 'Acer 14', 20000000,18000000,'15.6 inch, 1920 x 1080 Pixels, IPS, 60 Hz, 300 nits, IPS LCD LED Backlit, True Tone', 'còn hàng', 1),
 (3, 100, '2022-03-02', 'https://suanhanh247.com/wp-content/uploads/2021/07/6531_54516_laptop_msi_gaming_ge66_raider_10sfs_474vn_xam_bac_8.jpg', 0, 'TQ', 'Acer 21', 22000000,18000000,'15.6 inch, 1920 x 1080 Pixels, IPS, 144 Hz, Anti-glare LED-backlit', 'còn hàng', 1),
@@ -68,7 +48,7 @@ INSERT INTO `product`
 (26, 100, '2022-05-02', 'https://cdn.tgdd.vn/Products/Images/42/271717/oppo-reno7-z-5g-thumb-1-1-600x600.jpg', 0, 'TQ', 'Oppo Ren8 5G', 22000000,19000000,'6.6 inch', 'còn hàng', 2),
 (27, 100, '2022-05-02', 'https://toanmobile.vn/userdata/8264/wp-content/uploads/2021/10/oppo-reno6-z-5g-aurora-1-600x600.jpg', 0, 'TQ', 'Oppo Find X', 22000000,18888000,'6.6 inch', 'còn hàng', 2);
 INSERT INTO `product` 
-(`id`, `cost`, `create_date`, `image`, `is_delete`, `made_in`, `name`, `price`,`price_sale`,`specifications` ,`status_product`, `id_category`) VALUES 
+(`id`, `quantity`, `create_date`, `image`, `is_delete`, `made_in`, `name`, `price`,`price_sale`,`specifications` ,`status_product`, `id_category`) VALUES 
 (28, 100, '2022-05-02', 'https://cdn.tgdd.vn/Products/Images/42/234621/Xiaomi-12-xam-thumb-mau-600x600.jpg', 0, 'TQ', 'Xiaomi Mi 11', 5988000,4988000,'6.6 inch', 'còn hàng', 2),
 (29, 100, '2022-05-02', 'https://didongviet.vn/pub/media/catalog/product//x/i/xiaomi-11t-128gb-didongviet.jpg', 0, 'TQ', 'Xiaomi 11T', 6789000,3542000,'6.6 inch', 'còn hàng', 2),
 (30, 100, '2022-05-02', 'https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1658210760660/769410d3168557560e69da984419d51e.png', 0, 'TQ', 'Vivo Y02s', 8000000,5555000,'6.6 inch', 'còn hàng', 2),
@@ -84,3 +64,8 @@ INSERT INTO `app_user` (`password`, `user_name`, `creation_date`) VALUES
 INSERT INTO `user_role` (`role_id`, `user_id`) VALUES ('1', '1');
 INSERT INTO `user_role` (`role_id`, `user_id`) VALUES ('2', '2');
 INSERT INTO `user_role` (`role_id`, `user_id`) VALUES ('2', '1');
+
+INSERT INTO `customer` (`id`, `address`,`email`, `image`, `is_delete`, `name`, `phone_number`, `user_id`) VALUES 
+(1, 'Đà Nẵng','nguyennhuhoa2303@gmail.com', 'abc', 0, 'Hòa', '0123456789', 2),
+(2, 'Đà Nằng','nguyennhuhoa2303@gmail.com', 'abc', 0, 'Như Hòa', '099999988', 1);
+

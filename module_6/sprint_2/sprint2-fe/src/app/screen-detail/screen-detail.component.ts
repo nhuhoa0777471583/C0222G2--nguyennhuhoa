@@ -23,6 +23,7 @@ export class ScreenDetailComponent implements OnInit {
   token: string = '';
   customer: Customer;
   public inforStatus: boolean = false;
+  quantity: Cart[] ;
 
   constructor(private productService: ProductService,
               private tile: Title,
@@ -84,6 +85,21 @@ export class ScreenDetailComponent implements OnInit {
       }
     });
   }
-
-
+  //
+  // minusQuantity(productOrder: Cart) {
+  //   this.cartService.minusQuantity(productOrder).subscribe(value => {
+  //     this.product = value.content;
+  //     this.quantity = value;
+  //   });
+  // }
+  //
+  // plusQuantity(productOrder: Cart) {
+  //   this.cartService.plusQuantity(productOrder).subscribe(value => {
+  //     this.productInCartList = value;
+  //   }, error => {
+  //     if (error.error.message == 'maximum') {
+  //       this.toas.warning('Số lượng sản phẩm đã tối đa.');
+  //     }
+  //   });
+  // }
 }

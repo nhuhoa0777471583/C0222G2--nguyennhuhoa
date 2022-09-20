@@ -8,7 +8,8 @@ export interface Customer {
   email?: string;
   birthday?: string;
   phoneNumber?: string;
-
+  address?: string,
+  gender?: string,
   isDelete?: boolean;
   appUser?: AppUser;
   cart?: Cart[];

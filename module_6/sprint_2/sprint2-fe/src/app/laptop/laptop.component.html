@@ -207,8 +207,10 @@
               <li class="page-item"><a class="page-link" *ngIf="numberPage == 0" hidden><span>Trước</span></a></li>
               <li class="page-item"><a class="page-link" *ngIf="numberPage != 0 " (click)="previousPage($event)"><span>Trước</span></a>
               </li>
-              <li class="page-item"><a class="page-link" (click)="goItem(page)">
-                <span> {{numberPage + 1}} | {{totalPage}}</span></a>
+              <li class="page-item">
+                <a class="page-link" (click)="goItem(page)"><span> {{numberPage + 1}}
+                  | {{totalPage}}</span></a>
+              </li>
               <li class="page-item "><a class="page-link" *ngIf="numberPage == totalPage"><span>Sau</span></a></li>
               <li class="page-item "><a class="page-link" *ngIf="numberPage != totalPage - 1"
                                         (click)="nextPage($event)"><span>Sau</span></a></li>

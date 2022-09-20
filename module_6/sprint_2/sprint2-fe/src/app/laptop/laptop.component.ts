@@ -79,6 +79,7 @@ export class LaptopComponent implements OnInit {
       }
     });
   }
+
   addToCart(laptop: Product) {
     let carts: Cart = {
       customer: this.customer,

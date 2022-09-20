@@ -3,6 +3,8 @@ package com.example.demo.repository;
 import com.example.demo.dto.ICartDto;
 import com.example.demo.model.Cart;
 import com.example.demo.model.Customer;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -42,4 +44,23 @@ public interface ICartRepository extends JpaRepository<Cart, Integer> {
             " where po.customer_id = :#{#customer.id} " +
             " and bill_id is null ", nativeQuery = true)
     List<Cart> displayProductInCartByCustomer(Customer customer);
+
+    @Modifying
+    @Transactional
+    @Query(value = " UPDATE `cart` SET `bill_id` = :billId WHERE (`customer_id` = :customerId) and `bill_id` is null ", nativeQuery = true)
+    void setBill(@Param("customerId") Integer customerId, @Param("billId") Integer billId);
+
+    @Query(value = " select po.* from cart po " +
+            " join customer c on c.id = po.customer_id " +
+            " join product p on p.id = po.id_product " +
+            " join bill b on b.id = po.bill_id " +
+            " where po.customer_id = :#{#customer.id} and po.is_delete = 0 order by b.creation_date desc ",
+            countQuery = "select count(*) from (  select po.* from cart po " +
+                    "           join customer c on c.id = po.customer_id " +
+                    "          join product p on p.id = po.id_product " +
+                    "           join bill b on b.id = po.bill_id " +
+                    "            where po.customer_id = :#{#customer.id} and po.is_delete = 0 " +
+                    " order by b.creation_date desc) temp_table", nativeQuery = true)
+    Page<Cart> displayListBill(Pageable pageable, Customer customer);
+
 }

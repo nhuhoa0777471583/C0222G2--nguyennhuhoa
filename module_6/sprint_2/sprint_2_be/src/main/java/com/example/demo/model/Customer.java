@@ -28,10 +28,12 @@ public class Customer {
 
     @Column(columnDefinition = "text")
     private String address;
+    private String gender;
 
+    @Column(columnDefinition = "date")
+    private String birthday;
     @Column(columnDefinition = "text")
     private String image;
-
     @Column(columnDefinition = "bit(1) default 0")
     private Boolean isDelete;
 
