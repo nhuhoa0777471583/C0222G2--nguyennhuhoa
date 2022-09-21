@@ -36,6 +36,7 @@ export class SmartPhoneComponent implements OnInit {
   formSearch: FormGroup;
   customer: Customer;
   public inforStatus: boolean = false;
+
   constructor(private productService: ProductService,
               private tile: Title,
               private cookieService: CookieService,
@@ -47,7 +48,7 @@ export class SmartPhoneComponent implements OnInit {
     this.role = this.readCookieService('role');
     this.username = this.readCookieService('username');
     this.token = this.readCookieService('jwToken');
-    // this.getCustomerByUserName(this.username);
+    this.getCustomerByUserName(this.username);
   }
 
   readCookieService(key: string): string {
@@ -59,31 +60,36 @@ export class SmartPhoneComponent implements OnInit {
     this.formNameSearch();
   }
 
+  sendMessage(): void {
+    this.commonService.sendUpdate('Success!');
+  }
 
-  // getCustomerByUserName(username: string) {
-  //   this.customerService.getCustomerByUserName(username).subscribe(d => {
-  //     this.customer = d;
-  //     if (d == null) {
-  //       this.inforStatus = true;
-  //     } else {
-  //       this.inforStatus = d.appUser.isDeleted;
-  //     }
-  //   });
-  // }
-  // addToCart(phone: Product) {
-  //   let carts: Cart = {
-  //     customer: this.customer,
-  //     product: phone,
-  //     quantity: 1
-  //   };
-  //   this.cartService.addOrder(carts).subscribe((ca: Cart) => {
-  //     this.toas.success('Đã thêm sản phẩm ' + ca.product.name, 'Thành công');
-  //   }, error => {
-  //     if (error.error.message == 'quantity') {
-  //       this.toas.warning('Bạn đã thêm vượt quá số lượng sản phẩm!');
-  //     }
-  //   });
-  // }
+  getCustomerByUserName(username: string) {
+    this.customerService.getCustomerByUserName(username).subscribe(d => {
+      this.customer = d;
+      if (d == null) {
+        this.inforStatus = true;
+      } else {
+        this.inforStatus = d.appUser.isDeleted;
+      }
+    });
+  }
+
+  addToCart(phone: Product) {
+    let carts: Cart = {
+      customer: this.customer,
+      product: phone,
+      quantity: 1
+    };
+    this.cartService.addOrder(carts).subscribe((ca: Cart) => {
+      this.toas.success('Đã thêm sản phẩm ' + ca.product.name, 'Thành công');
+      this.sendMessage();
+    }, error => {
+      if (error.error.message == 'quantity') {
+        this.toas.warning('Bạn đã thêm vượt quá số lượng sản phẩm!');
+      }
+    });
+  }
 
 
   private getPhone(page: number, nameSearch: string, namePhone: string, beforePrice: string, afterPrice: string, sort: string) {
@@ -163,7 +169,7 @@ export class SmartPhoneComponent implements OnInit {
   }
 
   searchNameProduct() {
-    this.nameSearch = this.formSearch.value.key.trim()
+    this.nameSearch = this.formSearch.value.key.trim();
     this.productService.getPhone(this.numberPage, this.nameSearch,
       this.namePhone, this.beforePrice, this.afterPrice, this.sort).subscribe(d => {
       // @ts-ignore

@@ -10,6 +10,7 @@ import {ToastrService} from 'ngx-toastr';
 import {Customer} from '../model/Customer';
 import {CustomerService} from '../service/CustomerService';
 import {CookieService} from '../login/service/cookie.service';
+import {CommonService} from '../login/service/common.service';
 
 declare var $: any;
 
@@ -42,7 +43,9 @@ export class CartProductComponent implements OnInit {
               private cartService: CartService,
               private toast: ToastrService,
               private router: Router,
-              private customerService: CustomerService, private cookieService: CookieService,) {
+              private customerService: CustomerService,
+              private cookieService: CookieService,
+              private commonService: CommonService) {
     this.tile.setTitle('Giỏ hàng');
     this.role = this.readCookieService('role');
     this.username = this.readCookieService('username');
@@ -141,12 +144,16 @@ export class CartProductComponent implements OnInit {
     });
   }
 
+  sendMessage(): void {
+    this.commonService.sendUpdate('Success!');
+  }
 
   minusQuantity(productOrder: Cart) {
     this.cartService.minusQuantity(productOrder).subscribe(value => {
       this.productInCartList = value;
-      this.quantity = value;
+      // this.quantity = value;
       this.calculation(value);
+      this.sendMessage();
     });
   }
 
@@ -154,10 +161,12 @@ export class CartProductComponent implements OnInit {
     this.cartService.plusQuantity(productOrder).subscribe(value => {
       this.productInCartList = value;
       this.calculation(value);
+      this.sendMessage();
     }, error => {
       if (error.error.message == 'maximum') {
         this.toast.warning('Số lượng sản phẩm đã tối đa.');
       }
+    }, () => {
     });
   }
 }

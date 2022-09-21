@@ -11,21 +11,21 @@ import {ProductAddComponent} from './product-add/product-add.component';
 import {UserGuard} from './login/authguard/user.guard';
 import {HistoryListComponent} from './history-list/history-list.component';
 import {InforCustomerComponent} from './infor-customer/infor-customer.component';
+import {ProductEditComponent} from './product-edit/product-edit.component';
 
 const routes: Routes = [
 
-  {path: '', component: HomePageComponent},
-  // {path: "/:nameSearch", component: HomePageComponent},
+  {path: '', component: HomePageComponent,},
   {path: 'laptop', component: LaptopComponent},
-  {path: 'laptop/:name', component: LaptopComponent},
+  // {path: 'laptop/:name', component: LaptopComponent},
   {path: 'smartphone', component: SmartPhoneComponent},
-  // {path: "smartphone/:nameSearch", component: SmartPhoneComponent},
   {path: 'detail/:id', component: ScreenDetailComponent},
   {path: 'login', component: HomeLoginComponent},
-  {path: 'cart', component: CartProductComponent},
+  {path: 'cart', component: CartProductComponent, canActivate: [UserGuard] && [AdminGuard]},
   {path: 'history-bill', component: HistoryListComponent},
   {path: 'info-customer', component: InforCustomerComponent},
   {path: 'product-add', component: ProductAddComponent, canActivate: [AdminGuard]},
+  {path: 'product-edit', component: ProductEditComponent, canActivate: [AdminGuard]},
 ];
 
 @NgModule({

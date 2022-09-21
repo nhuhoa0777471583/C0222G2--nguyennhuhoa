@@ -1,14 +1,9 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.ErrorDTO;
-import com.example.demo.dto.ICartDto;
-import com.example.demo.model.Cart;
 import com.example.demo.model.Category;
 import com.example.demo.model.Product;
-import com.example.demo.repository.ICartRepository;
 import com.example.demo.repository.ICategoryRepository;
 import com.example.demo.repository.IProductRepository;
-import com.example.demo.service.product.ICartService;
 import com.example.demo.service.product.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -129,10 +124,10 @@ public class ProductController {
     }
 
 
-    // sắp xếp sản phẩm gần đây
+    // sắp xếp sản phẩm mới nhất
     @GetMapping("/near-day")
-    public ResponseEntity<List<Product>> displayProductNearDay() {
-        List<Product> products = this.iProductRepository.getProductNearTheDay();
+    public ResponseEntity<List<Product>> displayProductNewDay() {
+        List<Product> products = this.iProductRepository.getProductNewDay();
         if (products == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -153,8 +148,22 @@ public class ProductController {
     // thêm mới sản phẩm
     @PostMapping("/add")
     public ResponseEntity<Product> addAll(@RequestBody Product product) {
-        this.iProductRepository.save(product);
+        Product pr = this.iProductService.save(product);
+        if (pr == null) {
+            return new ResponseEntity<>(NOT_FOUND);
+        }
+        return new ResponseEntity<>(pr, OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+        Optional<Product> pr = this.iProductRepository.findById(id);
+        if (pr == null) {
+            return new ResponseEntity<>(NOT_FOUND);
+        }
+        this.iProductRepository.updateIsDeleted(id);
         return new ResponseEntity<>(OK);
+
     }
 
 }

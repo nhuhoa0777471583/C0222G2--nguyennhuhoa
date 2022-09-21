@@ -12,6 +12,7 @@ import {CustomerService} from '../service/CustomerService';
 import {Customer} from '../model/Customer';
 import {CartService} from '../service/CartService';
 
+declare var $: any;
 
 @Component({
   selector: 'app-laptop',
@@ -38,7 +39,10 @@ export class LaptopComponent implements OnInit {
   cart = [];
   customer: Customer;
   public inforStatus: boolean = false;
-  quantityProduct: number ;
+  quantityProduct: number;
+  idDelete: number;
+  nameDelete: string;
+  priceDelete: number;
 
   constructor(private productService: ProductService,
               private tile: Title,
@@ -88,13 +92,13 @@ export class LaptopComponent implements OnInit {
     };
     this.cartService.addOrder(carts).subscribe((ca: Cart) => {
       this.toas.success('Đã thêm sản phẩm ' + ca.product.name, 'Thành công');
+      this.sendMessage();
     }, error => {
       if (error.error.message == 'quantity') {
         this.toas.warning('Bạn đã thêm vượt quá số lượng sản phẩm!');
       }
     });
   }
-
 
 
   getLaptopAll(numberPage: number, nameSearch: string, nameLaptop: string, beforePrice: string, afterPrice: string, sort: string) {
@@ -197,4 +201,19 @@ export class LaptopComponent implements OnInit {
   }
 
 
+  showModalDelete(laptop: Product) {
+    this.idDelete = laptop.id;
+    this.nameDelete = laptop.name;
+    this.priceDelete = laptop.priceSale;
+  }
+
+  deleteProduct(idDelete: number) {
+    this.productService.deleteProductById(idDelete).subscribe(d => {
+    }, error => {
+    }, () => {
+      this.toas.success('Đã xóa thành công', 'Chúc mừng');
+      this.getLaptopAll(this.numberPage, this.nameSearch, this.nameLaptop, this.beforePrice, this.afterPrice, this.sort);
+
+    });
+  }
 }

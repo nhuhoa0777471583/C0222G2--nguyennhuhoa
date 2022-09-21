@@ -170,12 +170,15 @@
               <div class="product-action">
                 <a class="btn btn-outline-dark btn-square" (click)="addToCart(laptop)"> <i
                   class="fa fa-shopping-cart"></i></a>
-                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
+                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" [routerLink]="['/product-edit']"><i
                   class="fa-sharp fa-solid fa-pen text-primary"
                   style="font-size: 22px; color: black!important;"></i></a>
-                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
-                  class="fa-sharp fa-solid fa-trash text-danger "
-                  style="font-size: 22px; color: black!important;"></i></a>
+                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" data-toggle="modal"
+                   data-target="#deleteProductModal" (click)="showModalDelete(laptop)">
+
+                  <i class="fa-sharp fa-solid fa-trash text-danger"
+                     style="font-size: 22px; color: black!important;"></i></a>
+
                 <a class="btn btn-outline-dark btn-square" [routerLink]="['/detail/', laptop.id]"><i
                   class="fa fa-search"></i></a>
               </div>
@@ -223,3 +226,23 @@
   </div>
 </div>
 <!-- Shop End -->
+
+
+<!-- Modal delete -->
+<div class="modal fade" id="deleteProductModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        Bạn có muốn xóa sản phẩm {{nameDelete}} có giá {{priceDelete}} không
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteProduct(idDelete)">Xóa
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

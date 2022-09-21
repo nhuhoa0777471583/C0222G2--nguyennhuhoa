@@ -27,6 +27,8 @@ export class ProductService {
   private FIND_BY_ID = API_URL + 'cart/find-by-id/';
   private SEARCH_BY_NAME = API_URL + 'get-product-by-name/';
   private DELETE = API_URL + 'cart/delete';
+  private ADD = API_URL + 'add';
+  private DELETE_PRODUCT_BY_ID = API_URL + 'delete/';
 
   private header = 'Bearer ' + this.cookieService.getCookie('jwToken');
 
@@ -71,7 +73,15 @@ export class ProductService {
     return this.httpClient.get(this.FIND_BY_ID + `${id}`, {headers: new HttpHeaders({'authorization': this.header})}).pipe();
   }
 
-  deleteProductInCard(po: Cart):Observable<any> {
-    return this.httpClient.post(this.DELETE , po);
+  deleteProductInCard(po: Cart): Observable<any> {
+    return this.httpClient.post(this.DELETE, po);
+  }
+
+  add(pr: Product): Observable<Product> {
+    return this.httpClient.post(this.ADD, pr);
+  }
+
+  deleteProductById(id: number): Observable<Product>{
+    return this.httpClient.delete<Product>(this.DELETE_PRODUCT_BY_ID + id)
   }
 }

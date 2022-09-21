@@ -14,14 +14,14 @@ public class ProductServiceImpl implements IProductService {
     private IProductRepository iProductRepository;
 
     @Override
-    public Page<Product> searchPriceAndNameLaptop(Pageable pageable,String nameSearch, String nameLaptop, String beforePrice, String firstPrice) {
+    public Page<Product> searchPriceAndNameLaptop(Pageable pageable, String nameSearch, String nameLaptop, String beforePrice, String firstPrice) {
         Double before = Double.valueOf(beforePrice);
         Double first = Double.valueOf(firstPrice);
-        return this.iProductRepository.searchPriceAndNameLaptop(pageable, "%" + nameSearch + "%","%" + nameLaptop + "%", before, first);
+        return this.iProductRepository.searchPriceAndNameLaptop(pageable, "%" + nameSearch + "%", "%" + nameLaptop + "%", before, first);
     }
 
     @Override
-    public Page<Product> searchPriceAndNamePhone(Pageable pageable,String nameSearch, String namePhone, String beforePrice, String firstPrice) {
+    public Page<Product> searchPriceAndNamePhone(Pageable pageable, String nameSearch, String namePhone, String beforePrice, String firstPrice) {
         Double before = Double.valueOf(beforePrice);
         Double first = Double.valueOf(firstPrice);
         return this.iProductRepository.searchPriceAndNamePhone(pageable, "%" + nameSearch + "%", "%" + namePhone + "%", before, first);
@@ -32,5 +32,10 @@ public class ProductServiceImpl implements IProductService {
         Double before = Double.valueOf(beforePrice);
         Double first = Double.valueOf(firstPrice);
         return this.iProductRepository.searchPriceAndNamProduct(pageable, "%" + nameSearch + "%", before, first);
+    }
+
+    @Override
+    public Product save(Product product) {
+       return this.iProductRepository.save(product);
     }
 }

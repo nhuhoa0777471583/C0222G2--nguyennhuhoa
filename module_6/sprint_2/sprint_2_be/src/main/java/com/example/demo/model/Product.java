@@ -24,6 +24,7 @@ public class Product {
     private Double price;
     private Double priceSale;
     private String madeIn;
+    @Column(columnDefinition = "text")
     private String specifications;
     @ManyToOne
     @JoinColumn(name = "id_category", referencedColumnName = "id")
@@ -32,7 +33,8 @@ public class Product {
     private String image;
     @Column(columnDefinition = "bit(1) default 0")
     private Boolean isDelete;
-    private String statusProduct;
+    @Column(columnDefinition = "text")
+    private String detail;
 
     @OneToMany(mappedBy = "product")
     @JsonIgnore

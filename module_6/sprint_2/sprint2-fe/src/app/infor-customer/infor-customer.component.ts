@@ -34,6 +34,7 @@ export class InforCustomerComponent implements OnInit {
     this.role = this.readCookieService('role');
     this.username = this.readCookieService('username');
     this.token = this.readCookieService('jwToken');
+
   }
 
   readCookieService(key: string): string {
@@ -42,6 +43,7 @@ export class InforCustomerComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCustomerByUserName(this.username);
+
   }
 
   getCustomerByUserName(username: string) {

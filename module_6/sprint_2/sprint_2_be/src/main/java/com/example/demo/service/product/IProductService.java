@@ -10,4 +10,6 @@ public interface IProductService {
     Page<Product> searchPriceAndNamePhone(Pageable pageable,String nameSearch, String namePhone, String beforePrice, String firstPrice);
     Page<Product> searchPriceAndNameProduct(Pageable pageable,String nameSearch, String beforePrice, String firstPrice);
 
+    Product save(Product product);
+
 }

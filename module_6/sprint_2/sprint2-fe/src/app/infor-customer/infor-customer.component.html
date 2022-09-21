@@ -2,7 +2,7 @@
   <div style="text-align: center; padding-top: 2%"><h2>Thông tin khách hàng</h2></div>
   <div class="row" style="padding-top: 1%">
     <div class="col-6">
-      <img src="{{customer.image}}" style="height: 250px; width: 400px; border-radius: 30%">
+      <img src="{{customer.image}}" style="height: 350px; width: 400px; border-radius: 30%">
     </div>
     <div class="col-6">
       <div class="row css_input">
@@ -16,7 +16,7 @@
         </div>
         <div class="col-5 d-flex flex-column">
           <label class="p-2">Ngày sinh:</label>
-          <input class="p-2" value="{{customer.birthday}}" readonly>
+          <input class="p-2" value="{{customer.birthday | date: 'dd-MM-yyyy'}}" readonly>
         </div>
         <div class="col-3 d-flex flex-column">
           <label class="p-2">Giới tính:</label>

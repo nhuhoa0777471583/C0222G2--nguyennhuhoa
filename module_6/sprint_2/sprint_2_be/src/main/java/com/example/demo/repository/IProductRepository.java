@@ -57,7 +57,7 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
     @Query(value = " SELECT * FROM product where product.is_delete = 0 " +
             " ORDER BY ABS( DATEDIFF( create_date, NOW() ) ) limit 8 ",
             nativeQuery = true)
-    List<Product> getProductNearTheDay();
+    List<Product> getProductNewDay();
 
     @Modifying
     @Transactional
@@ -68,8 +68,8 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = " UPDATE `product` SET `is_deleted` = 1 " +
-            " WHERE (`id` = :id) ", nativeQuery = true)
+    @Query(value = " UPDATE `product` SET `is_delete` = 1 " +
+            " WHERE `id` = :id ", nativeQuery = true)
     void updateIsDeleted(@Param("id") Integer id);
 
 }

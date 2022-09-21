@@ -21,6 +21,10 @@ import {ProductAddComponent} from './product-add/product-add.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { HistoryListComponent } from './history-list/history-list.component';
 import { InforCustomerComponent } from './infor-customer/infor-customer.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,8 @@ import { InforCustomerComponent } from './infor-customer/infor-customer.componen
     HomeLoginComponent,
     ProductAddComponent,
     HistoryListComponent,
-    InforCustomerComponent
+    InforCustomerComponent,
+    ProductEditComponent
 
   ],
   imports: [
@@ -55,7 +60,9 @@ import { InforCustomerComponent } from './infor-customer/infor-customer.componen
         preventDuplicates: true,
       }
     ),
-    ShareModule
+    ShareModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
