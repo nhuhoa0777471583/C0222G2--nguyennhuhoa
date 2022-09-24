@@ -130,6 +130,7 @@ export class CartProductComponent implements OnInit {
           }
         }
       );
+      this.router.navigateByUrl('/cart');
     }
   }
 
@@ -141,6 +142,9 @@ export class CartProductComponent implements OnInit {
         });
       }, 500);
       this.toast.success('Thanh toán thành công!');
+    }, error => {
+    }, () => {
+      this.getProductInCart(this.customer);
     });
   }
 

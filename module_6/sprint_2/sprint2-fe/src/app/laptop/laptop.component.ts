@@ -79,12 +79,12 @@ export class LaptopComponent implements OnInit {
         this.inforStatus = true;
       } else {
         this.inforStatus = d.appUser.isDeleted;
-
       }
     });
   }
 
   addToCart(laptop: Product) {
+  if (this.username != ''){
     let carts: Cart = {
       customer: this.customer,
       product: laptop,
@@ -98,6 +98,9 @@ export class LaptopComponent implements OnInit {
         this.toas.warning('Bạn đã thêm vượt quá số lượng sản phẩm!');
       }
     });
+  }else {
+    this.toas.warning("Đăng nhập đi rồi làm gì thì làm :||")
+  }
   }
 
 

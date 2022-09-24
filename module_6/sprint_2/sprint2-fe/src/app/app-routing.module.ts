@@ -12,6 +12,7 @@ import {UserGuard} from './login/authguard/user.guard';
 import {HistoryListComponent} from './history-list/history-list.component';
 import {InforCustomerComponent} from './infor-customer/infor-customer.component';
 import {ProductEditComponent} from './product-edit/product-edit.component';
+import {StatisticalComponent} from './statistical/statistical.component';
 
 const routes: Routes = [
 
@@ -21,11 +22,12 @@ const routes: Routes = [
   {path: 'smartphone', component: SmartPhoneComponent},
   {path: 'detail/:id', component: ScreenDetailComponent},
   {path: 'login', component: HomeLoginComponent},
-  {path: 'cart', component: CartProductComponent, canActivate: [UserGuard] && [AdminGuard]},
+  {path: 'cart', component: CartProductComponent,},
   {path: 'history-bill', component: HistoryListComponent},
   {path: 'info-customer', component: InforCustomerComponent},
   {path: 'product-add', component: ProductAddComponent, canActivate: [AdminGuard]},
-  {path: 'product-edit', component: ProductEditComponent, canActivate: [AdminGuard]},
+  {path: 'product-edit/:id', component: ProductEditComponent, canActivate: [AdminGuard]},
+  {path: 'thong-ke', component: StatisticalComponent, canActivate: [AdminGuard]},
 ];
 
 @NgModule({

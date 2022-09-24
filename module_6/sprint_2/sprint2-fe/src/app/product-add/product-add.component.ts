@@ -32,6 +32,7 @@ export class ProductAddComponent implements OnInit {
   ngOnInit(): void {
     this.formAdd();
     this.getAllCategory();
+
   }
 
   formAdd() {
@@ -86,6 +87,9 @@ export class ProductAddComponent implements OnInit {
       this.imgSrc = '';
       this.selectFileImg = null;
     }
-
   }
+
+
+
+
 }

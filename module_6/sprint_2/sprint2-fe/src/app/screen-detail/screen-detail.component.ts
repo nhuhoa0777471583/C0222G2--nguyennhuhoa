@@ -56,7 +56,6 @@ export class ScreenDetailComponent implements OnInit {
         console.log(d);
       });
     });
-
   }
 
   getCustomerByUserName(username: string) {

@@ -25,6 +25,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFireStorageModule} from '@angular/fire/storage';
+import { StatisticalComponent } from './statistical/statistical.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
     ProductAddComponent,
     HistoryListComponent,
     InforCustomerComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    StatisticalComponent
 
   ],
   imports: [

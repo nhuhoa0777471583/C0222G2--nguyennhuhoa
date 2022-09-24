@@ -53,12 +53,14 @@ export class HeaderComponent implements OnInit {
       this.user = this.username;
       this.token = this.readCookieService('jwToken');
       this.getCustomerByUserName(this.username);
+
     });
   }
 
   ngOnInit(): void {
     this.searchForm();
     this.getCustomerByUserName(this.username);
+    this.displayQuantityProductInCart(this.customer);
   }
 
 
@@ -126,7 +128,6 @@ export class HeaderComponent implements OnInit {
 
   searchNameProduct() {
     this.nameSearch = this.formSearch.value.nameSearch.trim();
-    console.log(this.nameSearch);
   }
 
   getCustomerByUserName(username: string) {
@@ -153,6 +154,8 @@ export class HeaderComponent implements OnInit {
       } else {
         this.quantityProductInCart = [];
       }
+    }, error => {
+    }, () => {
     });
   }
 

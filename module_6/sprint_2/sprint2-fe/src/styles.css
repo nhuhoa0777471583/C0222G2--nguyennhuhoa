@@ -39,6 +39,8 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+
+
 *,
 *::before,
 *::after {
@@ -4906,7 +4908,7 @@ a.badge:hover, a.badge:focus {
 
 a.badge-primary:hover, a.badge-primary:focus {
   color: #212529;
-  background-color: #A5C9CA;
+  background-nav-item: #A5C9CA;
 }
 
 a.badge-primary:focus, a.badge-primary.focus {
@@ -6412,7 +6414,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #3D464D !important;
+  background-color: #e6e6e6 !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -10064,7 +10066,7 @@ a.text-primary:hover, a.text-primary:focus {
 }
 
 .text-secondary {
-  color: #F5F5F5 !important;
+  color: black !important;
 }
 
 a.text-secondary:hover, a.text-secondary:focus {
@@ -10521,3 +10523,4 @@ a.text-dark:hover, a.text-dark:focus {
     transform: translateY(-15px);
   }
 }
+

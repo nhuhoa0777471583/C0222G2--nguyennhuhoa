@@ -1,3 +1,9 @@
+.container {
+  background-color: #D8D8D8;
+  height: 500px
+}
+
+
 .css_input {
   position: relative;
 }
@@ -14,7 +20,19 @@
   outline: none;
   background: transparent;
 }
+.css_input i {
+  padding-left: 2%;
+}
+
+
+.css_img img {
+  height: 350px;
+  width: 400px;
+  border-radius: 30%;
+}
 
 .p-2 {
   color: black;
+
 }
+

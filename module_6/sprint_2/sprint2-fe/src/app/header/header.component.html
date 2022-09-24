@@ -92,7 +92,7 @@
           <div class="nav-item dropdown ">
             <a [routerLink]="['/laptop']" class="nav-link dropdown-toggle" data-toggle="dropdown">Laptop <i
               class="fa fa-angle-right float-right mt-1"></i></a>
-            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+            <div class="dropdown-menu dropdown-menu-right position-absolute rounded-0 border-0 m-0">
               <a href="" class="dropdown-item">Acer</a>
               <a href="" class="dropdown-item">Dell</a>
               <a href="" class="dropdown-item">Macbook</a>
@@ -120,16 +120,29 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav mr-auto py-0">
             <a [routerLink]="['/']" class="nav-item nav-link "
-               *ngIf="role === 'USER' || 'ADMIN' ">Trang chủ</a>
-            <a [routerLink]="['/laptop']" class="nav-item nav-link  "
-               *ngIf="role === 'USER' || 'ADMIN'">Laptop</a>
+               *ngIf="role === 'USER' || 'ADMIN'" style="color: black;"> Trang chủ</a>
+            <a [routerLink]="['/laptop']" class="nav-item  nav-link  "
+               *ngIf="role === 'USER' || 'ADMIN'" style="color: black;">Laptop</a>
             <a [routerLink]="['/smartphone']" class="nav-item nav-link "
-               *ngIf="role === 'USER' || 'ADMIN'">Điện
+               *ngIf="role === 'USER' || 'ADMIN'" style="color: black;">Điện
               thoại</a>
             <a [routerLink]="['/cart']" class="nav-item nav-link "
-               *ngIf="role === 'USER' || 'ADMIN'">Giỏ hàng</a>
+               *ngIf="role === 'USER' || 'ADMIN'" style="color: black;">Giỏ hàng</a>
             <a [routerLink]="['/product-add']" class="nav-item nav-link "
-               *ngIf="role === 'ADMIN'">Thêm mới sản phẩm</a>
+               *ngIf="role === 'ADMIN'" style="color: black;">Thêm mới sản phẩm</a>
+            <a [routerLink]="['/thong-ke']" class="nav-item nav-link "
+               *ngIf="role === 'ADMIN'" style="color: black;">Thống kê</a>
+
+            <!--            <div class=" dropdown">-->
+            <!--              <a class="nav-item nav-link dropdown-toggle"-->
+            <!--                 data-toggle="dropdown">Thống kê <i class="fa fa-angle-down"></i>-->
+            <!--              </a>-->
+            <!--              <div class="dropdown-menu dropdown-menu-right">-->
+            <!--                <a class="dropdown-item">Sản phẩm</a>-->
+            <!--                <a class="dropdown-item">Khách hàng</a>-->
+            <!--              </div>-->
+            <!--            </div>-->
+
           </div>
         </div>
       </nav>

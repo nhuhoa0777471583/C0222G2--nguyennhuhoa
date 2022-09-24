@@ -15,7 +15,7 @@
     <tr *ngFor="let h of listHistoryBill, index as i">
       <th scope="row">{{i + 1 + numberPage * size}}</th>
       <td>{{h.bill.code}}</td>
-      <td>{{h.bill.creationDate}}</td>
+      <td>{{h.bill.creationDate | date: 'dd-MM-yyyy hh:mm:ssa'}}</td>
       <td>{{h.product.name}}</td>
       <td>{{h.quantity}}</td>
       <td>{{h.product.priceSale}}</td>

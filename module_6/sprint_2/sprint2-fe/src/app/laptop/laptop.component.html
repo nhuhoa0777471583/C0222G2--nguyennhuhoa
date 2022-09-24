@@ -170,7 +170,8 @@
               <div class="product-action">
                 <a class="btn btn-outline-dark btn-square" (click)="addToCart(laptop)"> <i
                   class="fa fa-shopping-cart"></i></a>
-                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" [routerLink]="['/product-edit']"><i
+                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'"
+                   [routerLink]="['/product-edit',laptop.id]"><i
                   class="fa-sharp fa-solid fa-pen text-primary"
                   style="font-size: 22px; color: black!important;"></i></a>
                 <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" data-toggle="modal"
@@ -235,7 +236,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        Bạn có muốn xóa sản phẩm {{nameDelete}} có giá {{priceDelete}} không
+        Bạn có muốn xóa sản phẩm <span style="color: red">{{nameDelete}}</span> có giá <span
+        style="color: red">{{priceDelete | currency: 'VND': ''}}đ</span> không
       </div>
 
       <div class="modal-footer">

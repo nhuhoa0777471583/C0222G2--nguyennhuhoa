@@ -147,7 +147,7 @@
           <img class="img-fluid" style=" height: 200px" src="{{p.image}}" alt="">
           <div class="product-action">
             <a class="btn btn-outline-dark btn-square" (click)="addToCart(p)"><i class="fa fa-shopping-cart"></i></a>
-            <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
+            <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" [routerLink]="['/product-edit',p.id]"><i
               class="fa-sharp fa-solid fa-pen text-primary"
               style="font-size: 22px; color: black!important;"></i></a>
             <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'"><i
@@ -206,7 +206,7 @@
           <div class="product-action">
             <a class="btn btn-outline-dark btn-square" (click)="addToCart(productNearDay)"><i
               class="fa fa-shopping-cart"></i></a>
-            <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
+            <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" [routerLink]="['/product-edit',productNearDay.id]"><i
               class="fa-sharp fa-solid fa-pen text-primary"
               style="font-size: 22px; color: black!important;"></i></a>
             <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i

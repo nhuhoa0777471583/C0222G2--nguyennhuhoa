@@ -173,10 +173,12 @@
               <div class="product-action">
                 <a class="btn btn-outline-dark btn-square"><i
                   class="fa fa-shopping-cart" (click)="addToCart(phone)"></i></a>
-                <a class="btn btn-outline-dark btn-square" [routerLink]="['/product-edit']" *ngIf="role ===  'ADMIN'" href=""><i
+                <a class="btn btn-outline-dark btn-square" [routerLink]="['/product-edit',phone.id]"
+                   *ngIf="role ===  'ADMIN'"
+                   href=""><i
                   class="fa-sharp fa-solid fa-pen text-primary"
                   style="font-size: 22px; color: black!important;"></i></a>
-                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" href=""><i
+                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'"><i
                   class="fa-sharp fa-solid fa-trash text-danger "
                   style="font-size: 22px; color: black!important;"></i></a>
                 <a class="btn btn-outline-dark btn-square" [routerLink]="['/detail/', phone.id]"><i
