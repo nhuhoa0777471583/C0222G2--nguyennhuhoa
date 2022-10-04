@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Home</title>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+    />
+</head>
+<body>
+<div class="container mt-3">
+    <div class="mb-3"><a href="/add" class="btn btn-info">Thêm mới sản phẩm</a></div>
+    <table class="table table-bordered">
+        <thead style="text-align: center">
+        <th>Name</th>
+        <th>Price</th>
+        <th>Origin</th>
+        <th></th>
+        </thead>
+        <tbody style="text-align: center">
+        <%
+        for (var i = 0; i < product.length; i++){ %>
+            <tr>
+                <td><%= product[i].name %></td>
+                <td><%= product[i].price %></td>
+                <td><%= product[i].origin %></td>
+                <td>
+                    <a href="/edit/<%= product[i].id %>" class="btn btn-primary">Edit</a>
+                    <a href="/delete/<%= product[i].id %>" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        <%
+        }
+        %>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
