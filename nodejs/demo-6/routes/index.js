@@ -44,18 +44,29 @@ router.get('/delete/:id', function (req, res,) {
 
 
 router.get('/edit/:id', function (req, res, result) {
-    var pathFile = url.parse(req.url, true)
-    var id = (pathFile.path);
-    var idEdit = id.substring(6)
+    const pathFile = url.parse(req.url, true);
+    const id = (pathFile.path);
+    const idEdit = id.substring(6);
     console.log(idEdit)
     for (let i = 0; i < product.length; i++) {
         if (product[i].id == idEdit) {
             var productEdit = product[i];
-            // return res.redirect('/');
         }
     }
     console.log(productEdit)
     res.render('edit.ejs', {productEdit})
-
 })
+
+// update
+router.post('/update', function (req, res) {
+    const arrayProduct = req.body;
+    console.log(arrayProduct);
+    product.forEach((element, index) => {
+        if (element.id == arrayProduct.id) {
+            product[index] = arrayProduct;
+        }
+    })
+    res.redirect('/')
+})
+
 module.exports = router;
