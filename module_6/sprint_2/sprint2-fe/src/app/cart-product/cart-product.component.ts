@@ -59,7 +59,7 @@ export class CartProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCustomerByUserName(this.username);
-    this.paypal();
+    // this.paypal();
   }
 
   delete(productCart: Cart) {
@@ -111,6 +111,19 @@ export class CartProductComponent implements OnInit {
     this.totalPayment = (this.ship + this.totalProduct);
     this.moneyDola = this.totalPayment / 23000;
     this.paypal();
+
+    // render({
+    //         id: '#payments',
+    //         currency: 'VND',
+    //         value: String((this.moneyDola).toFixed(2)),
+    //         onApprove: (details) => {
+    //           if (details.status == 'COMPLETED') {
+    //             this.payment();
+    //           }
+    //         }
+    //       }
+    // );
+
   }
 
   paypal() {
@@ -130,16 +143,15 @@ export class CartProductComponent implements OnInit {
           }
         }
       );
-      this.router.navigateByUrl('/cart');
+    } else {
+      this.toast.warning('Giỏ hàng đang trống');
     }
   }
 
   payment() {
     this.cartService.goPayment(this.customer).subscribe(d => {
       setTimeout(() => {
-        this.router.navigateByUrl('/cart').then(() => {
-          this.toast.success('Thanh toán thành công!');
-        });
+        this.router.navigateByUrl('/cart').then(() => {});
       }, 500);
       this.toast.success('Thanh toán thành công!');
     }, error => {

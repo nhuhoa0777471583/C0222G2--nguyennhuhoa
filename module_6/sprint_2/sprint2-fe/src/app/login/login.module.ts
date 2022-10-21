@@ -12,7 +12,6 @@ import { Error404PageComponent } from './error404-page/error404-page.component';
 import { Error401PageComponent } from './error401-page/error401-page.component';
 import {ShareModule} from '../share/share.module';
 
-
 @NgModule({
   declarations: [
     HomeLoginComponent,
@@ -26,7 +25,11 @@ import {ShareModule} from '../share/share.module';
     CommonModule,
     RouterModule,
     LoginRoutingModule,
-    ShareModule
-  ]
+    ShareModule,
+
+  ],
+  providers: [
+
+  ],
 })
 export class LoginModule { }

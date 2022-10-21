@@ -159,7 +159,7 @@ public class ProductController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         Optional<Product> pr = this.iProductRepository.findById(id);
-        if (pr == null) {
+        if (!pr.isPresent()) {
             return new ResponseEntity<>(NOT_FOUND);
         }
         this.iProductRepository.updateIsDeleted(id);

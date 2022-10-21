@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sprint2-fe';
+  title = 'Shoppe-Fake';
 
   onActivate(event) {
     window.scroll({

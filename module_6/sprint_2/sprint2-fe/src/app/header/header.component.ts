@@ -160,4 +160,9 @@ export class HeaderComponent implements OnInit {
   }
 
 
+  notification() {
+    if (this.token == ''){
+      this.toasService.warning("Bạn cần phải đăng nhập mới vào được")
+    }
+  }
 }
