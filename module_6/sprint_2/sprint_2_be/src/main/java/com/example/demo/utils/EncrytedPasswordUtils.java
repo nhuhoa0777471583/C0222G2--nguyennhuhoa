@@ -20,8 +20,5 @@ public class EncrytedPasswordUtils {
         System.out.println("Encryted Password: " + encrytedPassword);
         System.out.println(new BCryptPasswordEncoder().matches("123456", encrytedPassword));
     }
-
-
-
 }
 

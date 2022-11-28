@@ -9,18 +9,19 @@ export class MessagingService {
   constructor(private angularFireMessaging: AngularFireMessaging) {
   }
 
+  // this function used to request notification permission from page web
   requestPermission() {
     this.angularFireMessaging.requestToken.subscribe(token => {
-      console.log(token);
+      console.log("Token: "+token);
     }, error => {
       console.log('Error !!');
     });
   }
-
+  // this function will receive notification from firebase
   receiveMessaging() {
-    this.angularFireMessaging.messages.subscribe(payload => {
-      console.log('new message recieved', payload);
-      this.currentMessage.next(payload);
+    this.angularFireMessaging.messages.subscribe(msg => {
+      console.log('new message recieved', msg);
+      this.currentMessage.next(msg);
     });
   }
 }

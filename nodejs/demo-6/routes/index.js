@@ -31,8 +31,7 @@ router.post('/add', function (req, res) {
 
 router.get('/delete/:id', function (req, res,) {
     var pathFile = url.parse(req.url, true)
-    var id = (pathFile.path);
-    var idDelete = id.substring(8)
+    var idDelete = (pathFile.path.substring(8));
     console.log(idDelete)
     for (let i = 0; i < product.length; i++) {
         if (product[i].id == idDelete) {
@@ -45,8 +44,8 @@ router.get('/delete/:id', function (req, res,) {
 
 router.get('/edit/:id', function (req, res, result) {
     const pathFile = url.parse(req.url, true);
-    const id = (pathFile.path);
-    const idEdit = id.substring(6);
+    console.log(pathFile.path)
+    const idEdit = (pathFile.path.substring(6));
     console.log(idEdit)
     for (let i = 0; i < product.length; i++) {
         if (product[i].id == idEdit) {

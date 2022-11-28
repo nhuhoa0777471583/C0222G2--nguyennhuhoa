@@ -1,6 +1,6 @@
 const express = require('express');
 let router = express.Router();
-const APIController = require('../controller/restController')
+const APIController = require('../models/product.models.api')
 
 const initAPIRoute = (app) => {
     router.get('/', APIController.displayListProduct);
@@ -9,7 +9,7 @@ const initAPIRoute = (app) => {
     router.put('/update/', APIController.updateProduct);
     router.delete('/delete/:id', APIController.deleteProduct);
 
-    return app.use('/api', router)
+    return app.use('', router)
 }
 
 module.exports = initAPIRoute;

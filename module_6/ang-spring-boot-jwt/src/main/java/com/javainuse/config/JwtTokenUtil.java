@@ -13,11 +13,11 @@ import org.springframework.stereotype.Component;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-
+//-JwtTokenUtil có nhiệm vụ sinh ra token dự vào key mình cung cấp
 @Component
-public class JwtTokenUtil implements Serializable {
+public class JwtTokenUtil {
 
-	private static final long serialVersionUID = -2550185165626007488L;
+//	private static final long serialVersionUID = -2550185165626007488L;
 	
 	public static final long JWT_TOKEN_VALIDITY = 5*60*60;
 

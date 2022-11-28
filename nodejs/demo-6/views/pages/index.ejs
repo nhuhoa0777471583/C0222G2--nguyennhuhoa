@@ -12,8 +12,11 @@
             crossorigin="anonymous"
     />
 </head>
+<header>
+    <%- include('../partials/header'); %>
+</header>
 <body>
-<div class="container mt-3">
+<div class="container-fluid mt-3" style="background-color: #e0e0c6">
     <div class="mb-3"><a href="/add" class="btn btn-info">Thêm mới sản phẩm</a></div>
     <table class="table table-bordered">
         <thead style="text-align: center">
@@ -40,5 +43,9 @@
         </tbody>
     </table>
 </div>
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
 </body>
 </html>

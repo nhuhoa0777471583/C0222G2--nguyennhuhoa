@@ -54,14 +54,46 @@ public class Test {
 //
 //        }
 
-        int a = 3;
-        System.out.println(a);
-        int b = a;
-        System.out.println(b);
+//        int a = 3;
+//        System.out.println(a);
+//        int b = a;
+//        System.out.println(b);
+//
+//
+//        int[] arrInt = {1,2,4,1,2,3,5,6};
 
 
-        int[] arrInt = {1,2,4,1,2,3,5,6};
-        
+//    int[] number1 = {8,2,5,6,7};
+//    int sumMin = 0;
+//    int sumMax = 0;
+//    int min = number1[0];
+//    int max = number1[0];
+//    int sum = 0;
+//        for (int i = 0; i < number1.length; i++) {
+//            if (number1[i] < min ){
+//                min = number1[i];
+//            }
+//            if (number1[i] > max){
+//                max = number1[i];
+//            }
+//            sum += number1[i];
+//            sumMax = sum - min;
+//            sumMin = sum - max;
+//        }
+//        System.out.println("a= "+ sumMax);
+//        System.out.println("b= "+ sumMin);
+
+
+        int number = 12345;
+        int convered = 0;
+        while (number !=0){
+            int num = number % 10;
+            convered = convered * 10 + num;
+            number = number / 10;
+        }
+        System.out.println(number);
+
+
     }
 
 

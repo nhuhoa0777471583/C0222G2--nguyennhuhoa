@@ -13,12 +13,16 @@ import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
+
+
+import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireMessagingModule} from '@angular/fire/messaging';
 import {MessagingService} from './service/messagingService';
 import {AsyncPipe} from '@angular/common';
+
+
 
 @NgModule({
   declarations: [

@@ -1,9 +1,6 @@
 export interface NotificationPayload {
   title?: string,
   body?: string,
+  isVisible: boolean;
 }
 
-export interface MessagingPayload {
-  notification: NotificationPayload,
-  data?: { [key: string]: string }
-}

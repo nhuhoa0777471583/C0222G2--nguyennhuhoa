@@ -4,6 +4,7 @@ package com.codegym.model.contract;
 import com.codegym.model.customers.Customer;
 import com.codegym.model.employee.Employee;
 import com.codegym.model.facility.Facility;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,6 +17,7 @@ public class Contract {
     private String startDate;
     private String endDate;
     private Double deposit;
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_employee", referencedColumnName = "id")
     private Employee employee;

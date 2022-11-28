@@ -12,11 +12,11 @@ public class EncrytedPasswordUtils {
     }
 
     public static void main(String[] args) {
-        String password = "123456";
+        String password = "@a123456789";
         String encrytedPassword = new EncrytedPasswordUtils().encrytePassword(password);
 
         System.out.println("Encryted Password: " + encrytedPassword);
-        System.out.println(new BCryptPasswordEncoder().matches("123456", encrytedPassword));
-
+        System.out.println(new BCryptPasswordEncoder().matches("@a123456789", encrytedPassword));
     }
+
 }

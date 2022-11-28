@@ -1,6 +1,6 @@
 const express = require('express');
 let router = express.Router();
-const home = require('../controller/homeController')
+const home = require('../models/product.models')
 
 const initWebRoute = (app) => {
     router.get('/', home.getList);

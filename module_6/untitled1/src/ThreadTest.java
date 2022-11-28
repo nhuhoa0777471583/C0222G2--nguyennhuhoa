@@ -8,7 +8,15 @@ public class ThreadTest extends Thread {
     }
 
     public static void main(String[] args) {
-        ThreadTest threadTest = new ThreadTest();
-        threadTest.run();
+        ThreadTest t1 = new ThreadTest();
+        t1.run();
+
+        //Tạo ra luồng t2 từ class ThreadTest
+        ThreadTest t2 = new ThreadTest();
+        t2.start();
+//
+//        //Tạo ra luồng t3 từ class ThreadTest
+//        ThreadTest t3 = new ThreadTest();
+//        t3.start();
     }
 }

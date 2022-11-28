@@ -2,9 +2,9 @@ package com.codegym.model.customers;
 
 
 import com.codegym.model.contract.Contract;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -19,12 +19,13 @@ public class Customer {
     private String phone;
     private String email;
     private String address;
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_customer_type", referencedColumnName = "id")
     private CustomerType customerType;
+    @JsonBackReference
     @OneToMany(mappedBy = "customer")
     private List<Contract> contractList;
-
 
 
     public Customer() {
@@ -67,11 +68,11 @@ public class Customer {
         this.nameCustomer = name;
     }
 
-    public String getBirdthday() {
+    public String getbirdthday() {
         return birdthday;
     }
 
-    public void setBirdthday(String birdthday) {
+    public void setbirdthday(String birdthday) {
         this.birdthday = birdthday;
     }
 

@@ -47,25 +47,25 @@ public class HomeController {
 
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-    public ResponseEntity<?> creatAuthen(@RequestBody JwtRequest jwtRequest) throws Exception {
-        if (jwtRequest.getUseName() == null || jwtRequest.getPassword() == null){
+    public ResponseEntity<?> createAuthenticate(@RequestBody JwtRequest jwtRequest) throws Exception {
+        if (jwtRequest.getUsername() == null || jwtRequest.getPassword() == null){
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
-        final UserDetails userDetails = userService.loadUserByUsername(jwtRequest.getUseName());
+        final UserDetails userDetails = userService.loadUserByUsername(jwtRequest.getUsername());
         if(userDetails ==null){
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 
-        authenticate(jwtRequest.getUseName(), jwtRequest.getPassword());
-        AppUser appUser = this.iAppUserService.findAppUserByUsername(jwtRequest.getUseName());
+        authenticate(jwtRequest.getUsername(), jwtRequest.getPassword());
+        AppUser appUser = this.iAppUserService.findAppUserByUsername(jwtRequest.getUsername());
         System.out.println(appUser.getCreationDate());
-        Date date = new Date(System.currentTimeMillis());
-
-        System.out.println(appUser.getCreationDate().toLocalDate().plusDays(30));
-        // Check Password Expired
-        if (date.toLocalDate().compareTo(appUser.getCreationDate().toLocalDate().plusDays(30)) >= 0) {
-            return new ResponseEntity<>("PasswordExpired", HttpStatus.UNAUTHORIZED);
-        }
+//        Date date = new Date(System.currentTimeMillis());
+//
+//        System.out.println(appUser.getCreationDate().toLocalDate().plusDays(30));
+//        // Check Password Expired
+//        if (date.toLocalDate().compareTo(appUser.getCreationDate().toLocalDate().plusDays(30)) >= 0) {
+//            return new ResponseEntity<>("PasswordExpired", HttpStatus.UNAUTHORIZED);
+//        }
         // Get roles list
         List<String> grantList = userDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)

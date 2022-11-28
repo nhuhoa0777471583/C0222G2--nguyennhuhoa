@@ -1,7 +1,8 @@
 const connectDB = require('../database/connect')
 
 let displayListProduct = (req, res) => {
-    connectDB.query('select * from product where is_deleted = 0', (err, data) => {
+    let sql = 'select * from product where is_deleted = 0'
+    connectDB.query(sql, (err, data) => {
         if (data == null) {
             res.writeHead(404, {
                 'Content-type': 'application/json',
@@ -21,8 +22,8 @@ let displayListProduct = (req, res) => {
                 success: true,
                 productList: data
             }));
-        }
 
+        }
     });
 }
 
@@ -34,9 +35,10 @@ let addProduct = (req, res) => {
             message: 'nhập đủ thông tin đi cu :))'
         })
     }
-    connectDB.query(' insert into product (name, price, cost, address) value ( ?,?,?,?)', [name, price, cost, address], (err, result) => {
+    let sql = ' insert into product (name, price, cost, address) value ( ?,?,?,?)';
+    connectDB.query(sql, [name, price, cost, address], (err, result) => {
         if (err) res.render('error', {message: err.message, status: '', error: err.message});
-        return res.status(200).json({message: 'ok'})
+        return res.status(200).json({message: 'thêm thành công'})
     })
 }
 
@@ -92,7 +94,7 @@ let updateProduct = async (req, res) => {
     }
     await connectDB.execute(' UPDATE product SET name = ? , price = ? , cost = ?, address = ? where id = ?', [name, price, cost, address, id], (err, result) => {
         if (err) res.render('error', {message: err.message, status: '', error: err.message});
-        return res.status(200).json({message: 'ok'})
+        return res.status(200).json({message: 'sửa thành công'})
     })
 }
 

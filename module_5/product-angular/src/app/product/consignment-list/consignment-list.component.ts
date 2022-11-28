@@ -1,10 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {Consignment} from '../../model/consignment';
 import {ConsignmentService} from '../../service/consignmentService';
-import {Product} from '../../model/product';
+
 import {ToastrService} from 'ngx-toastr';
 import {FormControl, FormGroup} from '@angular/forms';
 import {MessagingService} from '../../service/messagingService';
+
+import {NotificationService} from '../../service/notificationService';
+
 
 @Component({
   selector: 'app-consignment-list',
@@ -22,17 +25,23 @@ export class ConsignmentListComponent implements OnInit {
   totalPage: number;
   countTotalPage: number[];
   formSearch: FormGroup;
+  // message: any;
+  // showPanel: boolean;
+  // notification: NotificationPayload;
+  // notificationTimeout: any;
+  // private notificationSub: Subscription;
   message: any;
 
   constructor(private consignmentService: ConsignmentService,
               private toast: ToastrService,
-              private messagingService: MessagingService) {
+
+              private notificationService: NotificationService) {
   }
 
   ngOnInit(): void {
     this.getAllPage(this.numberPage);
     this.getFormSearch();
-
+    // this.notificationMess();
   }
 
 
@@ -100,9 +109,20 @@ export class ConsignmentListComponent implements OnInit {
     });
   }
 
-  getMess() {
-    this.messagingService.requestPermission();
-    this.messagingService.receiveMessaging();
-    this.message = this.messagingService.currentMessage;
-  }
+
+
+  //
+  // private notificationMess() {
+  //   this.notificationService.getNotification().subscribe(n => {
+  //     this.notification = n;
+  //     this.showPanel = n !== null;
+  //     this.notificationTimeout = setTimeout(() => {
+  //       this.showPanel = false;
+  //     }, 3000);
+  //   });
+  // }
+  // ngOnDestroy(){
+  //   this.notificationSub.unsubscribe();
+  //   clearTimeout(this.notificationTimeout)
+  // }
 }

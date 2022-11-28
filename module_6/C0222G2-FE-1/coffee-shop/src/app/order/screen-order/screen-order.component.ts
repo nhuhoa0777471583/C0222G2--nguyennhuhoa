@@ -188,6 +188,7 @@ export class ScreenOrderComponent implements OnInit, OnChanges {
       this.dish = dish;
       localStorage.setItem('dish', JSON.stringify(this.dish));
       const tempOrder: string = localStorage.getItem('dish');
+      console.log(tempOrder)
       if(tempOrder){
         this.dish = JSON.parse(tempOrder) as Dish;
       }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MessagingService} from '../service/messagingService';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  message: any;
 
-  constructor() { }
+  constructor(private messagingService: MessagingService) { }
 
   ngOnInit(): void {
   }
 
+  getMess() {
+    this.messagingService.requestPermission();
+    this.messagingService.receiveMessaging();
+    this.message = this.messagingService.currentMessage;
+  }
 }

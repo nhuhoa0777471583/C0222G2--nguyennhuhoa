@@ -206,7 +206,7 @@
                 <tr th:each="c, loop: ${customer}">
                     <td th:text="${loop.count + customer.number * customer.size}"></td>
                     <td th:text="${c.getName()}"></td>
-                    <td th:text="${c.getBirdthday()}"></td>
+                    <td th:text="${c.getDayOfBirth()}"></td>
                     <td>
                         <p th:if="${c.getGender() == 1}">Nam</p>
                         <p th:if="${c.getGender() == 0}">Nữ</p>

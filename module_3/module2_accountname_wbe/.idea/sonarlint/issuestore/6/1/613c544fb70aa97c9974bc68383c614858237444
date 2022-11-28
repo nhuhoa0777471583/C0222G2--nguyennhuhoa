@@ -1,0 +1,30 @@
+
+d
+java:S1192h"IDefine a constant instead of duplicating this literal "employee" 3 times.(…ùœ²ùÿÿÿÿ
+h
+java:S1192I"MDefine a constant instead of duplicating this literal "employeeList" 4 times.(£Çƒÿÿÿÿÿ
+u
+java:S1192J"_Define a constant instead of duplicating this literal "view/employee/listEmployee.jsp" 3 times.(Õá£À
+h
+java:S1192Q"MDefine a constant instead of duplicating this literal "positionList" 3 times.(­â¬Êıÿÿÿÿ
+c
+java:S1192R"NDefine a constant instead of duplicating this literal "educationList" 3 times.(××K
+h
+java:S1192S"MDefine a constant instead of duplicating this literal "divitionList" 3 times.(¥ß¨şÿÿÿÿ
+f
+java:S1301;"KReplace this "switch" statement by "if" statements to increase readability.(ë´åİşÿÿÿÿ
+ƒ
+java:S1989!"fHandle the following exceptions that could be thrown by "showEmployee": ServletException, IOException.(Êêº‚8ÁÑã˜¬0
+ˆ
+java:S1989-"fHandle the following exceptions that could be thrown by "listEmployee": ServletException, IOException.(şÀ¨Ïıÿÿÿÿ8ÏÑã˜¬0
+<	java:S131;""Add a default case to this switch.(ë´åİşÿÿÿÿ
+o
+java:S1989="SHandle the following exception that could be thrown by "saveEmployee": IOException.(ƒÀí(8ßÑã˜¬0
+b
+java:S2147z"ECombine this catch with the one at line 120, which has the same body.(ï­£Ä8æÓã˜¬0
+c
+java:S2147‘"ECombine this catch with the one at line 143, which has the same body.(ï­£Ä8Ôã˜¬0
+c
+java:S2147¶"ECombine this catch with the one at line 180, which has the same body.(ï­£Ä8âÔã˜¬0
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(£ÅÒü8êÔã˜¬0

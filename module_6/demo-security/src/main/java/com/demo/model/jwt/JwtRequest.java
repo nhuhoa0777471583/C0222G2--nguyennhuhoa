@@ -1,14 +1,10 @@
 package com.demo.model.jwt;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
 
 public class JwtRequest implements Serializable {
     private static final long serialVersionUID = 5926468583005150707L;
-    private String useName;
+    private String username;
     private String password;
     private String token;
     private String confirmPassword;
@@ -16,31 +12,31 @@ public class JwtRequest implements Serializable {
     public JwtRequest() {
     }
 
-    public JwtRequest(String useName, String password) {
-        this.useName = useName;
+    public JwtRequest(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
-    public JwtRequest(String useName, String password, String token) {
-        this.useName = useName;
+    public JwtRequest(String username, String password, String token) {
+        this.username = username;
         this.password = password;
         this.token = token;
     }
 
-    public JwtRequest(String useName, String password, String token, String confirmPassword) {
-        this.useName = useName;
+    public JwtRequest(String username, String password, String token, String confirmPassword) {
+        this.username = username;
         this.password = password;
         this.token = token;
         this.confirmPassword = confirmPassword;
     }
 
 
-    public String getUseName() {
-        return useName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUseName(String useName) {
-        this.useName = useName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
